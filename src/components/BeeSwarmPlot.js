@@ -20,7 +20,7 @@ class BeeSwarmPlot extends Component {
 
   componentDidUpdate(prevProps){
 
-    const { width, height, data, year } = this.props
+    const { width, height, data, year, mouseoverValue } = this.props
     const { firstRender } = this.state
 
 
@@ -33,6 +33,10 @@ class BeeSwarmPlot extends Component {
       this.updateData()
     }
 
+    if(prevProps.mouseoverValue !== mouseoverValue ) {
+      this.updateMouseover()
+    }
+
 
 
   }
@@ -43,6 +47,7 @@ class BeeSwarmPlot extends Component {
 
     const { width, height, margin, transition } = this.props,
           { data, year } = this.props,
+          { handleMouseover, handleMouseout, handlemouseClick } = this.props,
           {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin),
           values = _.uniq(data.map(e => e.economicClass))
 
@@ -54,25 +59,48 @@ class BeeSwarmPlot extends Component {
     this.colorScale = scaleOrdinal().domain(values).range(['#4F345A', '#DEE1E5', '#DEE1E5', '#628C6F'])
 
     this.chartArea
-          .selectAll('circle')
+          .selectAll('.sub-circle')
           .data(data, d => d.country)
           .enter()
           .append('circle')
+          .attr('class', 'sub-circle')
+          .attr("r", 11)
+          .attr('fill', d => this.colorScale(d.economicClass))
+          .attr('stroke', d => this.colorScale(d.economicClass))
+          .attr('fill-opacity', 0)
+          .attr('stroke-opacity', 0)
+          .attr("cx", d => d[year])
+          .attr("cy", d => chartHeight/2)
+
+    this.chartArea
+          .selectAll('.main-circle')
+          .data(data, d => d.country)
+          .enter()
+          .append('circle')
+          .attr('class', 'main-circle')
           .attr("r", 8)
           .attr('fill', d => this.colorScale(d.economicClass))
           .attr("cx", d => d[year])
           .attr("cy", d => chartHeight/2)
+              .on('mouseover', handleMouseover)
+              .on('mouseout', handleMouseout)
+              .on('click', handlemouseClick)
+
 
     this.simulation = forceSimulation(data)
         .force("charge", forceManyBody().strength(10))
         .force('x', forceX(d => this.xScale(d[year])).strength(.1))
         .force('y', forceY(chartHeight/2).strength(.1))
-        .force('collide', forceCollide(12))
+        .force('collide', forceCollide(14))
         .alphaDecay(0)
 			  .alpha(.1)
         .on("tick", () => {
 
-          this.chartArea.selectAll('circle')
+          this.chartArea.selectAll('.main-circle')
+              .attr("cx", d => d.x)
+              .attr("cy", d => d.y)
+
+          this.chartArea.selectAll('.sub-circle')
               .attr("cx", d => d.x)
               .attr("cy", d => d.y)
 
@@ -84,6 +112,7 @@ class BeeSwarmPlot extends Component {
     		this.simulation.alphaDecay(0.1);
     	}, transition.veryLong);
 
+
   }
 
   updateData(){
@@ -94,17 +123,26 @@ class BeeSwarmPlot extends Component {
 
   	this.simulation
   			.alphaDecay(0)
-  			.alpha(0.12)
+  			.alpha(0.05)
   			.restart()
 
-    this.chartArea.selectAll('circle').data(data, d => d.country)
+    this.chartArea.selectAll('.main-circle').data(data, d => d.country)
 
     clearTimeout(this.init_decay);
 
     this.init_decay = setTimeout(() => {
         this.simulation.alphaDecay(0.1);
-      }, transition.veryLong);
+      }, 10000);
 
+  }
+
+  updateMouseover(){
+
+    const { mouseoverValue } = this.props
+
+    this.chartArea
+          .selectAll('.sub-circle')
+          .attr('stroke-opacity', d => d.country === mouseoverValue ? 1 : 0)
   }
 
   render(){
@@ -113,6 +151,9 @@ class BeeSwarmPlot extends Component {
       <div>
         <ChartContainer>
           <svg ref={node => this.node = node}/>
+          <div className="tooltip">
+            
+          </div>
         </ChartContainer>
       </div>
     )

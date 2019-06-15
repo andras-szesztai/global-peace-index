@@ -4,30 +4,30 @@ import { withStyles } from '@material-ui/core/styles';
 
 const YearSlider = withStyles({
   root: {
-    color: '#52af77',
+    color: '#333',
     height: 8,
   },
   thumb: {
-    height: 24,
-    width: 24,
-    backgroundColor: '#fff',
+    height: 12,
+    width: 12,
+    backgroundColor: '#333',
     border: '2px solid currentColor',
-    marginTop: -10,
-    marginLeft: -12,
+    marginTop: -6,
+    marginLeft: -6,
     '&:focus,&:hover,&$active': {
       boxShadow: 'inherit',
     },
   },
   active: {},
   valueLabel: {
-    left: 'calc(-50% + 4px)',
+    left: 'calc(-50% - 8px)',
   },
   track: {
-    height: 4,
+    height: 2,
     borderRadius: 4,
   },
   rail: {
-    height: 4,
+    height: 2,
     borderRadius: 4,
   },
 })(Slider);

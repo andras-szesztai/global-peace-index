@@ -8,7 +8,6 @@ import BeeSwarmPlot from './components/BeeSwarmPlot'
 import { Wrapper } from './components/StyledComponents'
 
 import beeSwarmData from './data/beeswarmData.json'
-import test from './data/test.json'
 
 const small = 600
 const medium = 900
@@ -16,7 +15,9 @@ const medium = 900
 class App extends Component {
   state = {
       sectionWidth: undefined,
-      yearFilter: 2019
+      yearFilter: 2019,
+      mouseoverHighlight: '',
+      mouseClickHighlight: []
   }
 
   componentDidMount() {
@@ -30,15 +31,38 @@ class App extends Component {
     });
   }
 
+  handleCircleClick = d => {
+    this.setState(state => {
+
+      const copy = [...state.mouseClickHighlight]
+
+      console.log(d.country)
+
+      if(!state.mouseClickHighlight.includes(d.country)){
+        state.mouseClickHighlight = [...copy, d.country]
+      } else if (state.mouseClickHighlight.includes(d.country)){
+        state.mouseClickHighlight = copy.filter(el => d.country !== el)
+      }
+
+
+
+    })
+  }
+
+  handleCircleMouseover = d => {this.setState(state => state.mouseoverHighlight = d.country)}
+
+  handleCircleMouseout = () => {this.setState(state => state.mouseoverHighlight = '')}
+
 
   render(){
 
-    const { sectionWidth, yearFilter } = this.state
+    const { sectionWidth, yearFilter, mouseoverHighlight } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const lineChartHeight = this.lineChartContainer && this.lineChartContainer.clientHeight
 
-    const filteredBeeSwarmData = beeSwarmData.filter(d => d.year === yearFilter)
+    console.log(this.state.mouseClickHighlight)
+
 
     return (
       <div className="App">
@@ -72,8 +96,12 @@ class App extends Component {
               <BeeSwarmPlot
                 width={sectionWidth}
                 height={beeSwarmHeight}
-                data={test}
+                data={beeSwarmData}
                 year={yearFilter}
+                handleMouseover = {this.handleCircleMouseover}
+                handleMouseout = {this.handleCircleMouseout}
+                mouseoverValue = {mouseoverHighlight}
+                handlemouseClick = {this.handleCircleClick}
               />
             </Wrapper>
           </section>
