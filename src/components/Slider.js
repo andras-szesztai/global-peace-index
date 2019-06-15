@@ -12,7 +12,7 @@ const YearSlider = withStyles({
     width: 12,
     backgroundColor: '#333',
     border: '2px solid currentColor',
-    marginTop: -6,
+    marginTop: -5.5,
     marginLeft: -6,
     '&:focus,&:hover,&$active': {
       boxShadow: 'inherit',

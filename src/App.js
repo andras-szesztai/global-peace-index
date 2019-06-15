@@ -2,22 +2,29 @@ import React, {Component} from 'react';
 import './sass/_main.scss'
 import 'semantic-ui-css/semantic.min.css'
 
-
 import YearSlider from './components/Slider'
 import BeeSwarmPlot from './components/BeeSwarmPlot'
 import { Wrapper } from './components/StyledComponents'
 
 import beeSwarmData from './data/beeswarmData.json'
+import barchartData from './data/barchartData.json'
 
 const small = 600
 const medium = 900
+
+const metrics = [
+      'Overall Score', 'Safety & Security', 'Militarisation', 'Incarceration Rate', 'Political Instability',
+      'Military Expenditure (% GDP)', 'Political Terror Scale', 'Homicide Rate', 'Access to Small Arms', 'UN Peacekeeping Funding'
+  ]
+
+const filteredBarChartData = barchartData.filter(d => metrics.includes(d.metric))
 
 class App extends Component {
   state = {
       sectionWidth: undefined,
       yearFilter: 2019,
       mouseoverHighlight: '',
-      mouseClickHighlight: []
+      mouseClickHighlight: ['Iceland', 'Afghanistan']
   }
 
   componentDidMount() {
@@ -35,16 +42,16 @@ class App extends Component {
     this.setState(state => {
 
       const copy = [...state.mouseClickHighlight]
+      const length = state.mouseClickHighlight.length
 
-      console.log(d.country)
-
-      if(!state.mouseClickHighlight.includes(d.country)){
+      if(!state.mouseClickHighlight.includes(d.country) && length < 3){
         state.mouseClickHighlight = [...copy, d.country]
       } else if (state.mouseClickHighlight.includes(d.country)){
         state.mouseClickHighlight = copy.filter(el => d.country !== el)
+      } else if (state.mouseClickHighlight.length === 3){
+        copy.shift()
+        state.mouseClickHighlight = [...copy, d.country]
       }
-
-
 
     })
   }
@@ -56,13 +63,12 @@ class App extends Component {
 
   render(){
 
-    const { sectionWidth, yearFilter, mouseoverHighlight } = this.state
+    const { sectionWidth, yearFilter, mouseoverHighlight, mouseClickHighlight } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const lineChartHeight = this.lineChartContainer && this.lineChartContainer.clientHeight
 
-    console.log(this.state.mouseClickHighlight)
-
+    const tooltipData = filteredBarChartData.filter(d => (d.country === mouseoverHighlight || d.country === 'All') && d.year === yearFilter)
 
     return (
       <div className="App">
@@ -97,11 +103,13 @@ class App extends Component {
                 width={sectionWidth}
                 height={beeSwarmHeight}
                 data={beeSwarmData}
+                tooltipData = {tooltipData}
                 year={yearFilter}
                 handleMouseover = {this.handleCircleMouseover}
                 handleMouseout = {this.handleCircleMouseout}
                 mouseoverValue = {mouseoverHighlight}
                 handlemouseClick = {this.handleCircleClick}
+                mouseClickValue = {mouseClickHighlight}
               />
             </Wrapper>
           </section>

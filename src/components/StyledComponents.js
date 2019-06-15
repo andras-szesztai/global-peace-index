@@ -14,6 +14,21 @@ const Wrapper = styled.div`
 
 `
 
+const Tooltip = styled.div`
+
+    position: absolute;
+    display: none;
+    background: #fff;
+    opacity: .9;
+    z-index: 20;
+
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px 1px rgba(51, 51, 51, 0.2);
+
+    border: 1px solid black;
+
+`
+
 const ChartContainer = styled.div`
 
     circle {
@@ -26,4 +41,4 @@ const ChartContainer = styled.div`
 
 `
 
-export { Wrapper, ChartContainer }
+export { Wrapper, ChartContainer, Tooltip }

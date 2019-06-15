@@ -1,13 +1,12 @@
 import React, {Component} from 'react'
 
-import {ChartContainer} from './StyledComponents'
+import {ChartContainer, Tooltip} from './StyledComponents'
+import BarChart from './BarChart'
 
 import { select } from 'd3-selection'
 import { scaleLinear, scaleOrdinal } from 'd3-scale'
 import { forceSimulation, forceX, forceY, forceCollide, forceManyBody } from 'd3-force'
-import { voronoi } from 'd3-voronoi'
-import { extent } from 'd3-array'
-import { interval } from 'd3-timer'
+import { mouse } from 'd3-selection'
 import "d3-transition"
 import _ from 'lodash'
 
@@ -46,17 +45,19 @@ class BeeSwarmPlot extends Component {
     this.svg = select(this.node)
 
     const { width, height, margin, transition } = this.props,
-          { data, year } = this.props,
+          { data, year, mouseClickValue } = this.props,
           { handleMouseover, handleMouseout, handlemouseClick } = this.props,
           {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin),
           values = _.uniq(data.map(e => e.economicClass))
 
-    appendArea(this.svg, 'chart-area', margin.left, margin.right)
+    appendArea(this.svg, 'chart-area', margin.left, margin.top)
 
     this.chartArea = this.svg.select('.chart-area')
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
     this.colorScale = scaleOrdinal().domain(values).range(['#4F345A', '#DEE1E5', '#DEE1E5', '#628C6F'])
+
+    const tooltip = select(this.div).select('.tooltip')
 
     this.chartArea
           .selectAll('.sub-circle')
@@ -68,7 +69,7 @@ class BeeSwarmPlot extends Component {
           .attr('fill', d => this.colorScale(d.economicClass))
           .attr('stroke', d => this.colorScale(d.economicClass))
           .attr('fill-opacity', 0)
-          .attr('stroke-opacity', 0)
+            .attr('stroke-opacity', d => mouseClickValue.includes(d.country) ? 1 : 0)
           .attr("cx", d => d[year])
           .attr("cy", d => chartHeight/2)
 
@@ -79,13 +80,31 @@ class BeeSwarmPlot extends Component {
           .append('circle')
           .attr('class', 'main-circle')
           .attr("r", 8)
+          .attr("stroke-width", 4)
+          .attr("stroke", 'white')
+          .attr('stroke-opacity', 0)
           .attr('fill', d => this.colorScale(d.economicClass))
           .attr("cx", d => d[year])
           .attr("cy", d => chartHeight/2)
-              .on('mouseover', handleMouseover)
-              .on('mouseout', handleMouseout)
-              .on('click', handlemouseClick)
+              .on('mouseover', d => {
 
+                tooltip.style('display', 'block')
+                handleMouseover(d)
+
+              })
+              .on('mousemove', d => {
+                const mousePos = mouse(this.div)
+
+                tooltip.style('left', mousePos[0] + 10 + 'px')
+                        .style('top', mousePos[1] + 10 + 'px')
+
+              })
+              .on('mouseout', () => {
+                 handleMouseout()
+                 tooltip.style('display', 'none')
+
+              })
+              .on('click', handlemouseClick)
 
     this.simulation = forceSimulation(data)
         .force("charge", forceManyBody().strength(10))
@@ -110,8 +129,7 @@ class BeeSwarmPlot extends Component {
 
     this.init_decay = setTimeout(() => {
     		this.simulation.alphaDecay(0.1);
-    	}, transition.veryLong);
-
+    	}, transition.veryLong * 2);
 
   }
 
@@ -132,28 +150,36 @@ class BeeSwarmPlot extends Component {
 
     this.init_decay = setTimeout(() => {
         this.simulation.alphaDecay(0.1);
-      }, 10000);
+      }, transition.veryLong);
 
   }
 
   updateMouseover(){
 
-    const { mouseoverValue } = this.props
+    const { mouseoverValue, mouseClickValue } = this.props
 
     this.chartArea
           .selectAll('.sub-circle')
-          .attr('stroke-opacity', d => d.country === mouseoverValue ? 1 : 0)
+          .attr('stroke-opacity', d => d.country === mouseoverValue || mouseClickValue.includes(d.country) ? 1 : 0)
   }
 
   render(){
 
+    const { tooltipData, mouseoverValue, year } = this.props
+
     return(
       <div>
-        <ChartContainer>
+        <ChartContainer ref={div => this.div = div}>
           <svg ref={node => this.node = node}/>
-          <div className="tooltip">
-            
-          </div>
+          <Tooltip className="tooltip">
+              <BarChart
+                  data = {tooltipData}
+                  value = {mouseoverValue}
+                  year = {year}
+                  width = {300}
+                  height = {200}
+              />
+          </Tooltip>
         </ChartContainer>
       </div>
     )
@@ -172,7 +198,7 @@ BeeSwarmPlot.defaultProps = {
   },
 
   transition: {
-    veryLong: 8000
+    veryLong: 10000
   }
 
 }
