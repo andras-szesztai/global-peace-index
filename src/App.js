@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import './sass/_main.scss'
 import 'semantic-ui-css/semantic.min.css'
 
+import Slider from '@material-ui/lab/Slider';
+
 import BeeSwarmPlot from './components/BeeSwarmPlot'
 import { Wrapper } from './components/StyledComponents'
 
@@ -46,7 +48,11 @@ class App extends Component {
           </section>
 
           <section className="beeswarm-plot">
-            <Wrapper background="Teal"/>
+            <Wrapper padding="10px">
+              <Slider
+
+              />
+            </Wrapper>
             <Wrapper
               gridRow={sectionWidth > small ? 1 : 3}
               background="Firebrick"/>

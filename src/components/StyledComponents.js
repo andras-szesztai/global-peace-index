@@ -15,6 +15,10 @@ const Wrapper = styled.div`
 
 const ChartContainer = styled.div`
 
+    circle {
+      cursor: pointer;
+    }
+
     position: relative
 
     background-color: ${props => props.background || '#fff'};
