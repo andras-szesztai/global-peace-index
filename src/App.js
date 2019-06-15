@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
-import styled from 'styled-components'
 import './sass/_main.scss'
 import 'semantic-ui-css/semantic.min.css'
 
-import Slider from '@material-ui/lab/Slider';
 
+import YearSlider from './components/Slider'
 import BeeSwarmPlot from './components/BeeSwarmPlot'
 import { Wrapper } from './components/StyledComponents'
 
 import beeSwarmData from './data/beeswarmData.json'
+import test from './data/test.json'
 
 const small = 600
 const medium = 900
 
 class App extends Component {
   state = {
-      sectionWidth: undefined
+      sectionWidth: undefined,
+      yearFilter: 2019
   }
 
   componentDidMount() {
@@ -32,12 +33,12 @@ class App extends Component {
 
   render(){
 
-    const { sectionWidth } = this.state
+    const { sectionWidth, yearFilter } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const lineChartHeight = this.lineChartContainer && this.lineChartContainer.clientHeight
 
-    const filteredBeeSwarmData = beeSwarmData.filter(d => d.year === 2019)
+    const filteredBeeSwarmData = beeSwarmData.filter(d => d.year === yearFilter)
 
     return (
       <div className="App">
@@ -48,14 +49,22 @@ class App extends Component {
           </section>
 
           <section className="beeswarm-plot">
-            <Wrapper padding="10px">
-              <Slider
-
-              />
-            </Wrapper>
             <Wrapper
+              gridColumn={1}
+              padding="10px"
+              >
+                <YearSlider
+                  valueLabelDisplay="auto"
+                  max={2019}
+                  min={2008}
+                  defaultValue={2019}
+                  onChange={(event, value)=> this.setState(state => state.yearFilter = +value)}
+                />
+            </Wrapper>
+            <Wrapper background="Teal"
               gridRow={sectionWidth > small ? 1 : 3}
-              background="Firebrick"/>
+              gridColumn={sectionWidth > small ? 2 : 1}
+              />
             <Wrapper
               gridColumn={sectionWidth > small ? 'span 2' : 1}
               gridRow={2}
@@ -63,7 +72,8 @@ class App extends Component {
               <BeeSwarmPlot
                 width={sectionWidth}
                 height={beeSwarmHeight}
-                data={filteredBeeSwarmData}
+                data={test}
+                year={yearFilter}
               />
             </Wrapper>
           </section>

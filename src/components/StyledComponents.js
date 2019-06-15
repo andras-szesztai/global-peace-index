@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 
     padding: ${props => props.padding || 0}
 
+
 `
 
 const ChartContainer = styled.div`

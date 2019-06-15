@@ -1,0 +1,974 @@
+[
+  {
+    "2018": 3.312,
+    "2019": 3.204,
+    "country": "Afghanistan",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.916,
+    "2019": 1.943,
+    "country": "Albania",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.347,
+    "2019": 2.347,
+    "country": "Algeria",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.021,
+    "2019": 2.069,
+    "country": "Angola",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.962,
+    "2019": 1.859,
+    "country": "Argentina",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.356,
+    "2019": 2.344,
+    "country": "Armenia",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.391,
+    "2019": 1.367,
+    "country": "Australia",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.369,
+    "2019": 1.337,
+    "country": "Austria",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.394,
+    "2019": 2.336,
+    "country": "Azerbaijan",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.932,
+    "2019": 1.924,
+    "country": "Bahrain",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.076,
+    "2019": 2.101,
+    "country": "Bangladesh",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.202,
+    "2019": 2.187,
+    "country": "Belarus",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.504,
+    "2019": 1.494,
+    "country": "Belgium",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.214,
+    "2019": 2.218,
+    "country": "Benin",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.902,
+    "2019": 1.881,
+    "country": "Bhutan",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.084,
+    "2019": 2.011,
+    "country": "Bolivia",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.922,
+    "2019": 1.912,
+    "country": "Bosnia and Herzegovina",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.712,
+    "2019": 1.757,
+    "country": "Botswana",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.002,
+    "2019": 1.993,
+    "country": "Brazil",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.733,
+    "2019": 1.708,
+    "country": "Bulgaria",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.826,
+    "2019": 1.893,
+    "country": "Burkina Faso",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.44,
+    "2019": 2.442,
+    "country": "Burundi",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.233,
+    "2019": 2.124,
+    "country": "Cambodia",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.091,
+    "2019": 2.037,
+    "country": "Cameroon",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.418,
+    "2019": 1.374,
+    "country": "Canada",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.81,
+    "2019": 2.899,
+    "country": "Central African Republic",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.98,
+    "2019": 2.912,
+    "country": "Chad",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.718,
+    "2019": 1.695,
+    "country": "Chile",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.185,
+    "2019": 2.175,
+    "country": "China",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.841,
+    "2019": 2.891,
+    "country": "Colombia",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.631,
+    "2019": 1.619,
+    "country": "Costa Rica",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.387,
+    "2019": 2.481,
+    "country": "Cote d' Ivoire",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.84,
+    "2019": 1.814,
+    "country": "Croatia",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.063,
+    "2019": 2.07,
+    "country": "Cuba",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.771,
+    "2019": 1.769,
+    "country": "Cyprus",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.496,
+    "2019": 1.495,
+    "country": "Czech Republic",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.998,
+    "2019": 2.912,
+    "country": "Democratic Republic of the Congo",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.269,
+    "2019": 1.272,
+    "country": "Denmark",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.07,
+    "2019": 2.082,
+    "country": "Djibouti",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.998,
+    "2019": 1.992,
+    "country": "Dominican Republic",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.28,
+    "2019": 2.244,
+    "country": "Ecuador",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.96,
+    "2019": 2.052,
+    "country": "Egypt",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.108,
+    "2019": 2.059,
+    "country": "El Salvador",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.887,
+    "2019": 1.963,
+    "country": "Equatorial Guinea",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.424,
+    "2019": 2.419,
+    "country": "Eritrea",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.773,
+    "2019": 1.718,
+    "country": "Estonia",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.813,
+    "2019": 2.588,
+    "country": "Ethiopia",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.416,
+    "2019": 1.409,
+    "country": "Finland",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.863,
+    "2019": 1.853,
+    "country": "France",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.99,
+    "2019": 1.986,
+    "country": "Gabon",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.95,
+    "2019": 2.87,
+    "country": "Georgia",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.613,
+    "2019": 1.592,
+    "country": "Germany",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.799,
+    "2019": 1.753,
+    "country": "Ghana",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.915,
+    "2019": 1.913,
+    "country": "Greece",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.158,
+    "2019": 2.19,
+    "country": "Guatemala",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.296,
+    "2019": 2.296,
+    "country": "Guinea",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.464,
+    "2019": 2.476,
+    "country": "Guinea-Bissau",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.177,
+    "2019": 2.141,
+    "country": "Guyana",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.25,
+    "2019": 2.3,
+    "country": "Haiti",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.323,
+    "2019": 2.304,
+    "country": "Honduras",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.558,
+    "2019": 1.427,
+    "country": "Hungary",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.16,
+    "2019": 1.111,
+    "country": "Iceland",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.543,
+    "2019": 2.477,
+    "country": "India",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.857,
+    "2019": 1.859,
+    "country": "Indonesia",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.28,
+    "2019": 2.412,
+    "country": "Iran",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 3.616,
+    "2019": 3.681,
+    "country": "Iraq",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.468,
+    "2019": 1.367,
+    "country": "Ireland",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.884,
+    "2019": 2.884,
+    "country": "Israel",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.765,
+    "2019": 1.676,
+    "country": "Italy",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.039,
+    "2019": 2.041,
+    "country": "Jamaica",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.33,
+    "2019": 1.325,
+    "country": "Japan",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.935,
+    "2019": 1.927,
+    "country": "Jordan",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.11,
+    "2019": 2.09,
+    "country": "Kazakhstan",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.558,
+    "2019": 2.337,
+    "country": "Kenya",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.133,
+    "2019": 2.126,
+    "country": "Kosovo",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.659,
+    "2019": 1.652,
+    "country": "Kuwait",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.336,
+    "2019": 2.362,
+    "country": "Kyrgyz Republic",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.912,
+    "2019": 1.913,
+    "country": "Laos",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.746,
+    "2019": 1.643,
+    "country": "Latvia",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.796,
+    "2019": 2.888,
+    "country": "Lebanon",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.922,
+    "2019": 1.922,
+    "country": "Lesotho",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.043,
+    "2019": 2.054,
+    "country": "Liberia",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.003,
+    "2019": 2.033,
+    "country": "Libya",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.686,
+    "2019": 1.7,
+    "country": "Lithuania",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.052,
+    "2019": 2.006,
+    "country": "Macedonia (FYR)",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.994,
+    "2019": 1.73,
+    "country": "Madagascar",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.857,
+    "2019": 1.862,
+    "country": "Malawi",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.657,
+    "2019": 1.635,
+    "country": "Malaysia",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.346,
+    "2019": 2.347,
+    "country": "Mali",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.51,
+    "2019": 2.378,
+    "country": "Mauritania",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.614,
+    "2019": 1.599,
+    "country": "Mauritius",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.238,
+    "2019": 2.153,
+    "country": "Mexico",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.978,
+    "2019": 2.028,
+    "country": "Moldova",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.05,
+    "2019": 2.043,
+    "country": "Mongolia",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.15,
+    "2019": 2.2,
+    "country": "Montenegro",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.977,
+    "2019": 1.98,
+    "country": "Morocco",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.814,
+    "2019": 1.788,
+    "country": "Mozambique",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.417,
+    "2019": 2.393,
+    "country": "Myanmar",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.019,
+    "2019": 2.028,
+    "country": "Namibia",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.009,
+    "2019": 2.024,
+    "country": "Nepal",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.599,
+    "2019": 1.578,
+    "country": "Netherlands",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.26,
+    "2019": 1.261,
+    "country": "New Zealand",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.869,
+    "2019": 1.883,
+    "country": "Nicaragua",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.164,
+    "2019": 2.168,
+    "country": "Niger",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.582,
+    "2019": 2.593,
+    "country": "Nigeria",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.947,
+    "2019": 2.947,
+    "country": "North Korea",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.388,
+    "2019": 1.365,
+    "country": "Norway",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.701,
+    "2019": 1.672,
+    "country": "Oman",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 3.247,
+    "2019": 3.018,
+    "country": "Pakistan",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.807,
+    "2019": 1.858,
+    "country": "Panama",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.108,
+    "2019": 2.12,
+    "country": "Papua New Guinea",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.939,
+    "2019": 1.881,
+    "country": "Paraguay",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.01,
+    "2019": 2.088,
+    "country": "Peru",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.423,
+    "2019": 2.355,
+    "country": "Philippines",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.663,
+    "2019": 1.655,
+    "country": "Poland",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.437,
+    "2019": 1.387,
+    "country": "Portugal",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.429,
+    "2019": 1.618,
+    "country": "Qatar",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.147,
+    "2019": 2.226,
+    "country": "Republic of the Congo",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.637,
+    "2019": 1.61,
+    "country": "Romania",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.98,
+    "2019": 2.876,
+    "country": "Russia",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.09,
+    "2019": 1.918,
+    "country": "Rwanda",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.309,
+    "2019": 2.36,
+    "country": "Saudi Arabia",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.054,
+    "2019": 2.051,
+    "country": "Senegal",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.075,
+    "2019": 2.039,
+    "country": "Serbia",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.862,
+    "2019": 1.867,
+    "country": "Sierra Leone",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.518,
+    "2019": 1.58,
+    "country": "Singapore",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.529,
+    "2019": 1.542,
+    "country": "Slovakia",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.388,
+    "2019": 1.39,
+    "country": "Slovenia",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 3.426,
+    "2019": 3.35,
+    "country": "Somalia",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.364,
+    "2019": 2.173,
+    "country": "South Africa",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.796,
+    "2019": 1.782,
+    "country": "South Korea",
+    "economicClass": "High income"
+  },
+  {
+    "2018": "",
+    "2019": "",
+    "country": "South Sudan",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.782,
+    "2019": 1.721,
+    "country": "Spain",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.515,
+    "2019": 2.467,
+    "country": "Sri Lanka",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 3.121,
+    "2019": 3.121,
+    "country": "Sudan",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.998,
+    "2019": 2.009,
+    "country": "Swaziland",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.382,
+    "2019": 1.389,
+    "country": "Sweden",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.464,
+    "2019": 1.432,
+    "country": "Switzerland",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.17,
+    "2019": 2.083,
+    "country": "Syria",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.873,
+    "2019": 1.813,
+    "country": "Taiwan",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.248,
+    "2019": 2.25,
+    "country": "Tajikistan",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.772,
+    "2019": 1.783,
+    "country": "Tanzania",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.49,
+    "2019": 2.423,
+    "country": "Thailand",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.951,
+    "2019": 1.952,
+    "country": "The Gambia",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.929,
+    "2019": 2.005,
+    "country": "Timor-Leste",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2,
+    "2019": 2.002,
+    "country": "Togo",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.034,
+    "2019": 2.121,
+    "country": "Trinidad and Tobago",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.807,
+    "2019": 1.812,
+    "country": "Tunisia",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.541,
+    "2019": 2.44,
+    "country": "Turkey",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.158,
+    "2019": 2.267,
+    "country": "Turkmenistan",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 2.414,
+    "2019": 2.53,
+    "country": "Uganda",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 2.203,
+    "2019": 2.127,
+    "country": "Ukraine",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 1.685,
+    "2019": 1.738,
+    "country": "United Arab Emirates",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.84,
+    "2019": 1.812,
+    "country": "United Kingdom",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.337,
+    "2019": 2.257,
+    "country": "United States of America",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 1.714,
+    "2019": 1.7,
+    "country": "Uruguay",
+    "economicClass": "High income"
+  },
+  {
+    "2018": 2.226,
+    "2019": 2.267,
+    "country": "Uzbekistan",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.377,
+    "2019": 2.344,
+    "country": "Venezuela",
+    "economicClass": "Upper middle income"
+  },
+  {
+    "2018": 1.883,
+    "2019": 1.86,
+    "country": "Vietnam",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.484,
+    "2019": 2.35,
+    "country": "Yemen",
+    "economicClass": "Low income"
+  },
+  {
+    "2018": 1.864,
+    "2019": 1.879,
+    "country": "Zambia",
+    "economicClass": "Lower middle income"
+  },
+  {
+    "2018": 2.831,
+    "2019": 2.472,
+    "country": "Zimbabwe",
+    "economicClass": "Low income"
+  }
+]
