@@ -27,6 +27,18 @@ const Tooltip = styled.div`
 
     border: 1px solid black;
 
+    text-align: center;
+
+    h4 {
+      padding-top: 1rem;
+    }
+
+    h4,
+    p {
+      line-height: .3;
+    }
+
+
 `
 
 const ChartContainer = styled.div`

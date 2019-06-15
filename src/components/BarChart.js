@@ -11,12 +11,13 @@ import { svgDimensions, appendArea } from './chartFunctions'
 
 class BarChart extends Component {
   state = {
-    firstRender: false
+    firstRender: false,
+    overallScore: ''
   }
 
   componentDidUpdate(prevProps){
 
-    const { value } = this.props
+    const { data, value } = this.props
     const { firstRender } = this.state
 
     if(!firstRender) {
@@ -26,6 +27,11 @@ class BarChart extends Component {
 
     if(prevProps.value !== value) {
       this.updateData()
+
+      const overallScore = data.filter(d => d.country !== 'All' && d.metric === 'Overall Score')
+
+      overallScore.length === 1 ? this.setState(state => state.overallScore = overallScore[0].value) : this.setState(state => state.overallScore = '')
+
     }
 
   }
@@ -95,11 +101,12 @@ class BarChart extends Component {
   render(){
 
     const { year, value } = this.props
+    const { overallScore } = this.state
 
     return(
           <div>
             <h4>{value}</h4>
-            <p>Overall score in {year}</p>
+            <p>Overall score in {year}: {overallScore && +overallScore.toFixed(2)}</p>
             <svg ref={node => this.node = node}/>
           </div>
     )
@@ -111,10 +118,10 @@ class BarChart extends Component {
 BarChart.defaultProps = {
 
   margin: {
-    top: 20,
+    top: 0,
     right: 10,
-    bottom: 10,
-    left: 150
+    bottom: 0,
+    left: 145
   }
 
 }
