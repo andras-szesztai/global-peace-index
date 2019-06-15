@@ -1,0 +1,90 @@
+
+
+.App,
+.background-div {
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  width: 100vw;
+  height: 150vh;
+
+  display: grid;
+  grid-template-columns: 2% 1fr 2%;
+  grid-template-rows: 2% 2.5fr 5fr 3.5fr 50px 2%;
+
+  @media only screen and (max-width: $bp-small) {
+
+    height: 240vh;
+
+    grid-template-columns: 0 1fr 0;
+    grid-template-rows: 0px 3fr 3fr 5fr 1fr 0px;
+  }
+
+}
+
+.background-div {
+  z-index: -1;
+}
+
+section {
+  grid-column: 2;
+}
+
+.intro {
+  grid-row: 2;
+
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: 3fr 7fr;
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.beeswarm-plot {
+
+  grid-row: 3;
+
+  display: grid;
+  grid-template-rows: 2fr 8fr ;
+  grid-template-columns: repeat(2, 1fr);
+  //
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: 2fr 8fr 2fr;
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.line-charts {
+
+  grid-row: 4;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+}
+
+
+.credits {
+
+  grid-row: 5;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+}

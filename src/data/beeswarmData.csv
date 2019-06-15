@@ -1,0 +1,1945 @@
+﻿country,economicClass,score,year
+Afghanistan,Low income,3.204,2008
+Albania,Upper middle income,1.943,2008
+Algeria,Upper middle income,2.347,2008
+Angola,Lower middle income,2.069,2008
+Argentina,High income,1.859,2008
+Armenia,Upper middle income,2.344,2008
+Australia,High income,1.367,2008
+Austria,High income,1.337,2008
+Azerbaijan,Upper middle income,2.336,2008
+Bahrain,High income,1.924,2008
+Bangladesh,Lower middle income,2.101,2008
+Belarus,Upper middle income,2.187,2008
+Belgium,High income,1.494,2008
+Benin,Low income,2.218,2008
+Bhutan,Lower middle income,1.881,2008
+Bolivia,Lower middle income,2.011,2008
+Bosnia and Herzegovina,Upper middle income,1.912,2008
+Botswana,Upper middle income,1.757,2008
+Brazil,Upper middle income,1.993,2008
+Bulgaria,Upper middle income,1.708,2008
+Burkina Faso,Low income,1.893,2008
+Burundi,Low income,2.442,2008
+Cambodia,Lower middle income,2.124,2008
+Cameroon,Lower middle income,2.037,2008
+Canada,High income,1.374,2008
+Central African Republic,Low income,2.899,2008
+Chad,Low income,2.912,2008
+Chile,High income,1.695,2008
+China,Upper middle income,2.175,2008
+Colombia,Upper middle income,2.891,2008
+Costa Rica,Upper middle income,1.619,2008
+Cote d' Ivoire,Lower middle income,2.481,2008
+Croatia,High income,1.814,2008
+Cuba,Upper middle income,2.07,2008
+Cyprus,High income,1.769,2008
+Czech Republic,High income,1.495,2008
+Democratic Republic of the Congo,Low income,2.912,2008
+Denmark,High income,1.272,2008
+Djibouti,Lower middle income,2.082,2008
+Dominican Republic,Upper middle income,1.992,2008
+Ecuador,Upper middle income,2.244,2008
+Egypt,Lower middle income,2.052,2008
+El Salvador,Lower middle income,2.059,2008
+Equatorial Guinea,Upper middle income,1.963,2008
+Eritrea,Low income,2.419,2008
+Estonia,High income,1.718,2008
+Ethiopia,Low income,2.588,2008
+Finland,High income,1.409,2008
+France,High income,1.853,2008
+Gabon,Upper middle income,1.986,2008
+Georgia,Lower middle income,2.87,2008
+Germany,High income,1.592,2008
+Ghana,Lower middle income,1.753,2008
+Greece,High income,1.913,2008
+Guatemala,Upper middle income,2.19,2008
+Guinea,Low income,2.296,2008
+Guinea-Bissau,Low income,2.476,2008
+Guyana,Upper middle income,2.141,2008
+Haiti,Low income,2.3,2008
+Honduras,Lower middle income,2.304,2008
+Hungary,High income,1.427,2008
+Iceland,High income,1.111,2008
+India,Lower middle income,2.477,2008
+Indonesia,Lower middle income,1.859,2008
+Iran,Upper middle income,2.412,2008
+Iraq,Upper middle income,3.681,2008
+Ireland,High income,1.367,2008
+Israel,High income,2.884,2008
+Italy,High income,1.676,2008
+Jamaica,Upper middle income,2.041,2008
+Japan,High income,1.325,2008
+Jordan,Upper middle income,1.927,2008
+Kazakhstan,Upper middle income,2.09,2008
+Kenya,Lower middle income,2.337,2008
+Kosovo,Lower middle income,2.126,2008
+Kuwait,High income,1.652,2008
+Kyrgyz Republic,Lower middle income,2.362,2008
+Laos,Lower middle income,1.913,2008
+Latvia,High income,1.643,2008
+Lebanon,Upper middle income,2.888,2008
+Lesotho,Lower middle income,1.922,2008
+Liberia,Low income,2.054,2008
+Libya,Upper middle income,2.033,2008
+Lithuania,High income,1.7,2008
+Macedonia (FYR),Upper middle income,2.006,2008
+Madagascar,Low income,1.73,2008
+Malawi,Low income,1.862,2008
+Malaysia,Upper middle income,1.635,2008
+Mali,Low income,2.347,2008
+Mauritania,Lower middle income,2.378,2008
+Mauritius,Upper middle income,1.599,2008
+Mexico,Upper middle income,2.153,2008
+Moldova,Lower middle income,2.028,2008
+Mongolia,Lower middle income,2.043,2008
+Montenegro,Upper middle income,2.2,2008
+Morocco,Lower middle income,1.98,2008
+Mozambique,Low income,1.788,2008
+Myanmar,Lower middle income,2.393,2008
+Namibia,Upper middle income,2.028,2008
+Nepal,Low income,2.024,2008
+Netherlands,High income,1.578,2008
+New Zealand,High income,1.261,2008
+Nicaragua,Lower middle income,1.883,2008
+Niger,Low income,2.168,2008
+Nigeria,Lower middle income,2.593,2008
+North Korea,Low income,2.947,2008
+Norway,High income,1.365,2008
+Oman,High income,1.672,2008
+Pakistan,Lower middle income,3.018,2008
+Panama,High income,1.858,2008
+Papua New Guinea,Lower middle income,2.12,2008
+Paraguay,Upper middle income,1.881,2008
+Peru,Upper middle income,2.088,2008
+Philippines,Lower middle income,2.355,2008
+Poland,High income,1.655,2008
+Portugal,High income,1.387,2008
+Qatar,High income,1.618,2008
+Republic of the Congo,Lower middle income,2.226,2008
+Romania,Upper middle income,1.61,2008
+Russia,Upper middle income,2.876,2008
+Rwanda,Low income,1.918,2008
+Saudi Arabia,High income,2.36,2008
+Senegal,Low income,2.051,2008
+Serbia,Upper middle income,2.039,2008
+Sierra Leone,Low income,1.867,2008
+Singapore,High income,1.58,2008
+Slovakia,High income,1.542,2008
+Slovenia,High income,1.39,2008
+Somalia,Low income,3.35,2008
+South Africa,Upper middle income,2.173,2008
+South Korea,High income,1.782,2008
+South Sudan,Low income,,2008
+Spain,High income,1.721,2008
+Sri Lanka,Lower middle income,2.467,2008
+Sudan,Lower middle income,3.121,2008
+Swaziland,Lower middle income,2.009,2008
+Sweden,High income,1.389,2008
+Switzerland,High income,1.432,2008
+Syria,Low income,2.083,2008
+Taiwan,High income,1.813,2008
+Tajikistan,Low income,2.25,2008
+Tanzania,Low income,1.783,2008
+Thailand,Upper middle income,2.423,2008
+The Gambia,Low income,1.952,2008
+Timor-Leste,Lower middle income,2.005,2008
+Togo,Low income,2.002,2008
+Trinidad and Tobago,High income,2.121,2008
+Tunisia,Lower middle income,1.812,2008
+Turkey,Upper middle income,2.44,2008
+Turkmenistan,Upper middle income,2.267,2008
+Uganda,Low income,2.53,2008
+Ukraine,Lower middle income,2.127,2008
+United Arab Emirates,High income,1.738,2008
+United Kingdom,High income,1.812,2008
+United States of America,High income,2.257,2008
+Uruguay,High income,1.7,2008
+Uzbekistan,Lower middle income,2.267,2008
+Venezuela,Upper middle income,2.344,2008
+Vietnam,Lower middle income,1.86,2008
+Yemen,Low income,2.35,2008
+Zambia,Lower middle income,1.879,2008
+Zimbabwe,Low income,2.472,2008
+Afghanistan,Low income,3.312,2009
+Albania,Upper middle income,1.916,2009
+Algeria,Upper middle income,2.347,2009
+Angola,Lower middle income,2.021,2009
+Argentina,High income,1.962,2009
+Armenia,Upper middle income,2.356,2009
+Australia,High income,1.391,2009
+Austria,High income,1.369,2009
+Azerbaijan,Upper middle income,2.394,2009
+Bahrain,High income,1.932,2009
+Bangladesh,Lower middle income,2.076,2009
+Belarus,Upper middle income,2.202,2009
+Belgium,High income,1.504,2009
+Benin,Low income,2.214,2009
+Bhutan,Lower middle income,1.902,2009
+Bolivia,Lower middle income,2.084,2009
+Bosnia and Herzegovina,Upper middle income,1.922,2009
+Botswana,Upper middle income,1.712,2009
+Brazil,Upper middle income,2.002,2009
+Bulgaria,Upper middle income,1.733,2009
+Burkina Faso,Low income,1.826,2009
+Burundi,Low income,2.44,2009
+Cambodia,Lower middle income,2.233,2009
+Cameroon,Lower middle income,2.091,2009
+Canada,High income,1.418,2009
+Central African Republic,Low income,2.81,2009
+Chad,Low income,2.98,2009
+Chile,High income,1.718,2009
+China,Upper middle income,2.185,2009
+Colombia,Upper middle income,2.841,2009
+Costa Rica,Upper middle income,1.631,2009
+Cote d' Ivoire,Lower middle income,2.387,2009
+Croatia,High income,1.84,2009
+Cuba,Upper middle income,2.063,2009
+Cyprus,High income,1.771,2009
+Czech Republic,High income,1.496,2009
+Democratic Republic of the Congo,Low income,2.998,2009
+Denmark,High income,1.269,2009
+Djibouti,Lower middle income,2.07,2009
+Dominican Republic,Upper middle income,1.998,2009
+Ecuador,Upper middle income,2.28,2009
+Egypt,Lower middle income,1.96,2009
+El Salvador,Lower middle income,2.108,2009
+Equatorial Guinea,Upper middle income,1.887,2009
+Eritrea,Low income,2.424,2009
+Estonia,High income,1.773,2009
+Ethiopia,Low income,2.813,2009
+Finland,High income,1.416,2009
+France,High income,1.863,2009
+Gabon,Upper middle income,1.99,2009
+Georgia,Lower middle income,2.95,2009
+Germany,High income,1.613,2009
+Ghana,Lower middle income,1.799,2009
+Greece,High income,1.915,2009
+Guatemala,Upper middle income,2.158,2009
+Guinea,Low income,2.296,2009
+Guinea-Bissau,Low income,2.464,2009
+Guyana,Upper middle income,2.177,2009
+Haiti,Low income,2.25,2009
+Honduras,Lower middle income,2.323,2009
+Hungary,High income,1.558,2009
+Iceland,High income,1.16,2009
+India,Lower middle income,2.543,2009
+Indonesia,Lower middle income,1.857,2009
+Iran,Upper middle income,2.28,2009
+Iraq,Upper middle income,3.616,2009
+Ireland,High income,1.468,2009
+Israel,High income,2.884,2009
+Italy,High income,1.765,2009
+Jamaica,Upper middle income,2.039,2009
+Japan,High income,1.33,2009
+Jordan,Upper middle income,1.935,2009
+Kazakhstan,Upper middle income,2.11,2009
+Kenya,Lower middle income,2.558,2009
+Kosovo,Lower middle income,2.133,2009
+Kuwait,High income,1.659,2009
+Kyrgyz Republic,Lower middle income,2.336,2009
+Laos,Lower middle income,1.912,2009
+Latvia,High income,1.746,2009
+Lebanon,Upper middle income,2.796,2009
+Lesotho,Lower middle income,1.922,2009
+Liberia,Low income,2.043,2009
+Libya,Upper middle income,2.003,2009
+Lithuania,High income,1.686,2009
+Macedonia (FYR),Upper middle income,2.052,2009
+Madagascar,Low income,1.994,2009
+Malawi,Low income,1.857,2009
+Malaysia,Upper middle income,1.657,2009
+Mali,Low income,2.346,2009
+Mauritania,Lower middle income,2.51,2009
+Mauritius,Upper middle income,1.614,2009
+Mexico,Upper middle income,2.238,2009
+Moldova,Lower middle income,1.978,2009
+Mongolia,Lower middle income,2.05,2009
+Montenegro,Upper middle income,2.15,2009
+Morocco,Lower middle income,1.977,2009
+Mozambique,Low income,1.814,2009
+Myanmar,Lower middle income,2.417,2009
+Namibia,Upper middle income,2.019,2009
+Nepal,Low income,2.009,2009
+Netherlands,High income,1.599,2009
+New Zealand,High income,1.26,2009
+Nicaragua,Lower middle income,1.869,2009
+Niger,Low income,2.164,2009
+Nigeria,Lower middle income,2.582,2009
+North Korea,Low income,2.947,2009
+Norway,High income,1.388,2009
+Oman,High income,1.701,2009
+Pakistan,Lower middle income,3.247,2009
+Panama,High income,1.807,2009
+Papua New Guinea,Lower middle income,2.108,2009
+Paraguay,Upper middle income,1.939,2009
+Peru,Upper middle income,2.01,2009
+Philippines,Lower middle income,2.423,2009
+Poland,High income,1.663,2009
+Portugal,High income,1.437,2009
+Qatar,High income,1.429,2009
+Republic of the Congo,Lower middle income,2.147,2009
+Romania,Upper middle income,1.637,2009
+Russia,Upper middle income,2.98,2009
+Rwanda,Low income,2.09,2009
+Saudi Arabia,High income,2.309,2009
+Senegal,Low income,2.054,2009
+Serbia,Upper middle income,2.075,2009
+Sierra Leone,Low income,1.862,2009
+Singapore,High income,1.518,2009
+Slovakia,High income,1.529,2009
+Slovenia,High income,1.388,2009
+Somalia,Low income,3.426,2009
+South Africa,Upper middle income,2.364,2009
+South Korea,High income,1.796,2009
+South Sudan,Low income,,2009
+Spain,High income,1.782,2009
+Sri Lanka,Lower middle income,2.515,2009
+Sudan,Lower middle income,3.121,2009
+Swaziland,Lower middle income,1.998,2009
+Sweden,High income,1.382,2009
+Switzerland,High income,1.464,2009
+Syria,Low income,2.17,2009
+Taiwan,High income,1.873,2009
+Tajikistan,Low income,2.248,2009
+Tanzania,Low income,1.772,2009
+Thailand,Upper middle income,2.49,2009
+The Gambia,Low income,1.951,2009
+Timor-Leste,Lower middle income,1.929,2009
+Togo,Low income,2,2009
+Trinidad and Tobago,High income,2.034,2009
+Tunisia,Lower middle income,1.807,2009
+Turkey,Upper middle income,2.541,2009
+Turkmenistan,Upper middle income,2.158,2009
+Uganda,Low income,2.414,2009
+Ukraine,Lower middle income,2.203,2009
+United Arab Emirates,High income,1.685,2009
+United Kingdom,High income,1.84,2009
+United States of America,High income,2.337,2009
+Uruguay,High income,1.714,2009
+Uzbekistan,Lower middle income,2.226,2009
+Venezuela,Upper middle income,2.377,2009
+Vietnam,Lower middle income,1.883,2009
+Yemen,Low income,2.484,2009
+Zambia,Lower middle income,1.864,2009
+Zimbabwe,Low income,2.831,2009
+Afghanistan,Low income,3.163,2010
+Albania,Upper middle income,1.912,2010
+Algeria,Upper middle income,2.37,2010
+Angola,Lower middle income,2.02,2010
+Argentina,High income,2,2010
+Armenia,Upper middle income,2.368,2010
+Australia,High income,1.393,2010
+Austria,High income,1.383,2010
+Azerbaijan,Upper middle income,2.382,2010
+Bahrain,High income,1.871,2010
+Bangladesh,Lower middle income,2.156,2010
+Belarus,Upper middle income,2.204,2010
+Belgium,High income,1.517,2010
+Benin,Low income,2.213,2010
+Bhutan,Lower middle income,1.95,2010
+Bolivia,Lower middle income,2.115,2010
+Bosnia and Herzegovina,Upper middle income,1.943,2010
+Botswana,Upper middle income,1.691,2010
+Brazil,Upper middle income,2.022,2010
+Bulgaria,Upper middle income,1.709,2010
+Burkina Faso,Low income,1.791,2010
+Burundi,Low income,2.502,2010
+Cambodia,Lower middle income,2.206,2010
+Cameroon,Lower middle income,2.183,2010
+Canada,High income,1.5,2010
+Central African Republic,Low income,2.765,2010
+Chad,Low income,3.028,2010
+Chile,High income,1.755,2010
+China,Upper middle income,2.247,2010
+Colombia,Upper middle income,2.908,2010
+Costa Rica,Upper middle income,1.654,2010
+Cote d' Ivoire,Lower middle income,2.299,2010
+Croatia,High income,1.773,2010
+Cuba,Upper middle income,2.062,2010
+Cyprus,High income,1.958,2010
+Czech Republic,High income,1.464,2010
+Democratic Republic of the Congo,Low income,3.023,2010
+Denmark,High income,1.334,2010
+Djibouti,Lower middle income,2.061,2010
+Dominican Republic,Upper middle income,2.123,2010
+Ecuador,Upper middle income,2.216,2010
+Egypt,Lower middle income,1.939,2010
+El Salvador,Lower middle income,2.173,2010
+Equatorial Guinea,Upper middle income,1.933,2010
+Eritrea,Low income,2.409,2010
+Estonia,High income,1.798,2010
+Ethiopia,Low income,2.581,2010
+Finland,High income,1.41,2010
+France,High income,1.866,2010
+Gabon,Upper middle income,2.079,2010
+Georgia,Lower middle income,3.107,2010
+Germany,High income,1.633,2010
+Ghana,Lower middle income,1.803,2010
+Greece,High income,1.985,2010
+Guatemala,Upper middle income,2.181,2010
+Guinea,Low income,2.296,2010
+Guinea-Bissau,Low income,2.453,2010
+Guyana,Upper middle income,2.169,2010
+Haiti,Low income,2.204,2010
+Honduras,Lower middle income,2.421,2010
+Hungary,High income,1.544,2010
+Iceland,High income,1.143,2010
+India,Lower middle income,2.683,2010
+Indonesia,Lower middle income,1.852,2010
+Iran,Upper middle income,2.36,2010
+Iraq,Upper middle income,3.6,2010
+Ireland,High income,1.439,2010
+Israel,High income,2.922,2010
+Italy,High income,1.882,2010
+Jamaica,Upper middle income,2.059,2010
+Japan,High income,1.328,2010
+Jordan,Upper middle income,1.948,2010
+Kazakhstan,Upper middle income,2.123,2010
+Kenya,Lower middle income,2.545,2010
+Kosovo,Lower middle income,2.115,2010
+Kuwait,High income,1.608,2010
+Kyrgyz Republic,Lower middle income,2.331,2010
+Laos,Lower middle income,1.825,2010
+Latvia,High income,1.742,2010
+Lebanon,Upper middle income,2.76,2010
+Lesotho,Lower middle income,1.918,2010
+Liberia,Low income,2.077,2010
+Libya,Upper middle income,1.953,2010
+Lithuania,High income,1.71,2010
+Macedonia (FYR),Upper middle income,2.014,2010
+Madagascar,Low income,2.016,2010
+Malawi,Low income,1.858,2010
+Malaysia,Upper middle income,1.618,2010
+Mali,Low income,2.266,2010
+Mauritania,Lower middle income,2.348,2010
+Mauritius,Upper middle income,1.608,2010
+Mexico,Upper middle income,2.212,2010
+Moldova,Lower middle income,2.001,2010
+Mongolia,Lower middle income,2.048,2010
+Montenegro,Upper middle income,2.122,2010
+Morocco,Lower middle income,1.996,2010
+Mozambique,Low income,1.823,2010
+Myanmar,Lower middle income,2.413,2010
+Namibia,Upper middle income,2.019,2010
+Nepal,Low income,2.138,2010
+Netherlands,High income,1.635,2010
+New Zealand,High income,1.251,2010
+Nicaragua,Lower middle income,1.88,2010
+Niger,Low income,2.162,2010
+Nigeria,Lower middle income,2.61,2010
+North Korea,Low income,2.996,2010
+Norway,High income,1.407,2010
+Oman,High income,1.65,2010
+Pakistan,Lower middle income,3.188,2010
+Panama,High income,1.919,2010
+Papua New Guinea,Lower middle income,2.089,2010
+Paraguay,Upper middle income,2.005,2010
+Peru,Upper middle income,2.162,2010
+Philippines,Lower middle income,2.465,2010
+Poland,High income,1.714,2010
+Portugal,High income,1.472,2010
+Qatar,High income,1.483,2010
+Republic of the Congo,Lower middle income,2.17,2010
+Romania,Upper middle income,1.701,2010
+Russia,Upper middle income,3.125,2010
+Rwanda,Low income,2.12,2010
+Saudi Arabia,High income,2.347,2010
+Senegal,Low income,2.162,2010
+Serbia,Upper middle income,2.11,2010
+Sierra Leone,Low income,1.847,2010
+Singapore,High income,1.486,2010
+Slovakia,High income,1.548,2010
+Slovenia,High income,1.387,2010
+Somalia,Low income,3.485,2010
+South Africa,Upper middle income,2.331,2010
+South Korea,High income,1.822,2010
+South Sudan,Low income,,2010
+Spain,High income,1.807,2010
+Sri Lanka,Lower middle income,2.793,2010
+Sudan,Lower middle income,3.202,2010
+Swaziland,Lower middle income,2.016,2010
+Sweden,High income,1.39,2010
+Switzerland,High income,1.452,2010
+Syria,Low income,2.232,2010
+Taiwan,High income,1.731,2010
+Tajikistan,Low income,2.226,2010
+Tanzania,Low income,1.761,2010
+Thailand,Upper middle income,2.482,2010
+The Gambia,Low income,1.974,2010
+Timor-Leste,Lower middle income,1.909,2010
+Togo,Low income,2.004,2010
+Trinidad and Tobago,High income,2.085,2010
+Tunisia,Lower middle income,1.789,2010
+Turkey,Upper middle income,2.486,2010
+Turkmenistan,Upper middle income,2.241,2010
+Uganda,Low income,2.361,2010
+Ukraine,Lower middle income,2.228,2010
+United Arab Emirates,High income,1.669,2010
+United Kingdom,High income,1.871,2010
+United States of America,High income,2.32,2010
+Uruguay,High income,1.703,2010
+Uzbekistan,Lower middle income,2.267,2010
+Venezuela,Upper middle income,2.435,2010
+Vietnam,Lower middle income,1.905,2010
+Yemen,Low income,2.686,2010
+Zambia,Lower middle income,1.839,2010
+Zimbabwe,Low income,2.752,2010
+Afghanistan,Low income,3.167,2011
+Albania,Upper middle income,1.938,2011
+Algeria,Upper middle income,2.512,2011
+Angola,Lower middle income,2.074,2011
+Argentina,High income,2.007,2011
+Armenia,Upper middle income,2.331,2011
+Australia,High income,1.447,2011
+Austria,High income,1.416,2011
+Azerbaijan,Upper middle income,2.387,2011
+Bahrain,High income,2.287,2011
+Bangladesh,Lower middle income,2.157,2011
+Belarus,Upper middle income,2.236,2011
+Belgium,High income,1.5,2011
+Benin,Low income,2.261,2011
+Bhutan,Lower middle income,1.932,2011
+Bolivia,Lower middle income,2.046,2011
+Bosnia and Herzegovina,Upper middle income,1.953,2011
+Botswana,Upper middle income,1.709,2011
+Brazil,Upper middle income,2.005,2011
+Bulgaria,Upper middle income,1.651,2011
+Burkina Faso,Low income,1.75,2011
+Burundi,Low income,2.413,2011
+Cambodia,Lower middle income,2.204,2011
+Cameroon,Lower middle income,2.111,2011
+Canada,High income,1.46,2011
+Central African Republic,Low income,2.805,2011
+Chad,Low income,2.758,2011
+Chile,High income,1.783,2011
+China,Upper middle income,2.255,2011
+Colombia,Upper middle income,2.8,2011
+Costa Rica,Upper middle income,1.793,2011
+Cote d' Ivoire,Lower middle income,2.5,2011
+Croatia,High income,1.761,2011
+Cuba,Upper middle income,2.037,2011
+Cyprus,High income,1.946,2011
+Czech Republic,High income,1.383,2011
+Democratic Republic of the Congo,Low income,2.925,2011
+Denmark,High income,1.29,2011
+Djibouti,Lower middle income,2.099,2011
+Dominican Republic,Upper middle income,2.136,2011
+Ecuador,Upper middle income,2.156,2011
+Egypt,Lower middle income,2.128,2011
+El Salvador,Lower middle income,2.203,2011
+Equatorial Guinea,Upper middle income,2.008,2011
+Eritrea,Low income,2.4,2011
+Estonia,High income,1.792,2011
+Ethiopia,Low income,2.568,2011
+Finland,High income,1.414,2011
+France,High income,1.84,2011
+Gabon,Upper middle income,2.105,2011
+Georgia,Lower middle income,2.667,2011
+Germany,High income,1.621,2011
+Ghana,Lower middle income,1.78,2011
+Greece,High income,2.012,2011
+Guatemala,Upper middle income,2.311,2011
+Guinea,Low income,2.32,2011
+Guinea-Bissau,Low income,2.41,2011
+Guyana,Upper middle income,2.137,2011
+Haiti,Low income,2.15,2011
+Honduras,Lower middle income,2.327,2011
+Hungary,High income,1.59,2011
+Iceland,High income,1.099,2011
+India,Lower middle income,2.714,2011
+Indonesia,Lower middle income,1.859,2011
+Iran,Upper middle income,2.477,2011
+Iraq,Upper middle income,3.411,2011
+Ireland,High income,1.481,2011
+Israel,High income,2.866,2011
+Italy,High income,1.814,2011
+Jamaica,Upper middle income,2.174,2011
+Japan,High income,1.333,2011
+Jordan,Upper middle income,1.93,2011
+Kazakhstan,Upper middle income,2.089,2011
+Kenya,Lower middle income,2.487,2011
+Kosovo,Lower middle income,2.116,2011
+Kuwait,High income,1.581,2011
+Kyrgyz Republic,Lower middle income,2.332,2011
+Laos,Lower middle income,1.847,2011
+Latvia,High income,1.746,2011
+Lebanon,Upper middle income,2.774,2011
+Lesotho,Lower middle income,1.949,2011
+Liberia,Low income,2.035,2011
+Libya,Upper middle income,2.755,2011
+Lithuania,High income,1.819,2011
+Macedonia (FYR),Upper middle income,1.962,2011
+Madagascar,Low income,2.211,2011
+Malawi,Low income,1.733,2011
+Malaysia,Upper middle income,1.54,2011
+Mali,Low income,2.251,2011
+Mauritania,Lower middle income,2.421,2011
+Mauritius,Upper middle income,1.613,2011
+Mexico,Upper middle income,2.405,2011
+Moldova,Lower middle income,2.004,2011
+Mongolia,Lower middle income,1.844,2011
+Montenegro,Upper middle income,2.143,2011
+Morocco,Lower middle income,2.027,2011
+Mozambique,Low income,1.897,2011
+Myanmar,Lower middle income,2.341,2011
+Namibia,Upper middle income,1.965,2011
+Nepal,Low income,2.207,2011
+Netherlands,High income,1.611,2011
+New Zealand,High income,1.255,2011
+Nicaragua,Lower middle income,1.935,2011
+Niger,Low income,2.13,2011
+Nigeria,Lower middle income,2.58,2011
+North Korea,Low income,3.061,2011
+Norway,High income,1.482,2011
+Oman,High income,1.828,2011
+Pakistan,Lower middle income,3.11,2011
+Panama,High income,1.849,2011
+Papua New Guinea,Lower middle income,2.133,2011
+Paraguay,Upper middle income,1.942,2011
+Peru,Upper middle income,2.148,2011
+Philippines,Lower middle income,2.453,2011
+Poland,High income,1.628,2011
+Portugal,High income,1.485,2011
+Qatar,High income,1.487,2011
+Republic of the Congo,Lower middle income,2.143,2011
+Romania,Upper middle income,1.69,2011
+Russia,Upper middle income,2.992,2011
+Rwanda,Low income,2.164,2011
+Saudi Arabia,High income,2.263,2011
+Senegal,Low income,2.128,2011
+Serbia,Upper middle income,2.079,2011
+Sierra Leone,Low income,1.895,2011
+Singapore,High income,1.461,2011
+Slovakia,High income,1.592,2011
+Slovenia,High income,1.388,2011
+Somalia,Low income,3.392,2011
+South Africa,Upper middle income,2.312,2011
+South Korea,High income,1.902,2011
+South Sudan,Low income,2.591,2011
+Spain,High income,1.739,2011
+Sri Lanka,Lower middle income,2.64,2011
+Sudan,Lower middle income,3.285,2011
+Swaziland,Lower middle income,2.049,2011
+Sweden,High income,1.409,2011
+Switzerland,High income,1.426,2011
+Syria,Low income,2.276,2011
+Taiwan,High income,1.707,2011
+Tajikistan,Low income,2.212,2011
+Tanzania,Low income,1.735,2011
+Thailand,Upper middle income,2.45,2011
+The Gambia,Low income,2,2011
+Timor-Leste,Lower middle income,1.827,2011
+Togo,Low income,2,2011
+Trinidad and Tobago,High income,2.055,2011
+Tunisia,Lower middle income,1.851,2011
+Turkey,Upper middle income,2.441,2011
+Turkmenistan,Upper middle income,2.196,2011
+Uganda,Low income,2.34,2011
+Ukraine,Lower middle income,2.171,2011
+United Arab Emirates,High income,1.649,2011
+United Kingdom,High income,1.876,2011
+United States of America,High income,2.284,2011
+Uruguay,High income,1.647,2011
+Uzbekistan,Lower middle income,2.297,2011
+Venezuela,Upper middle income,2.426,2011
+Vietnam,Lower middle income,1.843,2011
+Yemen,Low income,2.735,2011
+Zambia,Lower middle income,1.721,2011
+Zimbabwe,Low income,2.695,2011
+Afghanistan,Low income,3.279,2012
+Albania,Upper middle income,1.976,2012
+Algeria,Upper middle income,2.355,2012
+Angola,Lower middle income,2.105,2012
+Argentina,High income,1.984,2012
+Armenia,Upper middle income,2.329,2012
+Australia,High income,1.497,2012
+Austria,High income,1.407,2012
+Azerbaijan,Upper middle income,2.404,2012
+Bahrain,High income,2.168,2012
+Bangladesh,Lower middle income,2.188,2012
+Belarus,Upper middle income,2.28,2012
+Belgium,High income,1.493,2012
+Benin,Low income,2.212,2012
+Bhutan,Lower middle income,1.75,2012
+Bolivia,Lower middle income,2.146,2012
+Bosnia and Herzegovina,Upper middle income,1.98,2012
+Botswana,Upper middle income,1.702,2012
+Brazil,Upper middle income,2.043,2012
+Bulgaria,Upper middle income,1.693,2012
+Burkina Faso,Low income,1.772,2012
+Burundi,Low income,2.48,2012
+Cambodia,Lower middle income,2.251,2012
+Cameroon,Lower middle income,2.104,2012
+Canada,High income,1.438,2012
+Central African Republic,Low income,2.861,2012
+Chad,Low income,2.684,2012
+Chile,High income,1.687,2012
+China,Upper middle income,2.238,2012
+Colombia,Upper middle income,2.712,2012
+Costa Rica,Upper middle income,1.74,2012
+Cote d' Ivoire,Lower middle income,2.452,2012
+Croatia,High income,1.723,2012
+Cuba,Upper middle income,2.078,2012
+Cyprus,High income,1.974,2012
+Czech Republic,High income,1.435,2012
+Democratic Republic of the Congo,Low income,2.958,2012
+Denmark,High income,1.235,2012
+Djibouti,Lower middle income,2.009,2012
+Dominican Republic,Upper middle income,2.105,2012
+Ecuador,Upper middle income,2.138,2012
+Egypt,Lower middle income,2.317,2012
+El Salvador,Lower middle income,2.25,2012
+Equatorial Guinea,Upper middle income,1.982,2012
+Eritrea,Low income,2.364,2012
+Estonia,High income,1.771,2012
+Ethiopia,Low income,2.652,2012
+Finland,High income,1.385,2012
+France,High income,1.896,2012
+Gabon,Upper middle income,2.064,2012
+Georgia,Lower middle income,2.671,2012
+Germany,High income,1.62,2012
+Ghana,Lower middle income,1.804,2012
+Greece,High income,2.063,2012
+Guatemala,Upper middle income,2.326,2012
+Guinea,Low income,2.212,2012
+Guinea-Bissau,Low income,2.422,2012
+Guyana,Upper middle income,2.033,2012
+Haiti,Low income,2.07,2012
+Honduras,Lower middle income,2.32,2012
+Hungary,High income,1.557,2012
+Iceland,High income,1.159,2012
+India,Lower middle income,2.627,2012
+Indonesia,Lower middle income,1.836,2012
+Iran,Upper middle income,2.468,2012
+Iraq,Upper middle income,3.234,2012
+Ireland,High income,1.43,2012
+Israel,High income,2.805,2012
+Italy,High income,1.819,2012
+Jamaica,Upper middle income,2.229,2012
+Japan,High income,1.346,2012
+Jordan,Upper middle income,1.982,2012
+Kazakhstan,Upper middle income,2.1,2012
+Kenya,Lower middle income,2.395,2012
+Kosovo,Lower middle income,2.083,2012
+Kuwait,High income,1.691,2012
+Kyrgyz Republic,Lower middle income,2.454,2012
+Laos,Lower middle income,1.871,2012
+Latvia,High income,1.744,2012
+Lebanon,Upper middle income,2.606,2012
+Lesotho,Lower middle income,1.894,2012
+Liberia,Low income,1.994,2012
+Libya,Upper middle income,2.839,2012
+Lithuania,High income,1.814,2012
+Macedonia (FYR),Upper middle income,1.997,2012
+Madagascar,Low income,2.223,2012
+Malawi,Low income,1.825,2012
+Malaysia,Upper middle income,1.611,2012
+Mali,Low income,2.28,2012
+Mauritania,Lower middle income,2.392,2012
+Mauritius,Upper middle income,1.595,2012
+Mexico,Upper middle income,2.581,2012
+Moldova,Lower middle income,1.99,2012
+Mongolia,Lower middle income,1.89,2012
+Montenegro,Upper middle income,2.082,2012
+Morocco,Lower middle income,2.084,2012
+Mozambique,Low income,1.841,2012
+Myanmar,Lower middle income,2.357,2012
+Namibia,Upper middle income,1.916,2012
+Nepal,Low income,2.11,2012
+Netherlands,High income,1.577,2012
+New Zealand,High income,1.276,2012
+Nicaragua,Lower middle income,2.003,2012
+Niger,Low income,2.156,2012
+Nigeria,Lower middle income,2.712,2012
+North Korea,Low income,2.944,2012
+Norway,High income,1.563,2012
+Oman,High income,1.901,2012
+Pakistan,Lower middle income,3.098,2012
+Panama,High income,1.885,2012
+Papua New Guinea,Lower middle income,2.094,2012
+Paraguay,Upper middle income,1.972,2012
+Peru,Upper middle income,2.169,2012
+Philippines,Lower middle income,2.5,2012
+Poland,High income,1.603,2012
+Portugal,High income,1.52,2012
+Qatar,High income,1.535,2012
+Republic of the Congo,Lower middle income,2.147,2012
+Romania,Upper middle income,1.686,2012
+Russia,Upper middle income,3.005,2012
+Rwanda,Low income,2.199,2012
+Saudi Arabia,High income,2.315,2012
+Senegal,Low income,2.05,2012
+Serbia,Upper middle income,2.114,2012
+Sierra Leone,Low income,1.917,2012
+Singapore,High income,1.441,2012
+Slovakia,High income,1.573,2012
+Slovenia,High income,1.438,2012
+Somalia,Low income,3.442,2012
+South Africa,Upper middle income,2.299,2012
+South Korea,High income,1.81,2012
+South Sudan,Low income,2.561,2012
+Spain,High income,1.668,2012
+Sri Lanka,Lower middle income,2.303,2012
+Sudan,Lower middle income,3.292,2012
+Swaziland,Lower middle income,2.095,2012
+Sweden,High income,1.409,2012
+Switzerland,High income,1.4,2012
+Syria,Low income,2.935,2012
+Taiwan,High income,1.638,2012
+Tajikistan,Low income,2.189,2012
+Tanzania,Low income,1.772,2012
+Thailand,Upper middle income,2.507,2012
+The Gambia,Low income,2.078,2012
+Timor-Leste,Lower middle income,1.792,2012
+Togo,Low income,1.98,2012
+Trinidad and Tobago,High income,2.128,2012
+Tunisia,Lower middle income,2.092,2012
+Turkey,Upper middle income,2.446,2012
+Turkmenistan,Upper middle income,2.261,2012
+Uganda,Low income,2.308,2012
+Ukraine,Lower middle income,2.125,2012
+United Arab Emirates,High income,1.7,2012
+United Kingdom,High income,1.859,2012
+United States of America,High income,2.29,2012
+Uruguay,High income,1.728,2012
+Uzbekistan,Lower middle income,2.334,2012
+Venezuela,Upper middle income,2.379,2012
+Vietnam,Lower middle income,1.85,2012
+Yemen,Low income,2.79,2012
+Zambia,Lower middle income,1.81,2012
+Zimbabwe,Low income,2.528,2012
+Afghanistan,Low income,3.316,2013
+Albania,Upper middle income,1.995,2013
+Algeria,Upper middle income,2.314,2013
+Angola,Lower middle income,2.094,2013
+Argentina,High income,2.117,2013
+Armenia,Upper middle income,2.332,2013
+Australia,High income,1.451,2013
+Austria,High income,1.309,2013
+Azerbaijan,Upper middle income,2.459,2013
+Bahrain,High income,2.2,2013
+Bangladesh,Lower middle income,2.154,2013
+Belarus,Upper middle income,2.234,2013
+Belgium,High income,1.473,2013
+Benin,Low income,2.126,2013
+Bhutan,Lower middle income,1.679,2013
+Bolivia,Lower middle income,2.165,2013
+Bosnia and Herzegovina,Upper middle income,1.94,2013
+Botswana,Upper middle income,1.676,2013
+Brazil,Upper middle income,2.047,2013
+Bulgaria,Upper middle income,1.712,2013
+Burkina Faso,Low income,1.91,2013
+Burundi,Low income,2.44,2013
+Cambodia,Lower middle income,2.217,2013
+Cameroon,Lower middle income,2.047,2013
+Canada,High income,1.342,2013
+Central African Republic,Low income,2.981,2013
+Chad,Low income,2.477,2013
+Chile,High income,1.669,2013
+China,Upper middle income,2.224,2013
+Colombia,Upper middle income,2.669,2013
+Costa Rica,Upper middle income,1.801,2013
+Cote d' Ivoire,Lower middle income,2.627,2013
+Croatia,High income,1.688,2013
+Cuba,Upper middle income,2.064,2013
+Cyprus,High income,1.926,2013
+Czech Republic,High income,1.421,2013
+Democratic Republic of the Congo,Low income,2.929,2013
+Denmark,High income,1.197,2013
+Djibouti,Lower middle income,1.965,2013
+Dominican Republic,Upper middle income,2.11,2013
+Ecuador,Upper middle income,2.119,2013
+Egypt,Lower middle income,2.353,2013
+El Salvador,Lower middle income,2.178,2013
+Equatorial Guinea,Upper middle income,1.941,2013
+Eritrea,Low income,2.306,2013
+Estonia,High income,1.753,2013
+Ethiopia,Low income,2.542,2013
+Finland,High income,1.385,2013
+France,High income,1.901,2013
+Gabon,Upper middle income,2.006,2013
+Georgia,Lower middle income,2.6,2013
+Germany,High income,1.555,2013
+Ghana,Lower middle income,1.795,2013
+Greece,High income,2.071,2013
+Guatemala,Upper middle income,2.261,2013
+Guinea,Low income,2.194,2013
+Guinea-Bissau,Low income,2.376,2013
+Guyana,Upper middle income,2.038,2013
+Haiti,Low income,2.016,2013
+Honduras,Lower middle income,2.263,2013
+Hungary,High income,1.542,2013
+Iceland,High income,1.164,2013
+India,Lower middle income,2.546,2013
+Indonesia,Lower middle income,1.828,2013
+Iran,Upper middle income,2.503,2013
+Iraq,Upper middle income,3.196,2013
+Ireland,High income,1.435,2013
+Israel,High income,2.743,2013
+Italy,High income,1.806,2013
+Jamaica,Upper middle income,2.193,2013
+Japan,High income,1.309,2013
+Jordan,Upper middle income,1.981,2013
+Kazakhstan,Upper middle income,1.999,2013
+Kenya,Lower middle income,2.431,2013
+Kosovo,Lower middle income,2.111,2013
+Kuwait,High income,1.651,2013
+Kyrgyz Republic,Lower middle income,2.417,2013
+Laos,Lower middle income,1.849,2013
+Latvia,High income,1.694,2013
+Lebanon,Upper middle income,2.669,2013
+Lesotho,Lower middle income,1.884,2013
+Liberia,Low income,1.946,2013
+Libya,Upper middle income,2.655,2013
+Lithuania,High income,1.769,2013
+Macedonia (FYR),Upper middle income,2.081,2013
+Madagascar,Low income,2.142,2013
+Malawi,Low income,1.834,2013
+Malaysia,Upper middle income,1.585,2013
+Mali,Low income,2.329,2013
+Mauritania,Lower middle income,2.273,2013
+Mauritius,Upper middle income,1.516,2013
+Mexico,Upper middle income,2.563,2013
+Moldova,Lower middle income,1.959,2013
+Mongolia,Lower middle income,1.91,2013
+Montenegro,Upper middle income,1.908,2013
+Morocco,Lower middle income,2.048,2013
+Mozambique,Low income,1.901,2013
+Myanmar,Lower middle income,2.3,2013
+Namibia,Upper middle income,1.878,2013
+Nepal,Low income,2.057,2013
+Netherlands,High income,1.549,2013
+New Zealand,High income,1.291,2013
+Nicaragua,Lower middle income,1.941,2013
+Niger,Low income,2.132,2013
+Nigeria,Lower middle income,2.744,2013
+North Korea,Low income,2.958,2013
+Norway,High income,1.53,2013
+Oman,High income,1.93,2013
+Pakistan,Lower middle income,3.174,2013
+Panama,High income,1.879,2013
+Papua New Guinea,Lower middle income,2.087,2013
+Paraguay,Upper middle income,2.084,2013
+Peru,Upper middle income,2.193,2013
+Philippines,Lower middle income,2.464,2013
+Poland,High income,1.568,2013
+Portugal,High income,1.525,2013
+Qatar,High income,1.588,2013
+Republic of the Congo,Lower middle income,2.147,2013
+Romania,Upper middle income,1.669,2013
+Russia,Upper middle income,3.008,2013
+Rwanda,Low income,2.326,2013
+Saudi Arabia,High income,2.22,2013
+Senegal,Low income,2.034,2013
+Serbia,Upper middle income,2.089,2013
+Sierra Leone,Low income,1.821,2013
+Singapore,High income,1.455,2013
+Slovakia,High income,1.591,2013
+Slovenia,High income,1.434,2013
+Somalia,Low income,3.353,2013
+South Africa,Upper middle income,2.332,2013
+South Korea,High income,1.787,2013
+South Sudan,Low income,2.65,2013
+Spain,High income,1.667,2013
+Sri Lanka,Lower middle income,2.221,2013
+Sudan,Lower middle income,3.172,2013
+Swaziland,Lower middle income,2.129,2013
+Sweden,High income,1.399,2013
+Switzerland,High income,1.383,2013
+Syria,Low income,3.251,2013
+Taiwan,High income,1.639,2013
+Tajikistan,Low income,2.265,2013
+Tanzania,Low income,1.799,2013
+Thailand,Upper middle income,2.482,2013
+The Gambia,Low income,2.096,2013
+Timor-Leste,Lower middle income,1.794,2013
+Togo,Low income,1.951,2013
+Trinidad and Tobago,High income,2.097,2013
+Tunisia,Lower middle income,2.106,2013
+Turkey,Upper middle income,2.578,2013
+Turkmenistan,Upper middle income,2.218,2013
+Uganda,Low income,2.192,2013
+Ukraine,Lower middle income,2.298,2013
+United Arab Emirates,High income,1.665,2013
+United Kingdom,High income,1.876,2013
+United States of America,High income,2.283,2013
+Uruguay,High income,1.689,2013
+Uzbekistan,Lower middle income,2.321,2013
+Venezuela,Upper middle income,2.365,2013
+Vietnam,Lower middle income,1.868,2013
+Yemen,Low income,2.755,2013
+Zambia,Lower middle income,1.724,2013
+Zimbabwe,Low income,2.501,2013
+Afghanistan,Low income,3.288,2014
+Albania,Upper middle income,1.96,2014
+Algeria,Upper middle income,2.283,2014
+Angola,Lower middle income,2.115,2014
+Argentina,High income,2.019,2014
+Armenia,Upper middle income,2.253,2014
+Australia,High income,1.387,2014
+Austria,High income,1.287,2014
+Azerbaijan,Upper middle income,2.412,2014
+Bahrain,High income,2.287,2014
+Bangladesh,Lower middle income,2.086,2014
+Belarus,Upper middle income,2.207,2014
+Belgium,High income,1.442,2014
+Benin,Low income,2.101,2014
+Bhutan,Lower middle income,1.66,2014
+Bolivia,Lower middle income,2.096,2014
+Bosnia and Herzegovina,Upper middle income,1.895,2014
+Botswana,Upper middle income,1.766,2014
+Brazil,Upper middle income,2.078,2014
+Bulgaria,Upper middle income,1.619,2014
+Burkina Faso,Low income,1.824,2014
+Burundi,Low income,2.312,2014
+Cambodia,Lower middle income,2.175,2014
+Cameroon,Lower middle income,2.094,2014
+Canada,High income,1.325,2014
+Central African Republic,Low income,3.255,2014
+Chad,Low income,2.559,2014
+Chile,High income,1.649,2014
+China,Upper middle income,2.235,2014
+Colombia,Upper middle income,2.738,2014
+Costa Rica,Upper middle income,1.781,2014
+Cote d' Ivoire,Lower middle income,2.315,2014
+Croatia,High income,1.656,2014
+Cuba,Upper middle income,2.084,2014
+Cyprus,High income,1.988,2014
+Czech Republic,High income,1.424,2014
+Democratic Republic of the Congo,Low income,3.071,2014
+Denmark,High income,1.179,2014
+Djibouti,Lower middle income,2.007,2014
+Dominican Republic,Upper middle income,2.121,2014
+Ecuador,Upper middle income,2.089,2014
+Egypt,Lower middle income,2.639,2014
+El Salvador,Lower middle income,2.178,2014
+Equatorial Guinea,Upper middle income,1.953,2014
+Eritrea,Low income,2.445,2014
+Estonia,High income,1.656,2014
+Ethiopia,Low income,2.381,2014
+Finland,High income,1.383,2014
+France,High income,1.842,2014
+Gabon,Upper middle income,1.936,2014
+Georgia,Lower middle income,2.311,2014
+Germany,High income,1.475,2014
+Ghana,Lower middle income,1.805,2014
+Greece,High income,2.108,2014
+Guatemala,Upper middle income,2.249,2014
+Guinea,Low income,2.211,2014
+Guinea-Bissau,Low income,2.469,2014
+Guyana,Upper middle income,2.05,2014
+Haiti,Low income,2.178,2014
+Honduras,Lower middle income,2.251,2014
+Hungary,High income,1.51,2014
+Iceland,High income,1.16,2014
+India,Lower middle income,2.54,2014
+Indonesia,Lower middle income,1.86,2014
+Iran,Upper middle income,2.46,2014
+Iraq,Upper middle income,3.266,2014
+Ireland,High income,1.419,2014
+Israel,High income,2.681,2014
+Italy,High income,1.753,2014
+Jamaica,Upper middle income,2.156,2014
+Japan,High income,1.33,2014
+Jordan,Upper middle income,1.946,2014
+Kazakhstan,Upper middle income,2.097,2014
+Kenya,Lower middle income,2.378,2014
+Kosovo,Lower middle income,2.038,2014
+Kuwait,High income,1.643,2014
+Kyrgyz Republic,Lower middle income,2.396,2014
+Laos,Lower middle income,1.809,2014
+Latvia,High income,1.657,2014
+Lebanon,Upper middle income,2.735,2014
+Lesotho,Lower middle income,1.865,2014
+Liberia,Low income,1.906,2014
+Libya,Upper middle income,2.455,2014
+Lithuania,High income,1.719,2014
+Macedonia (FYR),Upper middle income,2.066,2014
+Madagascar,Low income,1.966,2014
+Malawi,Low income,1.778,2014
+Malaysia,Upper middle income,1.579,2014
+Mali,Low income,2.418,2014
+Mauritania,Lower middle income,2.322,2014
+Mauritius,Upper middle income,1.511,2014
+Mexico,Upper middle income,2.573,2014
+Moldova,Lower middle income,1.939,2014
+Mongolia,Lower middle income,1.771,2014
+Montenegro,Upper middle income,1.941,2014
+Morocco,Lower middle income,2.063,2014
+Mozambique,Low income,2.012,2014
+Myanmar,Lower middle income,2.266,2014
+Namibia,Upper middle income,1.848,2014
+Nepal,Low income,1.981,2014
+Netherlands,High income,1.538,2014
+New Zealand,High income,1.271,2014
+Nicaragua,Lower middle income,1.934,2014
+Niger,Low income,2.094,2014
+Nigeria,Lower middle income,2.864,2014
+North Korea,Low income,2.968,2014
+Norway,High income,1.556,2014
+Oman,High income,1.97,2014
+Pakistan,Lower middle income,3.105,2014
+Panama,High income,1.907,2014
+Papua New Guinea,Lower middle income,2.025,2014
+Paraguay,Upper middle income,2.029,2014
+Peru,Upper middle income,2.158,2014
+Philippines,Lower middle income,2.505,2014
+Poland,High income,1.524,2014
+Portugal,High income,1.466,2014
+Qatar,High income,1.549,2014
+Republic of the Congo,Lower middle income,2.236,2014
+Romania,Upper middle income,1.648,2014
+Russia,Upper middle income,3.125,2014
+Rwanda,Low income,2.336,2014
+Saudi Arabia,High income,2.148,2014
+Senegal,Low income,1.987,2014
+Serbia,Upper middle income,1.999,2014
+Sierra Leone,Low income,1.777,2014
+Singapore,High income,1.416,2014
+Slovakia,High income,1.543,2014
+Slovenia,High income,1.43,2014
+Somalia,Low income,3.321,2014
+South Africa,Upper middle income,2.372,2014
+South Korea,High income,1.797,2014
+South Sudan,Low income,3.23,2014
+Spain,High income,1.63,2014
+Sri Lanka,Lower middle income,2.176,2014
+Sudan,Lower middle income,3.242,2014
+Swaziland,Lower middle income,2.134,2014
+Sweden,High income,1.375,2014
+Switzerland,High income,1.382,2014
+Syria,Low income,3.542,2014
+Taiwan,High income,1.643,2014
+Tajikistan,Low income,2.355,2014
+Tanzania,Low income,1.833,2014
+Thailand,Upper middle income,2.444,2014
+The Gambia,Low income,2.123,2014
+Timor-Leste,Lower middle income,1.875,2014
+Togo,Low income,1.985,2014
+Trinidad and Tobago,High income,2.103,2014
+Tunisia,Lower middle income,2.077,2014
+Turkey,Upper middle income,2.518,2014
+Turkmenistan,Upper middle income,2.189,2014
+Uganda,Low income,2.281,2014
+Ukraine,Lower middle income,2.562,2014
+United Arab Emirates,High income,1.708,2014
+United Kingdom,High income,1.868,2014
+United States of America,High income,2.269,2014
+Uruguay,High income,1.698,2014
+Uzbekistan,Lower middle income,2.271,2014
+Venezuela,Upper middle income,2.401,2014
+Vietnam,Lower middle income,1.83,2014
+Yemen,Low income,2.735,2014
+Zambia,Lower middle income,1.793,2014
+Zimbabwe,Low income,2.387,2014
+Afghanistan,Low income,3.425,2015
+Albania,Upper middle income,1.948,2015
+Algeria,Upper middle income,2.261,2015
+Angola,Lower middle income,2.008,2015
+Argentina,High income,2.082,2015
+Armenia,Upper middle income,2.243,2015
+Australia,High income,1.367,2015
+Austria,High income,1.264,2015
+Azerbaijan,Upper middle income,2.425,2015
+Bahrain,High income,2.228,2015
+Bangladesh,Lower middle income,2.027,2015
+Belarus,Upper middle income,2.244,2015
+Belgium,High income,1.437,2015
+Benin,Low income,1.975,2015
+Bhutan,Lower middle income,1.638,2015
+Bolivia,Lower middle income,2.071,2015
+Bosnia and Herzegovina,Upper middle income,1.955,2015
+Botswana,Upper middle income,1.663,2015
+Brazil,Upper middle income,2.163,2015
+Bulgaria,Upper middle income,1.684,2015
+Burkina Faso,Low income,1.896,2015
+Burundi,Low income,2.327,2015
+Cambodia,Lower middle income,2.105,2015
+Cameroon,Lower middle income,2.296,2015
+Canada,High income,1.337,2015
+Central African Republic,Low income,3.41,2015
+Chad,Low income,2.54,2015
+Chile,High income,1.633,2015
+China,Upper middle income,2.284,2015
+Colombia,Upper middle income,2.774,2015
+Costa Rica,Upper middle income,1.706,2015
+Cote d' Ivoire,Lower middle income,2.145,2015
+Croatia,High income,1.662,2015
+Cuba,Upper middle income,2.079,2015
+Cyprus,High income,1.962,2015
+Czech Republic,High income,1.443,2015
+Democratic Republic of the Congo,Low income,3.076,2015
+Denmark,High income,1.179,2015
+Djibouti,Lower middle income,2.185,2015
+Dominican Republic,Upper middle income,2.134,2015
+Ecuador,Upper middle income,2.04,2015
+Egypt,Lower middle income,2.438,2015
+El Salvador,Lower middle income,2.281,2015
+Equatorial Guinea,Upper middle income,1.929,2015
+Eritrea,Low income,2.422,2015
+Estonia,High income,1.727,2015
+Ethiopia,Low income,2.283,2015
+Finland,High income,1.399,2015
+France,High income,1.816,2015
+Gabon,Upper middle income,1.959,2015
+Georgia,Lower middle income,2.159,2015
+Germany,High income,1.482,2015
+Ghana,Lower middle income,1.8,2015
+Greece,High income,1.958,2015
+Guatemala,Upper middle income,2.229,2015
+Guinea,Low income,2.207,2015
+Guinea-Bissau,Low income,2.219,2015
+Guyana,Upper middle income,2.095,2015
+Haiti,Low income,2.088,2015
+Honduras,Lower middle income,2.226,2015
+Hungary,High income,1.519,2015
+Iceland,High income,1.142,2015
+India,Lower middle income,2.557,2015
+Indonesia,Lower middle income,1.812,2015
+Iran,Upper middle income,2.453,2015
+Iraq,Upper middle income,3.481,2015
+Ireland,High income,1.422,2015
+Israel,High income,2.721,2015
+Italy,High income,1.761,2015
+Jamaica,Upper middle income,2.115,2015
+Japan,High income,1.315,2015
+Jordan,Upper middle income,2.028,2015
+Kazakhstan,Upper middle income,2.021,2015
+Kenya,Lower middle income,2.332,2015
+Kosovo,Lower middle income,2.058,2015
+Kuwait,High income,1.696,2015
+Kyrgyz Republic,Lower middle income,2.303,2015
+Laos,Lower middle income,1.81,2015
+Latvia,High income,1.707,2015
+Lebanon,Upper middle income,2.73,2015
+Lesotho,Lower middle income,1.915,2015
+Liberia,Low income,1.951,2015
+Libya,Upper middle income,3.048,2015
+Lithuania,High income,1.715,2015
+Macedonia (FYR),Upper middle income,2.041,2015
+Madagascar,Low income,1.902,2015
+Malawi,Low income,1.719,2015
+Malaysia,Upper middle income,1.585,2015
+Mali,Low income,2.546,2015
+Mauritania,Lower middle income,2.385,2015
+Mauritius,Upper middle income,1.526,2015
+Mexico,Upper middle income,2.544,2015
+Moldova,Lower middle income,1.923,2015
+Mongolia,Lower middle income,1.75,2015
+Montenegro,Upper middle income,1.949,2015
+Morocco,Lower middle income,2.051,2015
+Mozambique,Low income,1.957,2015
+Myanmar,Lower middle income,2.337,2015
+Namibia,Upper middle income,1.863,2015
+Nepal,Low income,1.885,2015
+Netherlands,High income,1.527,2015
+New Zealand,High income,1.263,2015
+Nicaragua,Lower middle income,2.003,2015
+Niger,Low income,2.329,2015
+Nigeria,Lower middle income,2.936,2015
+North Korea,Low income,2.976,2015
+Norway,High income,1.483,2015
+Oman,High income,2.038,2015
+Pakistan,Lower middle income,3.138,2015
+Panama,High income,1.948,2015
+Papua New Guinea,Lower middle income,2.048,2015
+Paraguay,Upper middle income,2.077,2015
+Peru,Upper middle income,2.093,2015
+Philippines,Lower middle income,2.514,2015
+Poland,High income,1.503,2015
+Portugal,High income,1.418,2015
+Qatar,High income,1.64,2015
+Republic of the Congo,Lower middle income,2.243,2015
+Romania,Upper middle income,1.638,2015
+Russia,Upper middle income,3.138,2015
+Rwanda,Low income,2.228,2015
+Saudi Arabia,High income,2.139,2015
+Senegal,Low income,1.902,2015
+Serbia,Upper middle income,1.914,2015
+Sierra Leone,Low income,1.792,2015
+Singapore,High income,1.387,2015
+Slovakia,High income,1.539,2015
+Slovenia,High income,1.421,2015
+Somalia,Low income,3.293,2015
+South Africa,Upper middle income,2.428,2015
+South Korea,High income,1.762,2015
+South Sudan,Low income,3.491,2015
+Spain,High income,1.556,2015
+Sri Lanka,Lower middle income,2.225,2015
+Sudan,Lower middle income,3.284,2015
+Swaziland,Lower middle income,2.126,2015
+Sweden,High income,1.383,2015
+Switzerland,High income,1.372,2015
+Syria,Low income,3.628,2015
+Taiwan,High income,1.721,2015
+Tajikistan,Low income,2.237,2015
+Tanzania,Low income,1.857,2015
+Thailand,Upper middle income,2.43,2015
+The Gambia,Low income,2.151,2015
+Timor-Leste,Lower middle income,1.903,2015
+Togo,Low income,1.958,2015
+Trinidad and Tobago,High income,2.111,2015
+Tunisia,Lower middle income,1.997,2015
+Turkey,Upper middle income,2.496,2015
+Turkmenistan,Upper middle income,2.198,2015
+Uganda,Low income,2.239,2015
+Ukraine,Lower middle income,3.059,2015
+United Arab Emirates,High income,1.767,2015
+United Kingdom,High income,1.844,2015
+United States of America,High income,2.256,2015
+Uruguay,High income,1.759,2015
+Uzbekistan,Lower middle income,2.258,2015
+Venezuela,Upper middle income,2.51,2015
+Vietnam,Lower middle income,1.888,2015
+Yemen,Low income,2.84,2015
+Zambia,Lower middle income,1.817,2015
+Zimbabwe,Low income,2.235,2015
+Afghanistan,Low income,3.465,2016
+Albania,Upper middle income,1.9,2016
+Algeria,Upper middle income,2.197,2016
+Angola,Lower middle income,2.073,2016
+Argentina,High income,2.096,2016
+Armenia,Upper middle income,2.225,2016
+Australia,High income,1.4,2016
+Austria,High income,1.249,2016
+Azerbaijan,Upper middle income,2.441,2016
+Bahrain,High income,2.347,2016
+Bangladesh,Lower middle income,2.046,2016
+Belarus,Upper middle income,2.18,2016
+Belgium,High income,1.47,2016
+Benin,Low income,1.997,2016
+Bhutan,Lower middle income,1.572,2016
+Bolivia,Lower middle income,2.017,2016
+Bosnia and Herzegovina,Upper middle income,1.942,2016
+Botswana,Upper middle income,1.633,2016
+Brazil,Upper middle income,2.169,2016
+Bulgaria,Upper middle income,1.641,2016
+Burkina Faso,Low income,2.047,2016
+Burundi,Low income,2.507,2016
+Cambodia,Lower middle income,2.101,2016
+Cameroon,Lower middle income,2.3,2016
+Canada,High income,1.337,2016
+Central African Republic,Low income,3.313,2016
+Chad,Low income,2.476,2016
+Chile,High income,1.623,2016
+China,Upper middle income,2.276,2016
+Colombia,Upper middle income,2.74,2016
+Costa Rica,Upper middle income,1.705,2016
+Cote d' Ivoire,Lower middle income,2.218,2016
+Croatia,High income,1.665,2016
+Cuba,Upper middle income,2.072,2016
+Cyprus,High income,1.959,2016
+Czech Republic,High income,1.369,2016
+Democratic Republic of the Congo,Low income,3.064,2016
+Denmark,High income,1.201,2016
+Djibouti,Lower middle income,2.282,2016
+Dominican Republic,Upper middle income,2.129,2016
+Ecuador,Upper middle income,2.015,2016
+Egypt,Lower middle income,2.562,2016
+El Salvador,Lower middle income,2.237,2016
+Equatorial Guinea,Upper middle income,1.895,2016
+Eritrea,Low income,2.474,2016
+Estonia,High income,1.72,2016
+Ethiopia,Low income,2.275,2016
+Finland,High income,1.447,2016
+France,High income,1.873,2016
+Gabon,Upper middle income,2.007,2016
+Georgia,Lower middle income,2.129,2016
+Germany,High income,1.487,2016
+Ghana,Lower middle income,1.796,2016
+Greece,High income,2.038,2016
+Guatemala,Upper middle income,2.276,2016
+Guinea,Low income,2.159,2016
+Guinea-Bissau,Low income,2.224,2016
+Guyana,Upper middle income,2.122,2016
+Haiti,Low income,2.065,2016
+Honduras,Lower middle income,2.232,2016
+Hungary,High income,1.502,2016
+Iceland,High income,1.138,2016
+India,Lower middle income,2.565,2016
+Indonesia,Lower middle income,1.798,2016
+Iran,Upper middle income,2.37,2016
+Iraq,Upper middle income,3.53,2016
+Ireland,High income,1.423,2016
+Israel,High income,2.741,2016
+Italy,High income,1.761,2016
+Jamaica,Upper middle income,2.094,2016
+Japan,High income,1.374,2016
+Jordan,Upper middle income,2.049,2016
+Kazakhstan,Upper middle income,2.01,2016
+Kenya,Lower middle income,2.339,2016
+Kosovo,Lower middle income,2.07,2016
+Kuwait,High income,1.749,2016
+Kyrgyz Republic,Lower middle income,2.274,2016
+Laos,Lower middle income,1.857,2016
+Latvia,High income,1.666,2016
+Lebanon,Upper middle income,2.755,2016
+Lesotho,Lower middle income,1.955,2016
+Liberia,Low income,1.988,2016
+Libya,Upper middle income,3.219,2016
+Lithuania,High income,1.726,2016
+Macedonia (FYR),Upper middle income,2.118,2016
+Madagascar,Low income,1.866,2016
+Malawi,Low income,1.813,2016
+Malaysia,Upper middle income,1.635,2016
+Mali,Low income,2.565,2016
+Mauritania,Lower middle income,2.279,2016
+Mauritius,Upper middle income,1.557,2016
+Mexico,Upper middle income,2.548,2016
+Moldova,Lower middle income,1.949,2016
+Mongolia,Lower middle income,1.83,2016
+Montenegro,Upper middle income,1.878,2016
+Morocco,Lower middle income,2.082,2016
+Mozambique,Low income,1.951,2016
+Myanmar,Lower middle income,2.25,2016
+Namibia,Upper middle income,1.857,2016
+Nepal,Low income,2.003,2016
+Netherlands,High income,1.526,2016
+New Zealand,High income,1.238,2016
+Nicaragua,Lower middle income,1.959,2016
+Niger,Low income,2.268,2016
+Nigeria,Lower middle income,2.871,2016
+North Korea,Low income,2.945,2016
+Norway,High income,1.488,2016
+Oman,High income,1.995,2016
+Pakistan,Lower middle income,3.132,2016
+Panama,High income,1.831,2016
+Papua New Guinea,Lower middle income,2.114,2016
+Paraguay,Upper middle income,2.027,2016
+Peru,Upper middle income,2.062,2016
+Philippines,Lower middle income,2.501,2016
+Poland,High income,1.549,2016
+Portugal,High income,1.324,2016
+Qatar,High income,1.603,2016
+Republic of the Congo,Lower middle income,2.299,2016
+Romania,Upper middle income,1.648,2016
+Russia,Upper middle income,3.118,2016
+Rwanda,Low income,2.215,2016
+Saudi Arabia,High income,2.212,2016
+Senegal,Low income,1.972,2016
+Serbia,Upper middle income,1.888,2016
+Sierra Leone,Low income,1.772,2016
+Singapore,High income,1.393,2016
+Slovakia,High income,1.594,2016
+Slovenia,High income,1.39,2016
+Somalia,Low income,3.391,2016
+South Africa,Upper middle income,2.309,2016
+South Korea,High income,1.8,2016
+South Sudan,Low income,3.524,2016
+Spain,High income,1.582,2016
+Sri Lanka,Lower middle income,2.101,2016
+Sudan,Lower middle income,3.218,2016
+Swaziland,Lower middle income,2.091,2016
+Sweden,High income,1.42,2016
+Switzerland,High income,1.367,2016
+Syria,Low income,3.653,2016
+Taiwan,High income,1.751,2016
+Tajikistan,Low income,2.304,2016
+Tanzania,Low income,1.847,2016
+Thailand,Upper middle income,2.304,2016
+The Gambia,Low income,2.099,2016
+Timor-Leste,Lower middle income,1.876,2016
+Togo,Low income,1.951,2016
+Trinidad and Tobago,High income,2.073,2016
+Tunisia,Lower middle income,1.949,2016
+Turkey,Upper middle income,2.714,2016
+Turkmenistan,Upper middle income,2.2,2016
+Uganda,Low income,2.138,2016
+Ukraine,Lower middle income,3.28,2016
+United Arab Emirates,High income,1.783,2016
+United Kingdom,High income,1.806,2016
+United States of America,High income,2.203,2016
+Uruguay,High income,1.715,2016
+Uzbekistan,Lower middle income,2.198,2016
+Venezuela,Upper middle income,2.601,2016
+Vietnam,Lower middle income,1.894,2016
+Yemen,Low income,3.287,2016
+Zambia,Lower middle income,1.774,2016
+Zimbabwe,Low income,2.25,2016
+Afghanistan,Low income,3.519,2017
+Albania,Upper middle income,1.92,2017
+Algeria,Upper middle income,2.188,2017
+Angola,Lower middle income,2.007,2017
+Argentina,High income,2.012,2017
+Armenia,Upper middle income,2.258,2017
+Australia,High income,1.387,2017
+Austria,High income,1.292,2017
+Azerbaijan,Upper middle income,2.457,2017
+Bahrain,High income,2.41,2017
+Bangladesh,Lower middle income,2.036,2017
+Belarus,Upper middle income,2.106,2017
+Belgium,High income,1.536,2017
+Benin,Low income,2.028,2017
+Bhutan,Lower middle income,1.604,2017
+Bolivia,Lower middle income,2.012,2017
+Bosnia and Herzegovina,Upper middle income,2.042,2017
+Botswana,Upper middle income,1.641,2017
+Brazil,Upper middle income,2.195,2017
+Bulgaria,Upper middle income,1.631,2017
+Burkina Faso,Low income,2.074,2017
+Burundi,Low income,2.605,2017
+Cambodia,Lower middle income,2.01,2017
+Cameroon,Lower middle income,2.373,2017
+Canada,High income,1.332,2017
+Central African Republic,Low income,3.242,2017
+Chad,Low income,2.56,2017
+Chile,High income,1.603,2017
+China,Upper middle income,2.254,2017
+Colombia,Upper middle income,2.754,2017
+Costa Rica,Upper middle income,1.7,2017
+Cote d' Ivoire,Lower middle income,2.265,2017
+Croatia,High income,1.674,2017
+Cuba,Upper middle income,2.063,2017
+Cyprus,High income,1.94,2017
+Czech Republic,High income,1.368,2017
+Democratic Republic of the Congo,Low income,3.059,2017
+Denmark,High income,1.299,2017
+Djibouti,Lower middle income,2.209,2017
+Dominican Republic,Upper middle income,2.11,2017
+Ecuador,Upper middle income,1.952,2017
+Egypt,Lower middle income,2.602,2017
+El Salvador,Lower middle income,2.252,2017
+Equatorial Guinea,Upper middle income,1.888,2017
+Eritrea,Low income,2.494,2017
+Estonia,High income,1.716,2017
+Ethiopia,Low income,2.345,2017
+Finland,High income,1.527,2017
+France,High income,1.869,2017
+Gabon,Upper middle income,2.032,2017
+Georgia,Lower middle income,2.096,2017
+Germany,High income,1.515,2017
+Ghana,Lower middle income,1.808,2017
+Greece,High income,2.02,2017
+Guatemala,Upper middle income,2.243,2017
+Guinea,Low income,2.1,2017
+Guinea-Bissau,Low income,2.286,2017
+Guyana,Upper middle income,2.029,2017
+Haiti,Low income,2.05,2017
+Honduras,Lower middle income,2.193,2017
+Hungary,High income,1.503,2017
+Iceland,High income,1.084,2017
+India,Lower middle income,2.545,2017
+Indonesia,Lower middle income,1.84,2017
+Iran,Upper middle income,2.344,2017
+Iraq,Upper middle income,3.516,2017
+Ireland,High income,1.417,2017
+Israel,High income,2.745,2017
+Italy,High income,1.744,2017
+Jamaica,Upper middle income,2.072,2017
+Japan,High income,1.377,2017
+Jordan,Upper middle income,2.12,2017
+Kazakhstan,Upper middle income,1.958,2017
+Kenya,Lower middle income,2.33,2017
+Kosovo,Lower middle income,2.02,2017
+Kuwait,High income,1.823,2017
+Kyrgyz Republic,Lower middle income,2.219,2017
+Laos,Lower middle income,1.813,2017
+Latvia,High income,1.671,2017
+Lebanon,Upper middle income,2.804,2017
+Lesotho,Lower middle income,2.065,2017
+Liberia,Low income,2.059,2017
+Libya,Upper middle income,3.34,2017
+Lithuania,High income,1.734,2017
+Macedonia (FYR),Upper middle income,2.129,2017
+Madagascar,Low income,1.914,2017
+Malawi,Low income,1.824,2017
+Malaysia,Upper middle income,1.65,2017
+Mali,Low income,2.696,2017
+Mauritania,Lower middle income,2.361,2017
+Mauritius,Upper middle income,1.528,2017
+Mexico,Upper middle income,2.631,2017
+Moldova,Lower middle income,1.944,2017
+Mongolia,Lower middle income,1.802,2017
+Montenegro,Upper middle income,1.949,2017
+Morocco,Lower middle income,2.018,2017
+Mozambique,Low income,2.019,2017
+Myanmar,Lower middle income,2.187,2017
+Namibia,Upper middle income,1.822,2017
+Nepal,Low income,2.048,2017
+Netherlands,High income,1.54,2017
+New Zealand,High income,1.216,2017
+Nicaragua,Lower middle income,1.978,2017
+Niger,Low income,2.415,2017
+Nigeria,Lower middle income,2.871,2017
+North Korea,Low income,2.968,2017
+Norway,High income,1.504,2017
+Oman,High income,1.922,2017
+Pakistan,Lower middle income,3.08,2017
+Panama,High income,1.822,2017
+Papua New Guinea,Lower middle income,2.065,2017
+Paraguay,Upper middle income,1.956,2017
+Peru,Upper middle income,1.985,2017
+Philippines,Lower middle income,2.518,2017
+Poland,High income,1.688,2017
+Portugal,High income,1.273,2017
+Qatar,High income,1.562,2017
+Republic of the Congo,Lower middle income,2.361,2017
+Romania,Upper middle income,1.616,2017
+Russia,Upper middle income,3.117,2017
+Rwanda,Low income,2.132,2017
+Saudi Arabia,High income,2.346,2017
+Senegal,Low income,1.941,2017
+Serbia,Upper middle income,1.88,2017
+Sierra Leone,Low income,1.751,2017
+Singapore,High income,1.4,2017
+Slovakia,High income,1.627,2017
+Slovenia,High income,1.373,2017
+Somalia,Low income,3.347,2017
+South Africa,Upper middle income,2.336,2017
+South Korea,High income,1.793,2017
+South Sudan,Low income,3.462,2017
+Spain,High income,1.552,2017
+Sri Lanka,Lower middle income,1.98,2017
+Sudan,Lower middle income,3.2,2017
+Swaziland,Lower middle income,2.026,2017
+Sweden,High income,1.489,2017
+Switzerland,High income,1.369,2017
+Syria,Low income,3.66,2017
+Taiwan,High income,1.725,2017
+Tajikistan,Low income,2.264,2017
+Tanzania,Low income,1.825,2017
+Thailand,Upper middle income,2.285,2017
+The Gambia,Low income,2.221,2017
+Timor-Leste,Lower middle income,1.87,2017
+Togo,Low income,1.954,2017
+Trinidad and Tobago,High income,2.089,2017
+Tunisia,Lower middle income,1.976,2017
+Turkey,Upper middle income,2.802,2017
+Turkmenistan,Upper middle income,2.256,2017
+Uganda,Low income,2.179,2017
+Ukraine,Lower middle income,3.213,2017
+United Arab Emirates,High income,1.883,2017
+United Kingdom,High income,1.789,2017
+United States of America,High income,2.311,2017
+Uruguay,High income,1.703,2017
+Uzbekistan,Lower middle income,2.117,2017
+Venezuela,Upper middle income,2.608,2017
+Vietnam,Lower middle income,1.91,2017
+Yemen,Low income,3.316,2017
+Zambia,Lower middle income,1.78,2017
+Zimbabwe,Low income,2.297,2017
+Afghanistan,Low income,3.576,2018
+Albania,Upper middle income,1.843,2018
+Algeria,Upper middle income,2.188,2018
+Angola,Lower middle income,2.031,2018
+Argentina,High income,1.955,2018
+Armenia,Upper middle income,2.302,2018
+Australia,High income,1.398,2018
+Austria,High income,1.273,2018
+Azerbaijan,Upper middle income,2.447,2018
+Bahrain,High income,2.404,2018
+Bangladesh,Lower middle income,2.078,2018
+Belarus,Upper middle income,2.112,2018
+Belgium,High income,1.538,2018
+Benin,Low income,1.975,2018
+Bhutan,Lower middle income,1.521,2018
+Bolivia,Lower middle income,2.033,2018
+Bosnia and Herzegovina,Upper middle income,2.063,2018
+Botswana,Upper middle income,1.682,2018
+Brazil,Upper middle income,2.159,2018
+Bulgaria,Upper middle income,1.632,2018
+Burkina Faso,Low income,2.023,2018
+Burundi,Low income,2.502,2018
+Cambodia,Lower middle income,2.101,2018
+Cameroon,Lower middle income,2.473,2018
+Canada,High income,1.338,2018
+Central African Republic,Low income,3.276,2018
+Chad,Low income,2.496,2018
+Chile,High income,1.646,2018
+China,Upper middle income,2.247,2018
+Colombia,Upper middle income,2.729,2018
+Costa Rica,Upper middle income,1.766,2018
+Cote d' Ivoire,Lower middle income,2.213,2018
+Croatia,High income,1.639,2018
+Cuba,Upper middle income,2.046,2018
+Cyprus,High income,1.907,2018
+Czech Republic,High income,1.379,2018
+Democratic Republic of the Congo,Low income,3.249,2018
+Denmark,High income,1.313,2018
+Djibouti,Lower middle income,2.265,2018
+Dominican Republic,Upper middle income,2.073,2018
+Ecuador,Upper middle income,1.962,2018
+Egypt,Lower middle income,2.657,2018
+El Salvador,Lower middle income,2.272,2018
+Equatorial Guinea,Upper middle income,1.934,2018
+Eritrea,Low income,2.529,2018
+Estonia,High income,1.732,2018
+Ethiopia,Low income,2.426,2018
+Finland,High income,1.505,2018
+France,High income,1.887,2018
+Gabon,Upper middle income,2.096,2018
+Georgia,Lower middle income,2.118,2018
+Germany,High income,1.527,2018
+Ghana,Lower middle income,1.772,2018
+Greece,High income,2.028,2018
+Guatemala,Upper middle income,2.21,2018
+Guinea,Low income,2.106,2018
+Guinea-Bissau,Low income,2.28,2018
+Guyana,Upper middle income,2.041,2018
+Haiti,Low income,2.054,2018
+Honduras,Lower middle income,2.276,2018
+Hungary,High income,1.542,2018
+Iceland,High income,1.096,2018
+India,Lower middle income,2.517,2018
+Indonesia,Lower middle income,1.854,2018
+Iran,Upper middle income,2.419,2018
+Iraq,Upper middle income,3.436,2018
+Ireland,High income,1.394,2018
+Israel,High income,2.756,2018
+Italy,High income,1.772,2018
+Jamaica,Upper middle income,2.079,2018
+Japan,High income,1.381,2018
+Jordan,Upper middle income,2.101,2018
+Kazakhstan,Upper middle income,1.963,2018
+Kenya,Lower middle income,2.3,2018
+Kosovo,Lower middle income,2.08,2018
+Kuwait,High income,1.831,2018
+Kyrgyz Republic,Lower middle income,2.178,2018
+Laos,Lower middle income,1.818,2018
+Latvia,High income,1.679,2018
+Lebanon,Upper middle income,2.79,2018
+Lesotho,Lower middle income,2.144,2018
+Liberia,Low income,1.933,2018
+Libya,Upper middle income,3.283,2018
+Lithuania,High income,1.749,2018
+Macedonia (FYR),Upper middle income,2.06,2018
+Madagascar,Low income,1.86,2018
+Malawi,Low income,1.814,2018
+Malaysia,Upper middle income,1.616,2018
+Mali,Low income,2.685,2018
+Mauritania,Lower middle income,2.353,2018
+Mauritius,Upper middle income,1.53,2018
+Mexico,Upper middle income,2.64,2018
+Moldova,Lower middle income,1.933,2018
+Mongolia,Lower middle income,1.807,2018
+Montenegro,Upper middle income,1.892,2018
+Morocco,Lower middle income,2.017,2018
+Mozambique,Low income,2.051,2018
+Myanmar,Lower middle income,2.328,2018
+Namibia,Upper middle income,1.807,2018
+Nepal,Low income,2.06,2018
+Netherlands,High income,1.528,2018
+New Zealand,High income,1.188,2018
+Nicaragua,Lower middle income,1.935,2018
+Niger,Low income,2.444,2018
+Nigeria,Lower middle income,2.883,2018
+North Korea,Low income,2.95,2018
+Norway,High income,1.515,2018
+Oman,High income,1.974,2018
+Pakistan,Lower middle income,3.094,2018
+Panama,High income,1.824,2018
+Papua New Guinea,Lower middle income,2.1,2018
+Paraguay,Upper middle income,2.001,2018
+Peru,Upper middle income,1.982,2018
+Philippines,Lower middle income,2.523,2018
+Poland,High income,1.728,2018
+Portugal,High income,1.315,2018
+Qatar,High income,1.785,2018
+Republic of the Congo,Lower middle income,2.326,2018
+Romania,Upper middle income,1.592,2018
+Russia,Upper middle income,3.163,2018
+Rwanda,Low income,2.139,2018
+Saudi Arabia,High income,2.382,2018
+Senegal,Low income,1.85,2018
+Serbia,Upper middle income,1.854,2018
+Sierra Leone,Low income,1.737,2018
+Singapore,High income,1.382,2018
+Slovakia,High income,1.564,2018
+Slovenia,High income,1.39,2018
+Somalia,Low income,3.35,2018
+South Africa,Upper middle income,2.335,2018
+South Korea,High income,1.817,2018
+South Sudan,Low income,3.525,2018
+Spain,High income,1.676,2018
+Sri Lanka,Lower middle income,1.964,2018
+Sudan,Lower middle income,3.171,2018
+Swaziland,Lower middle income,2.04,2018
+Sweden,High income,1.507,2018
+Switzerland,High income,1.403,2018
+Syria,Low income,3.599,2018
+Taiwan,High income,1.737,2018
+Tajikistan,Low income,2.279,2018
+Tanzania,Low income,1.84,2018
+Thailand,Upper middle income,2.266,2018
+The Gambia,Low income,1.987,2018
+Timor-Leste,Lower middle income,1.898,2018
+Togo,Low income,2.103,2018
+Trinidad and Tobago,High income,2.053,2018
+Tunisia,Lower middle income,2,2018
+Turkey,Upper middle income,2.909,2018
+Turkmenistan,Upper middle income,2.283,2018
+Uganda,Low income,2.176,2018
+Ukraine,Lower middle income,3.147,2018
+United Arab Emirates,High income,1.816,2018
+United Kingdom,High income,1.831,2018
+United States of America,High income,2.332,2018
+Uruguay,High income,1.754,2018
+Uzbekistan,Lower middle income,2.144,2018
+Venezuela,Upper middle income,2.643,2018
+Vietnam,Lower middle income,1.911,2018
+Yemen,Low income,3.308,2018
+Zambia,Lower middle income,1.821,2018
+Zimbabwe,Low income,2.34,2018
+Afghanistan,Low income,3.574,2019
+Albania,Upper middle income,1.821,2019
+Algeria,Upper middle income,2.219,2019
+Angola,Lower middle income,2.012,2019
+Argentina,High income,1.989,2019
+Armenia,Upper middle income,2.294,2019
+Australia,High income,1.419,2019
+Austria,High income,1.291,2019
+Azerbaijan,Upper middle income,2.425,2019
+Bahrain,High income,2.357,2019
+Bangladesh,Lower middle income,2.128,2019
+Belarus,Upper middle income,2.115,2019
+Belgium,High income,1.533,2019
+Benin,Low income,1.986,2019
+Bhutan,Lower middle income,1.506,2019
+Bolivia,Lower middle income,2.044,2019
+Bosnia and Herzegovina,Upper middle income,2.019,2019
+Botswana,Upper middle income,1.676,2019
+Brazil,Upper middle income,2.271,2019
+Bulgaria,Upper middle income,1.607,2019
+Burkina Faso,Low income,2.176,2019
+Burundi,Low income,2.52,2019
+Cambodia,Lower middle income,2.066,2019
+Cameroon,Lower middle income,2.538,2019
+Canada,High income,1.327,2019
+Central African Republic,Low income,3.296,2019
+Chad,Low income,2.522,2019
+Chile,High income,1.634,2019
+China,Upper middle income,2.217,2019
+Colombia,Upper middle income,2.661,2019
+Costa Rica,Upper middle income,1.706,2019
+Cote d' Ivoire,Lower middle income,2.203,2019
+Croatia,High income,1.645,2019
+Cuba,Upper middle income,2.073,2019
+Cyprus,High income,1.914,2019
+Czech Republic,High income,1.375,2019
+Democratic Republic of the Congo,Low income,3.218,2019
+Denmark,High income,1.316,2019
+Djibouti,Lower middle income,2.207,2019
+Dominican Republic,Upper middle income,2.041,2019
+Ecuador,Upper middle income,1.98,2019
+Egypt,Lower middle income,2.521,2019
+El Salvador,Lower middle income,2.262,2019
+Equatorial Guinea,Upper middle income,1.957,2019
+Eritrea,Low income,2.504,2019
+Estonia,High income,1.727,2019
+Ethiopia,Low income,2.434,2019
+Finland,High income,1.488,2019
+France,High income,1.892,2019
+Gabon,Upper middle income,2.112,2019
+Georgia,Lower middle income,2.122,2019
+Germany,High income,1.547,2019
+Ghana,Lower middle income,1.796,2019
+Greece,High income,1.933,2019
+Guatemala,Upper middle income,2.264,2019
+Guinea,Low income,2.125,2019
+Guinea-Bissau,Low income,2.237,2019
+Guyana,Upper middle income,2.075,2019
+Haiti,Low income,2.052,2019
+Honduras,Lower middle income,2.341,2019
+Hungary,High income,1.54,2019
+Iceland,High income,1.072,2019
+India,Lower middle income,2.605,2019
+Indonesia,Lower middle income,1.785,2019
+Iran,Upper middle income,2.542,2019
+Iraq,Upper middle income,3.369,2019
+Ireland,High income,1.39,2019
+Israel,High income,2.735,2019
+Italy,High income,1.754,2019
+Jamaica,Upper middle income,2.038,2019
+Japan,High income,1.369,2019
+Jordan,Upper middle income,2.012,2019
+Kazakhstan,Upper middle income,1.932,2019
+Kenya,Lower middle income,2.3,2019
+Kosovo,Lower middle income,2.049,2019
+Kuwait,High income,1.794,2019
+Kyrgyz Republic,Lower middle income,2.105,2019
+Laos,Lower middle income,1.801,2019
+Latvia,High income,1.718,2019
+Lebanon,Upper middle income,2.8,2019
+Lesotho,Lower middle income,2.167,2019
+Liberia,Low income,1.889,2019
+Libya,Upper middle income,3.285,2019
+Lithuania,High income,1.728,2019
+Macedonia (FYR),Upper middle income,1.933,2019
+Madagascar,Low income,1.867,2019
+Malawi,Low income,1.779,2019
+Malaysia,Upper middle income,1.529,2019
+Mali,Low income,2.71,2019
+Mauritania,Lower middle income,2.333,2019
+Mauritius,Upper middle income,1.562,2019
+Mexico,Upper middle income,2.6,2019
+Moldova,Lower middle income,1.951,2019
+Mongolia,Lower middle income,1.792,2019
+Montenegro,Upper middle income,1.939,2019
+Morocco,Lower middle income,2.07,2019
+Mozambique,Low income,2.099,2019
+Myanmar,Lower middle income,2.393,2019
+Namibia,Upper middle income,1.892,2019
+Nepal,Low income,2.003,2019
+Netherlands,High income,1.53,2019
+New Zealand,High income,1.221,2019
+Nicaragua,Lower middle income,2.312,2019
+Niger,Low income,2.394,2019
+Nigeria,Lower middle income,2.898,2019
+North Korea,Low income,2.921,2019
+Norway,High income,1.536,2019
+Oman,High income,1.953,2019
+Pakistan,Lower middle income,3.072,2019
+Panama,High income,1.804,2019
+Papua New Guinea,Lower middle income,2.118,2019
+Paraguay,Upper middle income,2.055,2019
+Peru,Upper middle income,2.016,2019
+Philippines,Lower middle income,2.516,2019
+Poland,High income,1.654,2019
+Portugal,High income,1.274,2019
+Qatar,High income,1.696,2019
+Republic of the Congo,Lower middle income,2.323,2019
+Romania,Upper middle income,1.606,2019
+Russia,Upper middle income,3.093,2019
+Rwanda,Low income,2.014,2019
+Saudi Arabia,High income,2.409,2019
+Senegal,Low income,1.883,2019
+Serbia,Upper middle income,1.812,2019
+Sierra Leone,Low income,1.822,2019
+Singapore,High income,1.347,2019
+Slovakia,High income,1.55,2019
+Slovenia,High income,1.355,2019
+Somalia,Low income,3.3,2019
+South Africa,Upper middle income,2.399,2019
+South Korea,High income,1.867,2019
+South Sudan,Low income,3.526,2019
+Spain,High income,1.699,2019
+Sri Lanka,Lower middle income,1.986,2019
+Sudan,Lower middle income,2.995,2019
+Swaziland,Lower middle income,1.986,2019
+Sweden,High income,1.533,2019
+Switzerland,High income,1.383,2019
+Syria,Low income,3.566,2019
+Taiwan,High income,1.725,2019
+Tajikistan,Low income,2.196,2019
+Tanzania,Low income,1.86,2019
+Thailand,Upper middle income,2.278,2019
+The Gambia,Low income,1.908,2019
+Timor-Leste,Lower middle income,1.805,2019
+Togo,Low income,2.205,2019
+Trinidad and Tobago,High income,2.094,2019
+Tunisia,Lower middle income,2.035,2019
+Turkey,Upper middle income,3.015,2019
+Turkmenistan,Upper middle income,2.265,2019
+Uganda,Low income,2.196,2019
+Ukraine,Lower middle income,2.95,2019
+United Arab Emirates,High income,1.847,2019
+United Kingdom,High income,1.801,2019
+United States of America,High income,2.401,2019
+Uruguay,High income,1.711,2019
+Uzbekistan,Lower middle income,2.166,2019
+Venezuela,Upper middle income,2.671,2019
+Vietnam,Lower middle income,1.877,2019
+Yemen,Low income,3.412,2019
+Zambia,Lower middle income,1.805,2019
+Zimbabwe,Low income,2.463,2019
