@@ -29,6 +29,10 @@ class LineChart extends Component {
   componentDidUpdate(prevProps, prevState){
 
     const { firstRender, voronoi } = this.state
+    const { mouseClickHighlight } = this.props
+
+    console.log(prevProps.mouseClickHighlight);
+    console.log(mouseClickHighlight);
 
     if(!firstRender) {
       this.initVis()
@@ -38,6 +42,10 @@ class LineChart extends Component {
     if(prevState.voronoi.year !== voronoi.year || prevState.voronoi.country || voronoi.country){
       this.circleHover()
     }
+
+    // if(updatedValues.includes(false) || prevDataValues > currDataValues ){
+    //   this.updateData()
+    // }
 
   }
 
@@ -104,6 +112,12 @@ class LineChart extends Component {
   }
 
   updateData(){
+
+    const { data } = this.props
+
+    const nestedData = nest().key(d => d.country).entries(data)
+
+    this.createUpdateLines(nestedData)
 
 
   }
@@ -249,7 +263,6 @@ class LineChart extends Component {
 
               tooltip.style('display', 'none')
             })
-
               .merge(voronois)
               .transition('update')
               .duration(transition.long)
@@ -286,7 +299,7 @@ class LineChart extends Component {
 LineChart.defaultProps = {
 
   margin: {
-    top: 10,
+    top: 25,
     right: 25,
     bottom: 25,
     left: 15
