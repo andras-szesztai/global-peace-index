@@ -118,7 +118,7 @@ BarChart.defaultProps = {
   margin: {
     top: 0,
     right: 10,
-    bottom: 0,
+    bottom: 5,
     left: 145
   }
 

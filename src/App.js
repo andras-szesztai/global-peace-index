@@ -186,6 +186,14 @@ class App extends Component {
                 options={dropdownOptions(1)}
                 onChange = {this.handleMetricDropdownChange}
               />
+              <LineChart
+                height={lineChartHeight}
+                width={sectionWidth/3}
+                data={lineChartData.filter(d => d.metric === metricsDisplayed[1])}
+                colorScale={colorScale}
+
+                year = {yearFilter}
+              />
 
             </Wrapper>
 

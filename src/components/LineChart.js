@@ -7,7 +7,8 @@ import { format } from 'd3-format'
 import { timeParse } from 'd3-time-format'
 import { axisLeft, axisBottom } from 'd3-axis'
 import { line, curveMonotoneX } from 'd3-shape'
-import { scaleLinear, scaleTime, scaleOrdinal } from 'd3-scale'
+import { scaleLinear, scaleTime } from 'd3-scale'
+import { Delaunay } from "d3-delaunay";
 import "d3-transition"
 import _ from 'lodash'
 
@@ -18,6 +19,10 @@ import { svgDimensions, appendArea } from './chartFunctions'
 class LineChart extends Component {
   state = {
     firstRender: false,
+    voronoi: {
+      voronoiYear: '',
+      voronoiCountry: ''
+    }
   }
 
   componentDidUpdate(prevProps){
@@ -28,6 +33,7 @@ class LineChart extends Component {
       this.initVis()
       this.setState(state => state.firstRender = true)
     }
+    console.log(this.state);
   }
 
   initVis(){
@@ -38,6 +44,9 @@ class LineChart extends Component {
           { data, transition } = this.props,
           { chartWidth, chartHeight } = svgDimensions(this.svg, width, height, margin),
           parseTime = timeParse('%Y')
+
+    this.chartHeight = chartHeight
+    this.chartWidth = chartWidth
 
     data.forEach(d => {
       d.formattedDate = parseTime(d.year)
@@ -84,7 +93,8 @@ class LineChart extends Component {
     this.lineGenerator = line().x(d => this.xScale(d.formattedDate)).y(d => this.yScale(d.value)).curve(curveMonotoneX)
 
     this.createUpdateLines(nestedData)
-    this.createUpdateCircles(data)
+    this.createUpdateCircles()
+    this.createUpdateVoronoi()
 
   }
 
@@ -121,17 +131,17 @@ class LineChart extends Component {
 
   }
 
-  createUpdateCircles(data){
+  createUpdateCircles(){
 
-    const { transition, year } = this.props,
+    const { transition, year, data } = this.props,
           { long } = transition,
           circles = this.chartArea.selectAll('.circle').data(data, d => d.country),
           date = data.filter(d => d.year === year)[0].formattedDate
 
-    if(!select('.year-line')._groups[0][0]){
+    if(!this.chartArea.select('.year-line')._groups[0][0]){
       this.chartArea
                 .append('line')
-                .attr('class', 'year-line')
+                .attr('class', `year-line`)
                 .attr('x1', this.xScale(date))
                 .attr('x2', this.xScale(date))
                 .attr('y1', this.yScale(0))
@@ -169,6 +179,42 @@ class LineChart extends Component {
               // .attr('fill', d => colorScale(d.economicClass))
               .attr('cy', d => this.yScale(d.value))
               .attr('cx', d => this.xScale(d.formattedDate))
+
+  }
+
+  createUpdateVoronoi(){
+
+      const { data, transition } = this.props
+
+      const voronoi = Delaunay.from(data, d => this.xScale(d.formattedDate), d => this.yScale(d.value)).voronoi([0, 0, this.chartWidth, this.chartHeight])
+
+      const voronois =  this.chartArea.selectAll(".voronoi-path").data(data)
+
+      voronois.exit().remove()
+
+      voronois.enter()
+            .append("path")
+            // .attr('stroke', '#333')
+            .attr("fill", 'none')
+            .attr('class', d => `voronoi-path`)
+            .attr("pointer-events", "all")
+            .attr("d", (d, i) => voronoi.renderCell(i))
+            .on('mouseover', d => {
+              this.setState({
+                    voronoi: {
+                      voronoiYear: d.year,
+                      voronoiCountry: d.country
+                    }
+                  });
+            })
+            .on("mouseout", () => {
+
+            })
+
+              .merge(voronois)
+              .transition('update')
+              .duration(transition.long)
+              .attr("d", (d, i) => voronoi.renderCell(i))
 
   }
 
