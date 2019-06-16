@@ -4,6 +4,8 @@ import {ChartContainer, Tooltip} from './StyledComponents'
 import BarChart from './BarChart'
 
 import { select } from 'd3-selection'
+import { format } from 'd3-format'
+import { interpolateNumber } from 'd3-interpolate'
 import { scaleLinear, scaleOrdinal } from 'd3-scale'
 import { forceSimulation, forceX, forceY, forceCollide, forceManyBody } from 'd3-force'
 import { mouse } from 'd3-selection'
@@ -30,8 +32,8 @@ class BeeSwarmPlot extends Component {
       this.setState(state => state.firstRender = true)
     }
 
-    if(prevProps.year !== year){
-      this.updateData()
+    if(prevProps.year !== year && firstRender){
+      this.updateData(prevProps)
     }
 
     if(mouseClickValue[0] !== prevProps.mouseClickValue[0] || prevProps.mouseClickValue.length !== mouseClickValue.length){
@@ -40,8 +42,8 @@ class BeeSwarmPlot extends Component {
       this.updateMouseover()
     }
 
-    if(prevProps.width !== width){
-      this.updateDims()
+    if(prevProps.width !== width && firstRender){
+      this.updateDims(prevProps)
     }
 
 
@@ -88,6 +90,7 @@ class BeeSwarmPlot extends Component {
     appendText(this.chartArea, 'label-text', -10, chartHeight-10, 'start', '◄ Lower' )
     appendText(this.chartArea, 'label-text', chartWidth - 10, chartHeight-10, 'end', 'Higher ►' )
     appendText(this.chartArea, 'label-text', chartWidth/2, chartHeight-10, 'middle', 'State of Peace' )
+    appendText(this.chartArea, 'year-text', 0, 15, 'start', year )
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
 
@@ -176,7 +179,7 @@ class BeeSwarmPlot extends Component {
 
   }
 
-  updateData(){
+  updateData(prevProps){
 
     const { data, year, transition } = this.props
 
@@ -186,6 +189,31 @@ class BeeSwarmPlot extends Component {
   			.alphaDecay(0)
   			.alpha(0.05)
   			.restart()
+
+    const difference = Math.abs(prevProps.year - year)
+    let textTweenAnimation
+
+    if(difference < 2){
+      textTweenAnimation = 0
+    } else if (difference < 6){
+      textTweenAnimation = transition.short
+    } else {
+      textTweenAnimation = transition.long
+    }
+
+    this.chartArea.select('.year-text')
+          .transition('update')
+          .duration(textTweenAnimation)
+          .tween("text", (d, i,n) => {
+            const that = select(n[i]),
+                  num = +that.text(),
+                  index = interpolateNumber(num, year);
+
+            return function(t) {
+                that.text(index(t).toFixed(0));
+              };
+
+          });
 
     this.chartArea.selectAll('.main-circle').data(data, d => d.country)
 
@@ -251,14 +279,16 @@ class BeeSwarmPlot extends Component {
 BeeSwarmPlot.defaultProps = {
 
   margin: {
-    top: 10,
+    top: 20,
     right: 10,
-    bottom: 10,
+    bottom: 20,
     left: 10
   },
 
   transition: {
-    veryLong: 10000
+    veryLong: 10000,
+    long: 1000,
+    short: 500
   }
 
 }

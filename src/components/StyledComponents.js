@@ -122,6 +122,9 @@ const ChartContainer = styled.div`
       fill: #333333;
     }
 
+    .year-text {
+      font-size: 2rem;
+    }
 `
 
 export { Wrapper, ChartContainer, Tooltip, SmallTooltip }
