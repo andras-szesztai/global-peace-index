@@ -20,7 +20,9 @@ const medium = 900
 const metrics = [
       'Overall Score', 'Safety & Security', 'Militarisation', 'Incarceration Rate', 'Political Instability',
       'Military Expenditure (% GDP)', 'Political Terror Scale', 'Homicide Rate', 'Access to Small Arms', 'UN Peacekeeping Funding'
-  ]
+]
+
+const colorArray = ['#4F345A', '#DEE1E5', '#DEE1E5', '#628C6F']
 
 const allMetrics = _.uniq(barchartData.map(d => d.metric)).filter(d => !['Score', 'Rank'].includes(d))
 const filteredBarChartData = barchartData.filter(d => metrics.includes(d.metric))
@@ -102,7 +104,7 @@ class App extends Component {
     const windowWidth = this.window && this.window.clientWidth
     const lineChartHeight = this.lineChartContainer && this.lineChartContainer.clientHeight
     const colorDomain = _.uniq(beeSwarmData.map(el => el.economicClass))
-    const colorScale = scaleOrdinal().domain(colorDomain).range(['#4F345A', '#DEE1E5', '#DEE1E5', '#628C6F'])
+    const colorScale = scaleOrdinal().domain(colorDomain).range(colorArray)
 
     const filteredMetrics = allMetrics.filter(d => !metricsDisplayed.includes(d))
 
@@ -159,6 +161,7 @@ class App extends Component {
                 mouseClickValue = {mouseClickHighlight}
                 windowWidth = {windowWidth}
                 colorScale={colorScale}
+                colorArray={colorArray}
               />
             </Wrapper>
           </section>

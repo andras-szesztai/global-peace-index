@@ -4,15 +4,13 @@ import {ChartContainer, Tooltip} from './StyledComponents'
 import BarChart from './BarChart'
 
 import { select } from 'd3-selection'
-import { format } from 'd3-format'
 import { interpolateNumber } from 'd3-interpolate'
-import { scaleLinear, scaleOrdinal } from 'd3-scale'
+import { scaleLinear } from 'd3-scale'
 import { forceSimulation, forceX, forceY, forceCollide, forceManyBody } from 'd3-force'
 import { mouse } from 'd3-selection'
 import "d3-transition"
-import _ from 'lodash'
 
-import { svgDimensions, appendArea, appendText } from './chartFunctions'
+import { svgDimensions, appendArea, appendText, calculateAvg, appendLine, moveLine } from './chartFunctions'
 
 class BeeSwarmPlot extends Component {
   state = {
@@ -46,17 +44,19 @@ class BeeSwarmPlot extends Component {
       this.updateDims(prevProps)
     }
 
-
   }
 
   initVis(){
 
     this.svg = select(this.node)
 
-    const { width, height, margin, transition, windowWidth, colorScale } = this.props,
+    const { width, height, margin, transition, windowWidth, colorScale, colorArray } = this.props,
           { data, year, mouseClickValue } = this.props,
           { handleMouseover, handleMouseout, handlemouseClick } = this.props,
           {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin)
+
+    const lowAvg = calculateAvg(data, 'Low income', year)
+    const highAvg = calculateAvg(data, 'High income', year)
 
     let mainRadius, subRadius, strokeWidth, tooltipY, forceCollideValue
 
@@ -95,6 +95,9 @@ class BeeSwarmPlot extends Component {
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
 
     const tooltip = select(this.div).select('.tooltip')
+
+    appendLine(this.chartArea, 'low-line', this.xScale, lowAvg, chartHeight, colorArray[0])
+    appendLine(this.chartArea, 'high-line', this.xScale, highAvg, chartHeight, colorArray[3])
 
     this.chartArea
           .selectAll('.sub-circle')
@@ -182,6 +185,12 @@ class BeeSwarmPlot extends Component {
   updateData(prevProps){
 
     const { data, year, transition } = this.props
+
+    const lowAvg = calculateAvg(data, 'Low income', year)
+    const highAvg = calculateAvg(data, 'High income', year)
+
+    moveLine(this.chartArea, '.low-line', transition.long, this.xScale, lowAvg)
+    moveLine(this.chartArea, '.high-line', transition.long, this.xScale, highAvg)
 
   	this.simulation.force('x', forceX(d => this.xScale(d[year])).strength(1))
 

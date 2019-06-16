@@ -110,7 +110,8 @@ const Tooltip = styled.div`
 
 const ChartContainer = styled.div`
 
-    circle {
+    circle,
+    line {
       cursor: pointer;
     }
 
