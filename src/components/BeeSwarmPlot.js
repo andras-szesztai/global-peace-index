@@ -21,7 +21,7 @@ class BeeSwarmPlot extends Component {
 
   componentDidUpdate(prevProps){
 
-    const { width, height, data, year, mouseoverValue } = this.props
+    const { width, height, year, mouseoverValue, mouseClickValue } = this.props
     const { firstRender } = this.state
 
 
@@ -34,9 +34,12 @@ class BeeSwarmPlot extends Component {
       this.updateData()
     }
 
-    if(prevProps.mouseoverValue !== mouseoverValue ) {
+    if(mouseClickValue[0] !== prevProps.mouseClickValue[0] || prevProps.mouseClickValue.length !== mouseClickValue.length){
+      this.updateMouseover()
+    } else if(prevProps.mouseoverValue !== mouseoverValue ) {
       this.updateMouseover()
     }
+
 
 
 

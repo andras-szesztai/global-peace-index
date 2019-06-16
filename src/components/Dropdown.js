@@ -15,7 +15,8 @@ const MultipleDropdown = (props) => (
     multiple
     selection
     options={options}
-    values={props.values} />
+    value={props.values}
+    onChange={props.onChange} />
 )
 
 export default MultipleDropdown

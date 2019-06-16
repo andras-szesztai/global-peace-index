@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './sass/_main.scss'
 import 'semantic-ui-css/semantic.min.css'
 
+import _ from 'lodash'
 
 import YearSlider from './components/Slider'
 import MultipleDropdown from './components/Dropdown'
@@ -42,27 +43,59 @@ class App extends Component {
   }
 
   handleCircleClick = d => {
-    this.setState(state => {
 
-      const copy = [...state.mouseClickHighlight]
-      const length = state.mouseClickHighlight.length
+    let copy = {...this.state}
+    let array = copy.mouseClickHighlight
 
-      if(!state.mouseClickHighlight.includes(d.country) && length < 3){
-        state.mouseClickHighlight = [...copy, d.country]
-      } else if (state.mouseClickHighlight.includes(d.country)){
-        state.mouseClickHighlight = copy.filter(el => d.country !== el)
-      } else if (state.mouseClickHighlight.length === 3){
-        copy.shift()
-        state.mouseClickHighlight = [...copy, d.country]
-      }
+    if(!array.includes(d.country) && array.length < 3){
+      array = [...array, d.country]
+    } else if (array.includes(d.country)){
+      array = array.filter(el => d.country !== el)
+    } else if (array.length === 3){
+      array.shift()
+      array = [...array, d.country]
+    }
 
-    })
+    this.setState(() => ({mouseClickHighlight: array}))
   }
 
   handleCircleMouseover = d => {this.setState(state => state.mouseoverHighlight = d.country)}
 
   handleCircleMouseout = () => {this.setState(state => state.mouseoverHighlight = '')}
 
+  handleDropdownChange = (e, d) => {
+
+    let copy = {...this.state}
+    let array = copy.mouseClickHighlight
+    let newArray = d.value.map(el => _.capitalize(el))
+
+    console.log('Current: ', array)
+    console.log('New: ', newArray)
+
+    if(array.length < 3){
+      array = newArray
+    } else if (array.length === 3 && newArray.length > 3){
+      array.shift()
+      newArray.shift()
+      array = newArray
+    } else if (array.length > newArray.length){
+      array = newArray
+    }
+
+    // if(array.length < 3 || newArray.length > 2){
+    //   array = newArray
+    // } else if (
+    //   newArray.length < 2
+    // ){
+    //   array = newArray
+    // } else {
+    //   array.shift()
+    //   newArray.shift()
+    //   array = newArray
+    // }
+
+    this.setState(() => ({mouseClickHighlight: array}))
+  }
 
   render(){
 
@@ -94,12 +127,13 @@ class App extends Component {
                   onChange={(event, value)=> this.setState(state => state.yearFilter = +value)}
                 />
             </Wrapper>
-            <Wrapper background="Teal"
+            <Wrapper
               gridRow={sectionWidth > small ? 1 : 3}
               gridColumn={sectionWidth > small ? 2 : 1}
             >
               <MultipleDropdown
-                values = {[]}
+                values = {mouseClickHighlight.length > 0 ? mouseClickHighlight.map(el => el.toLowerCase()) : mouseClickHighlight}
+                onChange = {this.handleDropdownChange}
               />
             </Wrapper>
             <Wrapper
