@@ -6,7 +6,7 @@ const Wrapper = styled.div`
 
     grid-row: ${props => props.gridRow};
     grid-column: ${props => props.gridColumn};
-    
+
 `
 
 const SmallTooltip = styled.div`
@@ -117,6 +117,10 @@ const ChartContainer = styled.div`
     position: relative
 
     background-color: ${props => props.background || '#fff'};
+
+    .label-text {
+      fill: #333333;
+    }
 
 `
 

@@ -10,7 +10,7 @@ import { mouse } from 'd3-selection'
 import "d3-transition"
 import _ from 'lodash'
 
-import { svgDimensions, appendArea } from './chartFunctions'
+import { svgDimensions, appendArea, appendText } from './chartFunctions'
 
 class BeeSwarmPlot extends Component {
   state = {
@@ -54,8 +54,7 @@ class BeeSwarmPlot extends Component {
     const { width, height, margin, transition, windowWidth, colorScale } = this.props,
           { data, year, mouseClickValue } = this.props,
           { handleMouseover, handleMouseout, handlemouseClick } = this.props,
-          {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin),
-          values = _.uniq(data.map(e => e.economicClass))
+          {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin)
 
     let mainRadius, subRadius, strokeWidth, tooltipY, forceCollideValue
 
@@ -79,13 +78,16 @@ class BeeSwarmPlot extends Component {
       forceCollideValue= 14
     }
 
-
     this.chartWidth = chartWidth
     this.chartHeight = chartHeight
 
     appendArea(this.svg, 'chart-area', margin.left, margin.top)
 
     this.chartArea = this.svg.select('.chart-area')
+
+    appendText(this.chartArea, 'label-text', -10, chartHeight-10, 'start', '◄ Lower' )
+    appendText(this.chartArea, 'label-text', chartWidth - 10, chartHeight-10, 'end', 'Higher ►' )
+    appendText(this.chartArea, 'label-text', chartWidth/2, chartHeight-10, 'middle', 'State of Peace' )
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
 
