@@ -1,7 +1,6 @@
 
 
-.App,
-.background-div {
+.App {
 
   box-sizing: border-box;
   margin: 0;
@@ -26,10 +25,6 @@
     display: inline-block;
   }
 
-}
-
-.background-div {
-  z-index: -1;
 }
 
 section {

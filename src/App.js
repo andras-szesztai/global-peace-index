@@ -115,14 +115,13 @@ class App extends Component {
       <div className="App" ref={window => this.window = window}>
 
           <section className="intro" ref={section => this.section = section}>
-            <Wrapper background="steelblue"/>
-            <Wrapper background="lime"/>
+            <Wrapper/>
+            <Wrapper/>
           </section>
 
           <section className="beeswarm-plot">
             <Wrapper
               gridColumn={1}
-              padding="30px"
               >
                 <YearSlider
                   valueLabelDisplay="auto"
@@ -133,7 +132,7 @@ class App extends Component {
                 />
             </Wrapper>
             <Wrapper
-              padding="20px"
+
               gridRow={sectionWidth > small ? 1 : 3}
               gridColumn={sectionWidth > small ? 2 : 1}
             >
@@ -143,6 +142,7 @@ class App extends Component {
               />
             </Wrapper>
             <Wrapper
+              ref={beeSwarmContainer => this.beeSwarmContainer = beeSwarmContainer}
               gridColumn={sectionWidth > small ? 'span 2' : 1}
               gridRow={2}
               >
@@ -164,7 +164,9 @@ class App extends Component {
           </section>
 
           <section className="line-charts">
-            <Wrapper>
+            <Wrapper
+              ref={lineChartContainer => this.lineChartContainer = lineChartContainer}
+              >
               <h4 className="dropdown-metric">{metricsDisplayed[0]}</h4>
               <SingleDropDown
                 options={dropdownOptions(0)}
@@ -177,7 +179,6 @@ class App extends Component {
                 colorScale={colorScale}
                 metric = {metricsDisplayed[0]}
                 valueList = {mouseClickHighlight}
-
                 year = {yearFilter}
               />
             </Wrapper>
@@ -195,7 +196,6 @@ class App extends Component {
                 colorScale={colorScale}
                 metric = {metricsDisplayed[1]}
                 valueList = {mouseClickHighlight}
-
                 year = {yearFilter}
               />
 
@@ -207,34 +207,24 @@ class App extends Component {
                 options={dropdownOptions(2)}
                 onChange = {this.handleMetricDropdownChange}
               />
-
+              <LineChart
+                height={lineChartHeight}
+                width={sectionWidth/3}
+                data={lineChartData.filter(d => d.metric === metricsDisplayed[2])}
+                colorScale={colorScale}
+                metric = {metricsDisplayed[2]}
+                valueList = {mouseClickHighlight}
+                year = {yearFilter}
+              />
             </Wrapper>
           </section>
 
           <section className="credits">
-            <Wrapper background="steelblue"/>
-            <Wrapper background="Firebrick"/>
-            <Wrapper background="lime"/>
-            <Wrapper background="Teal"/>
+            <Wrapper />
+            <Wrapper />
+            <Wrapper />
+            <Wrapper />
           </section>
-
-          <div className="background-div">
-            <section
-              className="beeswarm-plot"
-              ref={section => this.section = section} >
-              <Wrapper
-                ref={beeSwarmContainer => this.beeSwarmContainer = beeSwarmContainer}
-                background="red"
-                gridColumn={sectionWidth > small ? 'span 2' : 1}
-                gridRow={2}
-              />
-            </section>
-            <section className="line-charts">
-              <Wrapper
-                ref={lineChartContainer => this.lineChartContainer = lineChartContainer}
-              />
-            </section>
-          </div>
 
       </div>
     );

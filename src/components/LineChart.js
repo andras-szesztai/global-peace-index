@@ -29,9 +29,7 @@ class LineChart extends Component {
   componentDidUpdate(prevProps, prevState){
 
     const { firstRender, voronoi } = this.state
-    const { valueList } = this.props
-
-    console.log(valueList);
+    const { valueList, metric, year } = this.props
 
     if(!firstRender) {
       this.initVis()
@@ -42,7 +40,7 @@ class LineChart extends Component {
       this.circleHover()
     }
 
-    if(prevProps.valueList.length !== valueList.length  ){
+    if(prevProps.valueList.length !== valueList.length || prevProps.metric !== metric || prevProps.year !== year){
       this.updateData()
     }
 
@@ -121,6 +119,10 @@ class LineChart extends Component {
     this.createUpdateCircles()
     this.createUpdateVoronoi()
 
+
+  }
+
+  updateYearLine(){
 
   }
 
@@ -244,6 +246,7 @@ class LineChart extends Component {
 
                   tooltip.select('.country').text(d.country)
                   tooltip.select('.score').text(d.value.toFixed(2))
+                  tooltip.select('.year').text(d.year)
 
                   tooltip.style('display', 'block')
 
@@ -287,7 +290,7 @@ class LineChart extends Component {
                 color={color}
               >
                 <h4 className="country"></h4>
-                <p>{metric} ({year}):</p>
+                <p>{metric} (<span className="year"></span>):</p>
                 <span className="score"></span>
               </SmallTooltip>
             </ChartContainer>
@@ -302,7 +305,7 @@ LineChart.defaultProps = {
 
   margin: {
     top: 25,
-    right: 25,
+    right: 50,
     bottom: 25,
     left: 15
   },

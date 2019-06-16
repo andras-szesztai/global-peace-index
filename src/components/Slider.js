@@ -12,7 +12,7 @@ const YearSlider = withStyles({
     width: 12,
     backgroundColor: '#333',
     border: '2px solid currentColor',
-    marginTop: -5.5,
+    marginTop: -6,
     marginLeft: -6,
     '&:focus,&:hover,&$active': {
       boxShadow: 'inherit',
@@ -23,11 +23,11 @@ const YearSlider = withStyles({
     left: 'calc(-50% - 8px)',
   },
   track: {
-    height: 2,
+    height: 1,
     borderRadius: 4,
   },
   rail: {
-    height: 2,
+    height: 1,
     borderRadius: 4,
   },
 })(Slider);

@@ -2,23 +2,17 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
 
-    position: relative
-
     background-color: ${props => props.background || '#fff'};
 
     grid-row: ${props => props.gridRow};
     grid-column: ${props => props.gridColumn};
-
-    padding: ${props => props.padding || 0}
-
-
+    
 `
 
 const SmallTooltip = styled.div`
     position: absolute;
     display: none;
     color: #fff;
-    opacity: .9;
     z-index: 20;
 
     border-radius: 3px;
@@ -52,10 +46,11 @@ const SmallTooltip = styled.div`
       padding: 0 !important;
     }
 
-    span {
+    .score {
       font-size: 1.2rem;
       font-weight: 700;
     }
+
 `
 
 const Tooltip = styled.div`
