@@ -15,7 +15,8 @@ import { svgDimensions, appendArea } from './chartFunctions'
 class BeeSwarmPlot extends Component {
   state = {
     firstRender: false,
-    tooltipLeft: ''
+    tooltipLeft: '',
+    tooltipColor: ''
   }
 
   componentDidUpdate(prevProps){
@@ -106,10 +107,14 @@ class BeeSwarmPlot extends Component {
                 left  ? tooltip.style('left', mousePos[0] - tooltipWidth - 30 + 'px')
                       : tooltip.style('left', mousePos[0] + 30 + 'px')
 
-                const { tooltipLeft } = this.state
+                const { tooltipLeft, tooltipColor } = this.state
 
                 if(tooltipLeft !== left){
-                  this.setState(s => s.tooltipLeft === left)
+                  this.setState(s => s.tooltipLeft = left)
+                }
+
+                if(tooltipColor !== d.economicClass){
+                  this.setState(s => s.tooltipColor = d.economicClass)
                 }
 
                 // tooltip.style('left', mousePos[0] + 10 + 'px')
@@ -184,8 +189,10 @@ class BeeSwarmPlot extends Component {
   render(){
 
     const { tooltipData, mouseoverValue, year } = this.props
-    const { tooltipLeft } = this.state
-    const color = mouseoverValue && this.colorScale(mouseoverValue)
+    const { tooltipLeft, tooltipColor } = this.state
+    const color = tooltipColor && this.colorScale(tooltipColor)
+
+    // console.log(tooltipLeft)
 
     return(
       <div>
@@ -201,7 +208,7 @@ class BeeSwarmPlot extends Component {
                   value = {mouseoverValue}
                   year = {year}
                   width = {300}
-                  height = {200}  
+                  height = {200}
               />
           </Tooltip>
         </ChartContainer>

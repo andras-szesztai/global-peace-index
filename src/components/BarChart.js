@@ -70,7 +70,7 @@ class BarChart extends Component {
 
   updateData(){
 
-    const { data, year } = this.props
+    const { data } = this.props
 
     const mainRects = this.chartArea.selectAll('.main-rect').data(data.filter(d => d.country !== 'All')),
           avgRects = this.chartArea.selectAll('.avg-rect').data(data.filter(d => d.country === 'All'))
@@ -106,7 +106,7 @@ class BarChart extends Component {
     return(
           <div>
             <h4>{value}</h4>
-            <p>Overall score in {year}: {overallScore && +overallScore.toFixed(2)}</p>
+            <p>Overall score in {year}: <span>{overallScore && +overallScore.toFixed(2)}</span></p>
             <svg ref={node => this.node = node}/>
           </div>
     )

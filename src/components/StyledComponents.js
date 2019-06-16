@@ -25,12 +25,15 @@ const Tooltip = styled.div`
     border-radius: 5px;
 
     border: 1px solid black;
+    border-style: solid;
+    border-width: 1px;
+    border-color: ${props => props.color};
 
     text-align: center;
 
     &:after {
-      right: 100%;
-      left: 100%;
+      right: ${props => props.left ? '' : '100%'};
+      left:  ${props => props.left ? '100%' : ''};
       top: 12%;
       border: solid transparent;
       content: " ";
@@ -39,8 +42,8 @@ const Tooltip = styled.div`
       position: absolute;
       pointer-events: none;
       border-color: rgba(136, 183, 213, 0);
-      border-right-color: #88b7d5;
-      border-left-color: #88b7d5;
+      border-right-color: ${props => props.left ? '' : props.color};
+      border-left-color: ${props => props.left ? props.color : ''};
       border-width: 15px;
       margin-top: -15px;
       }
@@ -48,6 +51,11 @@ const Tooltip = styled.div`
 
     h4 {
       padding-top: 1rem;
+      color: ${props => props.color};
+    }
+
+    span {
+      font-weight: 700;
     }
 
     h4,

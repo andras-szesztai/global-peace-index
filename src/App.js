@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import './sass/_main.scss'
 import 'semantic-ui-css/semantic.min.css'
 
+
 import YearSlider from './components/Slider'
+import MultipleDropdown from './components/Dropdown'
 import BeeSwarmPlot from './components/BeeSwarmPlot'
 import { Wrapper } from './components/StyledComponents'
 
@@ -16,6 +18,7 @@ const metrics = [
       'Overall Score', 'Safety & Security', 'Militarisation', 'Incarceration Rate', 'Political Instability',
       'Military Expenditure (% GDP)', 'Political Terror Scale', 'Homicide Rate', 'Access to Small Arms', 'UN Peacekeeping Funding'
   ]
+
 
 const filteredBarChartData = barchartData.filter(d => metrics.includes(d.metric))
 
@@ -94,7 +97,11 @@ class App extends Component {
             <Wrapper background="Teal"
               gridRow={sectionWidth > small ? 1 : 3}
               gridColumn={sectionWidth > small ? 2 : 1}
+            >
+              <MultipleDropdown
+                values = {[]}
               />
+            </Wrapper>
             <Wrapper
               gridColumn={sectionWidth > small ? 'span 2' : 1}
               gridRow={2}
