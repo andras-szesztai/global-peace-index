@@ -5,8 +5,9 @@ import 'semantic-ui-css/semantic.min.css'
 import _ from 'lodash'
 
 import YearSlider from './components/Slider'
-import MultipleDropdown from './components/Dropdown'
+import {MultipleDropdown, SingleDropDown} from './components/Dropdown'
 import BeeSwarmPlot from './components/BeeSwarmPlot'
+import LineChart from './components/LineChart'
 import { Wrapper } from './components/StyledComponents'
 
 import beeSwarmData from './data/beeswarmData.json'
@@ -28,7 +29,8 @@ class App extends Component {
       sectionWidth: undefined,
       yearFilter: 2019,
       mouseoverHighlight: '',
-      mouseClickHighlight: ['Iceland', 'Afghanistan']
+      mouseClickHighlight: ['Iceland', 'Afghanistan'],
+      metricsDisplayer: ['Safety & Security', 'Militarisation', 'Incarceration Rate']
   }
 
   componentDidMount() {
@@ -144,9 +146,15 @@ class App extends Component {
           </section>
 
           <section className="line-charts">
-            <Wrapper
-                background="Burlywood"
-            />
+            <Wrapper>
+              <h4>Metric chosen</h4>
+              <SingleDropDown
+
+              />
+              <LineChart
+                data={barchartData}
+              />
+            </Wrapper>
             <Wrapper background="Lightseagreen"/>
             <Wrapper background="Blueviolet"/>
           </section>
