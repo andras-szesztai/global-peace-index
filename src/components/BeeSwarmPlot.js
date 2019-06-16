@@ -151,9 +151,9 @@ class BeeSwarmPlot extends Component {
               .on('click', handlemouseClick)
 
     this.simulation = forceSimulation(data)
-        .force("charge", forceManyBody().strength(10))
-        .force('x', forceX(d => this.xScale(d[year])).strength(.1))
-        .force('y', forceY(chartHeight/2).strength(.1))
+        .force("charge", forceManyBody().strength(-10))
+        .force('x', forceX(d => this.xScale(d[year])).strength(1))
+        .force('y', forceY(chartHeight/2).strength(.15))
         .force('collide', forceCollide(forceCollideValue))
         .alphaDecay(0)
 			  .alpha(.1)
@@ -181,7 +181,7 @@ class BeeSwarmPlot extends Component {
 
     const { data, year, transition } = this.props
 
-  	this.simulation.force('x', forceX(d => this.xScale(d[year])).strength(.1))
+  	this.simulation.force('x', forceX(d => this.xScale(d[year])).strength(1))
 
   	this.simulation
   			.alphaDecay(0)

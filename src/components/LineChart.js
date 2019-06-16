@@ -44,9 +44,6 @@ class LineChart extends Component {
 
   render(){
 
-    const { year, value } = this.props
-    const { overallScore } = this.state
-
     return(
           <div>
             <ChartContainer ref={div => this.div = div}>
