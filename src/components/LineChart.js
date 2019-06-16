@@ -12,7 +12,7 @@ import { Delaunay } from "d3-delaunay";
 import "d3-transition"
 import _ from 'lodash'
 
-import {ChartContainer} from './StyledComponents'
+import {ChartContainer, SmallTooltip} from './StyledComponents'
 
 import { svgDimensions, appendArea } from './chartFunctions'
 
@@ -21,7 +21,8 @@ class LineChart extends Component {
     firstRender: false,
     voronoi: {
       year: '',
-      country: ''
+      country: '',
+      economicClass: ''
     }
   }
 
@@ -135,6 +136,8 @@ class LineChart extends Component {
           .attr('fill', 'none')
           .attr('stroke', d => colorScale(d.values[0].economicClass))
           .attr('stroke-width', 0)
+          .attr("stroke-linejoin", "round")
+          .attr("stroke-linecap", "round")
           .attr('d', d => this.lineGenerator(d.values))
             .merge(lines)
             .transition('in')
@@ -147,7 +150,7 @@ class LineChart extends Component {
 
   createUpdateCircles(){
 
-    const { transition, year, data } = this.props,
+    const { transition, year, data, colorScale } = this.props,
           { long } = transition,
           circles = this.chartArea.selectAll('.circle').data(data, d => d.country),
           date = data.filter(d => d.year === year)[0].formattedDate
@@ -180,7 +183,7 @@ class LineChart extends Component {
     circles.enter()
           .append('circle')
           .attr('class', d => `circle`)
-          .attr('fill', "#333")
+          .attr('fill', d => colorScale(d.economicClass))
           .attr('stroke', '#fff')
           .attr('stroke-width', 2)
           .attr('r', 0)
@@ -190,7 +193,7 @@ class LineChart extends Component {
               .transition('out')
               .duration(long)
               .attr('r', d => year === d.year ? 5 : 0)
-              // .attr('fill', d => colorScale(d.economicClass))
+              .attr('fill', d => colorScale(d.economicClass))
               .attr('cy', d => this.yScale(d.value))
               .attr('cx', d => this.xScale(d.formattedDate))
 
@@ -198,11 +201,12 @@ class LineChart extends Component {
 
   createUpdateVoronoi(){
 
-      const { data, transition } = this.props
+      const { data, transition, margin } = this.props
 
       const voronoi = Delaunay.from(data, d => this.xScale(d.formattedDate), d => this.yScale(d.value)).voronoi([0, 0, this.chartWidth, this.chartHeight])
 
       const voronois =  this.chartArea.selectAll(".voronoi-path").data(data)
+      const tooltip = select(this.tooltip)
 
       voronois.exit().remove()
 
@@ -217,12 +221,33 @@ class LineChart extends Component {
               this.setState({
                     voronoi: {
                       year: d.year,
-                      country: d.country
+                      country: d.country,
+                      economicClass: d.economicClass
                     }
                   });
+
+                  tooltip.select('.country').text(d.country)
+                  tooltip.select('.score').text(d.value.toFixed(2))
+
+                  tooltip.style('display', 'block')
+
+                  const tooltipWidth = tooltip._groups[0][0].clientWidth
+                  const tooltipHeight = tooltip._groups[0][0].clientHeight
+
+                  tooltip.style("left", this.xScale(d.formattedDate) + margin.left - tooltipWidth/2 + "px")
+                        .style("top", this.yScale(d.value) - tooltipHeight - 10 + "px")
+
             })
             .on("mouseout", () => {
+              this.setState({
+                    voronoi: {
+                      year: '',
+                      country: '',
+                      economicClass: ''
+                    }
+                  });
 
+              tooltip.style('display', 'none')
             })
 
               .merge(voronois)
@@ -235,10 +260,21 @@ class LineChart extends Component {
 
   render(){
 
+    const { colorScale, year, metric } = this.props
+    const { voronoi } = this.state
+    const color = colorScale(voronoi.economicClass && voronoi.economicClass)
+
     return(
           <div>
             <ChartContainer ref={div => this.div = div}>
               <svg ref={node => this.node = node}/>
+              <SmallTooltip ref={tooltip => this.tooltip = tooltip}
+                color={color}
+              >
+                <h4 className="country"></h4>
+                <p>{metric} ({year}):</p>
+                <span className="score"></span>
+              </SmallTooltip>
             </ChartContainer>
           </div>
     )

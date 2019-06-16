@@ -175,6 +175,7 @@ class App extends Component {
                 width={sectionWidth/3}
                 data={lineChartData.filter(d => d.metric === metricsDisplayed[0])}
                 colorScale={colorScale}
+                metric = {metricsDisplayed[0]}
 
                 year = {yearFilter}
               />
@@ -191,6 +192,7 @@ class App extends Component {
                 width={sectionWidth/3}
                 data={lineChartData.filter(d => d.metric === metricsDisplayed[1])}
                 colorScale={colorScale}
+                metric = {metricsDisplayed[1]}
 
                 year = {yearFilter}
               />
