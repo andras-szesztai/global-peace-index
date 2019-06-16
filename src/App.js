@@ -21,7 +21,7 @@ const metrics = [
       'Military Expenditure (% GDP)', 'Political Terror Scale', 'Homicide Rate', 'Access to Small Arms', 'UN Peacekeeping Funding'
   ]
 
-
+const allMetrics = _.uniq(barchartData.map(d => d.metric)).filter(d => !['Score', 'Rank'].includes(d))
 const filteredBarChartData = barchartData.filter(d => metrics.includes(d.metric))
 
 class App extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
       yearFilter: 2019,
       mouseoverHighlight: '',
       mouseClickHighlight: ['Iceland', 'Afghanistan'],
-      metricsDisplayer: ['Safety & Security', 'Militarisation', 'Incarceration Rate']
+      metricsDisplayed: ['Safety & Security', 'Militarisation', 'Incarceration Rate']
   }
 
   componentDidMount() {
@@ -84,15 +84,28 @@ class App extends Component {
     this.setState(() => ({mouseClickHighlight: array}))
   }
 
+  handleMetricDropdownChange = (e, d) => {
+
+    const value = d.value
+    const number = d.options.filter(el => el.key === value)[0].number
+
+    this.setState(state => state.metricsDisplayed[number] = value)
+
+  }
+
   render(){
 
-    const { sectionWidth, yearFilter, mouseoverHighlight, mouseClickHighlight } = this.state
+    const { sectionWidth, yearFilter, mouseoverHighlight, mouseClickHighlight, metricsDisplayed } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
     const lineChartHeight = this.lineChartContainer && this.lineChartContainer.clientHeight
 
+    const filteredMetrics = allMetrics.filter(d => !metricsDisplayed.includes(d))
+
     const tooltipData = filteredBarChartData.filter(d => (d.country === mouseoverHighlight || d.country === 'All') && d.year === yearFilter)
+
+    const dropdownOptions = (num) => filteredMetrics.map(el => {return { key: el, text: el, value: el, number: num}})
 
     return (
       <div className="App" ref={window => this.window = window}>
@@ -147,16 +160,33 @@ class App extends Component {
 
           <section className="line-charts">
             <Wrapper>
-              <h4>Metric chosen</h4>
+              <h4 className="dropdown-metric">{metricsDisplayed[0]}</h4>
               <SingleDropDown
-
+                options={dropdownOptions(0)}
+                onChange = {this.handleMetricDropdownChange}
               />
               <LineChart
                 data={barchartData}
               />
             </Wrapper>
-            <Wrapper background="Lightseagreen"/>
-            <Wrapper background="Blueviolet"/>
+
+            <Wrapper>
+              <h4 className="dropdown-metric">{metricsDisplayed[1]}</h4>
+              <SingleDropDown
+                options={dropdownOptions(1)}
+                onChange = {this.handleMetricDropdownChange}
+              />
+
+            </Wrapper>
+
+            <Wrapper>
+              <h4 className="dropdown-metric">{metricsDisplayed[2]}</h4>
+              <SingleDropDown
+                options={dropdownOptions(2)}
+                onChange = {this.handleMetricDropdownChange}
+              />
+
+            </Wrapper>
           </section>
 
           <section className="credits">
