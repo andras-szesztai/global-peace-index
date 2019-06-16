@@ -20,20 +20,24 @@ class LineChart extends Component {
   state = {
     firstRender: false,
     voronoi: {
-      voronoiYear: '',
-      voronoiCountry: ''
+      year: '',
+      country: ''
     }
   }
 
-  componentDidUpdate(prevProps){
+  componentDidUpdate(prevProps, prevState){
 
-    const { firstRender } = this.state
+    const { firstRender, voronoi } = this.state
 
     if(!firstRender) {
       this.initVis()
       this.setState(state => state.firstRender = true)
     }
-    console.log(this.state);
+
+    if(prevState.voronoi.year !== voronoi.year || prevState.voronoi.country || voronoi.country){
+      this.circleHover()
+    }
+
   }
 
   initVis(){
@@ -100,6 +104,16 @@ class LineChart extends Component {
 
   updateData(){
 
+
+  }
+
+  circleHover(){
+
+    const { voronoi } = this.state
+    const { year } = this.props
+
+    this.chartArea.selectAll('.circle')
+        .attr('r', d => (voronoi.year === d.year && voronoi.country === d.country) || year === d.year ? 5 : 0)
 
   }
 
@@ -202,8 +216,8 @@ class LineChart extends Component {
             .on('mouseover', d => {
               this.setState({
                     voronoi: {
-                      voronoiYear: d.year,
-                      voronoiCountry: d.country
+                      year: d.year,
+                      country: d.country
                     }
                   });
             })
