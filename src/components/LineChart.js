@@ -29,10 +29,9 @@ class LineChart extends Component {
   componentDidUpdate(prevProps, prevState){
 
     const { firstRender, voronoi } = this.state
-    const { mouseClickHighlight } = this.props
+    const { valueList } = this.props
 
-    console.log(prevProps.mouseClickHighlight);
-    console.log(mouseClickHighlight);
+    console.log(valueList);
 
     if(!firstRender) {
       this.initVis()
@@ -43,9 +42,9 @@ class LineChart extends Component {
       this.circleHover()
     }
 
-    // if(updatedValues.includes(false) || prevDataValues > currDataValues ){
-    //   this.updateData()
-    // }
+    if(prevProps.valueList.length !== valueList.length  ){
+      this.updateData()
+    }
 
   }
 
@@ -55,15 +54,14 @@ class LineChart extends Component {
 
     const { width, height, margin } = this.props,
           { data, transition } = this.props,
-          { chartWidth, chartHeight } = svgDimensions(this.svg, width, height, margin),
-          parseTime = timeParse('%Y')
+          { chartWidth, chartHeight } = svgDimensions(this.svg, width, height, margin)
+
+    this.parseTime = timeParse('%Y')
 
     this.chartHeight = chartHeight
     this.chartWidth = chartWidth
 
-    data.forEach(d => {
-      d.formattedDate = parseTime(d.year)
-    })
+    data.forEach(d => d.formattedDate = this.parseTime(d.year))
 
     const nestedData = nest().key(d => d.country).entries(data)
 
@@ -115,9 +113,13 @@ class LineChart extends Component {
 
     const { data } = this.props
 
+    data.forEach(d => d.formattedDate = this.parseTime(d.year))
+
     const nestedData = nest().key(d => d.country).entries(data)
 
     this.createUpdateLines(nestedData)
+    this.createUpdateCircles()
+    this.createUpdateVoronoi()
 
 
   }
@@ -166,7 +168,7 @@ class LineChart extends Component {
 
     const { transition, year, data, colorScale } = this.props,
           { long } = transition,
-          circles = this.chartArea.selectAll('.circle').data(data, d => d.country),
+          circles = this.chartArea.selectAll('.circle').data(data, d => d.country + d.formattedDate),
           date = data.filter(d => d.year === year)[0].formattedDate
 
     if(!this.chartArea.select('.year-line')._groups[0][0]){
@@ -249,7 +251,7 @@ class LineChart extends Component {
                   const tooltipHeight = tooltip._groups[0][0].clientHeight
 
                   tooltip.style("left", this.xScale(d.formattedDate) + margin.left - tooltipWidth/2 + "px")
-                        .style("top", this.yScale(d.value) - tooltipHeight - 10 + "px")
+                        .style("top", this.yScale(d.value) - tooltipHeight + 8 + "px")
 
             })
             .on("mouseout", () => {
