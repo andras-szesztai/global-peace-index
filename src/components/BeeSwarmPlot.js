@@ -40,7 +40,9 @@ class BeeSwarmPlot extends Component {
       this.updateMouseover()
     }
 
-
+    if(prevProps.width !== width){
+      this.updateDims()
+    }
 
 
   }
@@ -49,11 +51,36 @@ class BeeSwarmPlot extends Component {
 
     this.svg = select(this.node)
 
-    const { width, height, margin, transition } = this.props,
+    const { width, height, margin, transition, windowWidth } = this.props,
           { data, year, mouseClickValue } = this.props,
           { handleMouseover, handleMouseout, handlemouseClick } = this.props,
           {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin),
           values = _.uniq(data.map(e => e.economicClass))
+
+    let mainRadius, subRadius, strokeWidth, tooltipY, forceCollideValue
+
+    console.log(windowWidth)
+
+    if(windowWidth <= 600){
+      mainRadius= 4
+      subRadius= 6
+      strokeWidth= 2
+      tooltipY= 10
+      forceCollideValue= 8
+    } else if (windowWidth < 1000){
+      mainRadius= 6
+      subRadius= 9
+      strokeWidth= 3
+      tooltipY= 20
+      forceCollideValue= 12
+    } else {
+      mainRadius= 8
+      subRadius= 11
+      strokeWidth= 4
+      tooltipY= 30
+      forceCollideValue= 14
+    }
+
 
     this.chartWidth = chartWidth
     this.chartHeight = chartHeight
@@ -73,11 +100,11 @@ class BeeSwarmPlot extends Component {
           .enter()
           .append('circle')
           .attr('class', 'sub-circle')
-          .attr("r", 11)
+          .attr("r", subRadius)
           .attr('fill', d => this.colorScale(d.economicClass))
           .attr('stroke', d => this.colorScale(d.economicClass))
           .attr('fill-opacity', 0)
-            .attr('stroke-opacity', d => mouseClickValue.includes(d.country) ? 1 : 0)
+          .attr('stroke-opacity', d => mouseClickValue.includes(d.country) ? 1 : 0)
           .attr("cx", d => d[year])
           .attr("cy", d => chartHeight/2)
 
@@ -87,18 +114,16 @@ class BeeSwarmPlot extends Component {
           .enter()
           .append('circle')
           .attr('class', 'main-circle')
-          .attr("r", 8)
-          .attr("stroke-width", 4)
+          .attr("r", mainRadius)
+          .attr("stroke-width", strokeWidth)
           .attr("stroke", 'white')
           .attr('stroke-opacity', 0)
           .attr('fill', d => this.colorScale(d.economicClass))
           .attr("cx", d => d[year])
           .attr("cy", d => chartHeight/2)
               .on('mouseover', d => {
-
                 tooltip.style('display', 'block')
                 handleMouseover(d)
-
               })
               .on('mousemove', d => {
                 const mousePos = mouse(this.div)
@@ -107,28 +132,21 @@ class BeeSwarmPlot extends Component {
 
                 tooltip.style('top', mousePos[1] - 30 + 'px')
 
-                left  ? tooltip.style('left', mousePos[0] - tooltipWidth - 30 + 'px')
-                      : tooltip.style('left', mousePos[0] + 30 + 'px')
+                left  ? tooltip.style('left', mousePos[0] - tooltipWidth - tooltipY + 'px')
+                      : tooltip.style('left', mousePos[0] + tooltipY + 'px')
 
                 const { tooltipLeft, tooltipColor } = this.state
-
                 if(tooltipLeft !== left){
                   this.setState(s => s.tooltipLeft = left)
                 }
-
                 if(tooltipColor !== d.economicClass){
                   this.setState(s => s.tooltipColor = d.economicClass)
                 }
-
-                // tooltip.style('left', mousePos[0] + 10 + 'px')
-                //         .style('top', mousePos[1] + 10 + 'px')
-
 
               })
               .on('mouseout', () => {
                  handleMouseout()
                  tooltip.style('display', 'none')
-
               })
               .on('click', handlemouseClick)
 
@@ -136,7 +154,7 @@ class BeeSwarmPlot extends Component {
         .force("charge", forceManyBody().strength(10))
         .force('x', forceX(d => this.xScale(d[year])).strength(.1))
         .force('y', forceY(chartHeight/2).strength(.1))
-        .force('collide', forceCollide(14))
+        .force('collide', forceCollide(forceCollideValue))
         .alphaDecay(0)
 			  .alpha(.1)
         .on("tick", () => {
@@ -189,13 +207,22 @@ class BeeSwarmPlot extends Component {
           .attr('stroke-opacity', d => d.country === mouseoverValue || mouseClickValue.includes(d.country) ? 1 : 0)
   }
 
+  updateDims(){
+
+    const { width, height, margin } = this.props,
+          {chartWidth} = svgDimensions(this.svg, width, height, margin)
+
+    this.xScale.range([0, chartWidth])
+
+    this.updateData()
+
+  }
+
   render(){
 
     const { tooltipData, mouseoverValue, year } = this.props
     const { tooltipLeft, tooltipColor } = this.state
     const color = tooltipColor && this.colorScale(tooltipColor)
-
-    // console.log(tooltipLeft)
 
     return(
       <div>

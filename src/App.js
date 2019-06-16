@@ -69,9 +69,6 @@ class App extends Component {
     let array = copy.mouseClickHighlight
     let newArray = d.value.map(el => _.capitalize(el))
 
-    console.log('Current: ', array)
-    console.log('New: ', newArray)
-
     if(array.length < 3){
       array = newArray
     } else if (array.length === 3 && newArray.length > 3){
@@ -82,18 +79,6 @@ class App extends Component {
       array = newArray
     }
 
-    // if(array.length < 3 || newArray.length > 2){
-    //   array = newArray
-    // } else if (
-    //   newArray.length < 2
-    // ){
-    //   array = newArray
-    // } else {
-    //   array.shift()
-    //   newArray.shift()
-    //   array = newArray
-    // }
-
     this.setState(() => ({mouseClickHighlight: array}))
   }
 
@@ -102,12 +87,13 @@ class App extends Component {
     const { sectionWidth, yearFilter, mouseoverHighlight, mouseClickHighlight } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
+    const windowWidth = this.window && this.window.clientWidth
     const lineChartHeight = this.lineChartContainer && this.lineChartContainer.clientHeight
 
     const tooltipData = filteredBarChartData.filter(d => (d.country === mouseoverHighlight || d.country === 'All') && d.year === yearFilter)
 
     return (
-      <div className="App">
+      <div className="App" ref={window => this.window = window}>
 
           <section className="intro" ref={section => this.section = section}>
             <Wrapper background="steelblue"/>
@@ -117,7 +103,7 @@ class App extends Component {
           <section className="beeswarm-plot">
             <Wrapper
               gridColumn={1}
-              padding="10px"
+              padding="30px"
               >
                 <YearSlider
                   valueLabelDisplay="auto"
@@ -128,6 +114,7 @@ class App extends Component {
                 />
             </Wrapper>
             <Wrapper
+              padding="20px"
               gridRow={sectionWidth > small ? 1 : 3}
               gridColumn={sectionWidth > small ? 2 : 1}
             >
@@ -151,6 +138,7 @@ class App extends Component {
                 mouseoverValue = {mouseoverHighlight}
                 handlemouseClick = {this.handleCircleClick}
                 mouseClickValue = {mouseClickHighlight}
+                windowWidth = {windowWidth}
               />
             </Wrapper>
           </section>
