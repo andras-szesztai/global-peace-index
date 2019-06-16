@@ -42,5 +42,6 @@ $bp-smallest: 31.25em;
 
 html {
   box-sizing: border-box;
+  user-select: none;
   font-size: 62.5%;
 }

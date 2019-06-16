@@ -3,6 +3,7 @@ import './sass/_main.scss'
 import 'semantic-ui-css/semantic.min.css'
 
 import _ from 'lodash'
+import { scaleOrdinal } from 'd3-scale'
 
 import YearSlider from './components/Slider'
 import {MultipleDropdown, SingleDropDown} from './components/Dropdown'
@@ -100,10 +101,14 @@ class App extends Component {
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
     const lineChartHeight = this.lineChartContainer && this.lineChartContainer.clientHeight
+    const colorDomain = _.uniq(beeSwarmData.map(el => el.economicClass))
+    const colorScale = scaleOrdinal().domain(colorDomain).range(['#4F345A', '#DEE1E5', '#DEE1E5', '#628C6F'])
+    console.log(beeSwarmData);
 
     const filteredMetrics = allMetrics.filter(d => !metricsDisplayed.includes(d))
 
     const tooltipData = filteredBarChartData.filter(d => (d.country === mouseoverHighlight || d.country === 'All') && d.year === yearFilter)
+    const lineChartData = barchartData.filter( d => ( mouseClickHighlight.includes(d.country) && metricsDisplayed.includes(d.metric)))
 
     const dropdownOptions = (num) => filteredMetrics.map(el => {return { key: el, text: el, value: el, number: num}})
 
@@ -166,7 +171,9 @@ class App extends Component {
                 onChange = {this.handleMetricDropdownChange}
               />
               <LineChart
-                data={barchartData}
+                height={lineChartHeight}
+                width={sectionWidth/3}
+                data={lineChartData.filter(d => d.metric === metricsDisplayed[0])}
               />
             </Wrapper>
 

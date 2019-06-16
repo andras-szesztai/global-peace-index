@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 
-
 import { select } from 'd3-selection'
-import { max } from 'd3-array'
 import { axisLeft } from 'd3-axis'
 import { scaleLinear, scaleBand } from 'd3-scale'
 import "d3-transition"
