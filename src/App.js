@@ -28,7 +28,7 @@ const filteredBarChartData = barchartData.filter(d => metrics.includes(d.metric)
 class App extends Component {
   state = {
       sectionWidth: undefined,
-      yearFilter: 2019,
+      yearFilter: 2012,
       mouseoverHighlight: '',
       mouseClickHighlight: ['Iceland', 'Afghanistan'],
       metricsDisplayed: ['Safety & Security', 'Militarisation', 'Incarceration Rate']
@@ -128,7 +128,7 @@ class App extends Component {
                   valueLabelDisplay="auto"
                   max={2019}
                   min={2008}
-                  defaultValue={2019}
+                  defaultValue={yearFilter}
                   onChange={(event, value)=> this.setState(state => state.yearFilter = +value)}
                 />
             </Wrapper>
@@ -175,6 +175,8 @@ class App extends Component {
                 width={sectionWidth/3}
                 data={lineChartData.filter(d => d.metric === metricsDisplayed[0])}
                 colorScale={colorScale}
+
+                year = {yearFilter}
               />
             </Wrapper>
 

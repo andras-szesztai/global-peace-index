@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import { select } from 'd3-selection'
 import { nest } from 'd3-collection'
 import { extent } from 'd3-array'
+import { format } from 'd3-format'
 import { timeParse } from 'd3-time-format'
 import { axisLeft, axisBottom } from 'd3-axis'
 import { line, curveMonotoneX } from 'd3-shape'
@@ -34,7 +35,7 @@ class LineChart extends Component {
     this.svg = select(this.node)
 
     const { width, height, margin } = this.props,
-          { data } = this.props,
+          { data, transition } = this.props,
           { chartWidth, chartHeight } = svgDimensions(this.svg, width, height, margin),
           parseTime = timeParse('%Y')
 
@@ -49,15 +50,41 @@ class LineChart extends Component {
     appendArea(this.svg, 'xAxis-area', margin.left, margin.top + chartHeight)
 
     this.chartArea = this.svg.select('.chart-area')
-    this.yAxis = this.svg.select('.yAxis-area')
-    this.xAxis = this.svg.select('.xAxis-area')
+
+    const yAxis = this.svg.select('.yAxis-area')
+    const xAxis = this.svg.select('.xAxis-area')
 
     this.yScale = scaleLinear().domain([0, 5]).range([chartHeight, 0])
     this.xScale = scaleTime().domain(extent(data, d => d.formattedDate)).range([0, chartWidth])
 
+    xAxis
+        .transition('update')
+        .duration(transition.long)
+        .call(
+          axisBottom(this.xScale)
+            .tickSizeOuter(0)
+            .tickSizeInner(5)
+            .tickValues(this.xScale.domain()))
+
+    xAxis.selectAll(".tick line").remove()
+
+    yAxis
+        .transition('update')
+        .duration(transition.long)
+        .call(
+          axisLeft(this.yScale)
+            .tickSizeOuter(0)
+            .tickSizeInner(5)
+            .tickValues([0,1,2,3,4,5])
+            .tickFormat(format('d')))
+
+    yAxis.selectAll(".domain").remove()
+    yAxis.selectAll(".tick line").attr('transform', 'translate(1, 0)')
+
     this.lineGenerator = line().x(d => this.xScale(d.formattedDate)).y(d => this.yScale(d.value)).curve(curveMonotoneX)
 
     this.createUpdateLines(nestedData)
+    this.createUpdateCircles(data)
 
   }
 
@@ -71,9 +98,6 @@ class LineChart extends Component {
     const { transition, colorScale } = this.props,
           { long } = transition,
           lines = this.chartArea.selectAll('.line').data(data, d => d.key)
-
-    console.log(colorScale.domain());
-    console.log(colorScale.range());
 
     lines.exit()
         .transition('out')
@@ -97,6 +121,36 @@ class LineChart extends Component {
 
   }
 
+  createUpdateCircles(data){
+
+    const { transition, colorScale, year } = this.props,
+          { long } = transition,
+          circles = this.chartArea.selectAll('.circle').data(data, d => d.country)
+
+    circles.exit()
+          .transition('out')
+          .duration(long)
+          .attr('r', 0)
+          .remove()
+
+    circles.enter()
+          .append('circle')
+          .attr('class', d => `circle`)
+          .attr('fill', d => colorScale(d.economicClass))
+          .attr('stroke', '#fff')
+          .attr('r', 0)
+          .attr('cy', d => this.yScale(d.value))
+          .attr('cx', d => this.xScale(d.formattedDate))
+              .merge(circles)
+              .transition('out')
+              .duration(long)
+              .attr('r', d => year === d.year ? 5 : 0)
+              .attr('fill', d => colorScale(d.economicClass))
+              .attr('cy', d => this.yScale(d.value))
+              .attr('cx', d => this.xScale(d.formattedDate))
+
+  }
+
 
   render(){
 
@@ -116,9 +170,9 @@ LineChart.defaultProps = {
 
   margin: {
     top: 10,
-    right: 20,
-    bottom: 20,
-    left: 20
+    right: 25,
+    bottom: 25,
+    left: 15
   },
   transition: {
     long: 1000,
