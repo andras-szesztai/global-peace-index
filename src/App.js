@@ -103,7 +103,6 @@ class App extends Component {
     const lineChartHeight = this.lineChartContainer && this.lineChartContainer.clientHeight
     const colorDomain = _.uniq(beeSwarmData.map(el => el.economicClass))
     const colorScale = scaleOrdinal().domain(colorDomain).range(['#4F345A', '#DEE1E5', '#DEE1E5', '#628C6F'])
-    console.log(beeSwarmData);
 
     const filteredMetrics = allMetrics.filter(d => !metricsDisplayed.includes(d))
 
@@ -159,6 +158,7 @@ class App extends Component {
                 handlemouseClick = {this.handleCircleClick}
                 mouseClickValue = {mouseClickHighlight}
                 windowWidth = {windowWidth}
+                colorScale={colorScale}
               />
             </Wrapper>
           </section>
@@ -174,6 +174,7 @@ class App extends Component {
                 height={lineChartHeight}
                 width={sectionWidth/3}
                 data={lineChartData.filter(d => d.metric === metricsDisplayed[0])}
+                colorScale={colorScale}
               />
             </Wrapper>
 

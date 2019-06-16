@@ -68,29 +68,31 @@ class LineChart extends Component {
 
   createUpdateLines(data){
 
-    const { transition } = this.props,
+    const { transition, colorScale } = this.props,
           { long } = transition,
           lines = this.chartArea.selectAll('.line').data(data, d => d.key)
+
+    console.log(colorScale.domain());
+    console.log(colorScale.range());
 
     lines.exit()
         .transition('out')
         .duration(long)
-        .attr('stroke-opacity', 0)
+        .attr('stroke-width', 0)
         .remove()
 
     lines.enter()
           .append('path')
           .attr('class', d => `line`)
           .attr('fill', 'none')
-          .attr('stroke-opacity', 0)
-          //.attr('stroke', d => this.colorScale(d.values[0].economicClass))
-          .attr('stroke-width', 1)
+          .attr('stroke', d => colorScale(d.values[0].economicClass))
+          .attr('stroke-width', 0)
           .attr('d', d => this.lineGenerator(d.values))
             .merge(lines)
             .transition('in')
             .duration(long)
-            .attr('stroke-opacity', 1)
-            //.attr('stroke', d => this.colorScale(d.key))
+            .attr('stroke-width', 2)
+            .attr('stroke', d => colorScale(d.values[0].economicClass))
             .attr('d', d => this.lineGenerator(d.values))
 
   }
@@ -114,9 +116,9 @@ LineChart.defaultProps = {
 
   margin: {
     top: 10,
-    right: 10,
-    bottom: 10,
-    left: 10
+    right: 20,
+    bottom: 20,
+    left: 20
   },
   transition: {
     long: 1000,

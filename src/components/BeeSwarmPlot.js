@@ -51,15 +51,13 @@ class BeeSwarmPlot extends Component {
 
     this.svg = select(this.node)
 
-    const { width, height, margin, transition, windowWidth } = this.props,
+    const { width, height, margin, transition, windowWidth, colorScale } = this.props,
           { data, year, mouseClickValue } = this.props,
           { handleMouseover, handleMouseout, handlemouseClick } = this.props,
           {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin),
           values = _.uniq(data.map(e => e.economicClass))
 
     let mainRadius, subRadius, strokeWidth, tooltipY, forceCollideValue
-
-    console.log(windowWidth)
 
     if(windowWidth <= 600){
       mainRadius= 4
@@ -90,7 +88,6 @@ class BeeSwarmPlot extends Component {
     this.chartArea = this.svg.select('.chart-area')
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
-    this.colorScale = scaleOrdinal().domain(values).range(['#4F345A', '#DEE1E5', '#DEE1E5', '#628C6F'])
 
     const tooltip = select(this.div).select('.tooltip')
 
@@ -101,8 +98,8 @@ class BeeSwarmPlot extends Component {
           .append('circle')
           .attr('class', 'sub-circle')
           .attr("r", subRadius)
-          .attr('fill', d => this.colorScale(d.economicClass))
-          .attr('stroke', d => this.colorScale(d.economicClass))
+          .attr('fill', d => colorScale(d.economicClass))
+          .attr('stroke', d => colorScale(d.economicClass))
           .attr('fill-opacity', 0)
           .attr('stroke-opacity', d => mouseClickValue.includes(d.country) ? 1 : 0)
           .attr("cx", d => d[year])
@@ -118,7 +115,7 @@ class BeeSwarmPlot extends Component {
           .attr("stroke-width", strokeWidth)
           .attr("stroke", 'white')
           .attr('stroke-opacity', 0)
-          .attr('fill', d => this.colorScale(d.economicClass))
+          .attr('fill', d => colorScale(d.economicClass))
           .attr("cx", d => d[year])
           .attr("cy", d => chartHeight/2)
               .on('mouseover', d => {
@@ -220,9 +217,9 @@ class BeeSwarmPlot extends Component {
 
   render(){
 
-    const { tooltipData, mouseoverValue, year } = this.props
+    const { tooltipData, mouseoverValue, year, colorScale } = this.props
     const { tooltipLeft, tooltipColor } = this.state
-    const color = tooltipColor && this.colorScale(tooltipColor)
+    const color = tooltipColor && colorScale(tooltipColor)
 
     return(
       <div>
