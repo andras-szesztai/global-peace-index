@@ -123,9 +123,29 @@ class LineChart extends Component {
 
   createUpdateCircles(data){
 
-    const { transition, colorScale, year } = this.props,
+    const { transition, year } = this.props,
           { long } = transition,
-          circles = this.chartArea.selectAll('.circle').data(data, d => d.country)
+          circles = this.chartArea.selectAll('.circle').data(data, d => d.country),
+          date = data.filter(d => d.year === year)[0].formattedDate
+
+    if(!select('.year-line')._groups[0][0]){
+      this.chartArea
+                .append('line')
+                .attr('class', 'year-line')
+                .attr('x1', this.xScale(date))
+                .attr('x2', this.xScale(date))
+                .attr('y1', this.yScale(0))
+                .attr('y2', this.yScale(5))
+                .style('stroke', '#333')
+                .attr('stroke-dasharray', '5, 2')
+                .attr('stroke-width', 1)
+    } else {
+      this.chartArea.select('.year-line')
+              .transition('update')
+              .duration(long)
+              .attr('x1', this.xScale(date))
+              .attr('x2', this.xScale(date))
+    }
 
     circles.exit()
           .transition('out')
@@ -136,8 +156,9 @@ class LineChart extends Component {
     circles.enter()
           .append('circle')
           .attr('class', d => `circle`)
-          .attr('fill', d => colorScale(d.economicClass))
+          .attr('fill', "#333")
           .attr('stroke', '#fff')
+          .attr('stroke-width', 2)
           .attr('r', 0)
           .attr('cy', d => this.yScale(d.value))
           .attr('cx', d => this.xScale(d.formattedDate))
@@ -145,7 +166,7 @@ class LineChart extends Component {
               .transition('out')
               .duration(long)
               .attr('r', d => year === d.year ? 5 : 0)
-              .attr('fill', d => colorScale(d.economicClass))
+              // .attr('fill', d => colorScale(d.economicClass))
               .attr('cy', d => this.yScale(d.value))
               .attr('cx', d => this.xScale(d.formattedDate))
 
