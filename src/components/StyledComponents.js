@@ -23,11 +23,28 @@ const Tooltip = styled.div`
     z-index: 20;
 
     border-radius: 5px;
-    box-shadow: 0px 1px 5px 1px rgba(51, 51, 51, 0.2);
 
     border: 1px solid black;
 
     text-align: center;
+
+    &:after {
+      right: 100%;
+      left: 100%;
+      top: 12%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(136, 183, 213, 0);
+      border-right-color: #88b7d5;
+      border-left-color: #88b7d5;
+      border-width: 15px;
+      margin-top: -15px;
+      }
+
 
     h4 {
       padding-top: 1rem;

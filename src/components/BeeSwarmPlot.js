@@ -14,7 +14,8 @@ import { svgDimensions, appendArea } from './chartFunctions'
 
 class BeeSwarmPlot extends Component {
   state = {
-    firstRender: false
+    firstRender: false,
+    tooltipLeft: ''
   }
 
   componentDidUpdate(prevProps){
@@ -49,6 +50,9 @@ class BeeSwarmPlot extends Component {
           { handleMouseover, handleMouseout, handlemouseClick } = this.props,
           {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin),
           values = _.uniq(data.map(e => e.economicClass))
+
+    this.chartWidth = chartWidth
+    this.chartHeight = chartHeight
 
     appendArea(this.svg, 'chart-area', margin.left, margin.top)
 
@@ -94,9 +98,23 @@ class BeeSwarmPlot extends Component {
               })
               .on('mousemove', d => {
                 const mousePos = mouse(this.div)
+                const left = this.chartWidth/2 < mousePos[0]
+                const tooltipWidth = tooltip._groups[0][0].clientWidth
 
-                tooltip.style('left', mousePos[0] + 10 + 'px')
-                        .style('top', mousePos[1] + 10 + 'px')
+                tooltip.style('top', mousePos[1] - 30 + 'px')
+
+                left  ? tooltip.style('left', mousePos[0] - tooltipWidth - 30 + 'px')
+                      : tooltip.style('left', mousePos[0] + 30 + 'px')
+
+                const { tooltipLeft } = this.state
+
+                if(tooltipLeft !== left){
+                  this.setState(s => s.tooltipLeft === left)
+                }
+
+                // tooltip.style('left', mousePos[0] + 10 + 'px')
+                //         .style('top', mousePos[1] + 10 + 'px')
+
 
               })
               .on('mouseout', () => {
@@ -166,18 +184,24 @@ class BeeSwarmPlot extends Component {
   render(){
 
     const { tooltipData, mouseoverValue, year } = this.props
+    const { tooltipLeft } = this.state
+    const color = mouseoverValue && this.colorScale(mouseoverValue)
 
     return(
       <div>
         <ChartContainer ref={div => this.div = div}>
           <svg ref={node => this.node = node}/>
-          <Tooltip className="tooltip">
+          <Tooltip
+              className="tooltip"
+              color = {color}
+              left = {tooltipLeft}
+              >
               <BarChart
                   data = {tooltipData}
                   value = {mouseoverValue}
                   year = {year}
                   width = {300}
-                  height = {200}
+                  height = {200}  
               />
           </Tooltip>
         </ChartContainer>
