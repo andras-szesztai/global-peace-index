@@ -25,7 +25,7 @@ class BeeSwarmPlot extends Component {
 
   componentDidUpdate(prevProps){
 
-    const { width, height, year, mouseoverValue, mouseClickValue } = this.props
+    const { width, year, mouseoverValue, mouseClickValue } = this.props
     const { firstRender } = this.state
 
 
@@ -102,6 +102,8 @@ class BeeSwarmPlot extends Component {
 
     appendLine(this.chartArea, 'low-line', this.xScale, lowAvg, chartHeight, colorArray[0])
     appendLine(this.chartArea, 'high-line', this.xScale, highAvg, chartHeight, colorArray[3])
+    this.avgLineHover('.low-line', 'Low income', lowAvg)
+    this.avgLineHover('.high-line', 'High income', highAvg)
 
     this.chartArea
           .selectAll('.sub-circle')
@@ -188,41 +190,15 @@ class BeeSwarmPlot extends Component {
 
   updateData(prevProps){
 
-    const { data, year, transition, margin } = this.props
+    const { data, year, transition } = this.props
 
     const lowAvg = calculateAvg(data, 'Low income', year)
     const highAvg = calculateAvg(data, 'High income', year)
 
     moveLine(this.chartArea, '.low-line', transition.long, this.xScale, lowAvg)
     moveLine(this.chartArea, '.high-line', transition.long, this.xScale, highAvg)
-
-    const smallTooltip = select(this.tooltip)
-
-    this.chartArea.select('.low-line')
-      .on('mouseover',  () => {
-        this.setState({
-            avgLine: {
-              economicClass: 'Low income',
-              value: lowAvg
-            }
-          })
-
-          select('.low-line').attr('stroke-opacity', 1)
-
-          smallTooltip.style('display', 'block')
-
-          const tooltipWidth = smallTooltip._groups[0][0].clientWidth
-
-          smallTooltip
-                .style("left", this.xScale(lowAvg) + margin.left - tooltipWidth/2 + "px")
-                .style("top", "-25px")
-
-        })
-      .on('mouseout', () => {
-        select('.low-line').attr('stroke-opacity', .4)
-        smallTooltip.style('display', 'none')
-      })
-
+    this.avgLineHover('.low-line', 'Low income', lowAvg)
+    this.avgLineHover('.high-line', 'High income', highAvg)
 
   	this.simulation.force('x', forceX(d => this.xScale(d[year])).strength(1))
 
@@ -286,7 +262,36 @@ class BeeSwarmPlot extends Component {
 
   }
 
-  avgLineHover(){
+  avgLineHover(selection, ecoClass, value){
+
+    const smallTooltip = select(this.tooltip)
+    const selected = this.chartArea.select(selection)
+    const { margin } = this.props
+
+    selected
+      .on('mouseover',  () => {
+        this.setState({
+            avgLine: {
+              economicClass: ecoClass,
+              value: value
+            }
+          })
+
+          selected.attr('stroke-opacity', 1)
+
+          smallTooltip.style('display', 'block')
+
+          const tooltipWidth = smallTooltip._groups[0][0].clientWidth
+
+          smallTooltip
+                .style("left", this.xScale(value) + margin.left - tooltipWidth/2 + "px")
+                .style("top", "-25px")
+
+        })
+      .on('mouseout', () => {
+        selected.attr('stroke-opacity', .4)
+        smallTooltip.style('display', 'none')
+      })
 
   }
 
