@@ -116,7 +116,7 @@ class App extends Component {
     return (
       <div className="App" ref={window => this.window = window}>
 
-          <section className="intro" ref={section => this.section = section}>
+          <section className="intro">
             <Wrapper/>
             <Wrapper/>
           </section>
@@ -144,7 +144,6 @@ class App extends Component {
               />
             </Wrapper>
             <Wrapper
-              ref={beeSwarmContainer => this.beeSwarmContainer = beeSwarmContainer}
               gridColumn={sectionWidth > small ? 'span 2' : 1}
               gridRow={2}
               >
@@ -227,6 +226,16 @@ class App extends Component {
             <Wrapper />
             <Wrapper />
             <Wrapper />
+          </section>
+
+          <section  className="beeswarm-plot background"
+                    ref={section => this.section = section}
+          >
+              <Wrapper
+                ref={beeSwarmContainer => this.beeSwarmContainer = beeSwarmContainer}
+                gridColumn={sectionWidth > small ? 'span 2' : 1}
+                gridRow={2}
+              />
           </section>
 
       </div>

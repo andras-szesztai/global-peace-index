@@ -25,6 +25,11 @@
     display: inline-block;
   }
 
+  .background {
+    z-index: -1;
+    // border: 2px solid steelblue;
+  }
+
 }
 
 section {

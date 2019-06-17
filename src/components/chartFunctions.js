@@ -31,6 +31,12 @@ const appendText = (
       .text(text)
 }
 
+const moveText = (
+  chartArea, selection, x, y
+) => {
+  chartArea.select(selection).attr('x', x).attr('y', y)
+}
+
 const calculateAvg = (
   data, type, year
 ) => {
@@ -71,4 +77,4 @@ const moveLine = (
 
 }
 
-export { svgDimensions, appendArea, appendText, calculateAvg, appendLine, moveLine }
+export { svgDimensions, appendArea, appendText, moveText, calculateAvg, appendLine, moveLine }

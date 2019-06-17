@@ -10,7 +10,7 @@ import { forceSimulation, forceX, forceY, forceCollide, forceManyBody } from 'd3
 import { mouse } from 'd3-selection'
 import "d3-transition"
 
-import { svgDimensions, appendArea, appendText, calculateAvg, appendLine, moveLine } from './chartFunctions'
+import { svgDimensions, appendArea, appendText, calculateAvg, appendLine, moveLine, moveText } from './chartFunctions'
 
 class BeeSwarmPlot extends Component {
   state = {
@@ -27,7 +27,6 @@ class BeeSwarmPlot extends Component {
 
     const { width, year, mouseoverValue, mouseClickValue } = this.props
     const { firstRender } = this.state
-
 
     if(!firstRender) {
       this.initVis()
@@ -91,9 +90,9 @@ class BeeSwarmPlot extends Component {
 
     this.chartArea = this.svg.select('.chart-area')
 
-    appendText(this.chartArea, 'label-text', -10, chartHeight-10, 'start', '◄ Lower' )
-    appendText(this.chartArea, 'label-text', chartWidth - 10, chartHeight-10, 'end', 'Higher ►' )
-    appendText(this.chartArea, 'label-text', chartWidth/2, chartHeight-10, 'middle', 'State of Peace' )
+    appendText(this.chartArea, 'label-text label-text-left', -10, chartHeight-10, 'start', '◄ Lower' )
+    appendText(this.chartArea, 'label-text label-text-right', chartWidth - 10, chartHeight-10, 'end', 'Higher ►' )
+    appendText(this.chartArea, 'label-text label-text-middle', chartWidth/2, chartHeight-10, 'middle', 'State of Peace' )
     appendText(this.chartArea, 'year-text', 0, 15, 'start', year )
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
@@ -254,7 +253,10 @@ class BeeSwarmPlot extends Component {
   updateDims(){
 
     const { width, height, margin } = this.props,
-          {chartWidth} = svgDimensions(this.svg, width, height, margin)
+          {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin)
+
+    moveText(this.chartArea, '.label-text-right', chartWidth - 10, chartHeight-10)
+    moveText(this.chartArea, '.label-text-middle', chartWidth/2, chartHeight-10)
 
     this.xScale.range([0, chartWidth])
 
