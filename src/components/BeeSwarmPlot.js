@@ -207,7 +207,7 @@ class BeeSwarmPlot extends Component {
   			.alpha(0.05)
   			.restart()
 
-    const difference = Math.abs(prevProps.year - year)
+    const difference = prevProps ? Math.abs(prevProps.year - year) : 0
     let textTweenAnimation
 
     if(difference < 2){
