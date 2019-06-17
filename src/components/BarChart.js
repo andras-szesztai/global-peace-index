@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import { select } from 'd3-selection'
 import { axisLeft } from 'd3-axis'
 import { scaleLinear, scaleBand } from 'd3-scale'
+import { easeCubic } from 'd3-ease'
 import "d3-transition"
 
 import { svgDimensions, appendArea } from './chartFunctions'
@@ -25,11 +26,8 @@ class BarChart extends Component {
 
     if(prevProps.value !== value) {
       this.updateData()
-
       const overallScore = data.filter(d => d.country !== 'All' && d.metric === 'Overall Score')
-
       overallScore.length === 1 ? this.setState(state => state.overallScore = overallScore[0].value) : this.setState(state => state.overallScore = '')
-
     }
 
   }
@@ -68,10 +66,10 @@ class BarChart extends Component {
 
   updateData(){
 
-    const { data } = this.props
+    const { data, transition } = this.props
 
-    const mainRects = this.chartArea.selectAll('.main-rect').data(data.filter(d => d.country !== 'All')),
-          avgRects = this.chartArea.selectAll('.avg-rect').data(data.filter(d => d.country === 'All'))
+    const mainRects = this.chartArea.selectAll('.main-rect').data(data.filter(d => d.country !== 'All'), d => d.metric),
+          avgRects = this.chartArea.selectAll('.avg-rect').data(data.filter(d => d.country === 'All'), d => d.metric)
 
     mainRects.enter()
         .append('rect')
@@ -82,6 +80,9 @@ class BarChart extends Component {
         .attr('height', this.yScale.bandwidth())
         .attr('fill', d => d.value > d.avg ? 'red' : 'steelblue')
           .merge(mainRects)
+          .transition('update')
+          .ease(easeCubic)
+          .duration(transition.long)
           .attr('width', d => this.xScale(d.value))
           .attr('fill', d => d.value > d.avg ? 'red' : 'steelblue')
 
@@ -120,6 +121,9 @@ BarChart.defaultProps = {
     right: 10,
     bottom: 5,
     left: 145
+  },
+  transition: {
+    long: 1000
   }
 
 }

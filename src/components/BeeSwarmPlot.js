@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import {ChartContainer, Tooltip} from './StyledComponents'
+import {ChartContainer, Tooltip, SmallTooltip} from './StyledComponents'
 import BarChart from './BarChart'
 
 import { select } from 'd3-selection'
@@ -16,7 +16,11 @@ class BeeSwarmPlot extends Component {
   state = {
     firstRender: false,
     tooltipLeft: '',
-    tooltipColor: ''
+    tooltipColor: '',
+    avgLine: {
+      economicClass: '',
+      value: ''
+    }
   }
 
   componentDidUpdate(prevProps){
@@ -95,9 +99,29 @@ class BeeSwarmPlot extends Component {
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
 
     const tooltip = select(this.div).select('.tooltip')
+    const smallTooltip = select(this.tooltip)
 
     appendLine(this.chartArea, 'low-line', this.xScale, lowAvg, chartHeight, colorArray[0])
     appendLine(this.chartArea, 'high-line', this.xScale, highAvg, chartHeight, colorArray[3])
+
+    this.chartArea.select('.low-line').on('mouseover',  () => {
+        this.setState({
+            avgLine: {
+              economicClass: 'Low income',
+              value: lowAvg
+            }
+          })
+
+          smallTooltip.attr('display', 'block')
+
+          const tooltipWidth = smallTooltip._groups[0][0].clientWidth
+          const tooltipHeight = smallTooltip._groups[0][0].clientHeight
+
+          smallTooltip.style("left", this.xScale(lowAvg) + margin.left - tooltipWidth/2 + "px")
+                .style("top", 10 - tooltipHeight + 8 + "px")
+
+        })
+
 
     this.chartArea
           .selectAll('.sub-circle')
@@ -257,8 +281,9 @@ class BeeSwarmPlot extends Component {
   render(){
 
     const { tooltipData, mouseoverValue, year, colorScale } = this.props
-    const { tooltipLeft, tooltipColor } = this.state
+    const { tooltipLeft, tooltipColor, income, avgLine } = this.state
     const color = tooltipColor && colorScale(tooltipColor)
+    const smallTooltipColor = avgLine.economicClass && colorScale(avgLine.economicClass)
 
     return(
       <div>
@@ -277,6 +302,12 @@ class BeeSwarmPlot extends Component {
                   height = {200}
               />
           </Tooltip>
+          <SmallTooltip ref={tooltip => this.tooltip = tooltip}
+            color={smallTooltipColor}
+          >
+            <p>{avgLine.economicClass && avgLine.economicClass} average: </p>
+            <span className="score">{avgLine.value && avgLine.value}</span>
+          </SmallTooltip>
         </ChartContainer>
       </div>
     )

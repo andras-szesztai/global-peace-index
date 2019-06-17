@@ -183,6 +183,8 @@ class LineChart extends Component {
                 .attr('y2', this.yScale(5))
                 .style('stroke', '#333')
                 .attr('stroke-dasharray', '5, 2')
+                .attr("stroke-linejoin", "round")
+                .attr("stroke-linecap", "round")
                 .attr('stroke-width', 1)
     } else {
       this.chartArea.select('.year-line')
