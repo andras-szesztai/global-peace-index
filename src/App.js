@@ -103,6 +103,7 @@ class App extends Component {
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
     const lineChartHeight = this.lineChartContainer && this.lineChartContainer.clientHeight
+    const lineChartWidth = windowWidth && windowWidth - windowWidth * 0.02
     const colorDomain = _.uniq(beeSwarmData.map(el => el.economicClass))
     const colorScale = scaleOrdinal().domain(colorDomain).range(colorArray)
 
@@ -176,7 +177,7 @@ class App extends Component {
               />
               <LineChart
                 height={lineChartHeight}
-                width={sectionWidth/3}
+                width={windowWidth > 600 ? lineChartWidth/3 : lineChartWidth}
                 data={lineChartData.filter(d => d.metric === metricsDisplayed[0])}
                 colorScale={colorScale}
                 metric = {metricsDisplayed[0]}
@@ -193,7 +194,7 @@ class App extends Component {
               />
               <LineChart
                 height={lineChartHeight}
-                width={sectionWidth/3}
+                width={windowWidth > 600 ? lineChartWidth/3 : lineChartWidth}
                 data={lineChartData.filter(d => d.metric === metricsDisplayed[1])}
                 colorScale={colorScale}
                 metric = {metricsDisplayed[1]}
@@ -211,7 +212,7 @@ class App extends Component {
               />
               <LineChart
                 height={lineChartHeight}
-                width={sectionWidth/3}
+                width={windowWidth > 600 ? lineChartWidth/3 : lineChartWidth}
                 data={lineChartData.filter(d => d.metric === metricsDisplayed[2])}
                 colorScale={colorScale}
                 metric = {metricsDisplayed[2]}
