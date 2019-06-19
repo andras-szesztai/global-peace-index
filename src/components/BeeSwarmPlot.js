@@ -90,28 +90,31 @@ class BeeSwarmPlot extends Component {
 
     this.chartArea = this.svg.select('.chart-area')
 
-    appendText(this.chartArea, 'label-text label-text-left', -10, chartHeight-10, 'start', '◄ Lower' )
-    appendText(this.chartArea, 'label-text label-text-right', chartWidth - 10, chartHeight-10, 'end', 'Higher ►' )
-    appendText(this.chartArea, 'label-text label-text-middle', chartWidth/2, chartHeight-10, 'middle', 'State of Peace' )
+    appendText(this.chartArea, 'label-text label-text-left', -10, chartHeight, 'start', '◄ Lower' )
+    appendText(this.chartArea, 'label-text label-text-right', chartWidth - 10, chartHeight, 'end', 'Higher ►' )
+    appendText(this.chartArea, 'label-text label-text-middle', chartWidth/2, chartHeight, 'middle', 'State of Peace' )
     appendText(this.chartArea, 'year-text', 0, 15, 'start', year )
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
     appendText(this.chartArea, 'high-inc-avg-value high-income-avg', this.xScale(highAvg), 0, 'middle', highAvg.toFixed(2), 0, 800 )
     appendText(this.chartArea, 'low-inc-avg-value low-income-avg', this.xScale(lowAvg), 0, 'middle', lowAvg.toFixed(2), 0, 800 )
 
-    appendText(this.chartArea, 'low-inc-average avg-text-low low-income-avg', this.xScale(lowAvg), 15, 'middle', 'Low income average' )
+    appendText(this.chartArea, 'low-inc-average avg-text-low low-income-avg', this.xScale(lowAvg), 15, 'middle', 'Low income average')
     appendText(this.chartArea, 'high-inc-average avg-text-high high-income-avg', this.xScale(highAvg), 15, 'middle', 'High income average' )
 
     appendText(this.chartArea, 'low-inc-average-arrow avg-text-low low-income-avg', this.xScale(lowAvg), 25, 'middle', '▾' )
     appendText(this.chartArea, 'high-inc-average-arrow avg-text-high high-income-avg', this.xScale(highAvg), 25, 'middle', '▾' )
+
+    this.chartArea.selectAll('.high-income-avg').attr('fill', colorArray[3])
+    this.chartArea.selectAll('.low-income-avg').attr('fill', colorArray[0])
 
     const tooltip = select(this.div).select('.tooltip')
 
     appendLine(this.chartArea, 'low-line', this.xScale, lowAvg, chartHeight, colorArray[0])
     appendLine(this.chartArea, 'high-line', this.xScale, highAvg, chartHeight, colorArray[3])
 
-    this.avgLineHover('.low-line', 'low-income-avg', 'Low income', lowAvg)
-    this.avgLineHover('.high-line', 'high-income-avg', 'High income', highAvg)
+    this.avgLineHover('.low-line', 'low-income-avg')
+    this.avgLineHover('.high-line', 'high-income-avg')
 
     this.chartArea
           .selectAll('.sub-circle')
@@ -209,8 +212,8 @@ class BeeSwarmPlot extends Component {
     moveLine(this.chartArea, '.low-line', transition.long, this.xScale, lowAvg)
     moveLine(this.chartArea, '.high-line', transition.long, this.xScale, highAvg)
 
-    this.avgLineHover('.low-line', 'low-income-avg', 'Low income', lowAvg)
-    this.avgLineHover('.high-line', 'high-income-avg', 'High income', highAvg)
+    this.avgLineHover('.low-line', 'low-income-avg')
+    this.avgLineHover('.high-line', 'high-income-avg')
 
   	this.simulation.force('x', forceX(d => this.xScale(d[year])).strength(1))
 
@@ -288,34 +291,26 @@ class BeeSwarmPlot extends Component {
 
   }
 
-  avgLineHover(selection, ecoClass, colorClass, value){
+  avgLineHover(selection, ecoClass){
 
     const area = this.chartArea
-    const { colorScale } = this.props
-    const color = colorScale(colorClass)
 
     area.select(selection)
       .on('mouseover',  () => {
         this.setState({
             avgLine: {
               economicClass: ecoClass,
-              value: value
             }
           })
 
           area.select(selection).attr('stroke-opacity', 1)
-
-          area.selectAll(`.${ecoClass}`).attr('fill', color)
           area.select(`.${ecoClass}`).attr('opacity', 1)
-
 
 
         })
       .on('mouseout', () => {
         area.select(selection).attr('stroke-opacity', .4)
-        area.selectAll(`.${ecoClass}`).attr('fill', '#333')
         area.select(`.${ecoClass}`).attr('opacity', 0)
-
       })
 
   }
