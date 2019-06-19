@@ -96,13 +96,18 @@ class BeeSwarmPlot extends Component {
     appendText(this.chartArea, 'year-text', 0, 15, 'start', year )
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
+    appendText(this.chartArea, 'low-inc-average avg-text-low', this.xScale(lowAvg), 15, 'middle', 'Low income average' )
+    appendText(this.chartArea, 'high-inc-average avg-text-high', this.xScale(highAvg), 15, 'middle', 'High income average' )
+    appendText(this.chartArea, 'low-inc-average-arrow avg-text-low', this.xScale(lowAvg), 25, 'middle', '▾' )
+    appendText(this.chartArea, 'high-inc-average-arrow avg-text-high', this.xScale(highAvg), 25, 'middle', '▾' )
 
     const tooltip = select(this.div).select('.tooltip')
 
     appendLine(this.chartArea, 'low-line', this.xScale, lowAvg, chartHeight, colorArray[0])
     appendLine(this.chartArea, 'high-line', this.xScale, highAvg, chartHeight, colorArray[3])
-    this.avgLineHover('.low-line', 'Low income', lowAvg)
-    this.avgLineHover('.high-line', 'High income', highAvg)
+
+    // this.avgLineHover('.low-line', 'Low income', lowAvg)
+    // this.avgLineHover('.high-line', 'High income', highAvg)
 
     this.chartArea
           .selectAll('.sub-circle')
@@ -181,9 +186,9 @@ class BeeSwarmPlot extends Component {
 
     this.simulation.tick(120)
 
-    // this.init_decay = setTimeout(() => {
-    // 		this.simulation.alphaDecay(0.1);
-    // 	}, transition.veryLong * 2);
+    this.init_decay = setTimeout(() => {
+    		this.simulation.alphaDecay(0.1);
+    	}, transition.veryLong * 2);
 
   }
 
@@ -205,6 +210,9 @@ class BeeSwarmPlot extends Component {
   			.alphaDecay(0)
   			.alpha(0.05)
   			.restart()
+
+    this.chartArea.selectAll('.avg-text-low').transition('update').duration(transition.long).attr('x', this.xScale(lowAvg))
+    this.chartArea.selectAll('.avg-text-high').transition('update').duration(transition.long).attr('x', this.xScale(highAvg))
 
     const difference = prevProps ? Math.abs(prevProps.year - year) : 0
     let textTweenAnimation
@@ -235,9 +243,9 @@ class BeeSwarmPlot extends Component {
 
     clearTimeout(this.init_decay);
 
-    // this.init_decay = setTimeout(() => {
-    //     this.simulation.alphaDecay(0.1);
-    //   }, transition.veryLong);
+    this.init_decay = setTimeout(() => {
+        this.simulation.alphaDecay(0.1);
+      }, transition.veryLong);
 
   }
 

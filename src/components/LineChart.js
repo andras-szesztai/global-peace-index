@@ -249,7 +249,7 @@ class LineChart extends Component {
       this.chartArea
         .select(".year-line")
         .transition("update")
-        .duration(long)
+        .duration(duration)
         .attr("x1", this.xScale(date))
         .attr("x2", this.xScale(date));
     }

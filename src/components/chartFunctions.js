@@ -59,7 +59,7 @@ const appendLine = (
             .attr('y1', 30)
             .attr('y2', chartHeight - 30)
             .style('stroke', color)
-            .attr('stroke-width', 3)
+            .attr('stroke-width', 2)
             .attr("stroke-linejoin", "round")
             .attr("stroke-linecap", "round")
             .attr('stroke-opacity', .4)
