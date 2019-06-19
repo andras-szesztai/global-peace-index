@@ -15,8 +15,6 @@ const SmallTooltip = styled.div`
     color: ${props => props.color};
     z-index: 20;
 
-    font-size: .8rem;
-
     border-radius: 3px;
     padding: .6rem 1rem;
 
@@ -47,8 +45,9 @@ const SmallTooltip = styled.div`
 
     p,
     h4 {
-      line-height: .7;
-      margin-bottom: 1rem !important;
+      font-size: .8em;
+      line-height: .4;
+      margin-bottom: .8rem !important;
       padding: 0 !important;
     }
 

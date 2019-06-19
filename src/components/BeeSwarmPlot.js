@@ -144,7 +144,7 @@ class BeeSwarmPlot extends Component {
               .on('mouseover', (d,i,n) => {
                 tooltip.style('display', 'block')
                 handleMouseover(d)
-                select(n[i]).transition('highlight').duration(transition.short).attr('opacity', 1)
+                select(n[i]).attr('opacity', 1)
               })
               .on('mousemove', d => {
                 const mousePos = mouse(this.div)
@@ -165,10 +165,10 @@ class BeeSwarmPlot extends Component {
                 }
 
               })
-              .on('mouseout', (_, i, n) => {
-                 handleMouseout()
+              .on('mouseout', (d, i, n) => {
+                 handleMouseout(d, i, n)
                  tooltip.style('display', 'none')
-                 select(n[i]).transition('unhighlight').duration(transition.short).attr('opacity', d => ['Low income', 'High income'].includes(d.economicClass) ? 1 : .1 )
+
               })
               .on('click', handlemouseClick)
 
@@ -267,6 +267,11 @@ class BeeSwarmPlot extends Component {
     this.chartArea
           .selectAll('.sub-circle')
           .attr('stroke-opacity', d => d.country === mouseoverValue || mouseClickValue.includes(d.country) ? 1 : 0)
+
+    this.chartArea
+          .selectAll('.main-circle')
+          .attr('opacity', d => ['Low income', 'High income'].includes(d.economicClass) || mouseClickValue.includes(d.country) ? 1 : .1 )
+
   }
 
   updateDims(){

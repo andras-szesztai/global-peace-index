@@ -354,7 +354,7 @@ class LineChart extends Component {
         <ChartContainer ref={div => (this.div = div)}>
           <svg ref={node => (this.node = node)} />
           <SmallTooltip ref={tooltip => (this.tooltip = tooltip)} color={color}>
-            <h4 className="country" />
+            <h4 className="country"></h4>
             <p>
               {metric} (<span className="year" />):
             </p>
