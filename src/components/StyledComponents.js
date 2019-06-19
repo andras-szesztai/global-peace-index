@@ -18,7 +18,7 @@ const SmallTooltip = styled.div`
     border-radius: 3px;
     padding: .6rem 1rem;
 
-    background: ${props => props.color};
+    background: #fff;
 
     text-align: center;
     white-space: nowrap;
@@ -115,7 +115,11 @@ const ChartContainer = styled.div`
       cursor: pointer;
     }
 
-    position: relative
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 
     background-color: ${props => props.background || '#fff'};
 

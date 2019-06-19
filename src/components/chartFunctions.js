@@ -41,7 +41,8 @@ const calculateAvg = (
   data, type, year
 ) => {
 
-  const array = data.filter(d => d.economicClass === type).map(el => el[year])
+  const filteredData =  [2008,2009,2010].includes(year) ? data.filter(d => d.country !== 'South Sudan') : data
+  const array = filteredData.filter(d => d.economicClass === type).map(el => el[year])
   const avg = _.sum(array)/array.length
 
   return avg

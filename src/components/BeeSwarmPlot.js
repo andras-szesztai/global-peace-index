@@ -181,9 +181,9 @@ class BeeSwarmPlot extends Component {
 
     this.simulation.tick(120)
 
-    this.init_decay = setTimeout(() => {
-    		this.simulation.alphaDecay(0.1);
-    	}, transition.veryLong * 2);
+    // this.init_decay = setTimeout(() => {
+    // 		this.simulation.alphaDecay(0.1);
+    // 	}, transition.veryLong * 2);
 
   }
 
@@ -235,9 +235,9 @@ class BeeSwarmPlot extends Component {
 
     clearTimeout(this.init_decay);
 
-    this.init_decay = setTimeout(() => {
-        this.simulation.alphaDecay(0.1);
-      }, transition.veryLong);
+    // this.init_decay = setTimeout(() => {
+    //     this.simulation.alphaDecay(0.1);
+    //   }, transition.veryLong);
 
   }
 
