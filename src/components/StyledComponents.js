@@ -12,8 +12,10 @@ const Wrapper = styled.div`
 const SmallTooltip = styled.div`
     position: absolute;
     display: none;
-    color: #fff;
+    color: ${props => props.color};
     z-index: 20;
+
+    font-size: .8rem;
 
     border-radius: 3px;
     padding: .6rem 1rem;
@@ -23,6 +25,10 @@ const SmallTooltip = styled.div`
     text-align: center;
     white-space: nowrap;
     pointer-events: none;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: ${props => props.color};
 
     &:after {
       top: 100%;
@@ -35,8 +41,8 @@ const SmallTooltip = styled.div`
     	pointer-events: none;
     	border-color: rgba(136, 183, 213, 0);
     	border-top-color: ${props => props.color}
-    	border-width: 10px;
-    	margin-left: -10px;
+    	border-width: 8px;
+    	margin-left: -8px;
     }
 
     p,
@@ -47,7 +53,7 @@ const SmallTooltip = styled.div`
     }
 
     .score {
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       font-weight: 700;
     }
 
@@ -58,14 +64,13 @@ const Tooltip = styled.div`
     position: absolute;
     display: none;
     background: #fff;
-    opacity: .9;
+    opacity: 1;
     z-index: 20;
 
     border-radius: 5px;
     white-space: nowrap;
     pointer-events: none;
 
-    border: 1px solid black;
     border-style: solid;
     border-width: 1px;
     border-color: ${props => props.color};
@@ -93,7 +98,7 @@ const Tooltip = styled.div`
 
     h4 {
       padding-top: 1rem;
-      color: ${props => props.color};
+      color: #333;
     }
 
     span {

@@ -96,8 +96,8 @@ class BeeSwarmPlot extends Component {
     appendText(this.chartArea, 'year-text', 0, 15, 'start', year )
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
-    appendText(this.chartArea, 'high-inc-avg-value high-income-avg', this.xScale(highAvg), 0, 'middle', highAvg.toFixed(2), .2, 800 )
-    appendText(this.chartArea, 'low-inc-avg-value low-income-avg', this.xScale(lowAvg), 0, 'middle', lowAvg.toFixed(2), .2, 800 )
+    appendText(this.chartArea, 'high-inc-avg-value high-income-avg', this.xScale(highAvg), 0, 'middle', highAvg.toFixed(2), 0, 800 )
+    appendText(this.chartArea, 'low-inc-avg-value low-income-avg', this.xScale(lowAvg), 0, 'middle', lowAvg.toFixed(2), 0, 800 )
 
     appendText(this.chartArea, 'low-inc-average avg-text-low low-income-avg', this.xScale(lowAvg), 15, 'middle', 'Low income average' )
     appendText(this.chartArea, 'high-inc-average avg-text-high high-income-avg', this.xScale(highAvg), 15, 'middle', 'High income average' )
@@ -138,11 +138,13 @@ class BeeSwarmPlot extends Component {
           .attr("stroke", 'white')
           .attr('stroke-opacity', 0)
           .attr('fill', d => colorScale(d.economicClass))
+          .attr('opacity', d => ['Low income', 'High income'].includes(d.economicClass) ? 1 : .1 )
           .attr("cx", d => d[year])
           .attr("cy", d => chartHeight/2)
-              .on('mouseover', d => {
+              .on('mouseover', (d,i,n) => {
                 tooltip.style('display', 'block')
                 handleMouseover(d)
+                select(n[i]).transition('highlight').duration(transition.short).attr('opacity', 1)
               })
               .on('mousemove', d => {
                 const mousePos = mouse(this.div)
@@ -163,9 +165,10 @@ class BeeSwarmPlot extends Component {
                 }
 
               })
-              .on('mouseout', () => {
+              .on('mouseout', (_, i, n) => {
                  handleMouseout()
                  tooltip.style('display', 'none')
+                 select(n[i]).transition('unhighlight').duration(transition.short).attr('opacity', d => ['Low income', 'High income'].includes(d.economicClass) ? 1 : .1 )
               })
               .on('click', handlemouseClick)
 
@@ -315,9 +318,8 @@ class BeeSwarmPlot extends Component {
   render(){
 
     const { tooltipData, mouseoverValue, year, colorScale } = this.props
-    const { tooltipLeft, tooltipColor, avgLine } = this.state
+    const { tooltipLeft, tooltipColor } = this.state
     const color = tooltipColor && colorScale(tooltipColor)
-    const smallTooltipColor = avgLine.economicClass && colorScale(avgLine.economicClass)
 
     return(
       <div>
@@ -356,7 +358,7 @@ BeeSwarmPlot.defaultProps = {
   transition: {
     veryLong: 10000,
     long: 1000,
-    short: 500
+    short: 300
   }
 
 }

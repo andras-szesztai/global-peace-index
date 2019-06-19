@@ -22,7 +22,7 @@ const metrics = [
       'Military Expenditure (% GDP)', 'Political Terror Scale', 'Homicide Rate', 'Access to Small Arms', 'UN Peacekeeping Funding'
 ]
 
-const colorArray = ['#4F345A', '#DEE1E5', '#DEE1E5', '#628C6F']
+const colorArray = ['#E18F69', '#656662', '#656662', '#6F9CAB']
 
 const allMetrics = _.uniq(barchartData.map(d => d.metric)).filter(d => !['Score', 'Rank'].includes(d))
 const filteredBarChartData = barchartData.filter(d => metrics.includes(d.metric))
