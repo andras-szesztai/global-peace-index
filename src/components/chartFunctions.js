@@ -20,7 +20,7 @@ const appendArea = (
 }
 
 const appendText = (
-  chartArea, className, x, y, anchor, text
+  chartArea, className, x, y, anchor, text, opacity = 1, weight = 300
 ) => {
   chartArea
       .append('text')
@@ -28,6 +28,8 @@ const appendText = (
       .attr('x', x)
       .attr('y', y)
       .attr('text-anchor', anchor)
+      .attr('opacity', opacity)
+      .attr('font-weight', weight)
       .text(text)
 }
 
