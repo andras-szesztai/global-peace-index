@@ -114,6 +114,10 @@ class App extends Component {
     const lineChartData = barchartData.filter( d => ( mouseClickHighlight.includes(d.country) && metricsDisplayed.includes(d.metric)))
 
     const dropdownOptions = (num) => filteredMetrics.map(el => {return { key: el, text: el, value: el, number: num}})
+    const showYAxis = [true, false, false]
+    const lineChartMargins = [{top: 25, right: 70, bottom: 25, left: 15},
+                              {top: 25, right: 60, bottom: 25, left: 10},
+                              {top: 25, right: 75, bottom: 25, left: 10}]
 
     const lineCharts = metricsDisplayed.map( (el, i) => {
       return <Wrapper key={i}>
@@ -124,10 +128,12 @@ class App extends Component {
               />
               <LineChart
                 height={300}
+                showYAxis={showYAxis[i]}
                 width={windowWidth > 600 ? lineChartWidth/3 : lineChartWidth}
                 data={lineChartData.filter(d => d.metric === el)}
                 colorScale={colorScale}
                 metric = {el}
+                margin={lineChartMargins[i]}
                 valueList = {mouseClickHighlight}
                 year = {yearFilter}
               />

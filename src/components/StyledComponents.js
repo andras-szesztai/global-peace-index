@@ -134,7 +134,8 @@ const ChartContainer = styled.div`
     }
 
     .year-text {
-      font-size: 2rem;
+      font-size: 4rem;
+      font-weight: 300;
     }
 `
 

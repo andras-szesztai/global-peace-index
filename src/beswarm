@@ -1,0 +1,15 @@
+<BeeSwarmPlot
+  width={sectionWidth}
+  height={beeSwarmHeight}
+  data={beeSwarmData}
+  tooltipData = {tooltipData}
+  year={yearFilter}
+  handleMouseover = {this.handleCircleMouseover}
+  handleMouseout = {this.handleCircleMouseout}
+  mouseoverValue = {mouseoverHighlight}
+  handlemouseClick = {this.handleCircleClick}
+  mouseClickValue = {mouseClickHighlight}
+  windowWidth = {windowWidth}
+  colorScale={colorScale}
+  colorArray={colorArray}
+/>

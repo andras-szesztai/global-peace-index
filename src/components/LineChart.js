@@ -61,7 +61,7 @@ class LineChart extends Component {
   initVis() {
     this.svg = select(this.node);
 
-    const { width, height, margin } = this.props,
+    const { width, height, margin, showYAxis } = this.props,
       { data, transition } = this.props,
       { chartWidth, chartHeight } = svgDimensions(
         this.svg,
@@ -111,19 +111,23 @@ class LineChart extends Component {
 
     this.xAxis.selectAll(".tick line").remove();
 
-    yAxis
-      .transition("update")
-      .duration(transition.long)
-      .call(
-        axisLeft(this.yScale)
-          .tickSizeOuter(0)
-          .tickSizeInner(5)
-          .tickValues([0, 1, 2, 3, 4, 5])
-          .tickFormat(format("d"))
-      );
+    if(showYAxis){
+      yAxis
+        .transition("update")
+        .duration(transition.long)
+        .call(
+          axisLeft(this.yScale)
+            .tickSizeOuter(0)
+            .tickSizeInner(5)
+            .tickValues([0, 1, 2, 3, 4, 5])
+            .tickFormat(format("d"))
+        );
 
-    yAxis.selectAll(".domain").remove();
-    yAxis.selectAll(".tick line").attr("transform", "translate(1, 0)");
+      yAxis.selectAll(".domain").remove();
+      yAxis.selectAll(".tick line").attr("transform", "translate(1, 0)");
+    }
+
+
 
     this.lineGenerator = line()
       .x(d => this.xScale(d.formattedDate))
