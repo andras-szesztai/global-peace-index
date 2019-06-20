@@ -2,6 +2,11 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
 
+    font-family: gill-sans-nova-condensed, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.2rem;
+
     background-color: ${props => props.background || '#fff'};
 
     grid-row: ${props => props.gridRow};
@@ -121,6 +126,13 @@ const ChartContainer = styled.div`
       cursor: pointer;
     }
 
+    text {
+      font-family: gill-sans-nova-condensed, sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1.2rem;
+    }
+
     position: relative;
     display: flex;
     justify-content: center;
@@ -133,9 +145,13 @@ const ChartContainer = styled.div`
       fill: #333333;
     }
 
+    /* .label-text-middle {
+      font-weight: 400;
+    } */
+
     .year-text {
-      font-size: 4rem;
-      font-weight: 300;
+      font-size: 3rem;
+      font-weight: 200;
     }
 `
 

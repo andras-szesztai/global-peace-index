@@ -1,5 +1,11 @@
 
-
+// font-family: gill-sans-nova-condensed,sans-serif;
+// font-weight: 800, 700, 500, 400, 300, 200;
+// font-style: normal;
+//
+// font-family: gill-sans-nova-condensed,sans-serif;
+// font-weight: 200;
+// font-style: italic;
 
 :root {
   --color-primary: #eb2f64;
@@ -44,4 +50,18 @@ html {
   box-sizing: border-box !important;
   user-select: none;
   font-size: 62.5%;
+  font-family: gill-sans-nova-condensed, sans-serif !important;
+  font-style: normal;
+  font-weight: 300;
+
+  .ui .label {
+    font-weight: 500 !important;
+  }
+
+  h4{
+    font-family: gill-sans-nova-condensed, sans-serif !important;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.6rem
+  }
 }

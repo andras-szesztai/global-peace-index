@@ -127,7 +127,7 @@ class App extends Component {
                 onChange = {this.handleMetricDropdownChange}
               />
               <LineChart
-                height={300}
+                height={250}
                 showYAxis={showYAxis[i]}
                 width={windowWidth > 600 ? lineChartWidth/3 : lineChartWidth}
                 data={lineChartData.filter(d => d.metric === el)}

@@ -11,7 +11,7 @@
 
   display: grid;
   grid-template-columns: 5% 90% 5%;
-  grid-template-rows: 2% 2.5fr 4fr 3.5fr 50px 2%;
+  grid-template-rows: 2% repeat(3, 1fr) 50px 2%;
 
   @media only screen and (max-width: $bp-small) {
 
