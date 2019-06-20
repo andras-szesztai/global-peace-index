@@ -116,6 +116,7 @@ class App extends Component {
 
     const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed } = this.state
 
+    const test = 'test'
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
     const lineChartWidth = windowWidth && windowWidth - windowWidth * 0.05
