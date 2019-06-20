@@ -90,10 +90,10 @@ class BeeSwarmPlot extends Component {
 
     this.chartArea = this.svg.select('.chart-area')
 
-    appendText(this.chartArea, 'label-text label-text-left', -10, chartHeight, 'start', '◄ Lower' )
-    appendText(this.chartArea, 'label-text label-text-right', chartWidth - 10, chartHeight, 'end', 'Higher ►' )
-    appendText(this.chartArea, 'label-text label-text-middle', chartWidth/2, chartHeight, 'middle', 'State of Peace' )
-    appendText(this.chartArea, 'year-text', 0, 15, 'start', year )
+    appendText(this.chartArea, 'label-text label-text-left', 0, -20, 'start', '◄ Lower' )
+    appendText(this.chartArea, 'label-text label-text-right', chartWidth, -20, 'end', 'Higher ►' )
+    appendText(this.chartArea, 'label-text label-text-middle', chartWidth/2, -20, 'middle', 'State of Peace' )
+    appendText(this.chartArea, 'year-text', 0, chartHeight, 'start', year )
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
     appendText(this.chartArea, 'high-inc-avg-value high-income-avg', this.xScale(highAvg), 0, 'middle', highAvg.toFixed(2), 0, 800 )
@@ -349,10 +349,10 @@ class BeeSwarmPlot extends Component {
 BeeSwarmPlot.defaultProps = {
 
   margin: {
-    top: 20,
-    right: 10,
-    bottom: 20,
-    left: 10
+    top: 30,
+    right: 0,
+    bottom: 30,
+    left: 0
   },
 
   transition: {

@@ -7,6 +7,8 @@ const Wrapper = styled.div`
     grid-row: ${props => props.gridRow};
     grid-column: ${props => props.gridColumn};
 
+    padding: ${props => props.padding || 0}
+
 `
 
 const SmallTooltip = styled.div`

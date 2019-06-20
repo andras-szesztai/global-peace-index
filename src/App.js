@@ -104,7 +104,7 @@ class App extends Component {
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
-    const lineChartWidth = windowWidth && windowWidth - windowWidth * 0.02
+    const lineChartWidth = windowWidth && windowWidth - windowWidth * 0.05
     const colorDomain = _.uniq(beeSwarmData.map(el => el.economicClass))
     const colorScale = scaleOrdinal().domain(colorDomain).range(colorArray)
 
@@ -145,6 +145,8 @@ class App extends Component {
           <section className="beeswarm-plot">
             <Wrapper
               gridColumn={1}
+              gridRow={2}
+              padding={'25px'}
               >
                 <YearSlider
                   valueLabelDisplay="auto"
@@ -155,9 +157,9 @@ class App extends Component {
                 />
             </Wrapper>
             <Wrapper
-
-              gridRow={sectionWidth > small ? 1 : 3}
-              gridColumn={sectionWidth > small ? 2 : 1}
+              gridRow={windowWidth > small ? 2 : 3}
+              gridColumn={windowWidth > small ? 2 : 1}
+              padding={'18px 50px 18px 25px'}
             >
               <MultipleDropdown
                 values = {mouseClickHighlight.length > 0 ? mouseClickHighlight.map(el => el.toLowerCase()) : mouseClickHighlight}
@@ -165,8 +167,8 @@ class App extends Component {
               />
             </Wrapper>
             <Wrapper
-              gridColumn={sectionWidth > small ? 'span 2' : 1}
-              gridRow={2}
+              gridColumn={windowWidth > small ? 'span 2' : 1}
+              gridRow={1}
               >
               <BeeSwarmPlot
                 width={sectionWidth}
@@ -203,7 +205,7 @@ class App extends Component {
               <Wrapper
                 ref={beeSwarmContainer => this.beeSwarmContainer = beeSwarmContainer}
                 gridColumn={sectionWidth > small ? 'span 2' : 1}
-                gridRow={2}
+                gridRow={1}
               />
           </section>
           <section  className="line-charts background">
