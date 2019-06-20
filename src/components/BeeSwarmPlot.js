@@ -356,7 +356,7 @@ BeeSwarmPlot.defaultProps = {
   },
 
   transition: {
-    veryLong: 10000,
+    veryLong: 7500,
     long: 1000,
     short: 300
   }

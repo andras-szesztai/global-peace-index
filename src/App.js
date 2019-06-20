@@ -30,7 +30,7 @@ const filteredBarChartData = barchartData.filter(d => metrics.includes(d.metric)
 class App extends Component {
   state = {
       sectionWidth: undefined,
-      yearFilter: 2012,
+      yearFilter: 2008,
       mouseoverHighlight: '',
       mouseClickHighlight: ['Iceland', 'Afghanistan'],
       metricsDisplayed: ['Safety & Security', 'Militarisation', 'Incarceration Rate'],
@@ -38,15 +38,25 @@ class App extends Component {
   }
 
   componentDidMount() {
+    
     window.addEventListener("resize", this.handleResize);
     this.handleResize()
+    
   }
 
-  handleResize = () => {
-    this.setState({
-      sectionWidth: this.section && this.section.clientWidth
-    });
+  componentDidUpdate(){
+    const { yearFilter } = this.state
+    setTimeout(() => this.setState(state => {
+                      if(yearFilter < 2019){
+                        return state.yearFilter = yearFilter + 1
+                      } else {
+                        return state.yearFilter = 2008
+                      }
+    }), 15000);
   }
+
+
+  handleResize = () => {this.setState({sectionWidth: this.section && this.section.clientWidth});}
 
   handleCircleClick = d => {
 
@@ -62,7 +72,7 @@ class App extends Component {
       array = [...array, d.country]
     }
 
-    this.setState(() => ({mouseClickHighlight: array}))
+    if(array.length > 0){this.setState(() => ({mouseClickHighlight: array}))}
   }
 
   handleCircleMouseover = d => {this.setState(state => state.mouseoverHighlight = d.country)}
@@ -85,7 +95,7 @@ class App extends Component {
       array = newArray
     }
 
-    this.setState(() => ({mouseClickHighlight: array}))
+    if(array.length > 0){this.setState(() => ({mouseClickHighlight: array}))}
   }
 
   handleMetricDropdownChange = (e, d) => {
@@ -99,24 +109,18 @@ class App extends Component {
   }
 
   handleClickOutside = () => {
-
     const copy = this.state
     if(copy.openClosed.includes(true)){
       this.setState(state => state.openClosed = [false,false,false])
     }
-   
   }
 
-  openDropDown = (i, openClosed) => {
-
-    this.setState(state => state.openClosed[i] = openClosed[i] === true ? false : true)
-  }
+  openDropDown = (i, openClosed) => {this.setState(state => state.openClosed[i] = openClosed[i] === true ? false : true)}
 
   render(){
 
     const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed } = this.state
 
-    const test = 'test'
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
     const lineChartWidth = windowWidth && windowWidth - windowWidth * 0.05
@@ -133,6 +137,9 @@ class App extends Component {
     const lineChartMargins = [{top: 25, right: 70, bottom: 25, left: 15},
                               {top: 25, right: 60, bottom: 25, left: 10},
                               {top: 25, right: 75, bottom: 25, left: 10}]
+
+    console.log(yearFilter);
+    
                               
     const lineCharts = metricsDisplayed.map( (el, i) => {
       return <Wrapper key={i}>
@@ -175,8 +182,8 @@ class App extends Component {
                   valueLabelDisplay="auto"
                   max={2019}
                   min={2008}
-                  defaultValue={yearFilter}
-                  onChange={(event, value)=> this.setState(state => state.yearFilter = +value)}
+                  value={yearFilter}
+                  onChange={(_, value)=> this.setState(state => state.yearFilter = +value)}
                 />
             </Wrapper>
             <Wrapper
@@ -193,7 +200,21 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-             
+              <BeeSwarmPlot
+  width={sectionWidth}
+  height={beeSwarmHeight}
+  data={beeSwarmData}
+  tooltipData = {tooltipData}
+  year={yearFilter}
+  handleMouseover = {this.handleCircleMouseover}
+  handleMouseout = {this.handleCircleMouseout}
+  mouseoverValue = {mouseoverHighlight}
+  handlemouseClick = {this.handleCircleClick}
+  mouseClickValue = {mouseClickHighlight}
+  windowWidth = {windowWidth}
+  colorScale={colorScale}
+  colorArray={colorArray}
+/>
             </Wrapper>
           </section>
 
