@@ -24,10 +24,13 @@ const MultipleDropdown = (props) => (
 const SingleDropDown = (props) => (
   <Dropdown
     text=' '
+    open={props.open}
     options={props.options}
     scrolling={true}
     onChange={props.onChange}
-    selectOnBlur={false} />
+    onBlur={props.onBlur}
+    selectOnBlur={false}
+    onClick={props.onClick} />
 )
 
 export { MultipleDropdown, SingleDropDown }

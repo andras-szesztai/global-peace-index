@@ -27,15 +27,14 @@ const colorArray = ['#E18F69', '#656662', '#656662', '#6F9CAB']
 const allMetrics = _.uniq(barchartData.map(d => d.metric)).filter(d => !['Score', 'Rank'].includes(d))
 const filteredBarChartData = barchartData.filter(d => metrics.includes(d.metric))
 
-
-
 class App extends Component {
   state = {
       sectionWidth: undefined,
       yearFilter: 2012,
       mouseoverHighlight: '',
       mouseClickHighlight: ['Iceland', 'Afghanistan'],
-      metricsDisplayed: ['Safety & Security', 'Militarisation', 'Incarceration Rate']
+      metricsDisplayed: ['Safety & Security', 'Militarisation', 'Incarceration Rate'],
+      openClosed: [false,false,false]
   }
 
   componentDidMount() {
@@ -95,12 +94,27 @@ class App extends Component {
     const number = d.options.filter(el => el.key === value)[0].number
 
     this.setState(state => state.metricsDisplayed[number] = value)
+    this.setState(state => state.openClosed = [false,false,false])
 
+  }
+
+  handleClickOutside = () => {
+
+    const copy = this.state
+    if(copy.openClosed.includes(true)){
+      this.setState(state => state.openClosed = [false,false,false])
+    }
+   
+  }
+
+  openDropDown = (i, openClosed) => {
+
+    this.setState(state => state.openClosed[i] = openClosed[i] === true ? false : true)
   }
 
   render(){
 
-    const { sectionWidth, yearFilter, mouseoverHighlight, mouseClickHighlight, metricsDisplayed } = this.state
+    const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
@@ -118,13 +132,15 @@ class App extends Component {
     const lineChartMargins = [{top: 25, right: 70, bottom: 25, left: 15},
                               {top: 25, right: 60, bottom: 25, left: 10},
                               {top: 25, right: 75, bottom: 25, left: 10}]
-
+                              
     const lineCharts = metricsDisplayed.map( (el, i) => {
       return <Wrapper key={i}>
-              <h4 className="dropdown-metric">{el}</h4>
+              <h4 className="dropdown-metric" onClick={() => this.openDropDown(i, openClosed)}>{el}</h4>
               <SingleDropDown
                 options={dropdownOptions(i)}
                 onChange = {this.handleMetricDropdownChange}
+                open={openClosed[i]}
+                onClick={() => this.openDropDown(i, openClosed)}
               />
               <LineChart
                 height={250}
@@ -141,7 +157,7 @@ class App extends Component {
     })
 
     return (
-      <div className="App" ref={window => this.window = window}>
+      <div className="App" ref={window => this.window = window} onClick={this.handleClickOutside}>
 
           <section className="intro">
             <Wrapper/>
@@ -176,21 +192,7 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-              <BeeSwarmPlot
-                width={sectionWidth}
-                height={beeSwarmHeight}
-                data={beeSwarmData}
-                tooltipData = {tooltipData}
-                year={yearFilter}
-                handleMouseover = {this.handleCircleMouseover}
-                handleMouseout = {this.handleCircleMouseout}
-                mouseoverValue = {mouseoverHighlight}
-                handlemouseClick = {this.handleCircleClick}
-                mouseClickValue = {mouseClickHighlight}
-                windowWidth = {windowWidth}
-                colorScale={colorScale}
-                colorArray={colorArray}
-              />
+             
             </Wrapper>
           </section>
 
