@@ -11,7 +11,7 @@ import { scaleLinear, scaleTime } from "d3-scale";
 import { Delaunay } from "d3-delaunay";
 import "d3-transition"
 
-import { ChartContainer, SmallTooltip, secondaryColor } from "./StyledComponents";
+import { ChartContainer, SmallTooltip, secondaryColorLight } from "./StyledComponents";
 
 import { svgDimensions, appendArea } from "./chartFunctions";
 
@@ -27,7 +27,7 @@ class LineChart extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { firstRender, voronoi } = this.state;
-    const { valueList, metric, year, width, windowWidth } = this.props;
+    const { valueList, metric, year, width } = this.props;
 
     if (!firstRender) {
       this.initVis();
@@ -119,7 +119,7 @@ class LineChart extends Component {
           axisLeft(this.yScale)
             .tickSizeOuter(0)
             .tickSizeInner(5)
-            .tickValues([0, 1, 2, 3, 4, 5])
+            .tickValues([1, 2, 3, 4, 5])
             .tickFormat(format("d"))
         );
 
@@ -244,7 +244,7 @@ class LineChart extends Component {
         .attr("x2", this.xScale(date))
         .attr("y1", this.yScale(0))
         .attr("y2", this.yScale(5))
-        .style("stroke", secondaryColor)
+        .style("stroke", secondaryColorLight)
         .attr("stroke-dasharray", "5, 2")
         .attr("stroke-linejoin", "round")
         .attr("stroke-linecap", "round")

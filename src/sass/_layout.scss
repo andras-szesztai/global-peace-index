@@ -7,11 +7,10 @@
   padding: 0;
 
   width: 100vw;
-  height: 150vh;
 
   display: grid;
   grid-template-columns: 5% 90% 5%;
-  grid-template-rows: 2% repeat(3, 1fr) 50px 2%;
+  grid-template-rows: 2% 35vh 70vh 300px 50px 2%;
 
   @media only screen and (max-width: $bp-small) {
 

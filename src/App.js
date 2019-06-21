@@ -136,7 +136,7 @@ class App extends Component {
 
   render(){
 
-    const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear } = this.state
+    const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
@@ -199,7 +199,10 @@ class App extends Component {
                   max={2019}
                   min={2008}
                   value={mainYearFilter}
-                  onChange={(_, value)=> this.setState(state => state.yearFilter = +value)}
+                  onChange={(_, value)=> 
+                  {this.setState(state => stopAutoplay ? state.stoppedYear = +value : state.yearFilter = +value)
+                  if(!stopAutoplay){this.setState(state => state.stopAutoplay = true)}
+                  }}
                   color = {secondaryColor}
                 />
             </Wrapper>
@@ -217,7 +220,21 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-            
+              <BeeSwarmPlot
+                width={sectionWidth}
+                height={beeSwarmHeight}
+                data={beeSwarmData}
+                tooltipData = {tooltipData}
+                year={yearFilter}
+                handleMouseover = {this.handleCircleMouseover}
+                handleMouseout = {this.handleCircleMouseout}
+                mouseoverValue = {mouseoverHighlight}
+                handlemouseClick = {this.handleCircleClick}
+                mouseClickValue = {mouseClickHighlight}
+                windowWidth = {windowWidth}
+                colorScale={colorScale}
+                colorArray={colorArray}
+              />
             </Wrapper>
           </section>
 

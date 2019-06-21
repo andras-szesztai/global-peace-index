@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+
+const secondaryColor = '#666666';
+const secondaryColorLight = 'rgba(34,36,38,.15)';
+
 const Wrapper = styled.div`
 
     font-family: gill-sans-nova-condensed, sans-serif;
@@ -149,6 +153,11 @@ const ChartContainer = styled.div`
       fill: #333333;
     }
 
+    .high-inc-avg-value,
+    .low-inc-avg-value {
+      font-weight: 500;
+    }
+
     /* .label-text-middle {
       font-weight: 400;
     } */
@@ -159,5 +168,4 @@ const ChartContainer = styled.div`
     }
 `
 
-const secondaryColor = '#666666'
-export { Wrapper, ChartContainer, Tooltip, SmallTooltip, secondaryColor }
+export { Wrapper, ChartContainer, Tooltip, SmallTooltip, secondaryColor, secondaryColorLight }
