@@ -205,6 +205,8 @@ class BeeSwarmPlot extends Component {
 
     const { data, year, transition } = this.props
 
+    console.log(year)
+
     const lowAvg = calculateAvg(data, 'Low income', year)
     const highAvg = calculateAvg(data, 'High income', year)
 

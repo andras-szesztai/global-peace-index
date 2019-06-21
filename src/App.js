@@ -225,7 +225,7 @@ class App extends Component {
                 height={beeSwarmHeight}
                 data={beeSwarmData}
                 tooltipData = {tooltipData}
-                year={yearFilter}
+                year={mainYearFilter}
                 handleMouseover = {this.handleCircleMouseover}
                 handleMouseout = {this.handleCircleMouseout}
                 mouseoverValue = {mouseoverHighlight}
