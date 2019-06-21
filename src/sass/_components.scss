@@ -18,3 +18,94 @@
   }
   
 }
+
+
+.intro{
+
+  h1{
+    text-transform: uppercase;
+    font-size: 6rem;
+    font-weight: 200 !important;
+    font-family: gill-sans-nova-condensed, sans-serif !important;
+    line-height: .8em;
+    letter-spacing: 1.2rem;
+    color: $color-grey;
+  }
+
+  .gap{
+    letter-spacing: 4.5rem;
+    animation: 5s;
+    animation-name: makeGap;
+    animation-fill-mode: backwards; 
+    animation-delay: 3s;
+  }
+
+  .low {
+    color: $color-primary;
+    animation: 5s;
+    animation-name: colorOrange;
+    animation-fill-mode: backwards; 
+    animation-delay: 3s;
+  }
+
+  .middle {
+    font-size: 2rem;
+    animation: 5s;
+    animation-name: lowerFontSize;
+    animation-fill-mode: backwards; 
+    animation-delay: 3s;
+  }
+  
+
+  .high {
+    color: $color-secondary;
+    animation: 5s;
+    animation-name: colorBlue;
+    animation-fill-mode: backwards; 
+    animation-delay: 3s;
+  }
+
+  @keyframes makeGap {
+    0% {
+      letter-spacing: 1.2rem;
+    }
+  
+    100% {
+      letter-spacing: 4.5rem;
+    }
+  }
+
+  @keyframes lowerFontSize {
+    0% {
+      font-size: 6rem;
+      // letter-spacing: 1.2rem;
+    }
+  
+    100% {
+      font-size: 2rem;
+      // letter-spacing:4.5rem;
+    }
+  }
+
+  @keyframes colorOrange {
+    0%{
+      color: $color-grey;
+    }
+
+    100% {
+      color: $color-primary;
+    }
+  }
+
+  @keyframes colorBlue {
+    0%{
+      color: $color-grey;
+    }
+
+    100% {
+      color: $color-secondary;
+    }
+  }
+
+
+}

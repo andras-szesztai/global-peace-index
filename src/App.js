@@ -184,8 +184,16 @@ class App extends Component {
       <div className="App" ref={window => this.window = window} onClick={this.handleClickOutside}>
 
           <section className="intro">
-            <Wrapper/>
-            <Wrapper/>
+            <Wrapper
+            >
+            <h1>Global</h1>
+            <h1>peace</h1>
+            <h1 className="gap"><span className="low">g</span><span className="middle">a</span><span className="high">p</span></h1>
+            </Wrapper>
+            <Wrapper
+            >
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A labore voluptatem soluta nostrum minus quam aliquid debitis, quidem deleniti facere expedita veritatis tenetur architecto asperiores vero, delectus at. Corporis nobis blanditiis explicabo dolorem a temporibus nisi modi recusandae ab atque consectetur doloremque culpa fugiat architecto minima dolorum, sapiente consequuntur nam?</p>
+            </Wrapper>
           </section>
 
           <section className="beeswarm-plot">
