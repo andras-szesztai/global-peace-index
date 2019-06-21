@@ -3,6 +3,8 @@ import React, {Component} from 'react'
 import { ChartContainer, Tooltip } from './StyledComponents'
 import BarChart from './BarChart'
 
+import { Icon } from 'semantic-ui-react'
+
 import { select } from 'd3-selection'
 import { interpolateNumber } from 'd3-interpolate'
 import { scaleLinear } from 'd3-scale'
@@ -90,9 +92,6 @@ class BeeSwarmPlot extends Component {
 
     this.chartArea = this.svg.select('.chart-area')
 
-    appendText(this.chartArea, 'label-text label-text-left', 0, -30, 'start', 'Lower' )
-    appendText(this.chartArea, 'label-text label-text-right', chartWidth, -30, 'end', 'Higher' )
-    appendText(this.chartArea, 'label-text label-text-middle', chartWidth/2, -30, 'middle', 'State of Peace')
     appendText(this.chartArea, 'year-text', 0, chartHeight + 10, 'start', year )
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
@@ -282,9 +281,6 @@ class BeeSwarmPlot extends Component {
     const { width, height, margin } = this.props,
           {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin)
 
-    moveText(this.chartArea, '.label-text-right', chartWidth - 10, chartHeight-10)
-    moveText(this.chartArea, '.label-text-middle', chartWidth/2, chartHeight-10)
-
     this.xScale.range([0, chartWidth])
 
     this.updateData()
@@ -325,6 +321,9 @@ class BeeSwarmPlot extends Component {
       <div>
         <ChartContainer ref={div => this.div = div}>
           <svg ref={node => this.node = node}/>
+          <p className="label label__icon label__left"><Icon className="label__icon__left" name="caret left" />Lower</p>
+          <p className="label label__icon label__right">Higher<Icon className="label__icon_right" name="caret right" /></p>
+          <p className="label label__text">State of Peace</p>
           <Tooltip
               className="tooltip"
               color = {color}

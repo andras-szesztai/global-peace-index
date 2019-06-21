@@ -130,6 +130,29 @@ const ChartContainer = styled.div`
       cursor: pointer;
     }
 
+    .label {
+      position: absolute;
+      top: 0;
+      z-index: 10;
+      color: secondaryColor !important;
+
+      &__left {
+        left: -5px;
+      }
+
+      &__right {
+        right: 10px;
+      }
+
+      &__icon__left{
+        margin-right: 5px;
+      }
+
+      &__icon__right {
+        margin-left: 5px;
+      }
+    }
+
     text {
       font-family: gill-sans-nova-condensed, sans-serif;
       font-style: normal;
@@ -163,7 +186,7 @@ const ChartContainer = styled.div`
     } */
 
     .year-text {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 200;
     }
 `
