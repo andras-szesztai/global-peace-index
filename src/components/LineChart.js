@@ -9,9 +9,9 @@ import { axisLeft, axisBottom } from "d3-axis";
 import { line, curveMonotoneX } from "d3-shape";
 import { scaleLinear, scaleTime } from "d3-scale";
 import { Delaunay } from "d3-delaunay";
-import "d3-transition";
+import "d3-transition"
 
-import { ChartContainer, SmallTooltip } from "./StyledComponents";
+import { ChartContainer, SmallTooltip, secondaryColor } from "./StyledComponents";
 
 import { svgDimensions, appendArea } from "./chartFunctions";
 
@@ -124,7 +124,7 @@ class LineChart extends Component {
         );
 
       yAxis.selectAll(".domain").remove();
-      yAxis.selectAll(".tick line").attr("transform", "translate(1, 0)");
+      yAxis.selectAll(".tick line").remove()
     }
 
 
@@ -244,11 +244,12 @@ class LineChart extends Component {
         .attr("x2", this.xScale(date))
         .attr("y1", this.yScale(0))
         .attr("y2", this.yScale(5))
-        .style("stroke", "#333")
+        .style("stroke", secondaryColor)
         .attr("stroke-dasharray", "5, 2")
         .attr("stroke-linejoin", "round")
         .attr("stroke-linecap", "round")
-        .attr("stroke-width", 1);
+        .attr("stroke-width", '1px');
+
     } else {
       this.chartArea
         .select(".year-line")

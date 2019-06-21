@@ -1,17 +1,16 @@
 import Slider from '@material-ui/lab/Slider';
 import { withStyles } from '@material-ui/core/styles';
-
+import { secondaryColor } from './StyledComponents'
 
 const YearSlider = withStyles({
   root: {
-    color: '#333',
+    color: 'rgba(34,36,38,.15)',
     height: 8,
   },
   thumb: {
     height: 12,
     width: 12,
-    backgroundColor: '#333',
-    border: '2px solid currentColor',
+    backgroundColor: secondaryColor,
     marginTop: -6,
     marginLeft: -6,
     '&:focus,&:hover,&$active': {
@@ -20,7 +19,8 @@ const YearSlider = withStyles({
   },
   active: {},
   valueLabel: {
-    left: 'calc(-50% - 8px)',
+    left: 'calc(-50% - 4px)',
+    color: secondaryColor
   },
   track: {
     height: 1,

@@ -9,13 +9,14 @@ import YearSlider from './components/Slider'
 import {MultipleDropdown, SingleDropDown} from './components/Dropdown'
 import BeeSwarmPlot from './components/BeeSwarmPlot'
 import LineChart from './components/LineChart'
-import { Wrapper } from './components/StyledComponents'
+import { Wrapper, secondaryColor } from './components/StyledComponents'
 
 import beeSwarmData from './data/beeswarmData.json'
 import barchartData from './data/barchartData.json'
 
 const small = 600
 const medium = 900
+const autoPlayDuration = 12000
 
 const metrics = [
       'Overall Score', 'Safety & Security', 'Militarisation', 'Incarceration Rate', 'Political Instability',
@@ -57,7 +58,6 @@ class App extends Component {
     } else {
       this.autoPlay()
     }
-
   }
 
   autoPlay = () => {
@@ -68,7 +68,7 @@ class App extends Component {
       } else {
         return state.yearFilter = 2008
       }
-}), 2000)
+}), autoPlayDuration)
   }
 
 
@@ -192,7 +192,7 @@ class App extends Component {
             <Wrapper
               gridColumn={1}
               gridRow={2}
-              padding={'25px'}
+              padding={'30px'}
               >
                 <YearSlider
                   valueLabelDisplay="auto"
@@ -200,6 +200,7 @@ class App extends Component {
                   min={2008}
                   value={mainYearFilter}
                   onChange={(_, value)=> this.setState(state => state.yearFilter = +value)}
+                  color = {secondaryColor}
                 />
             </Wrapper>
             <Wrapper
@@ -216,21 +217,7 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-              <BeeSwarmPlot
-                width={sectionWidth}
-                height={beeSwarmHeight}
-                data={beeSwarmData}
-                tooltipData = {tooltipData}
-                year={mainYearFilter}
-                handleMouseover = {this.handleCircleMouseover}
-                handleMouseout = {this.handleCircleMouseout}
-                mouseoverValue = {mouseoverHighlight}
-                handlemouseClick = {this.handleCircleClick}
-                mouseClickValue = {mouseClickHighlight}
-                windowWidth = {windowWidth}
-                colorScale={colorScale}
-                colorArray={colorArray}
-              />
+            
             </Wrapper>
           </section>
 

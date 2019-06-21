@@ -141,6 +141,10 @@ const ChartContainer = styled.div`
 
     background-color: ${props => props.background || '#fff'};
 
+    .domain{
+      stroke: rgba(34,36,38,.15);
+    }
+
     .label-text {
       fill: #333333;
     }
@@ -155,4 +159,5 @@ const ChartContainer = styled.div`
     }
 `
 
-export { Wrapper, ChartContainer, Tooltip, SmallTooltip }
+const secondaryColor = '#666666'
+export { Wrapper, ChartContainer, Tooltip, SmallTooltip, secondaryColor }
