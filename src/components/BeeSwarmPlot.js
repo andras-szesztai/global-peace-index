@@ -107,7 +107,7 @@ class BeeSwarmPlot extends Component {
         .force('y', forceY(chartHeight/2).strength(.15))
         .force('collide', forceCollide( d => this.radiusScale(d.population/million) + 4))
         .alphaDecay(0)
-			  .alpha(.1)
+			  .alpha(.15)
         .on("tick", () => {
 
           this.chartArea.selectAll('.main-circle')

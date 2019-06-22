@@ -10,7 +10,7 @@
 
   display: grid;
   grid-template-columns: 5% 90% 5%;
-  grid-template-rows: 2% 35vh 70vh 300px 50px 2%;
+  grid-template-rows: 2% 35vh 5vh 70vh 300px 70px 2%;
 
   @media only screen and (max-width: $bp-small) {
 
@@ -39,9 +39,9 @@ section {
   grid-row: 2;
 
   display: grid;
-  grid-template-columns: 2fr 1rem 3fr 2rem 3fr;
-  grid-template-rows: 1fr;
-
+  grid-template-columns: 2fr 2rem 3fr 5rem 3fr;
+  grid-template-rows: repeat(2, 50%);
+     
   @media only screen and (max-width: $bp-small) {
     grid-template-rows: 3fr 7fr;
     grid-template-columns: 1fr;
@@ -51,7 +51,7 @@ section {
 
 .beeswarm-plot {
 
-  grid-row: 3;
+  grid-row: 4;
   display: grid;
   grid-template-rows:  8fr 2fr;
   grid-template-columns: repeat(2, 1fr);
@@ -65,7 +65,7 @@ section {
 
 .line-charts {
 
-  grid-row: 4;
+  grid-row: 5;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -80,7 +80,7 @@ section {
 
 .credits {
 
-  grid-row: 5;
+  grid-row: 6;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);

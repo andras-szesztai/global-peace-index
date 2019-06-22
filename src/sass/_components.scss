@@ -26,29 +26,34 @@
     font-size: 6rem;
     font-weight: 200 !important;
     font-family: gill-sans-nova-condensed, sans-serif !important;
-    line-height: .8em;
+    line-height: 5.2rem;
     letter-spacing: 1.2rem;
     color: $color-grey;
   }
 
   p,
-  label {
+  label,
+  a {
     font-size: 1.4rem !important;
     font-weight: 400 !important;
     font-family: gill-sans-nova-condensed, sans-serif !important;
     color: $color-grey !important;
   }
 
+  a {
+    text-decoration: underline;
+  }
+
   .legend {
 
     &__low {
       color: $color-primary;
-      font-weight: 700 !important;
+      font-weight: 600 !important;
     }
 
     &__high {
       color: $color-secondary;
-      font-weight: 700 !important;
+      font-weight: 600 !important;
     }
 
   }

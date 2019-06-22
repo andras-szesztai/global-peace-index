@@ -61,20 +61,20 @@ class App extends Component {
         this.setState(state => state.stoppedYear = yearFilter)
       }
     } else {
-     // this.autoPlay()
+     this.autoPlay()
     }
   }
 
-//   autoPlay = () => {
-//     const {yearFilter} =this.state
-//     setTimeout(() => this.setState(state => {
-//       if(yearFilter < 2019){
-//         return state.yearFilter = yearFilter + 1
-//       } else {
-//         return state.yearFilter = 2008
-//       }
-// }), autoPlayDuration)
-  // }
+  autoPlay = () => {
+    const {yearFilter} =this.state
+    setTimeout(() => this.setState(state => {
+      if(yearFilter < 2019){
+        return state.yearFilter = yearFilter + 1
+      } else {
+        return state.yearFilter = 2008
+      }
+}), autoPlayDuration)
+  }
 
 
   handleResize = () => {this.setState({sectionWidth: this.section && this.section.clientWidth});}
@@ -207,6 +207,7 @@ class App extends Component {
 
           <section className="intro">
             <Wrapper
+              gridRow={1}
             >
             <h1>Global</h1>
             <h1>peace</h1>
@@ -215,26 +216,34 @@ class App extends Component {
             <Wrapper
               gridColumn={3}
             >
-              <p>Global Peace Index (GPI) measures the relative position of nations' and regions' peacefulness. It GPI ranks 163 independent states and territories (99.7 per cent of the world’s population) according to their levels of peacefulness.</p>
+              <p>Global Peace Index (GPI) measures the relative position of nations' and regions' peacefulness. It ranks 163 independent states and territories (99.7 per cent of the world’s population) according to their levels of peacefulness.</p>
               <p>The GPI is a report produced by the Institute for Economics and Peace (IEP) and developed in consultation with an international panel of peace experts from peace institutes and think tanks with data collected and collated by the Economist Intelligence Unit.</p>
-              <p>To find out more, you can download the latest <span>Global Peace Index Report from 2019</span></p>
+              <p>To find out more, you can download the latest <a href="http://visionofhumanity.org/app/uploads/2019/06/GPI-2019web003.pdf"  target="_blank" >Global Peace Index Report from 2019</a> or watch its <a href="https://www.csis.org/events/global-peace-index-2019-launch"  target="_blank" > official launch</a>.</p>
             </Wrapper>
             <Wrapper
               gridColumn={5}
             >
-              <p>The following visualization attempts to demonstrate changes in the Global Peace Gap, the difference in peacefulness between between countries beloning to the <span className="legend__low">Low income</span> group and those in the <span className="legend__high">High income</span> group.</p>
-              <FlexWrapper
-                justify='flex-start'
-                direction='column'
-                align="start"
-                >
-                <RegionFilter
-                  handleSave={this.handleRegionSave}
-                  filterButtonColor = {regionFilterButton}
-                />
-                <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
-              </FlexWrapper>
+              <p>The following visualization attempts to demonstrate changes that took place in the Global Peace Gap - the difference in peacefulness between countries belonging to the <span className="legend__low">Low income</span> group and those in the <span className="legend__high">High income</span> group -, around the globe between 2008 and 2019.</p>
             </Wrapper>
+              <Wrapper
+                gridRow={2}
+                gridColumn={5}
+              >
+                <FlexWrapper
+                  justify="space-between"
+                  direction='column'
+                  align="flex-start"
+                  >
+                  <RegionFilter
+                    handleSave={this.handleRegionSave}
+                    filterButtonColor = {regionFilterButton}
+                  />
+                  <br></br>
+                  <br></br>
+                  <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
+                </FlexWrapper>
+              </Wrapper>
+            
           </section>
 
           <section className="beeswarm-plot">
@@ -269,7 +278,7 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-                {/* <BeeSwarmPlot
+                <BeeSwarmPlot
                   width={sectionWidth}
                   height={beeSwarmHeight}
                   data={filteredBeesWarmData}
@@ -284,12 +293,12 @@ class App extends Component {
                   windowWidth = {windowWidth}
                   colorScale={colorScale}
                   colorArray={colorArray}
-              /> */}
+              />
             </Wrapper>
           </section>
 
           <section className="line-charts">
-            {/* {lineCharts} */}
+            {lineCharts}
           </section>
 
           <section className="credits">
