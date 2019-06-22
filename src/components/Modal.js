@@ -18,7 +18,7 @@ class RegionFilter extends Component {
 
   render() {
     const { open, size, values, buttonColor, shadowValues } = this.state
-    const { handleSave } = this.props
+    const { handleSave, filterButtonColor } = this.props
     const regions =  _.uniq(beeSwarmData.map(d => d.region)).sort()
     const radioButtons = regions.map(el => <Radio 
                                             toggle 
@@ -40,7 +40,10 @@ class RegionFilter extends Component {
 
     return (
       <div>
-        <Button basic onClick={this.show('large')}>Regions</Button>
+        <Button basic 
+                onClick={this.show('large')}
+                color={filterButtonColor}
+                >Regions</Button>
 
         <Modal size={size} open={open} onClose={this.close}>
           <Modal.Header>Filter for specific regions</Modal.Header>

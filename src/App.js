@@ -18,6 +18,7 @@ import barchartData from './data/barchartData.json'
 const small = 600
 const medium = 900
 const autoPlayDuration = 12000
+const regions = _.uniq(beeSwarmData.map(d => d.region))
 
 const metrics = [
       'Overall Score', 'Safety & Security', 'Militarisation', 'Incarceration Rate', 'Political Instability',
@@ -36,7 +37,7 @@ class App extends Component {
       stoppedYear: undefined,
       mouseoverHighlight: '',
       mouseClickHighlight: ['Iceland', 'Afghanistan'],
-      regionArray: _.uniq(beeSwarmData.map(d => d.region)),
+      regionArray: regions,
       lineHighlight: '',
       metricsDisplayed: ['Safety & Security', 'Militarisation', 'Incarceration Rate'],
       openClosed: [false,false,false],
@@ -160,6 +161,7 @@ class App extends Component {
     const lineChartWidth = windowWidth && windowWidth - windowWidth * 0.05
     const colorDomain = _.uniq(beeSwarmData.map(el => el.economicClass))
     const colorScale = scaleOrdinal().domain(colorDomain).range(colorArray)
+    const regionFilterButton = regions.length === regionArray.length ? 'grey' : 'red'
 
     const filteredMetrics = allMetrics.filter(d => !metricsDisplayed.includes(d))
     const filteredBeesWarmData = beeSwarmData.filter(d => regionArray.includes(d.region))
@@ -172,9 +174,7 @@ class App extends Component {
     const lineChartMargins = [{top: 25, right: 70, bottom: 25, left: 15},
                               {top: 25, right: 60, bottom: 25, left: 10},
                               {top: 25, right: 75, bottom: 25, left: 10}]
-    
-    console.log(regionArray);
-    
+                 
     let mainYearFilter = stoppedYear ? stoppedYear : yearFilter
                               
     const lineCharts = metricsDisplayed.map( (el, i) => {
@@ -224,6 +224,7 @@ class App extends Component {
               <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
               <RegionFilter
                 handleSave={this.handleRegionSave}
+                filterButtonColor = {regionFilterButton}
               />
             </Wrapper>
           </section>
@@ -260,7 +261,7 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-              {/* <BeeSwarmPlot
+              <BeeSwarmPlot
                 width={sectionWidth}
                 height={beeSwarmHeight}
                 data={filteredBeesWarmData}
@@ -275,7 +276,7 @@ class App extends Component {
                 windowWidth = {windowWidth}
                 colorScale={colorScale}
                 colorArray={colorArray}
-            /> */}
+            />
             </Wrapper>
           </section>
 

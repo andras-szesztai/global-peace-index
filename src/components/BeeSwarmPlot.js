@@ -30,7 +30,7 @@ class BeeSwarmPlot extends Component {
 
   componentDidUpdate(prevProps){
 
-    const { width, year, mouseoverValue, mouseClickValue, sizedByPopulation } = this.props
+    const { width, year, mouseoverValue, mouseClickValue, sizedByPopulation, data} = this.props
     const { firstRender } = this.state
 
     if(!firstRender) {
@@ -38,7 +38,9 @@ class BeeSwarmPlot extends Component {
       this.setState(state => state.firstRender = true)
     }
 
-    if(((prevProps.year !== year) || (prevProps.sizedByPopulation !== sizedByPopulation)) && firstRender ){
+    if(((prevProps.year !== year) || 
+      (prevProps.sizedByPopulation !== sizedByPopulation) || 
+      (prevProps.data.length !== data.length)) && firstRender ){
       this.updateData(prevProps)
     }
 
@@ -58,9 +60,8 @@ class BeeSwarmPlot extends Component {
 
     this.svg = select(this.node)
 
-    const { width, height, margin, transition, colorScale, colorArray } = this.props,
-          { data, year, mouseClickValue } = this.props,
-          { handleMouseover, handleMouseout, handlemouseClick } = this.props,
+    const { width, height, margin, transition, colorArray } = this.props,
+          { data, year } = this.props,
           {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin)
 
     const lowAvg = calculateAvg(data, 'Low income', year)
@@ -98,6 +99,7 @@ class BeeSwarmPlot extends Component {
     this.avgLineHover('.low-line', 'low-income-avg')
     this.avgLineHover('.high-line', 'high-income-avg')
 
+    this.createRemoveCircles()
     
     this.simulation = forceSimulation(data)
         .force("charge", forceManyBody().strength(-10))
@@ -133,7 +135,7 @@ class BeeSwarmPlot extends Component {
     const lowAvg = calculateAvg(data, 'Low income', year)
     const highAvg = calculateAvg(data, 'High income', year)
 
-    const { mainRadius, subRadius, forceCollideValue } = this.setElements()
+    const { forceCollideValue } = this.setElements()
 
     moveLine(this.chartArea, '.low-line', transition.long, this.xScale, lowAvg)
     moveLine(this.chartArea, '.high-line', transition.long, this.xScale, highAvg)
@@ -144,18 +146,8 @@ class BeeSwarmPlot extends Component {
     this.simulation
       .force('x', forceX(d => this.xScale(d[year])).strength(1))
       .force('collide',  forceCollide(sizedByPopulation ?  d => this.radiusScale(d.population/million) + 4 : forceCollideValue))
-    
-    this.chartArea
-      .selectAll('.main-circle')
-      .transition('resize')
-      .duration(1000)
-      .attr("r", sizedByPopulation ? d => this.radiusScale(d.population/million) : mainRadius)
-
-    this.chartArea
-      .selectAll('.sub-circle')
-      .transition('resize')
-      .duration(1000)
-      .attr("r", sizedByPopulation ? d => this.radiusScale(d.population/million) + 2 : subRadius)
+  
+    this.createRemoveCircles()
 
   	this.simulation
   			.alphaDecay(0)
@@ -240,7 +232,7 @@ class BeeSwarmPlot extends Component {
   updateDims(){
 
     const { width, height, margin } = this.props,
-          {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin)
+          {chartWidth} = svgDimensions(this.svg, width, height, margin)
 
     this.xScale.range([0, chartWidth])
 
@@ -274,31 +266,45 @@ class BeeSwarmPlot extends Component {
 
   createRemoveCircles(){
 
-    const {data, colorScale, mouseClickValue, year, handleMouseover, handleMouseout, handlemouseClick} = this.props
-    const {tooltipY} = this.setElements()
+    const {data, colorScale, mouseClickValue, year, handleMouseover, handleMouseout, handlemouseClick, sizedByPopulation, transition} = this.props
+    const {tooltipY, mainRadius, subRadius } = this.setElements()
 
     const subCircles = this.chartArea.selectAll('.sub-circle').data(data, d => d.country)
+    const mainCircles = this.chartArea.selectAll('.main-circle').data(data, d => d.country)
 
-    subCircles.exit().remove()
+    subCircles.exit()
+      .transition('remove')
+      .duration(transition.long)
+      .attr("r", 2)  
+      .remove()
     
     subCircles.enter()
           .append('circle')
           .attr('class', 'sub-circle')
           .attr("r", d => this.radiusScale(d.population/million) + 2)
-          .attr('fill', d => colorScale(d.economicClass))
           .attr('stroke', d => colorScale(d.economicClass))
+          .attr("r", 0)
           .attr('fill-opacity', 0)
           .attr('stroke-opacity', d => mouseClickValue.includes(d.country) ? 1 : 0)
           .attr("cx", d => d[year])
           .attr("cy", d => this.chartHeight/2)
+            .merge(subCircles)
+            .transition('add')
+            .duration(transition.long)
+            .attr("r", sizedByPopulation ? d => this.radiusScale(d.population/million) + 2 : subRadius)
+            
 
-    this.chartArea
-          .selectAll('.main-circle')
-          .data(data, d => d.country)
+    mainCircles.exit()
+      .transition('remove')
+      .duration(transition.long)
+      .attr("r", 0)
+      .remove()
+
+    mainCircles
           .enter()
           .append('circle')
           .attr('class', 'main-circle')
-          .attr("r", d => this.radiusScale(d.population/million))
+          .attr("r", 0)
           .attr("stroke-width", 4)
           .attr("stroke", 'white')
           .attr('stroke-opacity', 0)
@@ -336,7 +342,10 @@ class BeeSwarmPlot extends Component {
 
               })
               .on('click', handlemouseClick)
-
+                .merge(mainCircles)
+                .transition('add')
+                .duration(transition.long)
+                .attr("r", sizedByPopulation ? d => this.radiusScale(d.population/million) : mainRadius)
 
   }
 
