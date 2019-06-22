@@ -7,6 +7,7 @@ import { scaleOrdinal } from 'd3-scale'
 
 import YearSlider from './components/Slider'
 import {MultipleDropdown, SingleDropDown} from './components/Dropdown'
+import RegionFilter from './components/Modal'
 import BeeSwarmPlot from './components/BeeSwarmPlot'
 import LineChart from './components/LineChart'
 import { Wrapper, FlexWrapper, secondaryColor } from './components/StyledComponents'
@@ -35,6 +36,7 @@ class App extends Component {
       stoppedYear: undefined,
       mouseoverHighlight: '',
       mouseClickHighlight: ['Iceland', 'Afghanistan'],
+      regionArray: _.uniq(beeSwarmData.map(d => d.region)),
       lineHighlight: '',
       metricsDisplayed: ['Safety & Security', 'Militarisation', 'Incarceration Rate'],
       openClosed: [false,false,false],
@@ -147,9 +149,11 @@ class App extends Component {
 
   openDropDown = (i, openClosed) => {this.setState(state => state.openClosed[i] = openClosed[i] === true ? false : true)}
 
+  handleRegionSave = array =>  {this.setState(state => state.regionArray = array)}
+
   render(){
 
-    const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay, lineHighlight, sizedByPopulation } = this.state
+    const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay, lineHighlight, sizedByPopulation, regionArray } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
@@ -158,6 +162,7 @@ class App extends Component {
     const colorScale = scaleOrdinal().domain(colorDomain).range(colorArray)
 
     const filteredMetrics = allMetrics.filter(d => !metricsDisplayed.includes(d))
+    const filteredBeesWarmData = beeSwarmData.filter(d => regionArray.includes(d.region))
 
     const tooltipData = filteredBarChartData.filter(d => (d.country === mouseoverHighlight || d.country === 'All') && d.year === yearFilter)
     const lineChartData = barchartData.filter( d => ( mouseClickHighlight.includes(d.country) && metricsDisplayed.includes(d.metric)))
@@ -168,7 +173,7 @@ class App extends Component {
                               {top: 25, right: 60, bottom: 25, left: 10},
                               {top: 25, right: 75, bottom: 25, left: 10}]
     
-    console.log(this.state.lineHighlight);
+    console.log(regionArray);
     
     let mainYearFilter = stoppedYear ? stoppedYear : yearFilter
                               
@@ -217,6 +222,9 @@ class App extends Component {
             >
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cumque veniam! Animi velit necessitatibus ipsam quidem commodi sequi expedita blanditiis assumenda recusandae ex repellat consequuntur odit delectus aperiam voluptatem iure perspiciatis enim deleniti, quod sapiente placeat possimus! Odit voluptatibus sapiente similique cumque perferendis quam neque, distinctio sed, expedita cupiditate, id delectus aliquam quae aut placeat suscipit? Placeat quam porro nemo!</p> 
               <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
+              <RegionFilter
+                handleSave={this.handleRegionSave}
+              />
             </Wrapper>
           </section>
 
@@ -252,10 +260,10 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-              <BeeSwarmPlot
+              {/* <BeeSwarmPlot
                 width={sectionWidth}
                 height={beeSwarmHeight}
-                data={beeSwarmData}
+                data={filteredBeesWarmData}
                 tooltipData = {tooltipData}
                 sizedByPopulation = {sizedByPopulation}
                 year={mainYearFilter}
@@ -267,7 +275,7 @@ class App extends Component {
                 windowWidth = {windowWidth}
                 colorScale={colorScale}
                 colorArray={colorArray}
-            />
+            /> */}
             </Wrapper>
           </section>
 

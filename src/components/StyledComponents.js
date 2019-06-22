@@ -23,7 +23,9 @@ const Wrapper = styled.div`
 const FlexWrapper = styled(Wrapper)`
     display: flex;
     align-items: center;
-    justify-content: ${props => props.justify || 'start'}
+    justify-content: ${props => props.justify || 'start'};
+    flex-wrap: wrap;
+    flex-direction: ${props => props.direction || };
 `
 
 const SmallTooltip = styled.div`

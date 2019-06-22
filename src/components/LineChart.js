@@ -58,7 +58,6 @@ class LineChart extends Component {
     }
 
     if(prevProps.width !== width){
-      console.log('dims');
       this.updateDims()
     }
 

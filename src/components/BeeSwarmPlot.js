@@ -65,8 +65,6 @@ class BeeSwarmPlot extends Component {
 
     const lowAvg = calculateAvg(data, 'Low income', year)
     const highAvg = calculateAvg(data, 'High income', year)
-
-    const {tooltipY} = this.setElements()
     
     this.chartWidth = chartWidth
     this.chartHeight = chartHeight
@@ -92,7 +90,7 @@ class BeeSwarmPlot extends Component {
     this.chartArea.selectAll('.high-income-avg').attr('fill', colorArray[3])
     this.chartArea.selectAll('.low-income-avg').attr('fill', colorArray[0])
 
-    const tooltip = select(this.div).select('.tooltip')
+    this.tooltip = select(this.div).select('.tooltip')
 
     appendLine(this.chartArea, 'low-line', this.xScale, lowAvg, chartHeight, colorArray[0])
     appendLine(this.chartArea, 'high-line', this.xScale, highAvg, chartHeight, colorArray[3])
@@ -100,65 +98,7 @@ class BeeSwarmPlot extends Component {
     this.avgLineHover('.low-line', 'low-income-avg')
     this.avgLineHover('.high-line', 'high-income-avg')
 
-    this.chartArea
-          .selectAll('.sub-circle')
-          .data(data, d => d.country)
-          .enter()
-          .append('circle')
-          .attr('class', 'sub-circle')
-          .attr("r", d => this.radiusScale(d.population/million) + 2)
-          .attr('fill', d => colorScale(d.economicClass))
-          .attr('stroke', d => colorScale(d.economicClass))
-          .attr('fill-opacity', 0)
-          .attr('stroke-opacity', d => mouseClickValue.includes(d.country) ? 1 : 0)
-          .attr("cx", d => d[year])
-          .attr("cy", d => chartHeight/2)
-
-    this.chartArea
-          .selectAll('.main-circle')
-          .data(data, d => d.country)
-          .enter()
-          .append('circle')
-          .attr('class', 'main-circle')
-          .attr("r", d => this.radiusScale(d.population/million))
-          .attr("stroke-width", 4)
-          .attr("stroke", 'white')
-          .attr('stroke-opacity', 0)
-          .attr('fill', d => colorScale(d.economicClass))
-          .attr('opacity', d => ['Low income', 'High income'].includes(d.economicClass) ? 1 : .1 )
-          .attr("cx", d => d[year])
-          .attr("cy", d => chartHeight/2)
-              .on('mouseover', (d,i,n) => {
-                tooltip.style('display', 'block')
-                handleMouseover(d)
-                select(n[i]).attr('opacity', 1)
-              })
-              .on('mousemove', d => {
-                const mousePos = mouse(this.div)
-                const left = this.chartWidth/2 < mousePos[0]
-                const tooltipWidth = tooltip._groups[0][0].clientWidth
-
-                tooltip.style('top', mousePos[1] - 30 + 'px')
-
-                left  ? tooltip.style('left', mousePos[0] - tooltipWidth - tooltipY + 'px')
-                      : tooltip.style('left', mousePos[0] + tooltipY + 'px')
-
-                const { tooltipLeft, tooltipColor } = this.state
-                if(tooltipLeft !== left){
-                  this.setState(s => s.tooltipLeft = left)
-                }
-                if(tooltipColor !== d.economicClass){
-                  this.setState(s => s.tooltipColor = d.economicClass)
-                }
-
-              })
-              .on('mouseout', (d, i, n) => {
-                 handleMouseout(d, i, n)
-                 tooltip.style('display', 'none')
-
-              })
-              .on('click', handlemouseClick)
-
+    
     this.simulation = forceSimulation(data)
         .force("charge", forceManyBody().strength(-10))
         .force('x', forceX(d => this.xScale(d[year])).strength(1))
@@ -253,8 +193,6 @@ class BeeSwarmPlot extends Component {
 
           });
 
-    this.chartArea.selectAll('.main-circle').data(data, d => d.country)
-
     clearTimeout(this.init_decay);
 
     this.init_decay = setTimeout(() => {
@@ -331,6 +269,74 @@ class BeeSwarmPlot extends Component {
         area.select(selection).attr('stroke-opacity', .4)
         area.select(`.${ecoClass}`).attr('opacity', 0)
       })
+
+  }
+
+  createRemoveCircles(){
+
+    const {data, colorScale, mouseClickValue, year, handleMouseover, handleMouseout, handlemouseClick} = this.props
+    const {tooltipY} = this.setElements()
+
+    const subCircles = this.chartArea.selectAll('.sub-circle').data(data, d => d.country)
+
+    subCircles.exit().remove()
+    
+    subCircles.enter()
+          .append('circle')
+          .attr('class', 'sub-circle')
+          .attr("r", d => this.radiusScale(d.population/million) + 2)
+          .attr('fill', d => colorScale(d.economicClass))
+          .attr('stroke', d => colorScale(d.economicClass))
+          .attr('fill-opacity', 0)
+          .attr('stroke-opacity', d => mouseClickValue.includes(d.country) ? 1 : 0)
+          .attr("cx", d => d[year])
+          .attr("cy", d => this.chartHeight/2)
+
+    this.chartArea
+          .selectAll('.main-circle')
+          .data(data, d => d.country)
+          .enter()
+          .append('circle')
+          .attr('class', 'main-circle')
+          .attr("r", d => this.radiusScale(d.population/million))
+          .attr("stroke-width", 4)
+          .attr("stroke", 'white')
+          .attr('stroke-opacity', 0)
+          .attr('fill', d => colorScale(d.economicClass))
+          .attr('opacity', d => ['Low income', 'High income'].includes(d.economicClass) ? 1 : .1 )
+          .attr("cx", d => d[year])
+          .attr("cy", d => this.chartHeight/2)
+              .on('mouseover', (d,i,n) => {
+                this.tooltip.style('display', 'block')
+                handleMouseover(d)
+                select(n[i]).attr('opacity', 1)
+              })
+              .on('mousemove', d => {
+                const mousePos = mouse(this.div)
+                const left = this.chartWidth/2 < mousePos[0]
+                const tooltipWidth = this.tooltip._groups[0][0].clientWidth
+
+                this.tooltip.style('top', mousePos[1] - 30 + 'px')
+
+                left  ? this.tooltip.style('left', mousePos[0] - tooltipWidth - tooltipY + 'px')
+                      : this.tooltip.style('left', mousePos[0] + tooltipY + 'px')
+
+                const { tooltipLeft, tooltipColor } = this.state
+                if(tooltipLeft !== left){
+                  this.setState(s => s.tooltipLeft = left)
+                }
+                if(tooltipColor !== d.economicClass){
+                  this.setState(s => s.tooltipColor = d.economicClass)
+                }
+
+              })
+              .on('mouseout', (d, i, n) => {
+                 handleMouseout(d, i, n)
+                 this.tooltip.style('display', 'none')
+
+              })
+              .on('click', handlemouseClick)
+
 
   }
 
