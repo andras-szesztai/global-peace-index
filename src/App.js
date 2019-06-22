@@ -261,7 +261,7 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-              <BeeSwarmPlot
+              {/* <BeeSwarmPlot
                 width={sectionWidth}
                 height={beeSwarmHeight}
                 data={filteredBeesWarmData}
@@ -276,7 +276,7 @@ class App extends Component {
                 windowWidth = {windowWidth}
                 colorScale={colorScale}
                 colorArray={colorArray}
-            />
+            /> */}
             </Wrapper>
           </section>
 

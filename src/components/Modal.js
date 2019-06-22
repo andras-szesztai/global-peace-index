@@ -3,7 +3,6 @@ import { Button, Modal, Radio } from 'semantic-ui-react'
 import beeSwarmData from '../data/beeswarmData.json'
 import {FlexWrapper} from './StyledComponents'
 import _ from 'lodash'
-import { stat } from 'fs';
 
 class RegionFilter extends Component {
   state =   {   open: false,
@@ -24,17 +23,26 @@ class RegionFilter extends Component {
                                             toggle 
                                             label={el} 
                                             defaultChecked={values.includes(el)}
-                                            onChange={(_, o) => {
-                                                const {shadowValues} = this.state
+                                            onChange={(e, o) => {
+                                                const {shadowValues, values} = this.state
                                                 const value = o.label
                                                 const checked = o.checked
+                                                const differentValues = _.difference(values, shadowValues);
+
+                                                console.log(shadowValues)
+                                                console.log(differentValues)
 
                                                 if(checked){
                                                     this.setState(s => s.shadowValues = [...shadowValues, value])
                                                 } else {
                                                     this.setState(s => s.shadowValues = shadowValues.filter(el => el !== value))
                                                 }
+
+                                                if(differentValues.length > 0){
                                                     this.setState(s => s.buttonColor = 'green')
+                                                } else {
+                                                    this.setState(s => s.buttonColor = 'gray')
+                                                }
 
                                             }} />)
 
