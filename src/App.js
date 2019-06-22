@@ -207,6 +207,7 @@ class App extends Component {
             <Wrapper
             >
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A labore voluptatem soluta nostrum minus quam aliquid debitis, quidem deleniti facere expedita veritatis tenetur architecto asperiores vero, delectus at. Corporis nobis blanditiis explicabo dolorem a temporibus nisi modi recusandae ab atque consectetur doloremque culpa fugiat architecto minima dolorum, sapiente consequuntur nam?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cumque veniam! Animi velit necessitatibus ipsam quidem commodi sequi expedita blanditiis assumenda recusandae ex repellat consequuntur odit delectus aperiam voluptatem iure perspiciatis enim deleniti, quod sapiente placeat possimus! Odit voluptatibus sapiente similique cumque perferendis quam neque, distinctio sed, expedita cupiditate, id delectus aliquam quae aut placeat suscipit? Placeat quam porro nemo!</p>
             </Wrapper>
           </section>
 
@@ -242,7 +243,22 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-             
+             <BeeSwarmPlot
+  width={sectionWidth}
+  height={beeSwarmHeight}
+  data={beeSwarmData}
+  tooltipData = {tooltipData}
+  year={yearFilter}
+  handleMouseover = {this.handleCircleMouseover}
+  handleMouseout = {this.handleCircleMouseout}
+  mouseoverValue = {mouseoverHighlight}
+  handlemouseClick = {this.handleCircleClick}
+  mouseClickValue = {mouseClickHighlight}
+  windowWidth = {windowWidth}
+  colorScale={colorScale}
+  colorArray={colorArray}
+/>
+
             </Wrapper>
           </section>
 

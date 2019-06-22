@@ -206,11 +206,21 @@ class LineChart extends Component {
   }
 
   highlightLine(){
-    
+
+    const { highlighted, transition } = this.props
+
+    if(highlighted){
+      this.chartArea.selectAll('.line').transition('highlight').duration(transition.short).attr('opacity', d => d.key === highlighted ? 1 : .1)
+      this.chartArea.selectAll('.circle').transition('highlight').duration(transition.short).attr('opacity', d => d.country === highlighted ? 1 : .1)
+    } else {
+      this.chartArea.selectAll('.line').transition('unhighlight').duration(transition.short).attr('opacity', 1)
+      this.chartArea.selectAll('.circle').transition('unhighlight').duration(transition.short).attr('opacity', 1)
+    }
+
   }
 
   createUpdateLines(data, transition,duration) {
-    const { colorScale } = this.props,
+    const { colorScale, highlighted } = this.props,
       { long } = transition,
       lines = this.chartArea.selectAll(".line").data(data, d => d.key);
 
@@ -230,6 +240,7 @@ class LineChart extends Component {
       .attr("stroke-width", 0)
       .attr("stroke-linejoin", "round")
       .attr("stroke-linecap", "round")
+      .attr('opacity', d =>highlighted ? d.key === highlighted ? 1 : .1 : 1)
       .attr("d", d => this.lineGenerator(d.values))
       .merge(lines)
       .transition(transition)
@@ -240,7 +251,7 @@ class LineChart extends Component {
   }
 
   createUpdateCircles( transition, duration ) {
-    const { year, data, colorScale } = this.props,
+    const { year, data, colorScale, highlighted } = this.props,
       { long } = transition,
       circles = this.chartArea
         .selectAll(".circle")
@@ -284,6 +295,7 @@ class LineChart extends Component {
       .attr("fill", d => colorScale(d.economicClass))
       .attr("stroke", "#fff")
       .attr("stroke-width", 2)
+      .attr('opacity', d => highlighted ? d.key === highlighted ? 1 : .1 : 1)
       .attr("r", 0)
       .attr("cy", d => this.yScale(d.value))
       .attr("cx", d => this.xScale(d.formattedDate))
@@ -359,9 +371,10 @@ class LineChart extends Component {
   }
 
   render() {
-    const { colorScale, metric } = this.props;
+    const { colorScale, metric, highlighted } = this.props;
     const { voronoi } = this.state;
     const color = colorScale(voronoi.economicClass && voronoi.economicClass);
+    const hint = highlighted ? 'unhighlight' : 'highlight'
 
     return (
       <div>
@@ -373,7 +386,7 @@ class LineChart extends Component {
               {metric} ({voronoi.year}):
             </p>
             <p className="score">{voronoi.metricValue}</p>
-            <p><span>Click</span> here to highlight!</p>
+            <p><span>Click</span> here to {hint}!</p>
           </SmallTooltip>
         </ChartContainer>
       </div>
