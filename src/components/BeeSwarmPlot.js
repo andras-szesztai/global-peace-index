@@ -30,7 +30,7 @@ class BeeSwarmPlot extends Component {
 
   componentDidUpdate(prevProps){
 
-    const { width, year, mouseoverValue, mouseClickValue } = this.props
+    const { width, year, mouseoverValue, mouseClickValue, sizedByPopulation } = this.props
     const { firstRender } = this.state
 
     if(!firstRender) {
@@ -38,7 +38,7 @@ class BeeSwarmPlot extends Component {
       this.setState(state => state.firstRender = true)
     }
 
-    if(prevProps.year !== year && firstRender){
+    if(((prevProps.year !== year) || (prevProps.sizedByPopulation !== sizedByPopulation)) && firstRender ){
       this.updateData(prevProps)
     }
 
@@ -58,7 +58,7 @@ class BeeSwarmPlot extends Component {
 
     this.svg = select(this.node)
 
-    const { width, height, margin, transition, windowWidth, colorScale, colorArray } = this.props,
+    const { width, height, margin, transition, colorScale, colorArray } = this.props,
           { data, year, mouseClickValue } = this.props,
           { handleMouseover, handleMouseout, handlemouseClick } = this.props,
           {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin)
@@ -66,31 +66,8 @@ class BeeSwarmPlot extends Component {
     const lowAvg = calculateAvg(data, 'Low income', year)
     const highAvg = calculateAvg(data, 'High income', year)
 
-    console.log(lowAvg);
-    console.log(highAvg);
+    const {tooltipY} = this.setElements()
     
-    let mainRadius, subRadius, strokeWidth, tooltipY, forceCollideValue
-
-    if(windowWidth <= 600){
-      mainRadius= 4
-      subRadius= 6
-      strokeWidth= 2
-      tooltipY= 10
-      forceCollideValue= 8
-    } else if (windowWidth < 1000){
-      mainRadius= 6
-      subRadius= 9
-      strokeWidth= 3
-      tooltipY= 20
-      forceCollideValue= 12
-    } else {
-      mainRadius= 8
-      subRadius= 11
-      strokeWidth= 4
-      tooltipY= 30
-      forceCollideValue= 14
-    }
-
     this.chartWidth = chartWidth
     this.chartHeight = chartHeight
 
@@ -123,12 +100,6 @@ class BeeSwarmPlot extends Component {
     this.avgLineHover('.low-line', 'low-income-avg')
     this.avgLineHover('.high-line', 'high-income-avg')
 
-    mainRadius= 4
-    subRadius= 6
-    strokeWidth= 2
-    tooltipY= 10
-    forceCollideValue= 8
-
     this.chartArea
           .selectAll('.sub-circle')
           .data(data, d => d.country)
@@ -150,7 +121,7 @@ class BeeSwarmPlot extends Component {
           .append('circle')
           .attr('class', 'main-circle')
           .attr("r", d => this.radiusScale(d.population/million))
-          .attr("stroke-width", strokeWidth)
+          .attr("stroke-width", 4)
           .attr("stroke", 'white')
           .attr('stroke-opacity', 0)
           .attr('fill', d => colorScale(d.economicClass))
@@ -217,10 +188,12 @@ class BeeSwarmPlot extends Component {
 
   updateData(prevProps){
 
-    const { data, year, transition } = this.props
+    const { data, year, transition, sizedByPopulation } = this.props
 
     const lowAvg = calculateAvg(data, 'Low income', year)
     const highAvg = calculateAvg(data, 'High income', year)
+
+    const { mainRadius, subRadius, forceCollideValue } = this.setElements()
 
     moveLine(this.chartArea, '.low-line', transition.long, this.xScale, lowAvg)
     moveLine(this.chartArea, '.high-line', transition.long, this.xScale, highAvg)
@@ -228,7 +201,21 @@ class BeeSwarmPlot extends Component {
     this.avgLineHover('.low-line', 'low-income-avg')
     this.avgLineHover('.high-line', 'high-income-avg')
 
-  	this.simulation.force('x', forceX(d => this.xScale(d[year])).strength(1))
+    this.simulation
+      .force('x', forceX(d => this.xScale(d[year])).strength(1))
+      .force('collide',  forceCollide(sizedByPopulation ?  d => this.radiusScale(d.population/million) + 4 : forceCollideValue))
+    
+    this.chartArea
+      .selectAll('.main-circle')
+      .transition('resize')
+      .duration(1000)
+      .attr("r", sizedByPopulation ? d => this.radiusScale(d.population/million) : mainRadius)
+
+    this.chartArea
+      .selectAll('.sub-circle')
+      .transition('resize')
+      .duration(1000)
+      .attr("r", sizedByPopulation ? d => this.radiusScale(d.population/million) + 2 : subRadius)
 
   	this.simulation
   			.alphaDecay(0)
@@ -287,6 +274,28 @@ class BeeSwarmPlot extends Component {
     this.chartArea
           .selectAll('.main-circle')
           .attr('opacity', d => ['Low income', 'High income'].includes(d.economicClass) || mouseClickValue.includes(d.country) ? 1 : .1 )
+
+  }
+
+  setElements(){
+
+    const { windowWidth } = this.props
+
+    let mainRadius, subRadius, tooltipY, forceCollideValue
+
+  if (windowWidth < 1000){
+      mainRadius= 6
+      subRadius= 9
+      tooltipY= 20
+      forceCollideValue= 12
+    } else {
+      mainRadius= 8
+      subRadius= 11
+      tooltipY= 30
+      forceCollideValue= 14
+    }
+
+    return { mainRadius, subRadius, tooltipY, forceCollideValue }
 
   }
 

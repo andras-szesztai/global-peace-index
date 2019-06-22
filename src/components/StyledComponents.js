@@ -16,10 +16,14 @@ const Wrapper = styled.div`
     grid-row: ${props => props.gridRow};
     grid-column: ${props => props.gridColumn};
 
-    padding: ${props => props.padding || 0}
-
+    padding: ${props => props.padding || 0};
   
+`
 
+const FlexWrapper = styled(Wrapper)`
+    display: flex;
+    align-items: center;
+    justify-content: ${props => props.justify || 'start'}
 `
 
 const SmallTooltip = styled.div`
@@ -202,4 +206,4 @@ const ChartContainer = styled.div`
     }
 `
 
-export { Wrapper, ChartContainer, Tooltip, SmallTooltip, secondaryColor, secondaryColorLight }
+export { Wrapper, ChartContainer, FlexWrapper, Tooltip, SmallTooltip, secondaryColor, secondaryColorLight }

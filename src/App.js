@@ -9,7 +9,7 @@ import YearSlider from './components/Slider'
 import {MultipleDropdown, SingleDropDown} from './components/Dropdown'
 import BeeSwarmPlot from './components/BeeSwarmPlot'
 import LineChart from './components/LineChart'
-import { Wrapper, secondaryColor } from './components/StyledComponents'
+import { Wrapper, FlexWrapper, secondaryColor } from './components/StyledComponents'
 import { Radio } from 'semantic-ui-react'
 import beeSwarmData from './data/beeswarmData.json'
 import barchartData from './data/barchartData.json'
@@ -216,7 +216,7 @@ class App extends Component {
               gridColumn={5}
             >
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cumque veniam! Animi velit necessitatibus ipsam quidem commodi sequi expedita blanditiis assumenda recusandae ex repellat consequuntur odit delectus aperiam voluptatem iure perspiciatis enim deleniti, quod sapiente placeat possimus! Odit voluptatibus sapiente similique cumque perferendis quam neque, distinctio sed, expedita cupiditate, id delectus aliquam quae aut placeat suscipit? Placeat quam porro nemo!</p> 
-              <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Sized by population' : 'Sized equally'} />
+              <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
             </Wrapper>
           </section>
 
@@ -252,9 +252,22 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-
-
-
+              <BeeSwarmPlot
+                width={sectionWidth}
+                height={beeSwarmHeight}
+                data={beeSwarmData}
+                tooltipData = {tooltipData}
+                sizedByPopulation = {sizedByPopulation}
+                year={mainYearFilter}
+                handleMouseover = {this.handleCircleMouseover}
+                handleMouseout = {this.handleCircleMouseout}
+                mouseoverValue = {mouseoverHighlight}
+                handlemouseClick = {this.handleCircleClick}
+                mouseClickValue = {mouseClickHighlight}
+                windowWidth = {windowWidth}
+                colorScale={colorScale}
+                colorArray={colorArray}
+            />
             </Wrapper>
           </section>
 
@@ -263,10 +276,9 @@ class App extends Component {
           </section>
 
           <section className="credits">
-            <Wrapper />
-            <Wrapper />
-            <Wrapper />
-            <Wrapper />
+            <FlexWrapper className="credits__text" justify={'start'}>Designed and built by: Andras Szesztai</FlexWrapper>
+            <FlexWrapper className="credits__text" justify={'center'}>#dataforacause</FlexWrapper>
+            <FlexWrapper className="credits__text" justify={'flex-end'}>Data source: Institute for Economics and Peace: Global Peace Index; World Bank</FlexWrapper>
           </section>
 
           <section  className="beeswarm-plot background"
