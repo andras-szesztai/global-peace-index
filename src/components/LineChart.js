@@ -21,7 +21,8 @@ class LineChart extends Component {
     voronoi: {
       year: "",
       country: "",
-      economicClass: ""
+      economicClass: "",
+      metricValue: ""
     }
   };
 
@@ -312,13 +313,10 @@ class LineChart extends Component {
           voronoi: {
             year: d.year,
             country: d.country,
-            economicClass: d.economicClass
+            economicClass: d.economicClass,
+            metricValue: d.value.toFixed(2)
           }
         });
-
-        tooltip.select(".country").text(d.country);
-        tooltip.select(".score").text(d.value.toFixed(2));
-        tooltip.select(".year").text(d.year);
 
         tooltip.style("display", "block");
 
@@ -359,11 +357,12 @@ class LineChart extends Component {
         <ChartContainer ref={div => (this.div = div)}>
           <svg ref={node => (this.node = node)} />
           <SmallTooltip ref={tooltip => (this.tooltip = tooltip)} color={color}>
-            <h4 className="country"></h4>
+            <h4>{voronoi.country}</h4>
             <p>
-              {metric} (<span className="year" />):
+              {metric} ({voronoi.year}):
             </p>
-            <span className="score" />
+            <p className="score">{voronoi.metricValue}</p>
+            <p><span>Click</span> here to highlight!</p>
           </SmallTooltip>
         </ChartContainer>
       </div>

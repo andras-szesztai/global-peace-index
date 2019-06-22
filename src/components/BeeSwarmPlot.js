@@ -322,7 +322,7 @@ class BeeSwarmPlot extends Component {
         <ChartContainer ref={div => this.div = div}>
           <svg ref={node => this.node = node}/>
           <p className="label label__icon label__left"><Icon className="label__icon__left" name="caret left" />Lower</p>
-          <p className="label label__icon label__right">Higher<Icon className="label__icon_right" name="caret right" /></p>
+          <p className="label label__icon label__right">Higher<Icon className="label__icon__right" name="caret right" /></p>
           <p className="label label__text">State of Peace</p>
           <Tooltip
               className="tooltip"

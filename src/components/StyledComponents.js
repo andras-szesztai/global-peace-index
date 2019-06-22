@@ -59,15 +59,24 @@ const SmallTooltip = styled.div`
     p,
     h4 {
       font-size: .8em;
-      line-height: .4;
-      margin-bottom: .8rem !important;
+      line-height: .5;
+      ${'' /* margin-bottom: .8rem !important; */}
       padding: 0 !important;
+    }
+
+    h4,
+    span {
+      font-weight: 700;
     }
 
     .score {
       font-size: 1.6rem;
+      padding-bottom: 0 !important;
       font-weight: 700;
+      padding-top: .7rem !important;
     }
+
+
 
 `
 
@@ -143,7 +152,7 @@ const ChartContainer = styled.div`
       }
 
       &__right {
-        right: 10px;
+        right: 15px;
       }
 
       &__icon__left{
