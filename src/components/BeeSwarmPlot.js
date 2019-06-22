@@ -146,7 +146,7 @@ class BeeSwarmPlot extends Component {
     this.simulation
       .force('x', forceX(d => this.xScale(d[year])).strength(1))
       .force('collide',  forceCollide(sizedByPopulation ?  d => this.radiusScale(d.population/million) + 4 : forceCollideValue))
-  
+
     this.createRemoveCircles()
 
   	this.simulation

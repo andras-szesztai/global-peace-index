@@ -27,10 +27,6 @@ class RegionFilter extends Component {
                                                 const {shadowValues, values} = this.state
                                                 const value = o.label
                                                 const checked = o.checked
-                                                const differentValues = _.difference(values, shadowValues);
-
-                                                console.log(shadowValues)
-                                                console.log(differentValues)
 
                                                 if(checked){
                                                     this.setState(s => s.shadowValues = [...shadowValues, value])
@@ -38,14 +34,21 @@ class RegionFilter extends Component {
                                                     this.setState(s => s.shadowValues = shadowValues.filter(el => el !== value))
                                                 }
 
-                                                if(differentValues.length > 0){
-                                                    this.setState(s => s.buttonColor = 'green')
-                                                } else {
-                                                    this.setState(s => s.buttonColor = 'gray')
-                                                }
+                                            }} />)    
 
-                                            }} />)
+        const changedValuesOne = _.difference(values, shadowValues)
+        const changedValuesTwo = _.difference(shadowValues, values) 
 
+        if(changedValuesOne.length > 0 || changedValuesTwo.length > 0){
+            if(buttonColor !== 'green'){
+            this.setState(s => s.buttonColor = 'green')
+            }
+        } else {
+            if(buttonColor !== 'grey'){
+                this.setState(s => s.buttonColor = 'grey')
+            }
+        }                                                  
+           
     return (
       <div>
         <Button basic 
