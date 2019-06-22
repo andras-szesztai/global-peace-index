@@ -19,7 +19,6 @@
   
 }
 
-
 .intro{
 
   h1{
@@ -38,6 +37,20 @@
     font-weight: 400 !important;
     font-family: gill-sans-nova-condensed, sans-serif !important;
     color: $color-grey !important;
+  }
+
+  .legend {
+
+    &__low {
+      color: $color-primary;
+      font-weight: 700 !important;
+    }
+
+    &__high {
+      color: $color-secondary;
+      font-weight: 700 !important;
+    }
+
   }
 
   .ui.toggle.checkbox input:checked~.box, .ui.toggle.checkbox input:checked~label,
@@ -74,7 +87,6 @@
     animation-delay: 3s;
   }
   
-
   .high {
     color: $color-secondary;
     animation: 5s;
@@ -129,7 +141,6 @@
 
 .modal {
 
-
   .ui.toggle.checkbox input:checked~.box, .ui.toggle.checkbox input:checked~label,
   .ui.toggle.checkbox input:focus:checked~.box, .ui.toggle.checkbox input:focus:checked~label {
     color: $color-grey !important;
@@ -152,4 +163,12 @@
   &__text {
     font-size: 1rem !important;
   }
+}
+
+.button {
+  font-family: gill-sans-nova-condensed, sans-serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 400 !important;
+  color: $color-grey !important;
+  padding: 6px 12px !important;                                                                  
 }

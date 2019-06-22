@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 
 const FlexWrapper = styled(Wrapper)`
     display: flex;
-    align-items: center;
+    align-items: ${props => props.align || 'center'};
     justify-content: ${props => props.justify || 'start'};
     flex-wrap: wrap;
     flex-direction: ${props => props.direction || 'row' };

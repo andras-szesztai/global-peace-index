@@ -61,20 +61,20 @@ class App extends Component {
         this.setState(state => state.stoppedYear = yearFilter)
       }
     } else {
-      this.autoPlay()
+     // this.autoPlay()
     }
   }
 
-  autoPlay = () => {
-    const {yearFilter} =this.state
-    setTimeout(() => this.setState(state => {
-      if(yearFilter < 2019){
-        return state.yearFilter = yearFilter + 1
-      } else {
-        return state.yearFilter = 2008
-      }
-}), autoPlayDuration)
-  }
+//   autoPlay = () => {
+//     const {yearFilter} =this.state
+//     setTimeout(() => this.setState(state => {
+//       if(yearFilter < 2019){
+//         return state.yearFilter = yearFilter + 1
+//       } else {
+//         return state.yearFilter = 2008
+//       }
+// }), autoPlayDuration)
+  // }
 
 
   handleResize = () => {this.setState({sectionWidth: this.section && this.section.clientWidth});}
@@ -94,7 +94,7 @@ class App extends Component {
     }
 
     if(array.length > 0){this.setState(() => ({mouseClickHighlight: array}))}
-    if(!copy.stopAutoplay){this.setState(state => state.stopAutoplay = true)}
+
   }
 
   handleCircleMouseover = d => {this.setState(state => state.mouseoverHighlight = d.country)}
@@ -215,17 +215,25 @@ class App extends Component {
             <Wrapper
               gridColumn={3}
             >
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A labore voluptatem soluta nostrum minus quam aliquid debitis, quidem deleniti facere expedita veritatis tenetur architecto asperiores vero, delectus at. Corporis nobis blanditiis explicabo dolorem a temporibus nisi modi recusandae ab atque consectetur doloremque culpa fugiat architecto minima dolorum, sapiente consequuntur nam?</p>
+              <p>Global Peace Index (GPI) measures the relative position of nations' and regions' peacefulness. It GPI ranks 163 independent states and territories (99.7 per cent of the world’s population) according to their levels of peacefulness.</p>
+              <p>The GPI is a report produced by the Institute for Economics and Peace (IEP) and developed in consultation with an international panel of peace experts from peace institutes and think tanks with data collected and collated by the Economist Intelligence Unit.</p>
+              <p>To find out more, you can download the latest <span>Global Peace Index Report from 2019</span></p>
             </Wrapper>
             <Wrapper
               gridColumn={5}
             >
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cumque veniam! Animi velit necessitatibus ipsam quidem commodi sequi expedita blanditiis assumenda recusandae ex repellat consequuntur odit delectus aperiam voluptatem iure perspiciatis enim deleniti, quod sapiente placeat possimus! Odit voluptatibus sapiente similique cumque perferendis quam neque, distinctio sed, expedita cupiditate, id delectus aliquam quae aut placeat suscipit? Placeat quam porro nemo!</p> 
-              <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
-              <RegionFilter
-                handleSave={this.handleRegionSave}
-                filterButtonColor = {regionFilterButton}
-              />
+              <p>The following visualization attempts to demonstrate changes in the Global Peace Gap, the difference in peacefulness between between countries beloning to the <span className="legend__low">Low income</span> group and those in the <span className="legend__high">High income</span> group.</p>
+              <FlexWrapper
+                justify='flex-start'
+                direction='column'
+                align="start"
+                >
+                <RegionFilter
+                  handleSave={this.handleRegionSave}
+                  filterButtonColor = {regionFilterButton}
+                />
+                <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
+              </FlexWrapper>
             </Wrapper>
           </section>
 
@@ -261,27 +269,27 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-              <BeeSwarmPlot
-                width={sectionWidth}
-                height={beeSwarmHeight}
-                data={filteredBeesWarmData}
-                tooltipData = {tooltipData}
-                sizedByPopulation = {sizedByPopulation}
-                year={mainYearFilter}
-                handleMouseover = {this.handleCircleMouseover}
-                handleMouseout = {this.handleCircleMouseout}
-                mouseoverValue = {mouseoverHighlight}
-                handlemouseClick = {this.handleCircleClick}
-                mouseClickValue = {mouseClickHighlight}
-                windowWidth = {windowWidth}
-                colorScale={colorScale}
-                colorArray={colorArray}
-            />
+                {/* <BeeSwarmPlot
+                  width={sectionWidth}
+                  height={beeSwarmHeight}
+                  data={filteredBeesWarmData}
+                  tooltipData = {tooltipData}
+                  sizedByPopulation = {sizedByPopulation}
+                  year={mainYearFilter}
+                  handleMouseover = {this.handleCircleMouseover}
+                  handleMouseout = {this.handleCircleMouseout}
+                  mouseoverValue = {mouseoverHighlight}
+                  handlemouseClick = {this.handleCircleClick}
+                  mouseClickValue = {mouseClickHighlight}
+                  windowWidth = {windowWidth}
+                  colorScale={colorScale}
+                  colorArray={colorArray}
+              /> */}
             </Wrapper>
           </section>
 
           <section className="line-charts">
-            {lineCharts}
+            {/* {lineCharts} */}
           </section>
 
           <section className="credits">
