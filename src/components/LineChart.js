@@ -28,7 +28,7 @@ class LineChart extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { firstRender, voronoi } = this.state;
-    const { valueList, metric, year, width } = this.props;
+    const { valueList, metric, year, width, highlighted } = this.props;
 
     if (!firstRender) {
       this.initVis();
@@ -41,6 +41,12 @@ class LineChart extends Component {
       voronoi.country
     ) {
       this.circleHover();
+    }
+
+    if(
+      prevProps.highlighted !== highlighted
+    ){
+      this.highlightLine()
     }
 
     if (
@@ -199,6 +205,10 @@ class LineChart extends Component {
       );
   }
 
+  highlightLine(){
+    
+  }
+
   createUpdateLines(data, transition,duration) {
     const { colorScale } = this.props,
       { long } = transition,
@@ -287,7 +297,7 @@ class LineChart extends Component {
   }
 
   createUpdateVoronoi(transition, duration) {
-    const { data, margin } = this.props;
+    const { data, margin, handleClick } = this.props;
 
     const voronoi = Delaunay.from(
       data,
@@ -341,6 +351,7 @@ class LineChart extends Component {
 
         tooltip.style("display", "none");
       })
+      .on('click', handleClick)
       .merge(voronois)
       .transition(transition)
       .duration(duration)

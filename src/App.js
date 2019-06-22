@@ -35,6 +35,7 @@ class App extends Component {
       stoppedYear: undefined,
       mouseoverHighlight: '',
       mouseClickHighlight: ['Iceland', 'Afghanistan'],
+      lineHighlight: '',
       metricsDisplayed: ['Safety & Security', 'Militarisation', 'Incarceration Rate'],
       openClosed: [false,false,false],
       stopAutoplay: false
@@ -132,11 +133,20 @@ class App extends Component {
     }
   }
 
+  handleLineClick = (d) => {
+    const { lineHighlight } = this.state
+
+    lineHighlight === d.country ? 
+    this.setState( s => s.lineHighlight = '') :
+    this.setState( s => s.lineHighlight = d.country)
+
+  }
+
   openDropDown = (i, openClosed) => {this.setState(state => state.openClosed[i] = openClosed[i] === true ? false : true)}
 
   render(){
 
-    const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay } = this.state
+    const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay, lineHighlight } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
@@ -154,7 +164,9 @@ class App extends Component {
     const lineChartMargins = [{top: 25, right: 70, bottom: 25, left: 15},
                               {top: 25, right: 60, bottom: 25, left: 10},
                               {top: 25, right: 75, bottom: 25, left: 10}]
-
+    
+    console.log(this.state.lineHighlight);
+    
     let mainYearFilter = stoppedYear ? stoppedYear : yearFilter
                               
     const lineCharts = metricsDisplayed.map( (el, i) => {
@@ -176,6 +188,8 @@ class App extends Component {
                 margin={lineChartMargins[i]}
                 valueList = {mouseClickHighlight}
                 year = {mainYearFilter}
+                highlighted = {lineHighlight}
+                handleClick={this.handleLineClick}
               />
             </Wrapper>
     })
@@ -228,21 +242,7 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-              <BeeSwarmPlot
-                width={sectionWidth}
-                height={beeSwarmHeight}
-                data={beeSwarmData}
-                tooltipData = {tooltipData}
-                year={mainYearFilter}
-                handleMouseover = {this.handleCircleMouseover}
-                handleMouseout = {this.handleCircleMouseout}
-                mouseoverValue = {mouseoverHighlight}
-                handlemouseClick = {this.handleCircleClick}
-                mouseClickValue = {mouseClickHighlight}
-                windowWidth = {windowWidth}
-                colorScale={colorScale}
-                colorArray={colorArray}
-              />
+             
             </Wrapper>
           </section>
 
