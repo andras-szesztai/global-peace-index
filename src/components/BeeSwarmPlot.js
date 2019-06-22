@@ -60,12 +60,12 @@ class BeeSwarmPlot extends Component {
 
     this.svg = select(this.node)
 
-    const { width, height, margin, transition, colorArray } = this.props,
+    const { width, height, margin, transition, colorArray, sizedByPopulation } = this.props,
           { data, year } = this.props,
           {chartWidth, chartHeight} = svgDimensions(this.svg, width, height, margin)
 
-    const lowAvg = calculateAvg(data, 'Low income', year)
-    const highAvg = calculateAvg(data, 'High income', year)
+    const lowAvg = calculateAvg(data, 'Low income', year, sizedByPopulation)
+    const highAvg = calculateAvg(data, 'High income', year, sizedByPopulation)
     
     this.chartWidth = chartWidth
     this.chartHeight = chartHeight
@@ -82,8 +82,8 @@ class BeeSwarmPlot extends Component {
     appendText(this.chartArea, 'high-inc-avg-value high-income-avg', this.xScale(highAvg), 0, 'middle', highAvg.toFixed(2), 0, 800 )
     appendText(this.chartArea, 'low-inc-avg-value low-income-avg', this.xScale(lowAvg), 0, 'middle', lowAvg.toFixed(2), 0, 800 )
 
-    appendText(this.chartArea, 'low-inc-average avg-text-low low-income-avg', this.xScale(lowAvg), 15, 'middle', 'Low income average')
-    appendText(this.chartArea, 'high-inc-average avg-text-high high-income-avg', this.xScale(highAvg), 15, 'middle', 'High income average' )
+    appendText(this.chartArea, 'low-inc-average avg-text-low low-income-avg', this.xScale(lowAvg), 15, 'middle', 'Low income average*')
+    appendText(this.chartArea, 'high-inc-average avg-text-high high-income-avg', this.xScale(highAvg), 15, 'middle', 'High income average*' )
 
     appendText(this.chartArea, 'low-inc-average-arrow avg-text-low low-income-avg', this.xScale(lowAvg), 25, 'middle', '▾' )
     appendText(this.chartArea, 'high-inc-average-arrow avg-text-high high-income-avg', this.xScale(highAvg), 25, 'middle', '▾' )
@@ -132,8 +132,8 @@ class BeeSwarmPlot extends Component {
 
     const { data, year, transition, sizedByPopulation } = this.props
 
-    const lowAvg = calculateAvg(data, 'Low income', year)
-    const highAvg = calculateAvg(data, 'High income', year)
+    const lowAvg = calculateAvg(data, 'Low income', year, sizedByPopulation)
+    const highAvg = calculateAvg(data, 'High income', year, sizedByPopulation)
 
     const { forceCollideValue } = this.setElements()
 
@@ -351,9 +351,10 @@ class BeeSwarmPlot extends Component {
 
   render(){
 
-    const { tooltipData, mouseoverValue, year, colorScale } = this.props
+    const { tooltipData, mouseoverValue, year, colorScale, sizedByPopulation } = this.props
     const { tooltipLeft, tooltipColor } = this.state
     const color = tooltipColor && colorScale(tooltipColor)
+    const calculationMode = sizedByPopulation ? 'Weighted' : 'Not weighted'
 
     return(
       <div>
@@ -362,6 +363,7 @@ class BeeSwarmPlot extends Component {
           <p className="label label__icon label__left"><Icon className="label__icon__left" name="caret left" />Lower</p>
           <p className="label label__icon label__right">Higher<Icon className="label__icon__right" name="caret right" /></p>
           <p className="label label__text">State of Peace</p>
+          <p className="label label__calculation-text">*{calculationMode} by population</p>
           <Tooltip
               className="tooltip"
               color = {color}

@@ -91,7 +91,7 @@ const Tooltip = styled.div`
     position: absolute;
     display: none;
     background: #fff;
-    opacity: 1;
+    opacity: .9;
     z-index: 20;
 
     border-radius: 5px;
@@ -105,7 +105,6 @@ const Tooltip = styled.div`
     text-align: center;
 
     &:after {
-
       right: ${props => props.left ? '' : '100%'};
       left:  ${props => props.left ? '100%' : ''};
       top: 12%;
@@ -149,16 +148,22 @@ const ChartContainer = styled.div`
 
     .label {
       position: absolute;
-      top: 0;
+      
       z-index: 10;
       color: secondaryColor !important;
 
+      &__text {
+        top: 0;
+      }
+
       &__left {
         left: -5px;
+        top: 0;
       }
 
       &__right {
-        right: 15px;
+        right: 0;
+        top: 0;
       }
 
       &__icon__left{
@@ -167,6 +172,12 @@ const ChartContainer = styled.div`
 
       &__icon__right {
         margin-left: 5px;
+      }
+
+      &__calculation-text {
+        bottom: 20px;
+        right: 0;
+        text-align: right;
       }
     }
 

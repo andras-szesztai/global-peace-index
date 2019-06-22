@@ -40,13 +40,20 @@ const moveText = (
 }
 
 const calculateAvg = (
-  data, type, year
+  data, type, year, sizedByPopulation
 ) => {
 
+  let avg 
   const filteredData =  [2008,2009,2010].includes(year) ? data.filter(d => d.country !== 'South Sudan') : data
-  const array = filteredData.filter(d => d.economicClass === type).map(el => el[year] * el.population)
-  const population = filteredData.filter(d => d.economicClass === type).map(el => el.population)
-  const avg = _.sum(array)/_.sum(population)
+
+  if(sizedByPopulation){
+    const array = filteredData.filter(d => d.economicClass === type).map(el => el[year] * el.population)
+    const population = filteredData.filter(d => d.economicClass === type).map(el => el.population)
+    avg = _.sum(array)/_.sum(population)
+  } else {
+    const array = filteredData.filter(d => d.economicClass === type).map(el => el[year])
+    avg = _.sum(array)/array.length
+  }
 
   return avg
 }
