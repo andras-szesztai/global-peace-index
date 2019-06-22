@@ -14,7 +14,9 @@
     "2019": 3.574,
     "country": "Afghanistan",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "AFG",
+    "region": "South Asia",
+    "population": 32758020
   },
   {
     "2008": 1.943,
@@ -31,7 +33,9 @@
     "2019": 1.821,
     "country": "Albania",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "ALB",
+    "region": "Europe & Central Asia",
+    "population": 2889104
   },
   {
     "2008": 2.347,
@@ -48,7 +52,9 @@
     "2019": 2.219,
     "country": "Algeria",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "DZA",
+    "region": "Middle East & North Africa",
+    "population": 39113313
   },
   {
     "2008": 2.069,
@@ -65,7 +71,9 @@
     "2019": 2.012,
     "country": "Angola",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "AGO",
+    "region": "Sub-Saharan Africa",
+    "population": 26920466
   },
   {
     "2008": 1.859,
@@ -82,7 +90,9 @@
     "2019": 1.989,
     "country": "Argentina",
     "economicClass": "High income",
-    "year": 2008
+    "code": "ARG",
+    "region": "Latin America & Caribbean",
+    "population": 42981515
   },
   {
     "2008": 2.344,
@@ -99,7 +109,9 @@
     "2019": 2.294,
     "country": "Armenia",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "ARM",
+    "region": "Europe & Central Asia",
+    "population": 2906220
   },
   {
     "2008": 1.367,
@@ -116,7 +128,9 @@
     "2019": 1.419,
     "country": "Australia",
     "economicClass": "High income",
-    "year": 2008
+    "code": "AUS",
+    "region": "East Asia & Pacific",
+    "population": 23475686
   },
   {
     "2008": 1.337,
@@ -133,7 +147,9 @@
     "2019": 1.291,
     "country": "Austria",
     "economicClass": "High income",
-    "year": 2008
+    "code": "AUT",
+    "region": "Europe & Central Asia",
+    "population": 8546356
   },
   {
     "2008": 2.336,
@@ -150,7 +166,9 @@
     "2019": 2.425,
     "country": "Azerbaijan",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "AZE",
+    "region": "Europe & Central Asia",
+    "population": 9535079
   },
   {
     "2008": 1.924,
@@ -167,7 +185,9 @@
     "2019": 2.357,
     "country": "Bahrain",
     "economicClass": "High income",
-    "year": 2008
+    "code": "BHR",
+    "region": "Middle East & North Africa",
+    "population": 1336397
   },
   {
     "2008": 2.101,
@@ -184,7 +204,9 @@
     "2019": 2.128,
     "country": "Bangladesh",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "BGD",
+    "region": "South Asia",
+    "population": 159405279
   },
   {
     "2008": 2.187,
@@ -201,7 +223,9 @@
     "2019": 2.115,
     "country": "Belarus",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "BLR",
+    "region": "Europe & Central Asia",
+    "population": 9474511
   },
   {
     "2008": 1.494,
@@ -218,7 +242,9 @@
     "2019": 1.533,
     "country": "Belgium",
     "economicClass": "High income",
-    "year": 2008
+    "code": "BEL",
+    "region": "Europe & Central Asia",
+    "population": 11209057
   },
   {
     "2008": 2.218,
@@ -235,7 +261,9 @@
     "2019": 1.986,
     "country": "Benin",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "BEN",
+    "region": "Sub-Saharan Africa",
+    "population": 10286712
   },
   {
     "2008": 1.881,
@@ -252,7 +280,9 @@
     "2019": 1.506,
     "country": "Bhutan",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "BTN",
+    "region": "South Asia",
+    "population": 776448
   },
   {
     "2008": 2.011,
@@ -269,7 +299,9 @@
     "2019": 2.044,
     "country": "Bolivia",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "BOL",
+    "region": "Latin America & Caribbean",
+    "population": 10562159
   },
   {
     "2008": 1.912,
@@ -286,7 +318,9 @@
     "2019": 2.019,
     "country": "Bosnia and Herzegovina",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "BIH",
+    "region": "Europe & Central Asia",
+    "population": 3566002
   },
   {
     "2008": 1.757,
@@ -303,7 +337,9 @@
     "2019": 1.676,
     "country": "Botswana",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "BWA",
+    "region": "Sub-Saharan Africa",
+    "population": 2168573
   },
   {
     "2008": 1.993,
@@ -320,7 +356,9 @@
     "2019": 2.271,
     "country": "Brazil",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "BRA",
+    "region": "Latin America & Caribbean",
+    "population": 204213133
   },
   {
     "2008": 1.708,
@@ -337,7 +375,9 @@
     "2019": 1.607,
     "country": "Bulgaria",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "BGR",
+    "region": "Europe & Central Asia",
+    "population": 7223938
   },
   {
     "2008": 1.893,
@@ -354,7 +394,9 @@
     "2019": 2.176,
     "country": "Burkina Faso",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "BFA",
+    "region": "Sub-Saharan Africa",
+    "population": 17585977
   },
   {
     "2008": 2.442,
@@ -371,7 +413,9 @@
     "2019": 2.52,
     "country": "Burundi",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "BDI",
+    "region": "Sub-Saharan Africa",
+    "population": 9891790
   },
   {
     "2008": 2.124,
@@ -388,7 +432,9 @@
     "2019": 2.066,
     "country": "Cambodia",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "KHM",
+    "region": "East Asia & Pacific",
+    "population": 15270790
   },
   {
     "2008": 2.037,
@@ -405,7 +451,9 @@
     "2019": 2.538,
     "country": "Cameroon",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "CMR",
+    "region": "Sub-Saharan Africa",
+    "population": 22239904
   },
   {
     "2008": 1.374,
@@ -422,7 +470,9 @@
     "2019": 1.327,
     "country": "Canada",
     "economicClass": "High income",
-    "year": 2008
+    "code": "CAN",
+    "region": "North America",
+    "population": 35535348
   },
   {
     "2008": 2.899,
@@ -439,7 +489,9 @@
     "2019": 3.296,
     "country": "Central African Republic",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "CAF",
+    "region": "Sub-Saharan Africa",
+    "population": 4515392
   },
   {
     "2008": 2.912,
@@ -456,7 +508,9 @@
     "2019": 2.522,
     "country": "Chad",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "TCD",
+    "region": "Sub-Saharan Africa",
+    "population": 13569438
   },
   {
     "2008": 1.695,
@@ -473,7 +527,9 @@
     "2019": 1.634,
     "country": "Chile",
     "economicClass": "High income",
-    "year": 2008
+    "code": "CHL",
+    "region": "Latin America & Caribbean",
+    "population": 17613798
   },
   {
     "2008": 2.175,
@@ -490,7 +546,9 @@
     "2019": 2.217,
     "country": "China",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "CHN",
+    "region": "East Asia & Pacific",
+    "population": 1364270000
   },
   {
     "2008": 2.891,
@@ -507,7 +565,9 @@
     "2019": 2.661,
     "country": "Colombia",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "COL",
+    "region": "Latin America & Caribbean",
+    "population": 47791911
   },
   {
     "2008": 1.619,
@@ -524,7 +584,9 @@
     "2019": 1.706,
     "country": "Costa Rica",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "COM",
+    "region": "Sub-Saharan Africa",
+    "population": 759385
   },
   {
     "2008": 2.481,
@@ -541,7 +603,9 @@
     "2019": 2.203,
     "country": "Cote d' Ivoire",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "CIV",
+    "region": "Sub-Saharan Africa",
+    "population": 22531350
   },
   {
     "2008": 1.814,
@@ -558,7 +622,9 @@
     "2019": 1.645,
     "country": "Croatia",
     "economicClass": "High income",
-    "year": 2008
+    "code": "COM",
+    "region": "Sub-Saharan Africa",
+    "population": 759385
   },
   {
     "2008": 2.07,
@@ -575,7 +641,9 @@
     "2019": 2.073,
     "country": "Cuba",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "COM",
+    "region": "Sub-Saharan Africa",
+    "population": 759385
   },
   {
     "2008": 1.769,
@@ -592,7 +660,9 @@
     "2019": 1.914,
     "country": "Cyprus",
     "economicClass": "High income",
-    "year": 2008
+    "code": "CYP",
+    "region": "Europe & Central Asia",
+    "population": 1152309
   },
   {
     "2008": 1.495,
@@ -609,7 +679,9 @@
     "2019": 1.375,
     "country": "Czech Republic",
     "economicClass": "High income",
-    "year": 2008
+    "code": "CZE",
+    "region": "Europe & Central Asia",
+    "population": 10525347
   },
   {
     "2008": 2.912,
@@ -626,7 +698,9 @@
     "2019": 3.218,
     "country": "Democratic Republic of the Congo",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "CZE",
+    "region": "Europe & Central Asia",
+    "population": 10525347
   },
   {
     "2008": 1.272,
@@ -643,7 +717,9 @@
     "2019": 1.316,
     "country": "Denmark",
     "economicClass": "High income",
-    "year": 2008
+    "code": "DNK",
+    "region": "Europe & Central Asia",
+    "population": 5643475
   },
   {
     "2008": 2.082,
@@ -660,7 +736,9 @@
     "2019": 2.207,
     "country": "Djibouti",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "DJI",
+    "region": "Middle East & North Africa",
+    "population": 912164
   },
   {
     "2008": 1.992,
@@ -677,7 +755,9 @@
     "2019": 2.041,
     "country": "Dominican Republic",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "DOM",
+    "region": "Latin America & Caribbean",
+    "population": 10405844
   },
   {
     "2008": 2.244,
@@ -694,7 +774,9 @@
     "2019": 1.98,
     "country": "Ecuador",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "ECU",
+    "region": "Latin America & Caribbean",
+    "population": 15903112
   },
   {
     "2008": 2.052,
@@ -711,7 +793,9 @@
     "2019": 2.521,
     "country": "Egypt",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "EGY",
+    "region": "Middle East & North Africa",
+    "population": 91812566
   },
   {
     "2008": 2.059,
@@ -728,7 +812,9 @@
     "2019": 2.262,
     "country": "El Salvador",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "SLV",
+    "region": "Latin America & Caribbean",
+    "population": 6281189
   },
   {
     "2008": 1.963,
@@ -745,7 +831,9 @@
     "2019": 1.957,
     "country": "Equatorial Guinea",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "GNQ",
+    "region": "Sub-Saharan Africa",
+    "population": 1129424
   },
   {
     "2008": 2.419,
@@ -762,7 +850,9 @@
     "2019": 2.504,
     "country": "Eritrea",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "ERI",
+    "region": "Sub-Saharan Africa",
+    "population": 4475000
   },
   {
     "2008": 1.718,
@@ -779,7 +869,9 @@
     "2019": 1.727,
     "country": "Estonia",
     "economicClass": "High income",
-    "year": 2008
+    "code": "EST",
+    "region": "Europe & Central Asia",
+    "population": 1314545
   },
   {
     "2008": 2.588,
@@ -796,7 +888,9 @@
     "2019": 2.434,
     "country": "Ethiopia",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "ETH",
+    "region": "Sub-Saharan Africa",
+    "population": 97366774
   },
   {
     "2008": 1.409,
@@ -813,7 +907,9 @@
     "2019": 1.488,
     "country": "Finland",
     "economicClass": "High income",
-    "year": 2008
+    "code": "FIN",
+    "region": "Europe & Central Asia",
+    "population": 5461512
   },
   {
     "2008": 1.853,
@@ -830,7 +926,9 @@
     "2019": 1.892,
     "country": "France",
     "economicClass": "High income",
-    "year": 2008
+    "code": "FRA",
+    "region": "Europe & Central Asia",
+    "population": 66316092
   },
   {
     "2008": 1.986,
@@ -847,7 +945,9 @@
     "2019": 2.112,
     "country": "Gabon",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "GAB",
+    "region": "Sub-Saharan Africa",
+    "population": 1875713
   },
   {
     "2008": 2.87,
@@ -864,7 +964,9 @@
     "2019": 2.122,
     "country": "Georgia",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "GAB",
+    "region": "Sub-Saharan Africa",
+    "population": 1875713
   },
   {
     "2008": 1.592,
@@ -881,7 +983,9 @@
     "2019": 1.547,
     "country": "Germany",
     "economicClass": "High income",
-    "year": 2008
+    "code": "GAB",
+    "region": "Sub-Saharan Africa",
+    "population": 1875713
   },
   {
     "2008": 1.753,
@@ -898,7 +1002,9 @@
     "2019": 1.796,
     "country": "Ghana",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "GHA",
+    "region": "Sub-Saharan Africa",
+    "population": 26962563
   },
   {
     "2008": 1.913,
@@ -915,7 +1021,9 @@
     "2019": 1.933,
     "country": "Greece",
     "economicClass": "High income",
-    "year": 2008
+    "code": "GRC",
+    "region": "Europe & Central Asia",
+    "population": 10892413
   },
   {
     "2008": 2.19,
@@ -932,7 +1040,9 @@
     "2019": 2.264,
     "country": "Guatemala",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "GTM",
+    "region": "Latin America & Caribbean",
+    "population": 15923559
   },
   {
     "2008": 2.296,
@@ -949,7 +1059,9 @@
     "2019": 2.125,
     "country": "Guinea",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "GIN",
+    "region": "Sub-Saharan Africa",
+    "population": 11805509
   },
   {
     "2008": 2.476,
@@ -966,7 +1078,9 @@
     "2019": 2.237,
     "country": "Guinea-Bissau",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "GNB",
+    "region": "Sub-Saharan Africa",
+    "population": 1725744
   },
   {
     "2008": 2.141,
@@ -983,7 +1097,9 @@
     "2019": 2.075,
     "country": "Guyana",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "GUY",
+    "region": "Latin America & Caribbean",
+    "population": 763393
   },
   {
     "2008": 2.3,
@@ -1000,7 +1116,9 @@
     "2019": 2.052,
     "country": "Haiti",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "GAB",
+    "region": "Sub-Saharan Africa",
+    "population": 1875713
   },
   {
     "2008": 2.304,
@@ -1017,7 +1135,9 @@
     "2019": 2.341,
     "country": "Honduras",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "HND",
+    "region": "Latin America & Caribbean",
+    "population": 8809216
   },
   {
     "2008": 1.427,
@@ -1034,7 +1154,9 @@
     "2019": 1.54,
     "country": "Hungary",
     "economicClass": "High income",
-    "year": 2008
+    "code": "HUN",
+    "region": "Europe & Central Asia",
+    "population": 9866468
   },
   {
     "2008": 1.111,
@@ -1051,7 +1173,9 @@
     "2019": 1.072,
     "country": "Iceland",
     "economicClass": "High income",
-    "year": 2008
+    "code": "ISL",
+    "region": "Europe & Central Asia",
+    "population": 327386
   },
   {
     "2008": 2.477,
@@ -1068,7 +1192,9 @@
     "2019": 2.605,
     "country": "India",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "IND",
+    "region": "South Asia",
+    "population": 1293859294
   },
   {
     "2008": 1.859,
@@ -1085,7 +1211,9 @@
     "2019": 1.785,
     "country": "Indonesia",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "IDN",
+    "region": "East Asia & Pacific",
+    "population": 255131116
   },
   {
     "2008": 2.412,
@@ -1102,7 +1230,9 @@
     "2019": 2.542,
     "country": "Iran",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "IRN",
+    "region": "Middle East & North Africa",
+    "population": 78411092
   },
   {
     "2008": 3.681,
@@ -1119,7 +1249,9 @@
     "2019": 3.369,
     "country": "Iraq",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "IRQ",
+    "region": "Middle East & North Africa",
+    "population": 35006080
   },
   {
     "2008": 1.367,
@@ -1136,7 +1268,9 @@
     "2019": 1.39,
     "country": "Ireland",
     "economicClass": "High income",
-    "year": 2008
+    "code": "IRL",
+    "region": "Europe & Central Asia",
+    "population": 4657740
   },
   {
     "2008": 2.884,
@@ -1153,7 +1287,9 @@
     "2019": 2.735,
     "country": "Israel",
     "economicClass": "High income",
-    "year": 2008
+    "code": "ISR",
+    "region": "Middle East & North Africa",
+    "population": 8215700
   },
   {
     "2008": 1.676,
@@ -1170,7 +1306,9 @@
     "2019": 1.754,
     "country": "Italy",
     "economicClass": "High income",
-    "year": 2008
+    "code": "ITA",
+    "region": "Europe & Central Asia",
+    "population": 60789140
   },
   {
     "2008": 2.041,
@@ -1187,7 +1325,9 @@
     "2019": 2.038,
     "country": "Jamaica",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "JAM",
+    "region": "Latin America & Caribbean",
+    "population": 2862087
   },
   {
     "2008": 1.325,
@@ -1204,7 +1344,9 @@
     "2019": 1.369,
     "country": "Japan",
     "economicClass": "High income",
-    "year": 2008
+    "code": "JPN",
+    "region": "East Asia & Pacific",
+    "population": 127276000
   },
   {
     "2008": 1.927,
@@ -1221,7 +1363,9 @@
     "2019": 2.012,
     "country": "Jordan",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "JOR",
+    "region": "Middle East & North Africa",
+    "population": 8809306
   },
   {
     "2008": 2.09,
@@ -1238,7 +1382,9 @@
     "2019": 1.932,
     "country": "Kazakhstan",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "KAZ",
+    "region": "Europe & Central Asia",
+    "population": 17288285
   },
   {
     "2008": 2.337,
@@ -1255,7 +1401,9 @@
     "2019": 2.3,
     "country": "Kenya",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "KEN",
+    "region": "Sub-Saharan Africa",
+    "population": 46024250
   },
   {
     "2008": 2.126,
@@ -1272,7 +1420,9 @@
     "2019": 2.049,
     "country": "Kosovo",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "KIR",
+    "region": "East Asia & Pacific",
+    "population": 110458
   },
   {
     "2008": 1.652,
@@ -1289,7 +1439,9 @@
     "2019": 1.794,
     "country": "Kuwait",
     "economicClass": "High income",
-    "year": 2008
+    "code": "KWT",
+    "region": "Middle East & North Africa",
+    "population": 3782450
   },
   {
     "2008": 2.362,
@@ -1306,7 +1458,9 @@
     "2019": 2.105,
     "country": "Kyrgyz Republic",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "KIR",
+    "region": "East Asia & Pacific",
+    "population": 110458
   },
   {
     "2008": 1.913,
@@ -1323,7 +1477,9 @@
     "2019": 1.801,
     "country": "Laos",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "KIR",
+    "region": "East Asia & Pacific",
+    "population": 110458
   },
   {
     "2008": 1.643,
@@ -1340,7 +1496,9 @@
     "2019": 1.718,
     "country": "Latvia",
     "economicClass": "High income",
-    "year": 2008
+    "code": "LVA",
+    "region": "Europe & Central Asia",
+    "population": 1993782
   },
   {
     "2008": 2.888,
@@ -1357,7 +1515,9 @@
     "2019": 2.8,
     "country": "Lebanon",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "LBN",
+    "region": "Middle East & North Africa",
+    "population": 5603279
   },
   {
     "2008": 1.922,
@@ -1374,7 +1534,9 @@
     "2019": 2.167,
     "country": "Lesotho",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "LSO",
+    "region": "Sub-Saharan Africa",
+    "population": 2145785
   },
   {
     "2008": 2.054,
@@ -1391,7 +1553,9 @@
     "2019": 1.889,
     "country": "Liberia",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "LBR",
+    "region": "Sub-Saharan Africa",
+    "population": 4390737
   },
   {
     "2008": 2.033,
@@ -1408,7 +1572,9 @@
     "2019": 3.285,
     "country": "Libya",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "LBY",
+    "region": "Middle East & North Africa",
+    "population": 6204108
   },
   {
     "2008": 1.7,
@@ -1425,7 +1591,9 @@
     "2019": 1.728,
     "country": "Lithuania",
     "economicClass": "High income",
-    "year": 2008
+    "code": "LTU",
+    "region": "Europe & Central Asia",
+    "population": 2932367
   },
   {
     "2008": 2.006,
@@ -1442,7 +1610,9 @@
     "2019": 1.933,
     "country": "Macedonia (FYR)",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "MKD",
+    "region": "Europe & Central Asia",
+    "population": 2077495
   },
   {
     "2008": 1.73,
@@ -1459,7 +1629,9 @@
     "2019": 1.867,
     "country": "Madagascar",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "MDG",
+    "region": "Sub-Saharan Africa",
+    "population": 23589801
   },
   {
     "2008": 1.862,
@@ -1476,7 +1648,9 @@
     "2019": 1.779,
     "country": "Malawi",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "MWI",
+    "region": "Sub-Saharan Africa",
+    "population": 17068838
   },
   {
     "2008": 1.635,
@@ -1493,7 +1667,9 @@
     "2019": 1.529,
     "country": "Malaysia",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "MYS",
+    "region": "East Asia & Pacific",
+    "population": 30228017
   },
   {
     "2008": 2.347,
@@ -1510,7 +1686,9 @@
     "2019": 2.71,
     "country": "Mali",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "MLI",
+    "region": "Sub-Saharan Africa",
+    "population": 16962846
   },
   {
     "2008": 2.378,
@@ -1527,7 +1705,9 @@
     "2019": 2.333,
     "country": "Mauritania",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "MRT",
+    "region": "Sub-Saharan Africa",
+    "population": 4063920
   },
   {
     "2008": 1.599,
@@ -1544,7 +1724,9 @@
     "2019": 1.562,
     "country": "Mauritius",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "MUS",
+    "region": "Sub-Saharan Africa",
+    "population": 1260934
   },
   {
     "2008": 2.153,
@@ -1561,7 +1743,9 @@
     "2019": 2.6,
     "country": "Mexico",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "MEX",
+    "region": "Latin America & Caribbean",
+    "population": 124221600
   },
   {
     "2008": 2.028,
@@ -1578,7 +1762,9 @@
     "2019": 1.951,
     "country": "Moldova",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "MDA",
+    "region": "Europe & Central Asia",
+    "population": 3556397
   },
   {
     "2008": 2.043,
@@ -1595,7 +1781,9 @@
     "2019": 1.792,
     "country": "Mongolia",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "MNG",
+    "region": "East Asia & Pacific",
+    "population": 2923896
   },
   {
     "2008": 2.2,
@@ -1612,7 +1800,9 @@
     "2019": 1.939,
     "country": "Montenegro",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "MNE",
+    "region": "Europe & Central Asia",
+    "population": 621810
   },
   {
     "2008": 1.98,
@@ -1629,7 +1819,9 @@
     "2019": 2.07,
     "country": "Morocco",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "MAR",
+    "region": "Middle East & North Africa",
+    "population": 34318082
   },
   {
     "2008": 1.788,
@@ -1646,7 +1838,9 @@
     "2019": 2.099,
     "country": "Mozambique",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "MOZ",
+    "region": "Sub-Saharan Africa",
+    "population": 27212382
   },
   {
     "2008": 2.393,
@@ -1663,7 +1857,9 @@
     "2019": 2.393,
     "country": "Myanmar",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "MMR",
+    "region": "East Asia & Pacific",
+    "population": 51924182
   },
   {
     "2008": 2.028,
@@ -1680,7 +1876,9 @@
     "2019": 1.892,
     "country": "Namibia",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "NAM",
+    "region": "Sub-Saharan Africa",
+    "population": 2370992
   },
   {
     "2008": 2.024,
@@ -1697,7 +1895,9 @@
     "2019": 2.003,
     "country": "Nepal",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "NPL",
+    "region": "South Asia",
+    "population": 28323241
   },
   {
     "2008": 1.578,
@@ -1714,7 +1914,9 @@
     "2019": 1.53,
     "country": "Netherlands",
     "economicClass": "High income",
-    "year": 2008
+    "code": "NLD",
+    "region": "Europe & Central Asia",
+    "population": 16865008
   },
   {
     "2008": 1.261,
@@ -1731,7 +1933,9 @@
     "2019": 1.221,
     "country": "New Zealand",
     "economicClass": "High income",
-    "year": 2008
+    "code": "NZL",
+    "region": "East Asia & Pacific",
+    "population": 4509700
   },
   {
     "2008": 1.883,
@@ -1748,7 +1952,9 @@
     "2019": 2.312,
     "country": "Nicaragua",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "NIC",
+    "region": "Latin America & Caribbean",
+    "population": 6013997
   },
   {
     "2008": 2.168,
@@ -1765,7 +1971,9 @@
     "2019": 2.394,
     "country": "Niger",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "NER",
+    "region": "Sub-Saharan Africa",
+    "population": 19148219
   },
   {
     "2008": 2.593,
@@ -1782,7 +1990,9 @@
     "2019": 2.898,
     "country": "Nigeria",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "NGA",
+    "region": "Sub-Saharan Africa",
+    "population": 176460502
   },
   {
     "2008": 2.947,
@@ -1799,7 +2009,9 @@
     "2019": 2.921,
     "country": "North Korea",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "NGA",
+    "region": "Sub-Saharan Africa",
+    "population": 176460502
   },
   {
     "2008": 1.365,
@@ -1816,7 +2028,9 @@
     "2019": 1.536,
     "country": "Norway",
     "economicClass": "High income",
-    "year": 2008
+    "code": "NOR",
+    "region": "Europe & Central Asia",
+    "population": 5137232
   },
   {
     "2008": 1.672,
@@ -1833,7 +2047,9 @@
     "2019": 1.953,
     "country": "Oman",
     "economicClass": "High income",
-    "year": 2008
+    "code": "OMN",
+    "region": "Middle East & North Africa",
+    "population": 3960925
   },
   {
     "2008": 3.018,
@@ -1850,7 +2066,9 @@
     "2019": 3.072,
     "country": "Pakistan",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "PAK",
+    "region": "South Asia",
+    "population": 185546257
   },
   {
     "2008": 1.858,
@@ -1867,7 +2085,9 @@
     "2019": 1.804,
     "country": "Panama",
     "economicClass": "High income",
-    "year": 2008
+    "code": "PAN",
+    "region": "Latin America & Caribbean",
+    "population": 3903986
   },
   {
     "2008": 2.12,
@@ -1884,7 +2104,9 @@
     "2019": 2.118,
     "country": "Papua New Guinea",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "PNG",
+    "region": "East Asia & Pacific",
+    "population": 7755785
   },
   {
     "2008": 1.881,
@@ -1901,7 +2123,9 @@
     "2019": 2.055,
     "country": "Paraguay",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "PRY",
+    "region": "Latin America & Caribbean",
+    "population": 6552584
   },
   {
     "2008": 2.088,
@@ -1918,7 +2142,9 @@
     "2019": 2.016,
     "country": "Peru",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "PER",
+    "region": "Latin America & Caribbean",
+    "population": 30973354
   },
   {
     "2008": 2.355,
@@ -1935,7 +2161,9 @@
     "2019": 2.516,
     "country": "Philippines",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "PHL",
+    "region": "East Asia & Pacific",
+    "population": 100102249
   },
   {
     "2008": 1.655,
@@ -1952,7 +2180,9 @@
     "2019": 1.654,
     "country": "Poland",
     "economicClass": "High income",
-    "year": 2008
+    "code": "POL",
+    "region": "Europe & Central Asia",
+    "population": 38011735
   },
   {
     "2008": 1.387,
@@ -1969,7 +2199,9 @@
     "2019": 1.274,
     "country": "Portugal",
     "economicClass": "High income",
-    "year": 2008
+    "code": "PRT",
+    "region": "Europe & Central Asia",
+    "population": 10401062
   },
   {
     "2008": 1.618,
@@ -1986,7 +2218,9 @@
     "2019": 1.696,
     "country": "Qatar",
     "economicClass": "High income",
-    "year": 2008
+    "code": "QAT",
+    "region": "Middle East & North Africa",
+    "population": 2374419
   },
   {
     "2008": 2.226,
@@ -2003,7 +2237,9 @@
     "2019": 2.323,
     "country": "Republic of the Congo",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "QAT",
+    "region": "Middle East & North Africa",
+    "population": 2374419
   },
   {
     "2008": 1.61,
@@ -2020,7 +2256,9 @@
     "2019": 1.606,
     "country": "Romania",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "ROU",
+    "region": "Europe & Central Asia",
+    "population": 19908979
   },
   {
     "2008": 2.876,
@@ -2037,7 +2275,9 @@
     "2019": 3.093,
     "country": "Russia",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "RUS",
+    "region": "Europe & Central Asia",
+    "population": 143819666
   },
   {
     "2008": 1.918,
@@ -2054,7 +2294,9 @@
     "2019": 2.014,
     "country": "Rwanda",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "RWA",
+    "region": "Sub-Saharan Africa",
+    "population": 11345357
   },
   {
     "2008": 2.36,
@@ -2071,7 +2313,9 @@
     "2019": 2.409,
     "country": "Saudi Arabia",
     "economicClass": "High income",
-    "year": 2008
+    "code": "SAU",
+    "region": "Middle East & North Africa",
+    "population": 30776722
   },
   {
     "2008": 2.051,
@@ -2088,7 +2332,9 @@
     "2019": 1.883,
     "country": "Senegal",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "SEN",
+    "region": "Sub-Saharan Africa",
+    "population": 14546111
   },
   {
     "2008": 2.039,
@@ -2105,7 +2351,9 @@
     "2019": 1.812,
     "country": "Serbia",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "SRB",
+    "region": "Europe & Central Asia",
+    "population": 7130576
   },
   {
     "2008": 1.867,
@@ -2122,7 +2370,9 @@
     "2019": 1.822,
     "country": "Sierra Leone",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "SLE",
+    "region": "Sub-Saharan Africa",
+    "population": 7079162
   },
   {
     "2008": 1.58,
@@ -2139,7 +2389,9 @@
     "2019": 1.347,
     "country": "Singapore",
     "economicClass": "High income",
-    "year": 2008
+    "code": "SGP",
+    "region": "East Asia & Pacific",
+    "population": 5469724
   },
   {
     "2008": 1.542,
@@ -2156,7 +2408,9 @@
     "2019": 1.55,
     "country": "Slovakia",
     "economicClass": "High income",
-    "year": 2008
+    "code": "SVK",
+    "region": "Europe & Central Asia",
+    "population": 5418649
   },
   {
     "2008": 1.39,
@@ -2173,7 +2427,9 @@
     "2019": 1.355,
     "country": "Slovenia",
     "economicClass": "High income",
-    "year": 2008
+    "code": "SVN",
+    "region": "Europe & Central Asia",
+    "population": 2061980
   },
   {
     "2008": 3.35,
@@ -2190,7 +2446,9 @@
     "2019": 3.3,
     "country": "Somalia",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "SOM",
+    "region": "Sub-Saharan Africa",
+    "population": 13513125
   },
   {
     "2008": 2.173,
@@ -2207,7 +2465,9 @@
     "2019": 2.399,
     "country": "South Africa",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "ZAF",
+    "region": "Sub-Saharan Africa",
+    "population": 54539571
   },
   {
     "2008": 1.782,
@@ -2224,12 +2484,14 @@
     "2019": 1.867,
     "country": "South Korea",
     "economicClass": "High income",
-    "year": 2008
+    "code": "ZAF",
+    "region": "Sub-Saharan Africa",
+    "population": 54539571
   },
   {
-    "2008": 10,
-    "2009": 10,
-    "2010": 10,
+    "2008": 6,
+    "2009": 6,
+    "2010": 6,
     "2011": 2.591,
     "2012": 2.561,
     "2013": 2.65,
@@ -2241,7 +2503,9 @@
     "2019": 3.526,
     "country": "South Sudan",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "SSD",
+    "region": "Sub-Saharan Africa",
+    "population": 11530971
   },
   {
     "2008": 1.721,
@@ -2258,7 +2522,9 @@
     "2019": 1.699,
     "country": "Spain",
     "economicClass": "High income",
-    "year": 2008
+    "code": "ESP",
+    "region": "Europe & Central Asia",
+    "population": 46480882
   },
   {
     "2008": 2.467,
@@ -2275,7 +2541,9 @@
     "2019": 1.986,
     "country": "Sri Lanka",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "LKA",
+    "region": "South Asia",
+    "population": 20778000
   },
   {
     "2008": 3.121,
@@ -2292,7 +2560,9 @@
     "2019": 2.995,
     "country": "Sudan",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "SDN",
+    "region": "Sub-Saharan Africa",
+    "population": 37737913
   },
   {
     "2008": 2.009,
@@ -2309,7 +2579,9 @@
     "2019": 1.986,
     "country": "Swaziland",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "SWZ",
+    "region": "Sub-Saharan Africa",
+    "population": 1295097
   },
   {
     "2008": 1.389,
@@ -2326,7 +2598,9 @@
     "2019": 1.533,
     "country": "Sweden",
     "economicClass": "High income",
-    "year": 2008
+    "code": "SWE",
+    "region": "Europe & Central Asia",
+    "population": 9696110
   },
   {
     "2008": 1.432,
@@ -2343,7 +2617,9 @@
     "2019": 1.383,
     "country": "Switzerland",
     "economicClass": "High income",
-    "year": 2008
+    "code": "CHE",
+    "region": "Europe & Central Asia",
+    "population": 8188649
   },
   {
     "2008": 2.083,
@@ -2360,7 +2636,9 @@
     "2019": 3.566,
     "country": "Syria",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "SYR",
+    "region": "Middle East & North Africa",
+    "population": 19203090
   },
   {
     "2008": 1.813,
@@ -2377,7 +2655,9 @@
     "2019": 1.725,
     "country": "Taiwan",
     "economicClass": "High income",
-    "year": 2008
+    "code": "TWN",
+    "region": "East Asia & Pacific",
+    "population": 19203090
   },
   {
     "2008": 2.25,
@@ -2394,7 +2674,9 @@
     "2019": 2.196,
     "country": "Tajikistan",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "TJK",
+    "region": "Europe & Central Asia",
+    "population": 8362745
   },
   {
     "2008": 1.783,
@@ -2411,7 +2693,9 @@
     "2019": 1.86,
     "country": "Tanzania",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "TZA",
+    "region": "Sub-Saharan Africa",
+    "population": 52234869
   },
   {
     "2008": 2.423,
@@ -2428,7 +2712,9 @@
     "2019": 2.278,
     "country": "Thailand",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "THA",
+    "region": "East Asia & Pacific",
+    "population": 68416772
   },
   {
     "2008": 1.952,
@@ -2445,7 +2731,9 @@
     "2019": 1.908,
     "country": "The Gambia",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "THA",
+    "region": "East Asia & Pacific",
+    "population": 68416772
   },
   {
     "2008": 2.005,
@@ -2462,7 +2750,9 @@
     "2019": 1.805,
     "country": "Timor-Leste",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "TLS",
+    "region": "East Asia & Pacific",
+    "population": 1212814
   },
   {
     "2008": 2.002,
@@ -2479,7 +2769,9 @@
     "2019": 2.205,
     "country": "Togo",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "TGO",
+    "region": "Sub-Saharan Africa",
+    "population": 7228915
   },
   {
     "2008": 2.121,
@@ -2496,7 +2788,9 @@
     "2019": 2.094,
     "country": "Trinidad and Tobago",
     "economicClass": "High income",
-    "year": 2008
+    "code": "TTO",
+    "region": "Latin America & Caribbean",
+    "population": 1354493
   },
   {
     "2008": 1.812,
@@ -2513,7 +2807,9 @@
     "2019": 2.035,
     "country": "Tunisia",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "TUN",
+    "region": "Middle East & North Africa",
+    "population": 11143908
   },
   {
     "2008": 2.44,
@@ -2530,7 +2826,9 @@
     "2019": 3.015,
     "country": "Turkey",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "TUR",
+    "region": "Europe & Central Asia",
+    "population": 77030628
   },
   {
     "2008": 2.267,
@@ -2547,7 +2845,9 @@
     "2019": 2.265,
     "country": "Turkmenistan",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "TKM",
+    "region": "Europe & Central Asia",
+    "population": 5466241
   },
   {
     "2008": 2.53,
@@ -2564,7 +2864,9 @@
     "2019": 2.196,
     "country": "Uganda",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "UGA",
+    "region": "Sub-Saharan Africa",
+    "population": 38833338
   },
   {
     "2008": 2.127,
@@ -2581,7 +2883,9 @@
     "2019": 2.95,
     "country": "Ukraine",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "UKR",
+    "region": "Europe & Central Asia",
+    "population": 45271947
   },
   {
     "2008": 1.738,
@@ -2598,7 +2902,9 @@
     "2019": 1.847,
     "country": "United Arab Emirates",
     "economicClass": "High income",
-    "year": 2008
+    "code": "ARE",
+    "region": "Middle East & North Africa",
+    "population": 9070867
   },
   {
     "2008": 1.812,
@@ -2615,7 +2921,9 @@
     "2019": 1.801,
     "country": "United Kingdom",
     "economicClass": "High income",
-    "year": 2008
+    "code": "GBR",
+    "region": "Europe & Central Asia",
+    "population": 64613160
   },
   {
     "2008": 2.257,
@@ -2632,7 +2940,9 @@
     "2019": 2.401,
     "country": "United States of America",
     "economicClass": "High income",
-    "year": 2008
+    "code": "USA",
+    "region": "North America",
+    "population": 318386421
   },
   {
     "2008": 1.7,
@@ -2649,7 +2959,9 @@
     "2019": 1.711,
     "country": "Uruguay",
     "economicClass": "High income",
-    "year": 2008
+    "code": "URY",
+    "region": "Latin America & Caribbean",
+    "population": 3419546
   },
   {
     "2008": 2.267,
@@ -2666,7 +2978,9 @@
     "2019": 2.166,
     "country": "Uzbekistan",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "UZB",
+    "region": "Europe & Central Asia",
+    "population": 30757700
   },
   {
     "2008": 2.344,
@@ -2683,7 +2997,9 @@
     "2019": 2.671,
     "country": "Venezuela",
     "economicClass": "Upper middle income",
-    "year": 2008
+    "code": "VEN",
+    "region": "Latin America & Caribbean",
+    "population": 30738378
   },
   {
     "2008": 1.86,
@@ -2700,7 +3016,9 @@
     "2019": 1.877,
     "country": "Vietnam",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "VNM",
+    "region": "East Asia & Pacific",
+    "population": 92544915
   },
   {
     "2008": 2.35,
@@ -2717,7 +3035,9 @@
     "2019": 3.412,
     "country": "Yemen",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "YEM",
+    "region": "Middle East & North Africa",
+    "population": 26246327
   },
   {
     "2008": 1.879,
@@ -2734,7 +3054,9 @@
     "2019": 1.805,
     "country": "Zambia",
     "economicClass": "Lower middle income",
-    "year": 2008
+    "code": "ZMB",
+    "region": "Sub-Saharan Africa",
+    "population": 15620974
   },
   {
     "2008": 2.472,
@@ -2751,6 +3073,8 @@
     "2019": 2.463,
     "country": "Zimbabwe",
     "economicClass": "Low income",
-    "year": 2008
+    "code": "ZWE",
+    "region": "Sub-Saharan Africa",
+    "population": 15411675
   }
 ]

@@ -7,12 +7,15 @@ import { Icon } from 'semantic-ui-react'
 
 import { select } from 'd3-selection'
 import { interpolateNumber } from 'd3-interpolate'
-import { scaleLinear } from 'd3-scale'
+import { scaleLinear, scaleSqrt } from 'd3-scale'
+import { extent } from 'd3-array'
 import { forceSimulation, forceX, forceY, forceCollide, forceManyBody } from 'd3-force'
 import { mouse } from 'd3-selection'
 import "d3-transition"
 
 import { svgDimensions, appendArea, appendText, calculateAvg, appendLine, moveLine, moveText } from './chartFunctions'
+
+const million = 1000000
 
 class BeeSwarmPlot extends Component {
   state = {
@@ -63,6 +66,9 @@ class BeeSwarmPlot extends Component {
     const lowAvg = calculateAvg(data, 'Low income', year)
     const highAvg = calculateAvg(data, 'High income', year)
 
+    console.log(lowAvg);
+    console.log(highAvg);
+    
     let mainRadius, subRadius, strokeWidth, tooltipY, forceCollideValue
 
     if(windowWidth <= 600){
@@ -95,6 +101,8 @@ class BeeSwarmPlot extends Component {
     appendText(this.chartArea, 'year-text', 0, chartHeight + 10, 'start', year )
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
+    this.radiusScale = scaleSqrt().range([2, 40]).domain(extent(data, d => d.population/million))
+    
     appendText(this.chartArea, 'high-inc-avg-value high-income-avg', this.xScale(highAvg), 0, 'middle', highAvg.toFixed(2), 0, 800 )
     appendText(this.chartArea, 'low-inc-avg-value low-income-avg', this.xScale(lowAvg), 0, 'middle', lowAvg.toFixed(2), 0, 800 )
 
@@ -115,13 +123,19 @@ class BeeSwarmPlot extends Component {
     this.avgLineHover('.low-line', 'low-income-avg')
     this.avgLineHover('.high-line', 'high-income-avg')
 
+    mainRadius= 4
+    subRadius= 6
+    strokeWidth= 2
+    tooltipY= 10
+    forceCollideValue= 8
+
     this.chartArea
           .selectAll('.sub-circle')
           .data(data, d => d.country)
           .enter()
           .append('circle')
           .attr('class', 'sub-circle')
-          .attr("r", subRadius)
+          .attr("r", d => this.radiusScale(d.population/million) + 2)
           .attr('fill', d => colorScale(d.economicClass))
           .attr('stroke', d => colorScale(d.economicClass))
           .attr('fill-opacity', 0)
@@ -135,7 +149,7 @@ class BeeSwarmPlot extends Component {
           .enter()
           .append('circle')
           .attr('class', 'main-circle')
-          .attr("r", mainRadius)
+          .attr("r", d => this.radiusScale(d.population/million))
           .attr("stroke-width", strokeWidth)
           .attr("stroke", 'white')
           .attr('stroke-opacity', 0)
@@ -178,7 +192,7 @@ class BeeSwarmPlot extends Component {
         .force("charge", forceManyBody().strength(-10))
         .force('x', forceX(d => this.xScale(d[year])).strength(1))
         .force('y', forceY(chartHeight/2).strength(.15))
-        .force('collide', forceCollide(forceCollideValue))
+        .force('collide', forceCollide( d => this.radiusScale(d.population/million) + 4))
         .alphaDecay(0)
 			  .alpha(.1)
         .on("tick", () => {

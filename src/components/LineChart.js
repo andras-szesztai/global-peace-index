@@ -348,9 +348,9 @@ class LineChart extends Component {
         tooltip
           .style(
             "left",
-            this.xScale(d.formattedDate) + margin.left - tooltipWidth / 2 + "px"
+            this.xScale(d.formattedDate) + margin.left - tooltipWidth / 2  - 1 + "px"
           )
-          .style("top", this.yScale(d.value) - tooltipHeight + 8 + "px");
+          .style("top", this.yScale(d.value) - tooltipHeight + 10 + "px");
       })
       .on("mouseout", () => {
         this.setState({
