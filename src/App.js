@@ -10,7 +10,7 @@ import {MultipleDropdown, SingleDropDown} from './components/Dropdown'
 import BeeSwarmPlot from './components/BeeSwarmPlot'
 import LineChart from './components/LineChart'
 import { Wrapper, secondaryColor } from './components/StyledComponents'
-
+import { Radio } from 'semantic-ui-react'
 import beeSwarmData from './data/beeswarmData.json'
 import barchartData from './data/barchartData.json'
 
@@ -38,7 +38,8 @@ class App extends Component {
       lineHighlight: '',
       metricsDisplayed: ['Safety & Security', 'Militarisation', 'Incarceration Rate'],
       openClosed: [false,false,false],
-      stopAutoplay: false
+      stopAutoplay: false,
+      sizedByPopulation: true
   }
 
   componentDidMount() {
@@ -142,11 +143,13 @@ class App extends Component {
 
   }
 
+  handleButtonToggle = () => {this.setState(s => s.sizedByPopulation = !s.sizedByPopulation)}
+
   openDropDown = (i, openClosed) => {this.setState(state => state.openClosed[i] = openClosed[i] === true ? false : true)}
 
   render(){
 
-    const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay, lineHighlight } = this.state
+    const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay, lineHighlight, sizedByPopulation } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
@@ -213,6 +216,7 @@ class App extends Component {
               gridColumn={5}
             >
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cumque veniam! Animi velit necessitatibus ipsam quidem commodi sequi expedita blanditiis assumenda recusandae ex repellat consequuntur odit delectus aperiam voluptatem iure perspiciatis enim deleniti, quod sapiente placeat possimus! Odit voluptatibus sapiente similique cumque perferendis quam neque, distinctio sed, expedita cupiditate, id delectus aliquam quae aut placeat suscipit? Placeat quam porro nemo!</p> 
+              <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Sized by population' : 'Sized equally'} />
             </Wrapper>
           </section>
 
