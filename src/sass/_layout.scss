@@ -14,11 +14,11 @@
 
   @media only screen and (max-width: $bp-large) {
     grid-template-columns: 3% 94% 3%;
-    grid-template-rows: 3% 30vh 4vh 70vh 300px 60px 2%;
+    grid-template-rows: 3% 30vh 6vh 70vh 300px 60px 2%;
   }
   @media only screen and (max-width: $bp-medium) {
     grid-template-columns: 2% 96% 2%;
-    grid-template-rows: 2% 25vh 2vh 60vh 300px 50px 2%;
+    grid-template-rows: 2% 25vh 4vh 60vh 300px 50px 2%;
   }
 
 

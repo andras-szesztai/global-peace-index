@@ -21,7 +21,6 @@ import barchartData from './data/barchartData.json'
 import { bigScreen, smallScreen, mediumScreen } from './components/lineChartMargins'
 
 const small = 600
-const autoPlayDuration = 12000
 const regions = _.uniq(beeSwarmData.map(d => d.region))
 
 const metrics = [
@@ -345,7 +344,7 @@ class App extends Component {
           </section>
 
           <section className="line-charts">
-            {/* {lineCharts} */}
+            {lineCharts}
           </section>
 
           <section className="credits">

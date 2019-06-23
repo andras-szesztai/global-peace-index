@@ -145,15 +145,16 @@ class BarChart extends Component {
 
   render(){
 
-    const { year, value } = this.props
+    const { year, value, array } = this.props
     const { overallScore } = this.state
+    const hintMessage = array.includes(value) ? 'remove from' : 'add to'
 
     return(
           <div>
             <h4 className="tooltip__title">{value}</h4>
             <p className="tooltip__value">Overall score in {year}: <span>{overallScore && +overallScore.toFixed(2)}</span></p>
             <svg ref={node => this.node = node}/>
-            <p className="tooltip__hint"><span>Click</span> to add to selection!</p>
+            <p className="tooltip__hint"><span>Click</span> to {hintMessage} selection!</p>
           </div>
     )
 

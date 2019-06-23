@@ -220,13 +220,13 @@ class BeeSwarmPlot extends Component {
   if (windowWidth < 1000){
       mainRadius= 6
       subRadius= 9
-      tooltipY= 20
+      tooltipY= 25
       forceCollideValue= 12
       sizeRange = [3, 25]
     } else {
       mainRadius= 8
       subRadius= 11
-      tooltipY= 20
+      tooltipY= 25
       forceCollideValue= 14
       sizeRange = [2, 40]
     }
@@ -328,7 +328,7 @@ class BeeSwarmPlot extends Component {
                 const left = this.chartWidth/2 < mousePos[0]
                 const tooltipWidth = this.tooltip._groups[0][0].clientWidth
 
-                this.tooltip.style('top', mousePos[1] - 30 + 'px')
+                this.tooltip.style('top', mousePos[1] - 35 + 'px')
 
                 left  ? this.tooltip.style('left', mousePos[0] - tooltipWidth - tooltipY + 'px')
                       : this.tooltip.style('left', mousePos[0] + tooltipY + 'px')
@@ -357,7 +357,7 @@ class BeeSwarmPlot extends Component {
 
   render(){
 
-    const { tooltipData, mouseoverValue, year, colorScale, sizedByPopulation, windowWidth } = this.props
+    const { tooltipData, mouseoverValue, year, colorScale, sizedByPopulation, windowWidth, mouseClickValue } = this.props
     const { tooltipLeft, tooltipColor } = this.state
     const color = tooltipColor && colorScale(tooltipColor)
     const calculationMode = sizedByPopulation ? 'Weighted' : 'Not weighted'
