@@ -13,7 +13,7 @@ import { forceSimulation, forceX, forceY, forceCollide, forceManyBody } from 'd3
 import { mouse } from 'd3-selection'
 import "d3-transition"
 
-import { svgDimensions, appendArea, appendText, calculateAvg, appendLine, moveLine, moveText } from './chartFunctions'
+import { svgDimensions, appendArea, appendText, calculateAvg, appendLine, moveLine } from './chartFunctions'
 
 const million = 1000000
 

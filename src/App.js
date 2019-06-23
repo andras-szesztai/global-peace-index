@@ -21,7 +21,6 @@ import barchartData from './data/barchartData.json'
 import { bigScreen, smallScreen, mediumScreen } from './components/lineChartMargins'
 
 const small = 600
-const medium = 900
 const autoPlayDuration = 12000
 const regions = _.uniq(beeSwarmData.map(d => d.region))
 

@@ -30,6 +30,7 @@ const FlexWrapper = styled(Wrapper)`
 `
 
 const SmallTooltip = styled.div`
+
     position: absolute;
     display: none;
     color: ${props => props.color};
@@ -73,7 +74,7 @@ const SmallTooltip = styled.div`
 
     h4,
     span {
-      font-weight: 700;
+      font-weight: 700 !important;
     }
 
     .score {
