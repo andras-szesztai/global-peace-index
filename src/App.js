@@ -3,6 +3,7 @@ import './sass/_main.scss'
 import 'semantic-ui-css/semantic.min.css'
 import Tour from 'reactour'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { tourSteps } from './components/tourSteps'
 
 import _ from 'lodash'
 import { scaleOrdinal } from 'd3-scale'
@@ -13,7 +14,7 @@ import RegionFilter from './components/Modal'
 import BeeSwarmPlot from './components/BeeSwarmPlot'
 import LineChart from './components/LineChart'
 import { Wrapper, FlexWrapper, secondaryColor } from './components/StyledComponents'
-import { Radio, Button } from 'semantic-ui-react'
+import { Radio, Button, Popup } from 'semantic-ui-react'
 import beeSwarmData from './data/beeswarmData.json'
 import barchartData from './data/barchartData.json'
 
@@ -48,37 +49,6 @@ class App extends Component {
       stopAutoplay: false,
       sizedByPopulation: true,
       runTour: false,
-      tourSteps: [
-        {
-          selector: '.region-filter',
-          content: 'You can filter in or out any regions by opening up this modal, but do not forget to save your selection before closing it! ;)',
-        },
-        {
-          selector: '.main-chart',
-          content: 'Each country is represented by a dot, by default sized by its population The grey colored countries are the ones in the Lower and Higher middle income groups, while the Low income countries are represented by the orange, and the High income ones by the blue color. Also, you can hover over the dots to find out more about a country\'s perforamnce!',
-        },
-        {
-          selector: '.sizer',
-          content: 'You can easily change to equal dot sizing with this button!'
-        },
-        {
-          selector: '.year-filter',
-          content: 'With the help of this slider, you can filter across all the 12 years in this dataset to see how peacefulness evolved actoss the globe.',
-        },
-        {
-          selector: '.country-filter',
-          content: 'Select the countries you would like to be highlighted in the chart above, and added to the linecharts below! You can only select three countries at the same time.',
-        },
-        {
-          selector: '.metric-1',
-          content: 'Using the dropdown, you can choose any of the 23 indicators to see what changes they have gone through over time.',
-        },
-        {
-          selector: '.line-chart-1',
-          content: 'You can find out more about a country\'s score in a given indicator by hovering over its line, and highlight it across the other indicators by clicking on it!',
-        },
-
-      ]
   }
 
   componentDidMount() {
@@ -193,7 +163,7 @@ class App extends Component {
 
   render(){
 
-    const { tourSteps, runTour, sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay, lineHighlight, sizedByPopulation, regionArray } = this.state
+    const { runTour, sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay, lineHighlight, sizedByPopulation, regionArray } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
@@ -235,7 +205,6 @@ class App extends Component {
               </div>
               <div className={`line-chart-${i}`}>
                 <LineChart
-                  
                   height={280}
                   showYAxis={showYAxis[i]}
                   width={windowWidth > 600 ? lineChartWidth/3 : lineChartWidth}
@@ -263,6 +232,8 @@ class App extends Component {
               onRequestClose={() => this.setState(s => s.runTour = false)}
               onAfterOpen={this.disableBody}
               onBeforeClose={this.enableBody}
+              scrollDuration={2}
+              showCloseButton={false}
             />
           <section className="intro">
             <Wrapper
@@ -275,9 +246,9 @@ class App extends Component {
             <Wrapper
               gridColumn={3}
             >
-              <p>Global Peace Index (GPI) measures the relative position of nations' and regions' peacefulness using 23 qualitative and quantitative indicators. The report ranks 163 countries covering 99.7 per cent of the world’s population.</p>
+              <p>Global Peace Index (GPI) measures the relative position of nations' and regions' peacefulness using over 20 qualitative and quantitative indicators. The report includes the ranking of 163 countries covering 99.7 per cent of the world’s population.</p>
               <p>The GPI is a report produced by the Institute for Economics and Peace (IEP) and developed in consultation with an international panel of peace experts from peace institutes and think tanks with data collected and collated by the Economist Intelligence Unit.</p>
-              <p>To find out more, you can download the latest <a href="http://visionofhumanity.org/app/uploads/2019/06/GPI-2019web003.pdf"  target="_blank" >Global Peace Index Report from 2019</a> or watch its <a href="https://www.csis.org/events/global-peace-index-2019-launch"  target="_blank" > official launch</a>.</p>
+              <p>To find out more, you can download the latest <a href="http://visionofhumanity.org/app/uploads/2019/06/GPI-2019web003.pdf"  target="_blank" rel="noopener noreferrer" >Global Peace Index Report from 2019</a> or watch its <a href="https://www.csis.org/events/global-peace-index-2019-launch"  target="_blank" rel="noopener noreferrer" > official launch</a>.</p>
             </Wrapper>
             <Wrapper
               gridColumn={5}
@@ -290,12 +261,14 @@ class App extends Component {
               >
                 <FlexWrapper
                   direction="column"
-                  justify="space-evenly"
+                  justify="space-around"
                   align="flex-start"
                 >
-                  <Button basic color='grey' onClick={() => this.setState(s => s.runTour = true)}>
-                    Take a tour
-                  </Button>
+                  <Popup content='Click here to take a tour!'  position='right center' trigger={
+                    <Button basic color='grey' onClick={() => this.setState(s => s.runTour = true)}>
+                      How to read and interact?
+                    </Button>
+                  } />
                   <Wrapper
                     className="region-filter"
                   >
@@ -373,9 +346,11 @@ class App extends Component {
           </section>
 
           <section className="credits">
-            <FlexWrapper className="credits__text" justify={'start'}>Designed and built by: Andras Szesztai</FlexWrapper>
-            <FlexWrapper className="credits__text" justify={'center'}>#dataforacause</FlexWrapper>
-            <FlexWrapper className="credits__text" justify={'flex-end'}>Data source: Institute for Economics and Peace: Global Peace Index; World Bank</FlexWrapper>
+            <FlexWrapper className="credits__text" justify={'start'}>Designed and built by: <a href="https://twitter.com/AndSzesztai" target="_blank" rel="noopener noreferrer">&nbsp; Andras Szesztai</a></FlexWrapper>
+            <FlexWrapper className="credits__text" justify={'center'}><a href="https://www.olgatsubiks.com/data-for-a-cause-visualizations" target="_blank" rel="noopener noreferrer">#dataforacause</a></FlexWrapper>
+            <FlexWrapper className="credits__text" justify={'flex-end'}>Data source: <a href="http://economicsandpeace.org/" target="_blank" rel="noopener noreferrer">&nbsp; Institute for Economics and Peace</a> &nbsp;- 
+                                                                      <a href="http://visionofhumanity.org/app/uploads/2019/06/GPI-2019-Briefingweb-2.pdf" target="_blank" rel="noopener noreferrer">&nbsp; Global Peace Index</a>; 
+                                                                      <a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">&nbsp; World Bank</a></FlexWrapper>
           </section>
 
           <section  className="beeswarm-plot background"

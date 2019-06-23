@@ -169,6 +169,12 @@
     font-size: 1.1rem !important;
   }
 
+  a {
+    text-decoration: none;
+    color: $color-grey !important;
+  }
+  
+
   @media only screen and (max-width: $bp-large) {
     &__text {
       font-size: 1.2rem !important;
@@ -178,6 +184,8 @@
     &__text {
       font-size: 1.3rem !important;
     }
+
+  
   }
 
 
@@ -194,3 +202,23 @@
 .react-joyride__beacon{
   outline: none;
 }
+
+.reactour__helper {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+.item {
+  font-size: 1.4rem !important;              
+  font-weight: 400;
+  color: $color-grey !important;
+}
+
+.popup .content {
+  font-size: 1.4rem !important;
+  font-weight: 400 !important;
+  font-family: gill-sans-nova-condensed, sans-serif !important;
+  color: $color-grey !important;
+}
+

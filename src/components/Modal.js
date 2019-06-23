@@ -36,7 +36,6 @@ class RegionFilter extends Component {
 
                                             }} />)    
 
-                          console.log(this.state.buttonColor)
         const changedValuesOne = _.difference(values, shadowValues)
         const changedValuesTwo = _.difference(shadowValues, values) 
 

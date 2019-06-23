@@ -47,6 +47,7 @@ section {
   @media only screen and (max-width: $bp-large) {
     grid-template-columns: 2fr 1rem 3fr 4rem 3fr;
   }
+  
   @media only screen and (max-width: $bp-medium) {
     grid-template-columns: 2fr 0rem 3fr 2rem 3fr;
   }
