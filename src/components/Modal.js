@@ -24,7 +24,7 @@ class RegionFilter extends Component {
                                             label={el} 
                                             defaultChecked={values.includes(el)}
                                             onChange={(e, o) => {
-                                                const {shadowValues, values} = this.state
+                                                const {shadowValues} = this.state
                                                 const value = o.label
                                                 const checked = o.checked
 

@@ -67,20 +67,20 @@ class App extends Component {
         this.setState(state => state.stoppedYear = yearFilter)
       }
     } else {
-    //  this.autoPlay()
+     this.autoPlay()
     }
   }
 
-//   autoPlay = () => {
-//     const {yearFilter} =this.state
-//     setTimeout(() => this.setState(state => {
-//       if(yearFilter < 2019){
-//         return state.yearFilter = yearFilter + 1
-//       } else {
-//         return state.yearFilter = 2008
-//       }
-// }), autoPlayDuration)
-//   }
+  autoPlay = () => {
+    const {yearFilter} =this.state
+    setTimeout(() => this.setState(state => {
+      if(yearFilter < 2019){
+        return state.yearFilter = yearFilter + 1
+      } else {
+        return state.yearFilter = 2008
+      }
+}), autoPlayDuration)
+  }
 
 
   handleResize = () => {this.setState({sectionWidth: this.section && this.section.clientWidth});}
@@ -232,7 +232,6 @@ class App extends Component {
               onRequestClose={() => this.setState(s => s.runTour = false)}
               onAfterOpen={this.disableBody}
               onBeforeClose={this.enableBody}
-              scrollDuration={2}
               showCloseButton={false}
             />
           <section className="intro">
@@ -311,7 +310,7 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-                {/* <BeeSwarmPlot
+                <BeeSwarmPlot
                   width={sectionWidth}
                   height={beeSwarmHeight}
                   data={filteredBeesWarmData}
@@ -326,7 +325,7 @@ class App extends Component {
                   windowWidth = {windowWidth}
                   colorScale={colorScale}
                   colorArray={colorArray}
-              /> */}
+              />
             </Wrapper>
             <Wrapper
               gridRow={windowWidth > small ? 2 : 3}

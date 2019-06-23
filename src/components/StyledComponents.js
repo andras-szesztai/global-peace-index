@@ -128,8 +128,6 @@ const Tooltip = styled.div`
       padding-top: 1rem;
       font-size: 1.6rem !important;
       font-weight: 500;
-      
-
     }
 
     span {
@@ -144,7 +142,7 @@ const Tooltip = styled.div`
 
     .tooltip{
       &__hint {
-        padding-top: .5rem;
+        padding-top: .8rem;
       }
     }
 

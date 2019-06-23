@@ -1,11 +1,11 @@
 const tourSteps = [
     {
       selector: '.region-filter',
-      content: 'You can filter in or out any regions by opening up this modal, but do not forget to save your selection before closing it! ;)',
+      content: 'You can filter in or out any regions by opening up this modal, but do not forget to save your selection before closing it! ;)  Quick hint: press escape or click on the greyed out area to end your tour!',
     },
     {
       selector: '.main-chart',
-      content: 'Each country is represented by a dot, sized by its population. The grey colored countries are the ones in the Lower and Higher middle income groups, while the Low income countries are colored by the orange, and the High income ones by the blue color. Also, you can hover over the dots if you want to find out more about a country\'s perforamnce!',
+      content: 'Each country is represented by a dot, sized by its population. The grey colored countries are the ones in the Lower and Higher middle income groups, while the Low income countries are colored by the orange, and the High income ones by the blue color. Also, you can hover over the dots if you want to find out more about a country\'s performance!',
     },
     {
       selector: '.sizer',
@@ -13,11 +13,11 @@ const tourSteps = [
     },
     {
       selector: '.year-filter',
-      content: 'With the help of this slider, you can filter across all the 12 years in this dataset to see how peacefulness evolved actoss the globe.',
+      content: 'With the help of this slider, you can filter across all the 12 years in this dataset to see how peacefulness evolved around the globe. Autoplay will stop if you manually set the year! ;)',
     },
     {
       selector: '.country-filter',
-      content: 'Select the countries you would like to be highlighted in the chart above, and added to the linecharts below! You can only select three countries at the same time.',
+      content: 'Select the countries you would like to be highlighted in the chart above and added to the linecharts below! You can only select three countries at the same time.',
     },
     {
       selector: '.metric-1',
