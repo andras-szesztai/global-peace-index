@@ -230,16 +230,14 @@ class App extends Component {
                 gridColumn={5}
               >
                 <FlexWrapper
-                  justify="space-between"
-                  direction='column'
+                  direction="column"
+                  justify="space-around"
                   align="flex-start"
-                  >
+                >
                   <RegionFilter
-                    handleSave={this.handleRegionSave}
-                    filterButtonColor = {regionFilterButton}
-                  />
-                  <br></br>
-                  <br></br>
+                      handleSave={this.handleRegionSave}
+                      filterButtonColor = {regionFilterButton}
+                    />
                   <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
                 </FlexWrapper>
               </Wrapper>

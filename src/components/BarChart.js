@@ -70,7 +70,7 @@ class BarChart extends Component {
 
   updateData(duration){
 
-    const { data, transition } = this.props
+    const { data } = this.props
 
     const mainRects = this.chartArea.selectAll('.main-rect').data(data.filter(d => d.country !== 'All'), d => d.metric),
           avgRects = this.chartArea.selectAll('.avg-rect').data(data.filter(d => d.country === 'All'), d => d.metric)
