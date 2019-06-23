@@ -412,6 +412,7 @@ class BeeSwarmPlot extends Component {
               <BarChart
                   data = {tooltipData}
                   value = {mouseoverValue}
+                  array = {mouseClickValue}
                   year = {year}
                   width = {width}
                   height = {height}

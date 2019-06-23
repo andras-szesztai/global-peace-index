@@ -270,15 +270,19 @@ class App extends Component {
                     } />
                   </div>
                     <FlexWrapper>
-                      <Wrapper className="region-filter">
-                        <RegionFilter  
-                            handleSave={this.handleRegionSave}
-                            filterButtonColor = {regionFilterButton}
-                        />
-                      </Wrapper> 
-                      <Wrapper className='sizer'>
-                        <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
-                      </Wrapper>
+                      <FlexWrapper>
+                          <Wrapper className="region-filter">
+                            <RegionFilter  
+                                handleSave={this.handleRegionSave}
+                                filterButtonColor = {regionFilterButton}
+                            />
+                          </Wrapper> 
+                        </FlexWrapper>
+                        <FlexWrapper>
+                          <Wrapper className='sizer'>
+                            <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
+                          </Wrapper>
+                       </FlexWrapper>
                     </FlexWrapper>
                   </FlexWrapper>
               </Wrapper>
@@ -288,7 +292,7 @@ class App extends Component {
             <Wrapper
               gridColumn={1}
               gridRow={2}
-              padding={'30px'}
+              padding={'28px'}
              
               >
                 <YearSlider
@@ -310,7 +314,7 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-                {/* <BeeSwarmPlot
+                <BeeSwarmPlot
                   width={sectionWidth}
                   height={beeSwarmHeight}
                   data={filteredBeesWarmData}
@@ -325,7 +329,7 @@ class App extends Component {
                   windowWidth = {windowWidth}
                   colorScale={colorScale}
                   colorArray={colorArray}
-              /> */}
+              />
             </Wrapper>
             <Wrapper
               gridRow={windowWidth > small ? 2 : 3}
