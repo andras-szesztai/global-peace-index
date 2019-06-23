@@ -166,8 +166,21 @@
 .credits{
 
   &__text {
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
   }
+
+  @media only screen and (max-width: $bp-large) {
+    &__text {
+      font-size: 1.2rem !important;
+    }
+  }
+  @media only screen and (max-width: $bp-medium) {
+    &__text {
+      font-size: 1.3rem !important;
+    }
+  }
+
+
 }
 
 .button {

@@ -16,6 +16,8 @@ import { Radio, Button } from 'semantic-ui-react'
 import beeSwarmData from './data/beeswarmData.json'
 import barchartData from './data/barchartData.json'
 
+import { bigScreen, smallScreen, mediumScreen } from './components/lineChartMargins'
+
 const small = 600
 const medium = 900
 const autoPlayDuration = 12000
@@ -191,9 +193,15 @@ class App extends Component {
 
     const dropdownOptions = (num) => filteredMetrics.map(el => {return { key: el, text: el, value: el, number: num}})
     const showYAxis = [true, false, false]
-    const lineChartMargins = [{top: 25, right: 70, bottom: 25, left: 15},
-                              {top: 25, right: 60, bottom: 25, left: 10},
-                              {top: 25, right: 75, bottom: 25, left: 10}]
+    let lineChartMargins
+
+    if(windowWidth < 1100 && windowWidth > 900 ){
+      lineChartMargins = mediumScreen
+    } else if (windowWidth < 900 ) {
+      lineChartMargins = smallScreen
+    } else {
+      lineChartMargins = bigScreen
+    }
                  
     let mainYearFilter = stoppedYear ? stoppedYear : yearFilter
                               
@@ -207,7 +215,7 @@ class App extends Component {
                 onClick={() => this.openDropDown(i, openClosed)}
               />
               <LineChart
-                height={250}
+                height={280}
                 showYAxis={showYAxis[i]}
                 width={windowWidth > 600 ? lineChartWidth/3 : lineChartWidth}
                 data={lineChartData.filter(d => d.metric === el)}
