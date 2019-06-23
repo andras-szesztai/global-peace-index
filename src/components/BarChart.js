@@ -105,9 +105,10 @@ class BarChart extends Component {
 
     return(
           <div>
-            <h4>{value}</h4>
-            <p>Overall score in {year}: <span>{overallScore && +overallScore.toFixed(2)}</span></p>
+            <h4 className="tooltip__title">{value}</h4>
+            <p className="tooltip__value">Overall score in {year}: <span>{overallScore && +overallScore.toFixed(2)}</span></p>
             <svg ref={node => this.node = node}/>
+            <p className="tooltip__hint"><span>Click</span> to add to selection!</p>
           </div>
     )
 
@@ -119,9 +120,9 @@ BarChart.defaultProps = {
 
   margin: {
     top: 0,
-    right: 10,
-    bottom: 5,
-    left: 145
+    right: 20,
+    bottom: 0,
+    left: 120
   },
   transition: {
     long: 1000

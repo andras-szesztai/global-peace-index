@@ -70,6 +70,8 @@ class BeeSwarmPlot extends Component {
     this.chartWidth = chartWidth
     this.chartHeight = chartHeight
 
+    const { sizeRange } = this.setElements()
+
     appendArea(this.svg, 'chart-area', margin.left, margin.top)
 
     this.chartArea = this.svg.select('.chart-area')
@@ -77,7 +79,7 @@ class BeeSwarmPlot extends Component {
     appendText(this.chartArea, 'year-text', 0, chartHeight + 10, 'start', year )
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
-    this.radiusScale = scaleSqrt().range([2, 40]).domain(extent(data, d => d.population/million))
+    this.radiusScale = scaleSqrt().range(sizeRange).domain(extent(data, d => d.population/million))
     
     appendText(this.chartArea, 'high-inc-avg-value high-income-avg', this.xScale(highAvg), 0, 'middle', highAvg.toFixed(2), 0, 800 )
     appendText(this.chartArea, 'low-inc-avg-value low-income-avg', this.xScale(lowAvg), 0, 'middle', lowAvg.toFixed(2), 0, 800 )
@@ -135,7 +137,9 @@ class BeeSwarmPlot extends Component {
     const lowAvg = calculateAvg(data, 'Low income', year, sizedByPopulation)
     const highAvg = calculateAvg(data, 'High income', year, sizedByPopulation)
 
-    const { forceCollideValue } = this.setElements()
+    const { forceCollideValue, sizeRange } = this.setElements()
+
+    this.radiusScale.range(sizeRange)
 
     moveLine(this.chartArea, '.low-line', transition.long, this.xScale, lowAvg)
     moveLine(this.chartArea, '.high-line', transition.long, this.xScale, highAvg)
@@ -211,21 +215,23 @@ class BeeSwarmPlot extends Component {
 
     const { windowWidth } = this.props
 
-    let mainRadius, subRadius, tooltipY, forceCollideValue
+    let mainRadius, subRadius, tooltipY, forceCollideValue, sizeRange
 
   if (windowWidth < 1000){
       mainRadius= 6
       subRadius= 9
       tooltipY= 20
       forceCollideValue= 12
+      sizeRange = [3, 25]
     } else {
       mainRadius= 8
       subRadius= 11
-      tooltipY= 30
+      tooltipY= 20
       forceCollideValue= 14
+      sizeRange = [2, 40]
     }
 
-    return { mainRadius, subRadius, tooltipY, forceCollideValue }
+    return { mainRadius, subRadius, tooltipY, forceCollideValue, sizeRange }
 
   }
 
@@ -351,10 +357,43 @@ class BeeSwarmPlot extends Component {
 
   render(){
 
-    const { tooltipData, mouseoverValue, year, colorScale, sizedByPopulation } = this.props
+    const { tooltipData, mouseoverValue, year, colorScale, sizedByPopulation, windowWidth } = this.props
     const { tooltipLeft, tooltipColor } = this.state
     const color = tooltipColor && colorScale(tooltipColor)
     const calculationMode = sizedByPopulation ? 'Weighted' : 'Not weighted'
+    let tooltipHeight, margin, width, height
+    
+    if(windowWidth < 1100 && windowWidth > 900) {
+      tooltipHeight = '260px'
+      margin = {
+        top: 0,
+        right: 15,
+        bottom: 0,
+        left: 105
+      }
+      width = 225
+      height= 175
+    } else if (windowWidth < 900 ){
+      tooltipHeight = '220px'
+      margin = {
+        top: 0,
+        right: 10,
+        bottom: 0,
+        left: 90
+      }
+      width = 200
+      height= 150
+    } else {
+      tooltipHeight = '285px'
+      margin = {
+        top: 0,
+        right: 20,
+        bottom: 0,
+        left: 120
+      }
+      width = 250
+      height= 200
+    }
 
     return(
       <div>
@@ -368,13 +407,16 @@ class BeeSwarmPlot extends Component {
               className="tooltip"
               color = {color}
               left = {tooltipLeft}
+              height = {tooltipHeight}
               >
               <BarChart
                   data = {tooltipData}
                   value = {mouseoverValue}
                   year = {year}
-                  width = {300}
-                  height = {200}
+                  width = {width}
+                  height = {height}
+                  margin = {margin}
+                  windowWidth = {windowWidth}
               />
           </Tooltip>
         </ChartContainer>

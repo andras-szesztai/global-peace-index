@@ -39,10 +39,17 @@ $bp-smallest: 31.25em;
 html {
   box-sizing: border-box !important;
   user-select: none;
-  font-size: 62.5%;
+  font-size: 75% !important;
   font-family: gill-sans-nova-condensed, sans-serif !important;
   font-style: normal;
   font-weight: 300;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 68.75% !important;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 56.25% !important;
+  }
 
   .ui .label {
     font-weight: 500 !important;

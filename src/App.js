@@ -61,20 +61,20 @@ class App extends Component {
         this.setState(state => state.stoppedYear = yearFilter)
       }
     } else {
-     this.autoPlay()
+    //  this.autoPlay()
     }
   }
 
-  autoPlay = () => {
-    const {yearFilter} =this.state
-    setTimeout(() => this.setState(state => {
-      if(yearFilter < 2019){
-        return state.yearFilter = yearFilter + 1
-      } else {
-        return state.yearFilter = 2008
-      }
-}), autoPlayDuration)
-  }
+//   autoPlay = () => {
+//     const {yearFilter} =this.state
+//     setTimeout(() => this.setState(state => {
+//       if(yearFilter < 2019){
+//         return state.yearFilter = yearFilter + 1
+//       } else {
+//         return state.yearFilter = 2008
+//       }
+// }), autoPlayDuration)
+//   }
 
 
   handleResize = () => {this.setState({sectionWidth: this.section && this.section.clientWidth});}
@@ -298,7 +298,7 @@ class App extends Component {
           </section>
 
           <section className="line-charts">
-            {lineCharts}
+            {/* {lineCharts} */}
           </section>
 
           <section className="credits">

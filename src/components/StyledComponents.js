@@ -93,6 +93,7 @@ const Tooltip = styled.div`
     background: #fff;
     opacity: .9;
     z-index: 20;
+    height: ${props => props.height || 'auto'}
 
     border-radius: 5px;
     white-space: nowrap;
@@ -124,7 +125,10 @@ const Tooltip = styled.div`
 
     h4 {
       padding-top: 1rem;
-      color: #333;
+      font-size: 1.6rem !important;
+      font-weight: 500;
+      
+
     }
 
     span {
@@ -133,7 +137,14 @@ const Tooltip = styled.div`
 
     h4,
     p {
-      line-height: .3;
+      color: ${secondaryColor};
+      line-height: .8rem;
+    }
+
+    .tooltip{
+      &__hint {
+        padding-top: .5rem;
+      }
     }
 
 

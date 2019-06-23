@@ -12,13 +12,13 @@
   grid-template-columns: 5% 90% 5%;
   grid-template-rows: 2% 35vh 5vh 70vh 300px 70px 2%;
 
-  @media only screen and (max-width: $bp-small) {
-
-    height: 240vh;
-
-    grid-template-columns: 0 1fr 0;
-    grid-template-rows: 0px 3fr 3fr 5fr 1fr 0px;
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: 2% 35vh 3vh 70vh 300px 70px 2%;
   }
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: 2% 30vh 1vh 60vh 250px 50px 2%;
+  }
+
 
   .dropdown-metric{
     display: inline-block;
