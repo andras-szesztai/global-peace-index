@@ -55,7 +55,11 @@ class App extends Component {
         },
         {
           selector: '.main-chart',
-          content: 'Each country is represented by a dot, by default sized by its population - you can change sizing with the button below the region filter! The grey colored countries are the ones in the Lower and Higher middle income groups, while the Low income countries are represented by the orange, and the High income ones by the blue color. Also, you can hover over the dots to find out more about a country\'s perforamnce!',
+          content: 'Each country is represented by a dot, by default sized by its population The grey colored countries are the ones in the Lower and Higher middle income groups, while the Low income countries are represented by the orange, and the High income ones by the blue color. Also, you can hover over the dots to find out more about a country\'s perforamnce!',
+        },
+        {
+          selector: '.sizer',
+          content: 'You can easily change to equal dot sizing with this button!'
         },
         {
           selector: '.year-filter',
@@ -64,7 +68,16 @@ class App extends Component {
         {
           selector: '.country-filter',
           content: 'Select the countries you would like to be highlighted in the chart above, and added to the linecharts below! You can only select three countries at the same time.',
-        }
+        },
+        {
+          selector: '.metric-1',
+          content: 'Using the dropdown, you can choose any of the 23 indicators to see what changes they have gone through over time.',
+        },
+        {
+          selector: '.line-chart-1',
+          content: 'You can find out more about a country\'s score in a given indicator by hovering over its line, and highlight it across the other indicators by clicking on it!',
+        },
+
       ]
   }
 
@@ -211,26 +224,31 @@ class App extends Component {
                               
     const lineCharts = metricsDisplayed.map( (el, i) => {
       return <Wrapper key={i}>
-              <h4 className="dropdown-metric" onClick={() => this.openDropDown(i, openClosed)}>{el}</h4>
-              <SingleDropDown
-                options={dropdownOptions(i)}
-                onChange = {this.handleMetricDropdownChange}
-                open={openClosed[i]}
-                onClick={() => this.openDropDown(i, openClosed)}
-              />
-              <LineChart
-                height={280}
-                showYAxis={showYAxis[i]}
-                width={windowWidth > 600 ? lineChartWidth/3 : lineChartWidth}
-                data={lineChartData.filter(d => d.metric === el)}
-                colorScale={colorScale}
-                metric = {el}
-                margin={lineChartMargins[i]}
-                valueList = {mouseClickHighlight}
-                year = {mainYearFilter}
-                highlighted = {lineHighlight}
-                handleClick={this.handleLineClick}
-              />
+              <div className={`metric-${i}`}>
+                <h4 className={`dropdown-metric`} onClick={() => this.openDropDown(i, openClosed)}>{el}</h4>
+                <SingleDropDown
+                  options={dropdownOptions(i)}
+                  onChange = {this.handleMetricDropdownChange}
+                  open={openClosed[i]}
+                  onClick={() => this.openDropDown(i, openClosed)}
+                />
+              </div>
+              <div className={`line-chart-${i}`}>
+                <LineChart
+                  
+                  height={280}
+                  showYAxis={showYAxis[i]}
+                  width={windowWidth > 600 ? lineChartWidth/3 : lineChartWidth}
+                  data={lineChartData.filter(d => d.metric === el)}
+                  colorScale={colorScale}
+                  metric = {el}
+                  margin={lineChartMargins[i]}
+                  valueList = {mouseClickHighlight}
+                  year = {mainYearFilter}
+                  highlighted = {lineHighlight}
+                  handleClick={this.handleLineClick}
+                />
+              </div>
             </Wrapper>
     })
 
@@ -286,7 +304,9 @@ class App extends Component {
                         filterButtonColor = {regionFilterButton}
                     />
                   </Wrapper>  
-                  <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
+                  <Wrapper className='sizer'>
+                    <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
+                  </Wrapper>
                 </FlexWrapper>
               </Wrapper>
             
@@ -349,7 +369,7 @@ class App extends Component {
           </section>
 
           <section className="line-charts">
-            {/* {lineCharts} */}
+            {lineCharts}
           </section>
 
           <section className="credits">

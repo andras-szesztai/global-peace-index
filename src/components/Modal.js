@@ -13,8 +13,8 @@ class RegionFilter extends Component {
 
 
   show = size => () => this.setState({ size, open: true })
-  close = () => this.setState({ open: false })
-
+  close = () => {this.setState({buttonColor: 'grey', open: false})
+}
   render() {
     const { open, size, values, buttonColor, shadowValues } = this.state
     const { handleSave, filterButtonColor } = this.props
@@ -36,6 +36,7 @@ class RegionFilter extends Component {
 
                                             }} />)    
 
+                          console.log(this.state.buttonColor)
         const changedValuesOne = _.difference(values, shadowValues)
         const changedValuesTwo = _.difference(shadowValues, values) 
 
@@ -45,7 +46,7 @@ class RegionFilter extends Component {
             }
         } else {
             if(buttonColor !== 'grey'){
-                this.setState(s => s.buttonColor = 'grey')
+            this.setState(s => s.buttonColor = 'grey')
             }
         }                                                  
            
@@ -68,8 +69,8 @@ class RegionFilter extends Component {
           <Modal.Actions>
             <Button basic color={buttonColor} onClick={() =>
                 {
-                   this.close()
-                    this.setState({buttonColor: 'grey', values: shadowValues})
+                    this.close()
+                    this.setState({values: shadowValues})
                     handleSave(shadowValues)
                 }
                 }>Save</Button>
