@@ -42,15 +42,13 @@ section {
 
   display: grid;
   grid-template-columns: 2fr 2rem 3fr 5rem 3fr;
-  grid-template-rows: 30% 70%;
+  grid-template-rows: 40% 60%;
      
   @media only screen and (max-width: $bp-large) {
     grid-template-columns: 2fr 1rem 3fr 4rem 3fr;
-    grid-template-rows: 30% 70%;
   }
   @media only screen and (max-width: $bp-medium) {
     grid-template-columns: 2fr 0rem 3fr 2rem 3fr;
-    grid-template-rows: 40% 60%;
   }
 }
 

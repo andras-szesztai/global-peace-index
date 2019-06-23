@@ -6,6 +6,7 @@
     "@material-ui/core": "^4.1.1",
     "@material-ui/icons": "^4.2.0",
     "@material-ui/lab": "^4.0.0-alpha.16",
+    "body-scroll-lock": "^2.6.1",
     "d3-array": "^2.2.0",
     "d3-axis": "^1.0.12",
     "d3-collection": "^1.0.7",
@@ -25,8 +26,8 @@
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-joyride": "^2.0.5",
     "react-scripts": "3.0.1",
+    "reactour": "^1.15.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.87.2",
     "styled-components": "^4.3.1"

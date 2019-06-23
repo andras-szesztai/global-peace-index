@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './sass/_main.scss'
 import 'semantic-ui-css/semantic.min.css'
-import Joyride from 'react-joyride';
+import Tour from 'reactour'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 import _ from 'lodash'
 import { scaleOrdinal } from 'd3-scale'
@@ -49,19 +50,19 @@ class App extends Component {
       runTour: false,
       tourSteps: [
         {
-          target: '.region-filter',
+          selector: '.region-filter',
           content: 'You can filter in or out any regions by opening up this modal, but do not forget to save your selection before closing it! ;)',
         },
         {
-          target: '.main-chart',
-          content: 'Each country of the report is represented by a dot, by default sized by its population - you can switch to equal size by the button below the region filter! The grey colored countries are the ones belonging to the Lower and Higher middle income groups, while the Low income countries are represented by the orange, and the High income ones by the blue color. Also, you can hover over the dots to find out more about a country\'s perforamnce in the year displayed!',
+          selector: '.main-chart',
+          content: 'Each country is represented by a dot, by default sized by its population - you can change sizing with the button below the region filter! The grey colored countries are the ones in the Lower and Higher middle income groups, while the Low income countries are represented by the orange, and the High income ones by the blue color. Also, you can hover over the dots to find out more about a country\'s perforamnce!',
         },
         {
-          target: '.year-filter',
-          content: 'With the help of this slider, you can filter across all the 12 years in this dataset to see how peacefulness evolved actoss the globe. Autoplay will also stop when manually setting your year!',
+          selector: '.year-filter',
+          content: 'With the help of this slider, you can filter across all the 12 years in this dataset to see how peacefulness evolved actoss the globe.',
         },
         {
-          target: '.country-filter',
+          selector: '.country-filter',
           content: 'Select the countries you would like to be highlighted in the chart above, and added to the linecharts below! You can only select three countries at the same time.',
         }
       ]
@@ -174,6 +175,9 @@ class App extends Component {
 
   handleRegionSave = array =>  {this.setState(state => state.regionArray = array)}
 
+  disableBody = target => disableBodyScroll('.App')
+  enableBody = target => enableBodyScroll('.App')
+
   render(){
 
     const { tourSteps, runTour, sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay, lineHighlight, sizedByPopulation, regionArray } = this.state
@@ -232,18 +236,15 @@ class App extends Component {
 
     return (
       <div className="App" ref={window => this.window = window} onClick={this.handleClickOutside}>
-          <Joyride
+            <Tour
+              accentColor='#666'
               steps={tourSteps}
-              run={runTour}
-              continuous= {true}
-              showProgress = {true}
-              disableOverlay={true}
-              styles = {{
-              options: {
-                beaconSize:40,
-                primaryColor: '#666',
-                textColor: '#666',
-              }}}
+              isOpen={runTour}
+              rounded={5}
+              disableInteraction={true}
+              onRequestClose={() => this.setState(s => s.runTour = false)}
+              onAfterOpen={this.disableBody}
+              onBeforeClose={this.enableBody}
             />
           <section className="intro">
             <Wrapper
@@ -256,14 +257,14 @@ class App extends Component {
             <Wrapper
               gridColumn={3}
             >
-              <p>Global Peace Index (GPI) measures the relative position of nations' and regions' peacefulness. It ranks 163 independent states and territories (99.7 per cent of the world’s population) according to their levels of peacefulness.</p>
+              <p>Global Peace Index (GPI) measures the relative position of nations' and regions' peacefulness using 23 qualitative and quantitative indicators. The report ranks 163 countries covering 99.7 per cent of the world’s population.</p>
               <p>The GPI is a report produced by the Institute for Economics and Peace (IEP) and developed in consultation with an international panel of peace experts from peace institutes and think tanks with data collected and collated by the Economist Intelligence Unit.</p>
               <p>To find out more, you can download the latest <a href="http://visionofhumanity.org/app/uploads/2019/06/GPI-2019web003.pdf"  target="_blank" >Global Peace Index Report from 2019</a> or watch its <a href="https://www.csis.org/events/global-peace-index-2019-launch"  target="_blank" > official launch</a>.</p>
             </Wrapper>
             <Wrapper
               gridColumn={5}
             >
-              <p>The following visualization attempts to demonstrate changes that took place in the Global Peace Gap - the difference in peacefulness between countries belonging to the <span className="legend__low">Low income</span> group and those in the <span className="legend__high">High income</span> group -, around the globe between 2008 and 2019.</p>
+              <p>The following visualization attempts to demonstrate changes that took place in the Global Peace Gap - in this case the difference in peacefulness between countries belonging to the <span className="legend__low">Low income</span> group and those in the <span className="legend__high">High income</span> group -, around the globe between 2008 and 2019.</p>
             </Wrapper>
               <Wrapper
                 gridRow={2}
@@ -311,23 +312,13 @@ class App extends Component {
                   color = {secondaryColor}
                 />
             </Wrapper>
-            <Wrapper
-              gridRow={windowWidth > small ? 2 : 3}
-              gridColumn={windowWidth > small ? 2 : 1}
-              padding={'18px 50px 18px 25px'}
-              className="country-filter"
-            >
-              <MultipleDropdown
-                values = {mouseClickHighlight.length > 0 ? mouseClickHighlight.map(el => el.toLowerCase()) : mouseClickHighlight}
-                onChange = {this.handleDropdownChange}
-              />
-            </Wrapper>
+            
             <Wrapper
               className="main-chart"
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-                <BeeSwarmPlot
+                {/* <BeeSwarmPlot
                   width={sectionWidth}
                   height={beeSwarmHeight}
                   data={filteredBeesWarmData}
@@ -342,12 +333,23 @@ class App extends Component {
                   windowWidth = {windowWidth}
                   colorScale={colorScale}
                   colorArray={colorArray}
+              /> */}
+            </Wrapper>
+            <Wrapper
+              gridRow={windowWidth > small ? 2 : 3}
+              gridColumn={windowWidth > small ? 2 : 1}
+              padding={'18px 50px 18px 25px'}
+              className="country-filter"
+            >
+              <MultipleDropdown
+                values = {mouseClickHighlight.length > 0 ? mouseClickHighlight.map(el => el.toLowerCase()) : mouseClickHighlight}
+                onChange = {this.handleDropdownChange}
               />
             </Wrapper>
           </section>
 
           <section className="line-charts">
-            {lineCharts}
+            {/* {lineCharts} */}
           </section>
 
           <section className="credits">
