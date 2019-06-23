@@ -76,7 +76,7 @@ class BeeSwarmPlot extends Component {
 
     this.chartArea = this.svg.select('.chart-area')
 
-    appendText(this.chartArea, 'year-text', 0, chartHeight + 10, 'start', year )
+    appendText(this.chartArea, 'year-text', 0, chartHeight + 20, 'start', year )
 
     this.xScale = scaleLinear().domain([3.8, 1]).range([0, chartWidth])
     this.radiusScale = scaleSqrt().range(sizeRange).domain(extent(data, d => d.population/million))

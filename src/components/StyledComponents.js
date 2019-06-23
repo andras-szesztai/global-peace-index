@@ -187,7 +187,7 @@ const ChartContainer = styled.div`
       }
 
       &__calculation-text {
-        bottom: 20px;
+        bottom: 5px;
         right: 0;
         text-align: right;
       }

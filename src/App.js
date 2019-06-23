@@ -232,12 +232,7 @@ class App extends Component {
 
     return (
       <div className="App" ref={window => this.window = window} onClick={this.handleClickOutside}>
-
-          <section className="intro">
-            <Wrapper
-              gridRow={1}
-            >
-            <Joyride
+          <Joyride
               steps={tourSteps}
               run={runTour}
               continuous= {true}
@@ -250,6 +245,10 @@ class App extends Component {
                 textColor: '#666',
               }}}
             />
+          <section className="intro">
+            <Wrapper
+              gridRow={1}
+            >
             <h1>Global</h1>
             <h1 >peace</h1>
             <h1 className="gap"><span className="low">g</span><span className="middle">a</span><span className="high">p</span></h1>
