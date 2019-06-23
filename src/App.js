@@ -36,7 +36,7 @@ const filteredBarChartData = barchartData.filter(d => metrics.includes(d.metric)
 class App extends Component {
   state = {
       sectionWidth: undefined,
-      yearFilter: 2008,
+      yearFilter: 2019,
       stoppedYear: undefined,
       mouseoverHighlight: '',
       mouseClickHighlight: ['Iceland', 'Afghanistan'],
@@ -244,8 +244,7 @@ class App extends Component {
               gridColumn={3}
             >
               <p>Global Peace Index (GPI) measures the relative position of nations' and regions' peacefulness using over 20 qualitative and quantitative indicators. The report includes the ranking of 163 countries covering 99.7 per cent of the world’s population.</p>
-              <p>The GPI is a report produced by the Institute for Economics and Peace (IEP) and developed in consultation with an international panel of peace experts from peace institutes and think tanks with data collected and collated by the Economist Intelligence Unit.</p>
-              <p>To find out more, you can download the latest <a href="http://visionofhumanity.org/app/uploads/2019/06/GPI-2019web003.pdf"  target="_blank" rel="noopener noreferrer" >Global Peace Index Report from 2019</a> or watch its <a href="https://www.csis.org/events/global-peace-index-2019-launch"  target="_blank" rel="noopener noreferrer" > official launch</a>.</p>
+              <p>The GPI is a report produced by the Institute for Economics and Peace (IEP) and developed in consultation with an international panel of peace experts from peace institutes and think tanks with data collected and collated by the Economist Intelligence Unit. To find out more, you can download the latest <a href="http://visionofhumanity.org/app/uploads/2019/06/GPI-2019web003.pdf"  target="_blank" rel="noopener noreferrer" >Global Peace Index Report from 2019</a> or watch its <a href="https://www.csis.org/events/global-peace-index-2019-launch"  target="_blank" rel="noopener noreferrer" > official launch</a>.</p>
             </Wrapper>
             <Wrapper
               gridColumn={5}
