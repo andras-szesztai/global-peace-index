@@ -237,10 +237,8 @@ class App extends Component {
               disableOverlay={true}
               styles = {{
               options: {
-                beaconSize:30,
-                overlayColor: 'rgba(0, 0, 0, 0)',
-                primaryColor: '#f04',
-                spotlightShadow: '0 0 100px rgba(0, 0, 0, 0.1)',
+                beaconSize:40,
+                primaryColor: '#666',
                 textColor: '#666',
               }}}
             />
@@ -342,7 +340,7 @@ class App extends Component {
           </section>
 
           <section className="line-charts">
-            {/* {lineCharts} */}
+            {lineCharts}
           </section>
 
           <section className="credits">
