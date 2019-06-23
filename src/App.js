@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './sass/_main.scss'
 import 'semantic-ui-css/semantic.min.css'
+import Joyride from 'react-joyride';
 
 import _ from 'lodash'
 import { scaleOrdinal } from 'd3-scale'
@@ -11,7 +12,7 @@ import RegionFilter from './components/Modal'
 import BeeSwarmPlot from './components/BeeSwarmPlot'
 import LineChart from './components/LineChart'
 import { Wrapper, FlexWrapper, secondaryColor } from './components/StyledComponents'
-import { Radio } from 'semantic-ui-react'
+import { Radio, Button } from 'semantic-ui-react'
 import beeSwarmData from './data/beeswarmData.json'
 import barchartData from './data/barchartData.json'
 
@@ -42,7 +43,26 @@ class App extends Component {
       metricsDisplayed: ['Safety & Security', 'Militarisation', 'Incarceration Rate'],
       openClosed: [false,false,false],
       stopAutoplay: false,
-      sizedByPopulation: true
+      sizedByPopulation: true,
+      runTour: false,
+      tourSteps: [
+        {
+          target: '.region-filter',
+          content: 'You can filter in or out any regions by opening up this modal, but do not forget to save your selection before closing it! ;)',
+        },
+        {
+          target: '.main-chart',
+          content: 'Each country of the report is represented by a dot, by default sized by its population - you can switch to equal size by the button below the region filter! The grey colored countries are the ones belonging to the Lower and Higher middle income groups, while the Low income countries are represented by the orange, and the High income ones by the blue color. Also, you can hover over the dots to find out more about a country\'s perforamnce in the year displayed!',
+        },
+        {
+          target: '.year-filter',
+          content: 'With the help of this slider, you can filter across all the 12 years in this dataset to see how peacefulness evolved actoss the globe. Autoplay will also stop when manually setting your year!',
+        },
+        {
+          target: '.country-filter',
+          content: 'Select the countries you would like to be highlighted in the chart above, and added to the linecharts below! You can only select three countries at the same time.',
+        }
+      ]
   }
 
   componentDidMount() {
@@ -154,7 +174,7 @@ class App extends Component {
 
   render(){
 
-    const { sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay, lineHighlight, sizedByPopulation, regionArray } = this.state
+    const { tourSteps, runTour, sectionWidth, yearFilter, mouseClickHighlight, mouseoverHighlight, metricsDisplayed, openClosed, stoppedYear, stopAutoplay, lineHighlight, sizedByPopulation, regionArray } = this.state
 
     const beeSwarmHeight = this.beeSwarmContainer && this.beeSwarmContainer.clientHeight
     const windowWidth = this.window && this.window.clientWidth
@@ -209,8 +229,23 @@ class App extends Component {
             <Wrapper
               gridRow={1}
             >
+            <Joyride
+              steps={tourSteps}
+              run={runTour}
+              continuous= {true}
+              showProgress = {true}
+              disableOverlay={true}
+              styles = {{
+              options: {
+                beaconSize:30,
+                overlayColor: 'rgba(0, 0, 0, 0)',
+                primaryColor: '#f04',
+                spotlightShadow: '0 0 100px rgba(0, 0, 0, 0.1)',
+                textColor: '#666',
+              }}}
+            />
             <h1>Global</h1>
-            <h1>peace</h1>
+            <h1 >peace</h1>
             <h1 className="gap"><span className="low">g</span><span className="middle">a</span><span className="high">p</span></h1>
             </Wrapper>
             <Wrapper
@@ -231,13 +266,20 @@ class App extends Component {
               >
                 <FlexWrapper
                   direction="column"
-                  justify="space-around"
+                  justify="space-evenly"
                   align="flex-start"
                 >
-                  <RegionFilter
-                      handleSave={this.handleRegionSave}
-                      filterButtonColor = {regionFilterButton}
+                  <Button basic color='grey' onClick={() => this.setState(s => s.runTour = true)}>
+                    Take a tour
+                  </Button>
+                  <Wrapper
+                    className="region-filter"
+                  >
+                    <RegionFilter  
+                        handleSave={this.handleRegionSave}
+                        filterButtonColor = {regionFilterButton}
                     />
+                  </Wrapper>  
                   <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
                 </FlexWrapper>
               </Wrapper>
@@ -249,8 +291,10 @@ class App extends Component {
               gridColumn={1}
               gridRow={2}
               padding={'30px'}
+             
               >
                 <YearSlider
+                  className="year-filter"  
                   valueLabelDisplay="auto"
                   max={2019}
                   min={2008}
@@ -266,6 +310,7 @@ class App extends Component {
               gridRow={windowWidth > small ? 2 : 3}
               gridColumn={windowWidth > small ? 2 : 1}
               padding={'18px 50px 18px 25px'}
+              className="country-filter"
             >
               <MultipleDropdown
                 values = {mouseClickHighlight.length > 0 ? mouseClickHighlight.map(el => el.toLowerCase()) : mouseClickHighlight}
@@ -273,6 +318,7 @@ class App extends Component {
               />
             </Wrapper>
             <Wrapper
+              className="main-chart"
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >

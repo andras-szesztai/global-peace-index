@@ -54,7 +54,7 @@ class RegionFilter extends Component {
         <Button basic 
                 onClick={this.show('large')}
                 color={filterButtonColor}
-                >Regions</Button>
+                >Regions filter</Button>
 
         <Modal size={size} open={open} onClose={this.close}>
           <Modal.Header>Filter for specific regions</Modal.Header>
