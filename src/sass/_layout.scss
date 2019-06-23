@@ -28,7 +28,6 @@
 
   .background {
     z-index: -1;
-    // border: 2px solid steelblue;
   }
 
 }
@@ -41,15 +40,15 @@ section {
   grid-row: 2;
 
   display: grid;
-  grid-template-columns: 2fr 2rem 3fr 5rem 3fr;
+  grid-template-columns: 2fr 2rem 4fr 5rem 4fr;
   grid-template-rows: 40% 60%;
      
   @media only screen and (max-width: $bp-large) {
-    grid-template-columns: 2fr 1rem 3fr 4rem 3fr;
+    grid-template-columns: 2fr 1rem 4fr 5rem 4fr;
   }
   
   @media only screen and (max-width: $bp-medium) {
-    grid-template-columns: 2fr 0rem 3fr 2rem 3fr;
+    grid-template-columns: 2fr 0rem 4fr 2rem 4fr;
   }
 }
 

@@ -66,20 +66,20 @@ class App extends Component {
         this.setState(state => state.stoppedYear = yearFilter)
       }
     } else {
-     this.autoPlay()
+    //  this.autoPlay()
     }
   }
 
-  autoPlay = () => {
-    const {yearFilter} =this.state
-    setTimeout(() => this.setState(state => {
-      if(yearFilter < 2019){
-        return state.yearFilter = yearFilter + 1
-      } else {
-        return state.yearFilter = 2008
-      }
-}), autoPlayDuration)
-  }
+//   autoPlay = () => {
+//     const {yearFilter} =this.state
+//     setTimeout(() => this.setState(state => {
+//       if(yearFilter < 2019){
+//         return state.yearFilter = yearFilter + 1
+//       } else {
+//         return state.yearFilter = 2008
+//       }
+// }), autoPlayDuration)
+//   }
 
 
   handleResize = () => {this.setState({sectionWidth: this.section && this.section.clientWidth});}
@@ -262,25 +262,26 @@ class App extends Component {
                   justify="space-around"
                   align="flex-start"
                 >
-                  <Popup content='Click here to take a tour!'  position='right center' trigger={
-                    <Button basic color='grey' onClick={() => this.setState(s => s.runTour = true)}>
-                      How to read and interact?
-                    </Button>
-                  } />
-                  <Wrapper
-                    className="region-filter"
-                  >
-                    <RegionFilter  
-                        handleSave={this.handleRegionSave}
-                        filterButtonColor = {regionFilterButton}
-                    />
-                  </Wrapper>  
-                  <Wrapper className='sizer'>
-                    <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
-                  </Wrapper>
-                </FlexWrapper>
+                  <div className="tour-button">
+                    <Popup content='Click here to take a tour!'  position='right center' trigger={
+                      <Button basic color='grey' onClick={() => this.setState(s => s.runTour = true)}>
+                        How to read and interact?
+                      </Button>
+                    } />
+                  </div>
+                    <FlexWrapper>
+                      <Wrapper className="region-filter">
+                        <RegionFilter  
+                            handleSave={this.handleRegionSave}
+                            filterButtonColor = {regionFilterButton}
+                        />
+                      </Wrapper> 
+                      <Wrapper className='sizer'>
+                        <Radio fitted defaultChecked onChange={this.handleButtonToggle} toggle label={sizedByPopulation ? 'Dots sized by population' : 'Dots sized equally'} />
+                      </Wrapper>
+                    </FlexWrapper>
+                  </FlexWrapper>
               </Wrapper>
-            
           </section>
 
           <section className="beeswarm-plot">
@@ -309,7 +310,7 @@ class App extends Component {
               gridColumn={windowWidth > small ? 'span 2' : 1}
               gridRow={1}
               >
-                <BeeSwarmPlot
+                {/* <BeeSwarmPlot
                   width={sectionWidth}
                   height={beeSwarmHeight}
                   data={filteredBeesWarmData}
@@ -324,7 +325,7 @@ class App extends Component {
                   windowWidth = {windowWidth}
                   colorScale={colorScale}
                   colorArray={colorArray}
-              />
+              /> */}
             </Wrapper>
             <Wrapper
               gridRow={windowWidth > small ? 2 : 3}
@@ -340,7 +341,7 @@ class App extends Component {
           </section>
 
           <section className="line-charts">
-            {lineCharts}
+            {/* {lineCharts} */}
           </section>
 
           <section className="credits">
