@@ -347,9 +347,9 @@ class App extends Component {
           </section>
 
           <section className="credits">
-            <FlexWrapper className="credits__text" justify={'start'}>Designed and built by: <a href="https://twitter.com/AndSzesztai" target="_blank" rel="noopener noreferrer">&nbsp; Andras Szesztai</a></FlexWrapper>
-            <FlexWrapper className="credits__text" justify={'center'}><a href="https://www.olgatsubiks.com/data-for-a-cause-visualizations" target="_blank" rel="noopener noreferrer">#dataforacause</a></FlexWrapper>
-            <FlexWrapper className="credits__text" justify={'flex-end'}>Data source: <a href="http://economicsandpeace.org/" target="_blank" rel="noopener noreferrer">&nbsp; Institute for Economics and Peace</a> &nbsp;- 
+            <FlexWrapper className="credits__text" justify={'start'} >Designed and built by: <a href="https://twitter.com/AndSzesztai" target="_blank" rel="noopener noreferrer">&nbsp; Andras Szesztai</a></FlexWrapper>
+            <FlexWrapper className="credits__text" justify={'center'} ><a href="https://www.olgatsubiks.com/data-for-a-cause-visualizations" target="_blank" rel="noopener noreferrer">#dataforacause</a></FlexWrapper>
+            <FlexWrapper className="credits__text" justify={'flex-end'} >Data source: <a href="http://economicsandpeace.org/" target="_blank" rel="noopener noreferrer">&nbsp; Institute for Economics and Peace</a> &nbsp;- 
                                                                       <a href="http://visionofhumanity.org/app/uploads/2019/06/GPI-2019-Briefingweb-2.pdf" target="_blank" rel="noopener noreferrer">&nbsp; Global Peace Index</a>; 
                                                                       <a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">&nbsp; World Bank</a></FlexWrapper>
           </section>
