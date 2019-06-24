@@ -213,21 +213,21 @@ class BeeSwarmPlot extends Component {
 
   setElements(){
 
-    const { windowWidth } = this.props
+    const { windowWidth, sizedByPopulation } = this.props
 
     let mainRadius, subRadius, tooltipY, forceCollideValue, sizeRange
 
   if (windowWidth < 1000){
-      mainRadius= 6
-      subRadius= 9
+      mainRadius= 5
+      subRadius= 8
       tooltipY= 25
-      forceCollideValue= 12
+      forceCollideValue= sizedByPopulation ? 10 : 7
       sizeRange = [3, 25]
     } else {
-      mainRadius= 8
-      subRadius= 11
+      mainRadius= 7
+      subRadius= 10
       tooltipY= 25
-      forceCollideValue= 14
+      forceCollideValue= sizedByPopulation ? 12 : 9
       sizeRange = [2, 40]
     }
 

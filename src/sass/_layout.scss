@@ -10,15 +10,15 @@
 
   display: grid;
   grid-template-columns: 5% 90% 5%;
-  grid-template-rows: 4% 30vh 8vh 70vh 300px 70px 2%;
+  grid-template-rows: 4% 250px 6rem 500px 300px 70px 2%;
 
   @media only screen and (max-width: $bp-large) {
     grid-template-columns: 3% 94% 3%;
-    grid-template-rows: 3% 30vh 6vh 70vh 300px 60px 2%;
+    grid-template-rows: 3% 225px 4rem 450px 300px 60px 2%;
   }
   @media only screen and (max-width: $bp-medium) {
     grid-template-columns: 2% 96% 2%;
-    grid-template-rows: 2% 25vh 4vh 60vh 300px 50px 2%;
+    grid-template-rows: 2% 200px 2rem 400px 300px 50px 2%;
   }
 
 
@@ -40,15 +40,15 @@ section {
   grid-row: 2;
 
   display: grid;
-  grid-template-columns: 2fr 1rem 4fr 3rem 4fr;
+  grid-template-columns: repeat(2, 1fr) 30rem 1fr 30rem;
   grid-template-rows: repeat(2, 50%);
      
   @media only screen and (max-width: $bp-large) {
-    grid-template-columns: 2fr .5rem 4fr 5rem 4fr;
+    grid-template-columns: repeat(2, 1fr) 29rem 1fr 29rem;
   }
   
   @media only screen and (max-width: $bp-medium) {
-    grid-template-columns: 2fr 0rem 4fr 2rem 4fr;
+    grid-template-columns: repeat(2, 1fr) 28rem 1fr 28rem;
   }
 }
 
