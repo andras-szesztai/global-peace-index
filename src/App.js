@@ -290,7 +290,7 @@ class App extends Component {
             <Wrapper
               gridColumn={1}
               gridRow={2}
-              padding={'28px'}
+              padding={'27px 100px 25px 30px'}
              
               >
                 <YearSlider
@@ -332,7 +332,7 @@ class App extends Component {
             <Wrapper
               gridRow={windowWidth > small ? 2 : 3}
               gridColumn={windowWidth > small ? 2 : 1}
-              padding={'18px 50px 18px 25px'}
+              padding={'18px 50px 18px 50px'}
               className="country-filter"
             >
               <MultipleDropdown

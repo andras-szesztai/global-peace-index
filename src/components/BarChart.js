@@ -51,7 +51,7 @@ class BarChart extends Component {
     this.yAxis = this.svg.select('.yAxis-area')
 
     this.xScale = scaleLinear().domain([0, 5]).range([0, chartWidth])
-    this.yScale =scaleBand().domain(data.map(d => d.metric)).range([0, chartHeight]).padding(0.25)
+    this.yScale =scaleBand().domain(data.filter(d => d.metric !== 'Overall Score').map(d => d.metric)).range([0, chartHeight]).padding(0.25)
 
     this.yAxis
       .transition("y-axis-in")
@@ -72,8 +72,8 @@ class BarChart extends Component {
 
     const { data } = this.props
 
-    const mainRects = this.chartArea.selectAll('.main-rect').data(data.filter(d => d.country !== 'All'), d => d.metric),
-          avgRects = this.chartArea.selectAll('.avg-rect').data(data.filter(d => d.country === 'All'), d => d.metric)
+    const mainRects = this.chartArea.selectAll('.main-rect').data(data.filter(d => d.country !== 'All' && d.metric !== 'Overall Score'), d => d.metric),
+          avgRects = this.chartArea.selectAll('.avg-rect').data(data.filter(d => d.country === 'All' && d.metric !== 'Overall Score'), d => d.metric)
 
     mainRects.enter()
         .append('rect')
