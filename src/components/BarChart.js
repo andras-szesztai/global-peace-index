@@ -5,6 +5,7 @@ import { axisLeft } from 'd3-axis'
 import { scaleLinear, scaleBand } from 'd3-scale'
 import { easeCubic } from 'd3-ease'
 import "d3-transition"
+import _ from 'lodash'
 
 import { svgDimensions, appendArea } from './chartFunctions'
 
@@ -53,6 +54,17 @@ class BarChart extends Component {
     this.xScale = scaleLinear().domain([0, 5]).range([0, chartWidth])
     this.yScale =scaleBand().domain(data.filter(d => d.metric !== 'Overall Score').map(d => d.metric)).range([0, chartHeight]).padding(0.25)
 
+    const avgs = []
+    const metricMap = _.uniq(data.map(d => d.metric))
+    const countriesNum = _.uniq(data.map(d => d.country)).length
+    const metricSums = metricMap.forEach(el => {
+      const sum = _.sumBy(data.filter(d => d.metric === el), 'value')
+
+      avgs.push(sum/countriesNum)
+    })
+    
+    console.log(data)
+
     this.yAxis
       .transition("y-axis-in")
       .duration(1000)
@@ -70,9 +82,9 @@ class BarChart extends Component {
 
   updateData(duration){
 
-    const { data } = this.props
+    const { data, value } = this.props
 
-    const mainRects = this.chartArea.selectAll('.main-rect').data(data.filter(d => d.country !== 'All' && d.metric !== 'Overall Score'), d => d.metric),
+    const mainRects = this.chartArea.selectAll('.main-rect').data(data.filter(d => d.country === value && d.metric !== 'Overall Score'), d => d.metric),
           avgRects = this.chartArea.selectAll('.avg-rect').data(data.filter(d => d.country === 'All' && d.metric !== 'Overall Score'), d => d.metric)
 
     mainRects.enter()
