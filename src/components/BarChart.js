@@ -17,10 +17,8 @@ class BarChart extends Component {
 
   componentDidUpdate(prevProps){
 
-    const { value, width, transition, year, sizedByPopulation } = this.props
+    const { data, value, width, transition, year, sizedByPopulation } = this.props
     const { firstRender } = this.state
-
-    console.log(sizedByPopulation)
 
     if(!firstRender) {
       this.initVis()
@@ -28,18 +26,23 @@ class BarChart extends Component {
       this.setState(state => state.firstRender = true)
     }
 
-    if (prevProps.year !== year){
-      this.updateMainBars(0)
-      this.updateAvgBars(0)
-    } else if (
-      prevProps.sizedByPopulation !== sizedByPopulation
-    ){
-      this.updateAvgBars()
-    } else if (
-      prevProps.value !== value
-    ){
-      this.updateMainBars(transition.long)
+    if(value){
+      if (prevProps.year !== year){
+        this.updateMainBars(0)
+        this.updateAvgBars(0)
+      } else if (
+        prevProps.sizedByPopulation !== sizedByPopulation
+      ){
+        this.updateAvgBars()
+      } else if (
+        prevProps.value !== value
+      ){
+        this.updateMainBars(transition.long)
+        this.setState(s => s.overallScore = data.filter(d => d.country === value && d.metric === 'Overall Score')[0]['value'])
+      }
+  
     }
+
 
     if(prevProps.width !== width){
       this.updateDimensions()
@@ -145,8 +148,6 @@ class BarChart extends Component {
 
     }
 
-    console.log(calculatedData)
-
     const avgRects = this.chartArea.selectAll('.avg-rect').data(calculatedData.filter(d  => d.metric !== 'Overall Score'), d => d.metric)
     const avgText = this.chartArea.selectAll('.avg-text').data(calculatedData.filter(d  => d.metric !== 'Overall Score'), d => d.metric)
 
@@ -225,7 +226,7 @@ class BarChart extends Component {
             <h4 className="tooltip__title">{value}</h4>
             <p className="tooltip__value">Overall score in {year}: <span>{overallScore && +overallScore.toFixed(2)}</span></p>
             <svg ref={node => this.node = node}/>
-            <p className="tooltip__hint">The <span className="bar">┃</span> represents the overall average*</p>
+            <p className="tooltip__legend">The <span className="bar">┃</span> represents the overall average*</p>
             <p className="tooltip__hint"><span>Click</span> to {hintMessage} selection!</p>
           </div>
     )

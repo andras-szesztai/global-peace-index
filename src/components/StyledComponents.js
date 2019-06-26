@@ -124,13 +124,6 @@ const Tooltip = styled.div`
       margin-top: -15px;
       }
 
-
-    h4 {
-      padding-top: 1rem;
-      font-size: 1.6rem !important;
-      font-weight: 500;
-    }
-
     span {
       font-weight: 700;
     }
@@ -138,7 +131,7 @@ const Tooltip = styled.div`
     h4,
     p {
       color: ${secondaryColor};
-      line-height: .8rem;
+      line-height: 1rem;
     }
 
     .bar {
@@ -146,9 +139,20 @@ const Tooltip = styled.div`
     }
 
     .tooltip{
-      &__hint {
-        padding-top: .8rem;
+
+      &__title {
+        padding-top: 1rem;
+        font-size: 1.6rem !important;
+        font-weight: 500 !important;
       }
+      &__hint {
+        padding-top: .2rem;
+      }
+
+      &__legend {
+        padding-top: 1rem;
+      }
+
     }
 
     .avg-text {

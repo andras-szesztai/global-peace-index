@@ -384,7 +384,7 @@ class BeeSwarmPlot extends Component {
       width = 200
       height= 150
     } else {
-      tooltipHeight = '310px'
+      tooltipHeight = '330px'
       margin = {
         top: 0,
         right: 20,
