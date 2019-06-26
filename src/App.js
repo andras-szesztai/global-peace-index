@@ -343,7 +343,7 @@ class App extends Component {
           </section>
 
           <section className="line-charts">
-            {/* {lineCharts} */}
+            {lineCharts}
           </section>
 
           <section className="credits">

@@ -27,7 +27,6 @@ class BarChart extends Component {
       this.setState(state => state.firstRender = true)
     }
 
-    if(value){
       if (prevProps.year !== year){
         this.updateMainBars(0)
         this.updateAvgBars(0)
@@ -39,12 +38,9 @@ class BarChart extends Component {
         prevProps.value !== value
       ){
         this.updateMainBars(transition.long)
-        this.setState(s => s.overallScore = data.filter(d => d.country === value && d.metric === 'Overall Score')[0]['value'])
+        value && this.setState(s => s.overallScore = data.filter(d => d.country === value && d.metric === 'Overall Score')[0]['value'])
       }
   
-    }
-
-
     if(prevProps.width !== width){
       this.updateDimensions()
     }
@@ -230,8 +226,6 @@ class BarChart extends Component {
     const differenceFromGlobal = overallScore - globalOverallScore
 
     const plusMinus = differenceFromGlobal > 0 ? '+' : '-'
-
-    
 
     return(
           <div>

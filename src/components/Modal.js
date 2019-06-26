@@ -20,6 +20,7 @@ class RegionFilter extends Component {
     const { handleSave, filterButtonColor } = this.props
     const regions =  _.uniq(beeSwarmData.map(d => d.region)).sort()
     const radioButtons = regions.map(el => <Radio 
+                                            key={el}
                                             toggle 
                                             label={el} 
                                             defaultChecked={values.includes(el)}
