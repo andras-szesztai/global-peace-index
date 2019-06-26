@@ -418,6 +418,7 @@ class BeeSwarmPlot extends Component {
                   height = {height}
                   margin = {margin}
                   windowWidth = {windowWidth}
+                  sizedByPopulation = {sizedByPopulation}
               />
           </Tooltip>
         </ChartContainer>
