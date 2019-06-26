@@ -173,7 +173,7 @@ class App extends Component {
     const filteredMetrics = allMetrics.filter(d => !metricsDisplayed.includes(d))
     const filteredBeesWarmData = beeSwarmData.filter(d => regionArray.includes(d.region))
 
-    const tooltipData = filteredBarChartData.filter(d => (d.country !== 'All') && d.year === yearFilter)
+    const tooltipData = filteredBarChartData.filter(d => d.year === yearFilter)
     const lineChartData = barchartData.filter( d => ( mouseClickHighlight.includes(d.country) && metricsDisplayed.includes(d.metric)))
 
     const dropdownOptions = (num) => filteredMetrics.map(el => {return { key: el, text: el, value: el, number: num}})
