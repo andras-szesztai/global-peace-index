@@ -146,7 +146,7 @@ const Tooltip = styled.div`
         font-weight: 500 !important;
       }
       &__hint {
-        padding-top: .2rem;
+        padding-top: .3rem;
       }
 
       &__legend {

@@ -12,7 +12,8 @@ import { svgDimensions, appendArea } from './chartFunctions'
 class BarChart extends Component {
   state = {
     firstRender: false,
-    overallScore: ''
+    overallScore: '',
+    globalOverallScore: ''
   }
 
   componentDidUpdate(prevProps){
@@ -115,6 +116,7 @@ class BarChart extends Component {
   updateAvgBars(){
 
     const { sizedByPopulation, data} = this.props
+    const { globalOverallScore } = this.state
 
     let calculatedData 
 
@@ -180,6 +182,11 @@ class BarChart extends Component {
 
     this.chartArea.selectAll('.avg-rect').raise()
     this.chartArea.selectAll('.avg-text').raise()
+
+    const globalAvg = calculatedData.filter(d => d.metric === 'Overall Score')[0].value
+
+    if(globalOverallScore !==  globalAvg)
+      {this.setState(s => s.globalOverallScore = globalAvg)}
       
   }
 
@@ -218,13 +225,18 @@ class BarChart extends Component {
   render(){
 
     const { year, value, array } = this.props
-    const { overallScore } = this.state
+    const { overallScore, globalOverallScore } = this.state
     const hintMessage = array.includes(value) ? 'remove from' : 'add to'
+    const differenceFromGlobal = overallScore - globalOverallScore
+
+    const plusMinus = differenceFromGlobal > 0 ? '+' : '-'
+
+    
 
     return(
           <div>
             <h4 className="tooltip__title">{value}</h4>
-            <p className="tooltip__value">Overall score in {year}: <span>{overallScore && +overallScore.toFixed(2)}</span></p>
+            <p className="tooltip__value">Overall score in {year}: <span>{overallScore && +overallScore.toFixed(2)}</span> ({plusMinus}{Math.abs(differenceFromGlobal.toFixed(2))} from global)</p>
             <svg ref={node => this.node = node}/>
             <p className="tooltip__legend">The <span className="bar">┃</span> represents the overall average*</p>
             <p className="tooltip__hint"><span>Click</span> to {hintMessage} selection!</p>
