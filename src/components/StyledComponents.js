@@ -143,7 +143,7 @@ const Tooltip = styled.div`
       &__title {
         padding-top: 1rem;
         font-size: 1.6rem !important;
-        font-weight: 500 !important;
+        font-weight: 600 !important;
       }
       &__hint {
         padding-top: .3rem;
