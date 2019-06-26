@@ -364,7 +364,7 @@ class BeeSwarmPlot extends Component {
     let tooltipHeight, margin, width, height
     
     if(windowWidth < 1100 && windowWidth > 900) {
-      tooltipHeight = '260px'
+      tooltipHeight = '280px'
       margin = {
         top: 0,
         right: 15,
@@ -374,7 +374,7 @@ class BeeSwarmPlot extends Component {
       width = 225
       height= 175
     } else if (windowWidth < 900 ){
-      tooltipHeight = '225px'
+      tooltipHeight = '250px'
       margin = {
         top: 0,
         right: 10,
@@ -384,7 +384,7 @@ class BeeSwarmPlot extends Component {
       width = 200
       height= 150
     } else {
-      tooltipHeight = '290px'
+      tooltipHeight = '310px'
       margin = {
         top: 0,
         right: 20,

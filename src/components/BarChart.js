@@ -169,9 +169,8 @@ class BarChart extends Component {
       .attr('class', 'avg-text')
       .attr('x', d => this.xScale(d.value))
       .attr('y', d => this.yScale(d.metric) + this.yScale.bandwidth())
-      .attr('dy', -5)
+      .attr('dy', -3.5)
       .attr('dx', 5)
-      .attr('fill', '#333')
       .text(d => d.value.toFixed(1))
         .merge(avgText)
         .attr('x', d => this.xScale(d.value))
@@ -210,7 +209,9 @@ class BarChart extends Component {
       this.yAxis.selectAll(".tick line").remove();
       this.yAxis.selectAll(".domain").remove();
 
-    this.updateData(0)
+    this.updateMainBars()
+    this.updateAvgBars(0)
+
   }
 
   render(){
@@ -224,6 +225,7 @@ class BarChart extends Component {
             <h4 className="tooltip__title">{value}</h4>
             <p className="tooltip__value">Overall score in {year}: <span>{overallScore && +overallScore.toFixed(2)}</span></p>
             <svg ref={node => this.node = node}/>
+            <p className="tooltip__hint">The <span className="bar">┃</span> represents the overall average*</p>
             <p className="tooltip__hint"><span>Click</span> to {hintMessage} selection!</p>
           </div>
     )

@@ -141,10 +141,19 @@ const Tooltip = styled.div`
       line-height: .8rem;
     }
 
+    .bar {
+      color: #333;
+    }
+
     .tooltip{
       &__hint {
         padding-top: .8rem;
       }
+    }
+
+    .avg-text {
+      fill: #333;
+      font-weight: 500;
     }
 
 
