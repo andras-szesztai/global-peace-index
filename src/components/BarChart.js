@@ -232,7 +232,7 @@ class BarChart extends Component {
             <h4 className="tooltip__title">{value}</h4>
             <p className="tooltip__value">Overall score in {year}: <span>{overallScore && +overallScore.toFixed(2)}</span> ({plusMinus}{Math.abs(differenceFromGlobal.toFixed(2))} from global)</p>
             <svg ref={node => this.node = node}/>
-            <p className="tooltip__legend">The <span className="bar">┃</span> represents the overall average*</p>
+            <p className="tooltip__legend">The<span className="bar">┃</span>represents the overall average*</p>
             <p className="tooltip__hint"><span>Click</span> to {hintMessage} selection!</p>
           </div>
     )
